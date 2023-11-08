@@ -18,13 +18,6 @@ class RunsPipeline(MelangePipeline):
             "runs": self.command
         }
 
-        # Prioritizes branch over tag
-        if self.branch is not None:
-            data["with"]["branch"] = self.branch
-        
-        elif self.tag is not None:
-            data["with"]["tag"] = self.tag
-
         return data
     
 
@@ -64,7 +57,7 @@ class GoBuildPipeline(MelangePipeline):
     
     def as_dict(self) -> Dict:
         data = {
-            "uses": "git-checkout",
+            "uses": "go/build",
             "with": {
                 "packages": self.packages,
                 "output": self.output
@@ -121,4 +114,4 @@ class MelangeYaml:
             data["pipelines"] = [p.as_dict() for p in self.pipelines]
 
         # dump
-        yaml.dump(data, f)
+        yaml.dump(data, f, sort_keys=False)

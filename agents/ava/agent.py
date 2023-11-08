@@ -10,7 +10,6 @@ from utils import load_openai_api_key
 
 os.environ["OPENAI_API_KEY"] = load_openai_api_key()
 
-
 MODEL = "gpt-4"
 TEMPERATURE = 0
 

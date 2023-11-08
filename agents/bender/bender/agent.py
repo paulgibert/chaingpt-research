@@ -60,5 +60,4 @@ class Agent:
                                        tools=self.tools,
                                        handle_parsing_errors=True,
                                        verbose=verbose)
-        print(inputs)
         return agent_executor.invoke(inputs)

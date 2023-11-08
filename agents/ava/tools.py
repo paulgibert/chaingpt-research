@@ -9,7 +9,7 @@ def run_sh_command(command: str) -> str:
     """
     Run a shell command in the current working directory. Shell
     commands should be safe and not harmful to the system. The
-    contents of stdout and stderr is returned. Useful
+    contents of stdout and stderr are returned. Useful
     for testing build commands and receiving feedback.
     """
     log_tool("run_sh_command", command, end="")
@@ -57,7 +57,7 @@ def git_list_dir(path: str) -> str:
 @tool
 def git_read_file(path: str) -> str:
     """
-    Returns the content of a file at the specefied path
+    Returns the content of a file at the specified path
     """
     log_tool("git_read_file", path)
     try:

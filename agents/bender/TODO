@@ -1,0 +1,8 @@
+- Fix model yaml dump in environment
+- Give bender ability to search wolfi packages
+- Omit repeat packages
+- UI for demo
+- Ability to test build commands
+- Easy test melange file tool
+- Test melange within bender
+- Run tests with more projects

@@ -77,13 +77,12 @@ def melange_add_pipeline_go_build(packages: str, output: str,
     """
     Adds a go/build pipeline step to an initialized
     melange YAML model. An error is returned if no model
-    has been initialized.Go/build steps build and install
+    has been initialized. Go/build steps build and install
     go projects. Use the default values when possible.
-    packages: List of space-separated packages to compile. Files con also be specified.
-              This value is passed as an argument to go build.
-              All paths are relative to the provided modroot.
-    output: Filename to use when writing the binary. The final install location inside
-            the apk will be in prefix / install_dir / output
+    packages: Space-separated packages to compile. Files can also be specified.
+              This value is passed to go build. Paths are relative to modroot.
+    output: Name of the output binary. The final install location will be
+            in prefix/install_dir/output
     modroot: Top directory of the go module, this is where go.mod lives. Before buiding
              the go pipeline wil cd into this directory.
     prefix: Prefix to relocate binaries. Defaults to 'usr'.
@@ -100,16 +99,16 @@ def melange_add_pipeline_go_build(packages: str, output: str,
     state.add_pipeline(pipe)
 
 
-def melange_write_model(path: str):
+def melange_write_model():
     """
-    This function writes the Melange YAML model to a yaml file
-    at the provided path. An error is returned if the path already
-    exists. Call this function after initializing the model with a header
+    This function writes the Melange YAML model.
+    Call this function after initializing the model with a header
     and adding dependencies and pipeline steps.
     """
     global state
     _check_state_exists()
     
+    path = "bender/out.yaml"
     if os.path.exists(path):
         return "Error: The provided path already exists."
     
