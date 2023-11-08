@@ -1,9 +1,10 @@
 from langchain.document_loaders import TextLoader
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 import tiktoken
+from .exceptions import UnsupportedLanguage
 
 
-LANGUAGES = ['cpp', 'go', 'java', 'kotlin',
+LANGUAGES = ['text', 'cpp', 'go', 'java', 'kotlin',
              'js', 'ts', 'php', 'proto', 'python',
              'rst', 'ruby', 'rust', 'scala', 'swift',
              'markdown', 'latex', 'html', 'sol',
@@ -12,7 +13,7 @@ LANGUAGES = ['cpp', 'go', 'java', 'kotlin',
 
 def check_language(language: str):
     if language not in LANGUAGES:
-        return "Error: The provided language is not supported"
+        raise UnsupportedLanguage()
 
 
 def split_file(path: str, chunk_size: int,
@@ -28,7 +29,7 @@ def split_file(path: str, chunk_size: int,
     return loader.load_and_split(splitter)
 
 
-def ntokens(content: str, model_name: str) -> int:
+def count_tokens(content: str, model_name: str) -> int:
     enc = tiktoken.encoding_for_model(model_name)
     e = enc.encode(content)
     return len(e)

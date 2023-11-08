@@ -107,7 +107,7 @@ class MelangeYaml:
         if len(self.build_deps) > 0:
             data["environment"] = {}
             data["environment"]["contents"] = {}
-            data["environment"]["packages"] = self.build_deps
+            data["environment"]["contents"]["packages"] = self.build_deps
 
         # pipeline
         if len(self.pipelines) > 0:

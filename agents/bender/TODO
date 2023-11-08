@@ -1,8 +1,18 @@
-- Fix model yaml dump in environment
-- Give bender ability to search wolfi packages
+ASAP:
+[x] Fix model yaml dump in environment
+[] Print directory listing
+[] Suppress git clone stdout
+[] UI for demo
+[] Easy test melange file script
+
+Next Up:
+[] Fix rate limit errors from refine_and_read
+[] Give bender ability to search wolfi packages
+[] Run tests with more projects
+
+Next Version:
 - Omit repeat packages
-- UI for demo
 - Ability to test build commands
-- Easy test melange file tool
 - Test melange within bender
-- Run tests with more projects
+- Give agent its own volume
+- Other TODOs

@@ -1,6 +1,7 @@
 from typing import List
 import os
 import asyncio
+import time
 from langchain.prompts import PromptTemplate
 from langchain.schema.document import Document
 from langchain.chat_models import ChatOpenAI
@@ -15,6 +16,7 @@ CHUNK_SIZE = 3000
 CHUNK_OVERLAP = 100
 MODEL_NAME = "gpt-4"
 MODEL_TEMP = 0
+MAX_SLEEP_SEC = 5
 
 CHUNK_REFINE_PROMPT = """
 You are scanning the provided chunk of a document
@@ -63,7 +65,8 @@ Aggregate summary:
 """
 
 
-async def _ainvoke_chain(chain, input) -> str:
+async def _ainvoke_chain(chain, input, delay) -> str:
+    time.sleep(delay)
     response = await chain.ainvoke(input)
     return response
 
@@ -83,8 +86,8 @@ async def _refine_chunks(docs: List[Document], query: str) -> List[str]:
     )
     
     tasks = []
-    for d in docs:
-        t = _ainvoke_chain(chain, {"query": query, "doc": d})
+    for i, d in enumerate(docs):
+        t = _ainvoke_chain(chain, {"query": query, "doc": d}, delay=i)
         tasks.append(t)
     return await tqdm.gather(*tasks, desc="Refining")
 
@@ -95,7 +98,7 @@ def _agg_summaries(summaries: List[str], query: str) -> str:
                      model=MODEL_NAME)
     chain = (
         {
-        "summaries": lambda x: "\n\n".join(summaries),
+        "summaries": lambda _: "\n\n".join(summaries),
         "query": lambda x: x["query"],
         }
         | prompt
@@ -107,23 +110,7 @@ def _agg_summaries(summaries: List[str], query: str) -> str:
         return chain.invoke({"summaries": summaries, "query": query})
 
 
-def file_refine_text(path: str, query: str) -> str:
-    """
-    Condenses a large text document at the provided path down to
-    a smaller summary based on the provided query. Useful for analyzing
-    large documents that can't be analyzed using the file_read function.
-    Queries should be detailed to ensure the summary contains all
-    of the desired info. If the path does not exist, an error is returned.
-    """
-    if not os.path.exists(path):
-        return "Error: Provided path does not exist"
-    docs = split_file(path, chunk_size=CHUNK_SIZE,
-                      chunk_overlap=CHUNK_OVERLAP)
-    summaries = asyncio.run(_refine_chunks(docs, query))
-    return _agg_summaries(summaries, query)
-
-
-def file_refine_language(path: str, language: str, query: str) -> str:
+def refine_and_read(path: str, query: str, language: str=None) -> str:
     """
     Equivalent to the file_refine_text function with the added
     feature of being able to supply a language. The language is used
@@ -135,10 +122,11 @@ def file_refine_language(path: str, language: str, query: str) -> str:
     an unsupported langauge is provided.
     """
     if not os.path.exists(path):
-        return "Error: Provided path does not exist"
-    err = check_language(language)
-    if err is not None:
-        return err
+        raise FileNotFoundError
+    if language is not None:
+        check_language(language)
+    if language == "text":
+        language = None # Do nothing for language=text
     docs = split_file(path, chunk_size=CHUNK_SIZE,
                       chunk_overlap=CHUNK_OVERLAP,
                       language=language)

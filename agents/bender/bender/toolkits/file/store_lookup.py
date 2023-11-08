@@ -16,7 +16,7 @@ def _store_lookup(docs: List[Document], query: str) -> str:
     return docs[0].page_content
 
 
-def file_store_lookup_text(path: str, query: str) -> str:
+def store_lookup(path: str, query: str) -> str:
     """
     Splits the contents of a text-based file located at the provided
     path into chunks that are stored in a vectorstore.
@@ -39,23 +39,14 @@ def file_store_lookup_text(path: str, query: str) -> str:
     return _store_lookup(docs, query)
 
 
-def file_store_lookup_language(path: str, language: str, query: str) -> str:
-    """
-    Equivalent to the file_store_lookup_text function with the added
-    feature of being able to supply a language. The language is used
-    to more intelligently split the document than file_store_lookup_text
-    would. The supported langauges are: cpp, go, java, kotlin, js, ts,
-    php, proto, python, rst, ruby, rust, scala, swift, markdown, latex,
-    html, sol, and csharp. In addition to the errors returned from
-    file_store_lookup_text, this function will also report an error if
-    an unsupported langauge is provided.
-    """
+def vstore_and_read(path: str, query: str,
+                    language: str=None) -> str:
     if not os.path.exists(path):
-        return "Error: The provided path does not exist"
-    
-    err = check_language(language)
-    if err is not None:
-        return err
+        raise FileNotFoundError
+    if language is not None:
+        check_language(language)
+    if language == "text":
+        language = None # Do nothing for language=text
     docs = split_file(path, chunk_size=CHUNK_SIZE,
                       chunk_overlap=CHUNK_OVERLAP,
                       language=language)

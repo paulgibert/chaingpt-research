@@ -1,8 +1,3 @@
-class PathNotFoundError(Exception):
-    def __init__(self):
-        super().__init__("The provided path is invalid")
-
-
 class RepositoryNotFoundError(Exception):
     def __init__(self):
         super().__init__("The provided repository does not exist")

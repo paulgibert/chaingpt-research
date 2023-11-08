@@ -1,11 +1,14 @@
 import os
 import argparse
+import logging
 from agent import Agent
-from toolkits import FileToolkit, GitToolkit, SystemToolkit, MelangeToolkit
+from toolkits import FileToolkit, GitToolkit, SystemToolkit, MelangeToolkit, WebToolkit
 from utils import load_openai_api_key
 
 
 os.environ["OPENAI_API_KEY"] = load_openai_api_key()
+
+logging.basicConfig(level=logging.INFO)
 
 
 BUILD_PROMPT = """
@@ -52,18 +55,21 @@ def parse_args():
 def main():
     args = parse_args()
     
-    build_toolkits = [GitToolkit(), FileToolkit(), SystemToolkit()]
+    build_toolkits = [GitToolkit(),
+                      FileToolkit(),
+                      SystemToolkit(),
+                      WebToolkit()]
     build_tools = [t for tk in build_toolkits for t in tk.get_tools()]
     build_agent = Agent(BUILD_PROMPT, ["package", "version"], build_tools)
     desc = build_agent.run({"package": args.package, "version": args.version},
-                           verbose=True)
+                           verbose=False)
     
     package_tools = MelangeToolkit().get_tools()
     build_agent = Agent(PACKAGE_PROMPT, ["package", "version", "build_desc"], package_tools)
     build_agent.run({"package": args.package,
                      "version": args.version,
                      "build_desc": desc},
-                    verbose=True)
+                    verbose=False)
 
 
 if __name__ == "__main__":

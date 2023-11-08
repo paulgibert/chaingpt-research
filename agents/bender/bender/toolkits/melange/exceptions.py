@@ -1,0 +1,2 @@
+class MissingMelangeHeader(Exception):
+    pass
