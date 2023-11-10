@@ -1,10 +1,11 @@
 from typing import List
-import os
 import subprocess
-from .exceptions import RepositoryNotFoundError, GenericCloneError
+import shutil
+from .exceptions import GitFatalError
 
 
-BAD_HOST_ERRNO = 32768
+# BAD_HOST_ERRNO = 32768
+GIT_FATAL_ERRNO = 128
 
 
 def _clone(repository: str, branch_or_tag: str=None) -> str:
@@ -12,11 +13,9 @@ def _clone(repository: str, branch_or_tag: str=None) -> str:
     if branch_or_tag:
         cmd += " -b " + branch_or_tag
     cmd += " " + repository
-    r = os.system(cmd)
-    if r == BAD_HOST_ERRNO:
-        raise RepositoryNotFoundError()
-    if r != 0:
-        raise GenericCloneError()
+    r = subprocess.run(cmd, shell=True, capture_output=True) #TODO: Dangerous
+    if r.returncode == GIT_FATAL_ERRNO:
+        raise GitFatalError(r.stderr.decode("utf-8").replace("\n", ", "))
     repo_name = repository.split("/")[-1]
     repo_name = repo_name.split(".")[0]
     return repo_name
@@ -35,10 +34,12 @@ def _list_tags(repo_name: str) -> List[str]:
 
 
 def list_branches_and_tags(repository: str) -> str:
+    # TODO: Update this to be a checkout and switch branch instead of
+    # cloning twice.
     repo_name = _clone(repository)
     branches = _list_branches(repo_name)
     tags = _list_tags(repo_name)
-    os.system(f"rm -rf ./{repo_name}") # TODO: Dangerous, Also replace with subprocess
+    shutil.rmtree(repo_name) # TODO: Dangerous
     return ", ".join(branches + tags)
     
 

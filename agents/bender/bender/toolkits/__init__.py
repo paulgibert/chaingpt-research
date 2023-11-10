@@ -5,8 +5,7 @@ from langchain.tools import BaseTool, StructuredTool
 
 from .file import (file_read_from_path,
                    file_write_to_path,
-                   file_refine_and_read,
-                   file_vstore_and_read)
+                   file_refine_and_read)
 
 class FileToolkit(BaseToolkit):
     def get_tools(self) -> List[BaseTool]:
@@ -14,8 +13,7 @@ class FileToolkit(BaseToolkit):
             StructuredTool.from_function(f) for f in (
                 file_read_from_path,
                 file_write_to_path,
-                file_refine_and_read,
-                file_vstore_and_read)]
+                file_refine_and_read)]
 
 
 from .system import system_run_sh, system_list_dir

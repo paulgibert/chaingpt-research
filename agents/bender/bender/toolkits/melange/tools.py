@@ -56,6 +56,6 @@ def add_pipeline_go_build(packages: str, output: str,
 def write_model():
     global state
     _check_state_exists()
-    path = "bender/out.yaml"
+    path = "tmp.yaml"
     with open(path, "w", encoding="utf-8") as f: # TODO: dangerous
         state.dump_yaml(f)

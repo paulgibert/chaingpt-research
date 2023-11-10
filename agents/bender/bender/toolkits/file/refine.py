@@ -66,7 +66,7 @@ Aggregate summary:
 
 
 async def _ainvoke_chain(chain, input, delay) -> str:
-    time.sleep(delay)
+    await asyncio.sleep(delay)
     response = await chain.ainvoke(input)
     return response
 
@@ -87,7 +87,7 @@ async def _refine_chunks(docs: List[Document], query: str) -> List[str]:
     
     tasks = []
     for i, d in enumerate(docs):
-        t = _ainvoke_chain(chain, {"query": query, "doc": d}, delay=i)
+        t = _ainvoke_chain(chain, {"query": query, "doc": d}, delay=2*i)
         tasks.append(t)
     return await tqdm.gather(*tasks, desc="Refining")
 

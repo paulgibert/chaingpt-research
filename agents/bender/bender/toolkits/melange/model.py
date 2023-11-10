@@ -111,7 +111,7 @@ class MelangeYaml:
 
         # pipeline
         if len(self.pipelines) > 0:
-            data["pipelines"] = [p.as_dict() for p in self.pipelines]
+            data["pipeline"] = [p.as_dict() for p in self.pipelines]
 
         # dump
         yaml.dump(data, f, sort_keys=False)

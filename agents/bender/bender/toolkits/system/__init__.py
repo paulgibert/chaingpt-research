@@ -23,9 +23,10 @@ def system_list_dir(path: str) -> str:
     Useful for exploring a GitHub repo to determine what files need to be read.
     If the provided path is not found, an error is returned.
     """
-    logging.info(f"Listing directory contents of {path}")
     try:
-        return list_dir(path)
+        contents = list_dir(path)
+        msg = f"Listing directory contents of {path}:"
+        logging.info(msg + "\n" + contents.replace("\n", "  "))
     except FileNotFoundError:
         logging.error(f"Path not found. {path} does not exist.")
         return "Error: Path not found"

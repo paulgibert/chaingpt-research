@@ -2,3 +2,5 @@ env
 *.secret
 __pycache__
 samples
+*.rsa
+*.rsa.pub

@@ -1,7 +1,7 @@
 ASAP:
 [x] Fix model yaml dump in environment
-[] Print directory listing
-[] Suppress git clone stdout
+[x] Print directory listing
+[x] Suppress git clone stdout
 [] UI for demo
 [] Easy test melange file script
 
@@ -9,6 +9,8 @@ Next Up:
 [] Fix rate limit errors from refine_and_read
 [] Give bender ability to search wolfi packages
 [] Run tests with more projects
+[] Update git list tags and branches
+[] Abstract read semantics into a simple read file command
 
 Next Version:
 - Omit repeat packages

@@ -11,7 +11,7 @@ def web_websearch(query: str) -> List[str]:
     Performs a google search with the provided query.
     Returns the top urls from the search.
     """
-    logging.info("Searching web for {query}..")
+    logging.info(f"Searching web for {query}..")
     results = websearch(query)
     if len(results) <= MAX_DISPLAY_RESULTS:
         summary = "\n\t".join(results)

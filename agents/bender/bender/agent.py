@@ -59,5 +59,6 @@ class Agent:
         agent_executor = AgentExecutor(agent=self._chain,
                                        tools=self.tools,
                                        handle_parsing_errors=True,
+                                       max_iterations=50,
                                        verbose=verbose)
         return agent_executor.invoke(inputs)
