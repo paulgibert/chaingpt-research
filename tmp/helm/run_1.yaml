@@ -1,0 +1,16 @@
+package:
+  name: helm
+  version: latest
+  description: Helm is a package manager for Kubernetes
+  copyright:
+  - license: Apache-2.0
+environment:
+  contents:
+    packages:
+    - go
+pipeline:
+- uses: git-checkout
+  with:
+    repository: https://github.com/helm/helm.git
+- runs: git checkout v3.9.4
+- runs: make build

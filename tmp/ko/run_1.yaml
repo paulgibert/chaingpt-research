@@ -1,0 +1,19 @@
+package:
+  name: ko
+  version: latest
+  description: A tool for building and deploying Golang applications to Kubernetes
+  copyright:
+  - license: Apache-2.0
+environment:
+  contents:
+    packages:
+    - golang-go
+pipeline:
+- uses: git-checkout
+  with:
+    repository: https://github.com/google/ko.git
+    tag: latest
+- uses: go/build
+  with:
+    packages: github.com/google/ko
+    output: ko

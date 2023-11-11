@@ -1,0 +1,22 @@
+package:
+  name: zarf
+  version: latest
+  description: Zarf is a project that can be built using the `make` command with various
+    targets.
+  copyright:
+  - license: MIT
+environment:
+  contents:
+    packages:
+    - go
+    - make
+pipeline:
+- uses: git-checkout
+  with:
+    repository: https://github.com/defenseunicorns/zarf.git
+    branch: main
+- runs: make build
+- uses: go/build
+  with:
+    packages: .
+    output: zarf

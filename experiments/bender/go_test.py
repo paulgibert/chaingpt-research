@@ -56,7 +56,7 @@ def main():
         # Copy original .yaml over
         shutil.copyfile(os.path.join(args.samples, filename), os.path.join(package_dir, "original.yaml"))
 
-        for i in args.n:
+        for i in range(int(args.n)):
             out_filename = f"run_{i}.yaml"
             run_bender(package_name, VERSION_PLACEHOLDER, package_dir, out_filename)
 

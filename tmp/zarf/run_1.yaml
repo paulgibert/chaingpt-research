@@ -1,0 +1,18 @@
+package:
+  name: zarf
+  version: latest
+  description: Zarf is a project that uses a Makefile for building the project for
+    different operating systems and architectures, creating packages for different
+    components, and running tests.
+  copyright:
+  - license: MIT
+environment:
+  contents:
+    packages:
+    - go
+pipeline:
+- uses: git-checkout
+  with:
+    repository: https://github.com/defenseunicorns/zarf.git
+    tag: v0.31.1
+- runs: make build-cli-linux
