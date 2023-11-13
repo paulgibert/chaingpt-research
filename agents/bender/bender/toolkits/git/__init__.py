@@ -19,8 +19,11 @@ def git_list_branches_and_tags(repository: str) -> str:
     does not exists, an error is returned. Try a different
     repository path if this is the case.
     """
-    logging.info(f"Listing branches and tags from {repository}")
-    return _try_clone_op(list_branches_and_tags, repository)
+    items = _try_clone_op(list_branches_and_tags, repository)
+    items = "  ".join(items)
+    logging.info(f"Listing branches and tags from {repository}\n{items}")
+    return items
+
     
 
 def git_clone(repository: str, branch_or_tag: str) -> str:

@@ -1,4 +1,5 @@
 import os
+import sys
 import argparse
 import shutil
 import logging
@@ -7,12 +8,18 @@ from toolkits import FileToolkit, GitToolkit, SystemToolkit, MelangeToolkit, Web
 from utils import load_openai_api_key
 
 
+
+
 # TMP_YAML_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "out.yaml")
 TMP_YAML_PATH = "tmp.yaml"
+LOG_PATH = "/output/bender.log"
 
 os.environ["OPENAI_API_KEY"] = load_openai_api_key()
 
-logging.basicConfig(level=logging.INFO)
+logging.basicConfig(filename=LOG_PATH,
+                    encoding='utf-8',
+                    level=logging.INFO)
+logging.getLogger().addHandler(logging.StreamHandler(sys.stdout))
 
 
 BUILD_PROMPT = """
@@ -70,7 +77,7 @@ def main():
     desc = build_agent.run({"package": args.package, "version": args.version},
                            verbose=False)
     
-    # print(desc)
+    logging.info(f"BUILD INSTRUCTIONS:\n{desc}")
     
     package_tools = MelangeToolkit().get_tools()
     build_agent = Agent(PACKAGE_PROMPT, ["package", "version", "build_desc"], package_tools)
@@ -80,6 +87,7 @@ def main():
                     verbose=False)
     
     shutil.copyfile(TMP_YAML_PATH, f"/output/{args.output}")
+
     os.remove(TMP_YAML_PATH)
 
 if __name__ == "__main__":

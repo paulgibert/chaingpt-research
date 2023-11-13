@@ -1,7 +1,6 @@
 from typing import List
 import os
 import asyncio
-import time
 from langchain.prompts import PromptTemplate
 from langchain.schema.document import Document
 from langchain.chat_models import ChatOpenAI
@@ -12,11 +11,12 @@ from yaspin.spinners import Spinners
 from .utils import check_language, split_file
 
 
-CHUNK_SIZE = 3000
-CHUNK_OVERLAP = 100
-MODEL_NAME = "gpt-4"
+CHUNK_SIZE = 4000
+CHUNK_OVERLAP = 250
+MODEL_REFINE = "gpt-3.5-turbo-1106"
+MODEL_AGG = "gpt-4"
 MODEL_TEMP = 0
-MAX_SLEEP_SEC = 5
+
 
 CHUNK_REFINE_PROMPT = """
 You are scanning the provided chunk of a document
@@ -74,7 +74,7 @@ async def _ainvoke_chain(chain, input, delay) -> str:
 async def _refine_chunks(docs: List[Document], query: str) -> List[str]:
     prompt = PromptTemplate.from_template(CHUNK_REFINE_PROMPT)
     llm = ChatOpenAI(temperature=MODEL_TEMP,
-                     model=MODEL_NAME)
+                     model=MODEL_REFINE)
     chain = (
         {
         "query": lambda x: x["query"],
@@ -87,7 +87,7 @@ async def _refine_chunks(docs: List[Document], query: str) -> List[str]:
     
     tasks = []
     for i, d in enumerate(docs):
-        t = _ainvoke_chain(chain, {"query": query, "doc": d}, delay=2*i)
+        t = _ainvoke_chain(chain, {"query": query, "doc": d}, delay=4*i)
         tasks.append(t)
     return await tqdm.gather(*tasks, desc="Refining")
 
@@ -95,7 +95,7 @@ async def _refine_chunks(docs: List[Document], query: str) -> List[str]:
 def _agg_summaries(summaries: List[str], query: str) -> str:
     prompt = PromptTemplate.from_template(CHUNK_AGG_PROMPT)
     llm = ChatOpenAI(temperature=MODEL_TEMP,
-                     model=MODEL_NAME)
+                     model=MODEL_AGG)
     chain = (
         {
         "summaries": lambda _: "\n\n".join(summaries),

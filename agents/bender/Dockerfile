@@ -5,7 +5,7 @@ ARG package_name
 WORKDIR /work
 RUN mkdir /output
 
-RUN apk add build-base python-${py_version} py${py_version}-pip git
+RUN apk add build-base python-${py_version} py${py_version}-pip git go
 
 COPY requirements.txt openai_api_key.secret /work/
 

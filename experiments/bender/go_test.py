@@ -2,6 +2,7 @@ import os
 import shutil
 import argparse
 import subprocess
+import yaml
 
 
 N_RUNS_DEFAULT = 10
@@ -31,6 +32,7 @@ def run_bender(package: str, version: str, outpath: str, out_filename: str):
     cmd = f"docker run -it --rm -v {outpath}:/output -v {SRC_DIR}:/work/bender bender-agent python bender/main.py {package} -v {version} -o {out_filename}"
     subprocess.run(cmd, shell=True)
 
+
 def make_output_dir(path: str):
     if os.path.exists(path):
         r = input(f"{path} contains data from a previous experiment. Overwrite (y/N)? ")
@@ -38,6 +40,15 @@ def make_output_dir(path: str):
             raise UserCancelError("User canceled experiment")
         shutil.rmtree(path)
     os.mkdir(path)
+
+
+def get_version(yaml_path: str) -> str:
+    with open(yaml_path, "r", encoding="utf-8") as f:
+        data = yaml.safe_load(f)
+        try:
+            return data["package"]["version"]
+        except KeyError:
+            return VERSION_PLACEHOLDER
 
 
 def main():
@@ -54,11 +65,13 @@ def main():
         os.mkdir(package_dir)
         
         # Copy original .yaml over
-        shutil.copyfile(os.path.join(args.samples, filename), os.path.join(package_dir, "original.yaml"))
+        yaml_path = os.path.join(args.samples, filename)
+        shutil.copyfile(yaml_path, os.path.join(package_dir, "original.yaml"))
 
+        version = get_version(yaml_path)
         for i in range(int(args.n)):
             out_filename = f"run_{i}.yaml"
-            run_bender(package_name, VERSION_PLACEHOLDER, package_dir, out_filename)
+            run_bender(package_name, version, package_dir, out_filename)
 
 
 if __name__ == "__main__":

@@ -1,5 +1,7 @@
 from typing import List, Dict
 from operator import itemgetter
+import logging
+from langchain.callbacks import get_openai_callback
 from langchain.tools.render import format_tool_to_openai_function
 from langchain.agents.format_scratchpad import format_to_openai_functions
 from langchain.chat_models import ChatOpenAI
@@ -61,4 +63,7 @@ class Agent:
                                        handle_parsing_errors=True,
                                        max_iterations=50,
                                        verbose=verbose)
-        return agent_executor.invoke(inputs)
+        with get_openai_callback() as cb:
+            result = agent_executor.invoke(inputs)
+            logging.info(f"Agent callback:\n{str(cb)}")
+            return result
