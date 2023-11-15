@@ -1,2 +1,2 @@
 #!/bin/bash
-python experiments/bender/go_test.py samples experiments/bender/results -n 1
+python experiments/bender/go_test.py samples experiments/bender/results -n 3

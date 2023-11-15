@@ -12,12 +12,18 @@ LANGUAGES = ['text', 'cpp', 'go', 'java', 'kotlin',
 
 
 def check_language(language: str):
+    """
+    Checks that a language is valid
+    """
     if language not in LANGUAGES:
         raise UnsupportedLanguage()
 
 
 def split_file(path: str, chunk_size: int,
                 chunk_overlap: int, language: str=None):
+    """
+    Splits a file into chunks based on language
+    """
     loader = TextLoader(path)
     if language is None:
         splitter = RecursiveCharacterTextSplitter(chunk_size=chunk_size,
@@ -30,6 +36,9 @@ def split_file(path: str, chunk_size: int,
 
 
 def count_tokens(content: str, model_name: str) -> int:
+    """
+    Utility for counting tokens
+    """
     enc = tiktoken.encoding_for_model(model_name)
     e = enc.encode(content)
     return len(e)

@@ -10,5 +10,3 @@ RUN apk add build-base python-${py_version} py${py_version}-pip git go
 COPY requirements.txt openai_api_key.secret /work/
 
 RUN pip3 install -r requirements.txt
-
-# ENTRYPOINT [ "python", "/work/bender/main.py", ${package_name}]

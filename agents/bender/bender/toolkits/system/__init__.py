@@ -1,3 +1,7 @@
+"""
+A collection of tools for interacting with a system
+"""
+
 import logging
 from .tools import run_sh, list_dir
 
@@ -10,7 +14,7 @@ def system_run_sh(command: str) -> str:
     is returned. The contents of stdout and stderr are written to a file
     which can be examined for helpful logs and errors. The name of this file
     is returned. Note that all commands are run independently in subshells.
-    Therefore, any environmental variables you create will not peresist in the
+    Therefore, any environmental variables you create will not persist in the
     next call to run_sh. Chain your shell commands using &&, |, >, ect accordingly.
     """
     logging.info(f"Executing: {command}")

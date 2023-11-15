@@ -3,13 +3,20 @@ import subprocess
 
 
 def run_sh(command: str) -> str:
-    with open("cmd_out.txt", "w") as f:
-        subprocess.run(command, stdout=f, stderr=f, text=True, shell=True)
+    """
+    Runs a shell command and saves the result in cmd_out.txt.
+    This is a dangerous command.
+    """
+    with open("cmd_out.txt", "w", encoding="utf-8") as f:
+        subprocess.run(command, stdout=f, stderr=f, text=True, shell=True) # TODO: shell=True is dangerous
     return "cmd_out.txt"
 
 
 def list_dir(path: str) -> str:
-    contents = os.listdir(path) #TODO: Dangerous
+    """
+    List the contents of a directory
+    """
+    contents = os.listdir(path) #TODO: Dangerous: path traversal
     dirs = next(os.walk(path))[1]
     contents = os.listdir(path)
     results = ""

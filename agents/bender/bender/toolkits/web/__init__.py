@@ -1,3 +1,7 @@
+"""
+A collection of tools for search the web
+"""
+
 from typing import List
 import logging
 from .tools import websearch

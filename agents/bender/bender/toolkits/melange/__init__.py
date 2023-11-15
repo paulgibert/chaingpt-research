@@ -1,3 +1,8 @@
+"""
+A collection of tools for build melange YAML files.
+"""
+
+
 import logging
 from .tools import (add_header,
                     add_build_dependency,
@@ -13,7 +18,7 @@ def melange_add_header(package: str, version: str, description: str,
     """
     Initializes a melange YAML model with the provided metadata.
     Calling this function multiple times will discard the previous
-    model including all ascociated dependencies and pipeline steps.
+    model including all associated dependencies and pipeline steps.
     package: The name of the package
     version: The version of the package
     description: A one sentence description of the package
@@ -96,8 +101,8 @@ def melange_add_pipeline_go_build(packages: str, output: str,
               This value is passed to go build. Paths are relative to modroot.
     output: Name of the output binary. The final install location will be
             in prefix/install_dir/output
-    modroot: Top directory of the go module, this is where go.mod lives. Before buiding
-             the go pipeline wil cd into this directory.
+    modroot: Top directory of the go module, this is where go.mod lives. Before building
+             the go pipeline will cd into this directory.
     prefix: Prefix to relocate binaries. Defaults to 'usr'.
     ldflags: List of [pattern=]arg to pass to the go compiler with -ldflags
     install_dir: Directory where binaries will be installed. Defaults to 'bin'.

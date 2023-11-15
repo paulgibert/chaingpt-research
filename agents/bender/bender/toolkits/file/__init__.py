@@ -1,3 +1,7 @@
+"""
+A collection of file operation tools.
+"""
+
 import logging
 from .basic import read_from_path, write_to_path
 from .refine import refine_and_read
@@ -10,27 +14,36 @@ MODEL_NAME = "gpt-4"
 MAX_DISPLAY_LEN = 32
 
 
-def _summarize(text: str) -> str:
+def _snapshot(text: str) -> str:
+    """
+    A snapshot of a large chunk of text
+    """
     if len(text) <= MAX_DISPLAY_LEN:
         return text
     return text[:MAX_DISPLAY_LEN] + "..."
 
 
 def _log_read(text: str):
+    """
+    Logs a read operation
+    """
     ntok = count_tokens(text, MODEL_NAME)
-    summary = _summarize(text)
+    summary = _snapshot(text)
     logging.info(f"Read {ntok} tokens: \"{summary}\"")
 
 
 def _log_write(text: str):
+    """
+    Logs a write operation
+    """
     ntok = count_tokens(text)
-    summary = _summarize(text)
+    summary = _snapshot(text)
     logging.info(f"Wrote {ntok} tokens: \"{summary}\"")
 
 
 def file_read_from_path(path: str) -> str:
     """
-    Returns the raw contents of a file at the specefied path.
+    Returns the raw contents of a file at the specified path.
     If the file size exceeds a user defined token limit or does
     not exist, an error is returned.
     """
@@ -69,7 +82,7 @@ def file_refine_and_read(path: str, query: str,
     Condenses a large text document at the provided path down to
     a smaller summary based on the provided query. Useful for analyzing
     larger documents. Option to refine based on the language used in the
-    document. The supported langauges are: text, cpp, go, java, kotlin, js, ts,
+    document. The supported languages are: text, cpp, go, java, kotlin, js, ts,
     php, proto, python, rst, ruby, rust, scala, swift, markdown, latex,
     html, sol, and csharp. Queries should be detailed to ensure the summary contains all
     of the desired info. If the path does not exist, an error is returned.
@@ -86,6 +99,7 @@ def file_refine_and_read(path: str, query: str,
 
 def file_vstore_and_read(path: str, query: str, language: str=None) -> str:
     # TODO: Shorten description
+    # NOTE: This tool is not provided to Bender
     """
     Splits the contents of a text-based file located at the provided
     path into chunks that are stored in a vectorstore.
@@ -93,9 +107,9 @@ def file_vstore_and_read(path: str, query: str, language: str=None) -> str:
     the top matching chunk is returned. Queries should be
     carefully crafted to extract the desired information.
     Option to specify the language of the file to improve splitting.
-    The supported langauges are: text, cpp, go, java, kotlin, js, ts,
+    The supported languages are: text, cpp, go, java, kotlin, js, ts,
     php, proto, python, rst, ruby, rust, scala, swift, markdown, latex,
-    html, sol, and csharp. Usefull for extracting important information from a large
+    html, sol, and csharp. Useful for extracting important information from a large
     from larger files. Because only one document chunk is
     returned you should only use this if you believe the desired
     information is condensed in the file and not dispersed throughout.

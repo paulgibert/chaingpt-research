@@ -1,9 +1,16 @@
+"""
+A collection of tools for working with git repositories
+"""
+
 import logging
 from .tools import list_branches_and_tags, clone
 from .exceptions import GitFatalError
 
 
 def _try_clone_op(op: any, repository, *args) -> str:
+    """
+    Wraps logging and error handling around clone calls.
+    """
     try:
         return op(repository, *args)
     except GitFatalError as e:
@@ -20,7 +27,6 @@ def git_list_branches_and_tags(repository: str) -> str:
     repository path if this is the case.
     """
     items = _try_clone_op(list_branches_and_tags, repository)
-    items = "  ".join(items)
     logging.info(f"Listing branches and tags from {repository}\n{items}")
     return items
 

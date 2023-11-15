@@ -1,3 +1,8 @@
+"""
+File refinement tools for reading large files that are too big for
+the context window.
+"""
+
 from typing import List
 import os
 import asyncio
@@ -13,7 +18,7 @@ from .utils import check_language, split_file
 
 CHUNK_SIZE = 4000
 CHUNK_OVERLAP = 250
-MODEL_REFINE = "gpt-3.5-turbo-1106"
+MODEL_REFINE = "gpt-3.5-turbo-1106" # Use gpt-3 for refine step to reduce costs
 MODEL_AGG = "gpt-4"
 MODEL_TEMP = 0
 
@@ -66,12 +71,18 @@ Aggregate summary:
 
 
 async def _ainvoke_chain(chain, input, delay) -> str:
+    """
+    Async call a chain
+    """
     await asyncio.sleep(delay)
     response = await chain.ainvoke(input)
     return response
 
 
 async def _refine_chunks(docs: List[Document], query: str) -> List[str]:
+    """
+    Refine step
+    """
     prompt = PromptTemplate.from_template(CHUNK_REFINE_PROMPT)
     llm = ChatOpenAI(temperature=MODEL_TEMP,
                      model=MODEL_REFINE)
@@ -93,6 +104,9 @@ async def _refine_chunks(docs: List[Document], query: str) -> List[str]:
 
 
 def _agg_summaries(summaries: List[str], query: str) -> str:
+    """
+    Summarize step
+    """
     prompt = PromptTemplate.from_template(CHUNK_AGG_PROMPT)
     llm = ChatOpenAI(temperature=MODEL_TEMP,
                      model=MODEL_AGG)
@@ -112,14 +126,9 @@ def _agg_summaries(summaries: List[str], query: str) -> str:
 
 def refine_and_read(path: str, query: str, language: str=None) -> str:
     """
-    Equivalent to the file_refine_text function with the added
-    feature of being able to supply a language. The language is used
-    to more intelligently split the document than file_store_lookup_text
-    would. The supported langauges are: cpp, go, java, kotlin, js, ts,
-    php, proto, python, rst, ruby, rust, scala, swift, markdown, latex,
-    html, sol, and csharp. In addition to the errors returned from
-    file_refine_text, this function will also report an error if
-    an unsupported langauge is provided.
+    Splits a file into large chunks and refines each chunk into small summaries
+    based on a query. After refinement, the summaries are aggregated into one
+    final summary.
     """
     if not os.path.exists(path):
         raise FileNotFoundError
