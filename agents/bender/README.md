@@ -17,8 +17,6 @@ cd agents/bender
 
 3) Run Bender
 
-
-
 ```bash
 #  run.sh [package name] [version] [output .yaml] [output dir]
 ./run.sh grype 0.72.0 grype.yaml /tmp/
