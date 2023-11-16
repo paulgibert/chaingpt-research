@@ -1,2 +1,2 @@
 def prompt_user(prompt) -> str:
-    pass
+    return input(prompt)

@@ -5,11 +5,18 @@ from .response import LLMResponse
 IDK_TOKEN = "???"
 
 
-def is_idk(response: str) -> bool:
-    return response == IDK_TOKEN
+def is_idk(output: str) -> bool:
+    """
+    Returns True if an output is an "I don't know"
+    response.
+    """
+    return output == IDK_TOKEN
 
 
 def invoke_chain(chain, inputs):
+    """
+    Invokes a chain with the provided inputs
+    """
     with get_openai_callback() as cb:
         response = chain.invoke(inputs)
         if is_idk(response):
