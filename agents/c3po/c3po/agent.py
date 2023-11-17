@@ -1,9 +1,9 @@
 import os
 import shutil
 import logging
-from repo_setup import init_repository
-from repo import GitRepo
-from metadata import scan_docs_for_description, scan_docs_for_license
+from c3po.repo_setup import init_repository
+from c3po.repo import GitRepo
+from c3po.metadata import scan_docs_for_description, scan_docs_for_license
 
 
 logging.basicConfig(filename='agent.log', encoding='utf-8', level=logging.INFO)
@@ -22,13 +22,13 @@ def run_agent(package: str, version: str):
     _init_env()
     repo = init_repository(package, version)
     
-    db_docs = build_documentation_store(repo)
-    db_code = build_code_store(repo)
+    # db_docs = build_documentation_store(repo)
+    # db_code = build_code_store(repo)
 
-    desc = scan_docs_for_description(db_docs)
-    license = scan_repo_for_license(repo, db_docs)
-    build_summary = summarize_build(repo, db_docs, db_code)
-    build_yaml(package, version, desc, license, build_summary)
+    # desc = scan_docs_for_description(db_docs)
+    # license = scan_repo_for_license(repo, db_docs)
+    # build_summary = summarize_build(repo, db_docs, db_code)
+    # build_yaml(package, version, desc, license, build_summary)
 
 
 run_agent("random-package", "0.70.0")

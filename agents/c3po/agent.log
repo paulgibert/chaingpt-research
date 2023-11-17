@@ -1,0 +1,102 @@
+INFO:root:Web search found url https://github.com/topics/random-package
+ERROR:root:Failed to clone a repository at https://github.com/topics/random-package
+INFO:root:Web search found url https://github.com/topics/random-module
+ERROR:root:Failed to clone a repository at https://github.com/topics/random-module
+INFO:root:Web search found url https://www.reddit.com/r/github/comments/9uft8l/random_github_repositories/
+ERROR:root:The provided git url https://www.reddit.com/r/github/comments/9uft8l/random_github_repositories/ is not properly formatted
+INFO:root:Web search found url https://github.com/topics/random
+INFO:root:Web search found url https://github.com/topics/random-package
+ERROR:root:Failed to clone a repository at https://github.com/topics/random-package
+INFO:root:Web search found url https://github.com/topics/random-module
+ERROR:root:Failed to clone a repository at https://github.com/topics/random-module
+INFO:root:Web search found url https://www.reddit.com/r/github/comments/9uft8l/random_github_repositories/
+ERROR:root:The provided git url https://www.reddit.com/r/github/comments/9uft8l/random_github_repositories/ is not properly formatted
+INFO:root:Web search found url https://github.com/topics/random
+ERROR:root:Failed to clone a repository at https://github.com/topics/random
+INFO:root:Web search found url https://stackoverflow.com/questions/15055145/randomly-sample-github-repositories
+ERROR:root:The provided git url https://stackoverflow.com/questions/15055145/randomly-sample-github-repositories is not properly formatted
+INFO:root:Web search found url https://pkg.go.dev/github.com/mmcloughlin/random
+ERROR:root:The provided git url https://pkg.go.dev/github.com/mmcloughlin/random is not properly formatted
+INFO:root:Web search found url https://forum.freecodecamp.org/t/help-regarding-github-deployment-of-random-quote-generator-app/458073
+ERROR:root:The provided git url https://forum.freecodecamp.org/t/help-regarding-github-deployment-of-random-quote-generator-app/458073 is not properly formatted
+INFO:root:Web search found url https://gitrandom.digitalbunker.dev/
+ERROR:root:The provided git url https://gitrandom.digitalbunker.dev/ is not properly formatted
+INFO:root:Web search found url https://discourse.julialang.org/t/julia-packages-and-github/26196
+ERROR:root:The provided git url https://discourse.julialang.org/t/julia-packages-and-github/26196 is not properly formatted
+INFO:root:Web search found url https://snyk.io/advisor/npm-package/random
+ERROR:root:The provided git url https://snyk.io/advisor/npm-package/random is not properly formatted
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+INFO:root:LLM proposed url LLMResponse(total_tokens=45, prompt_tokens=44, completion_tokens=1, total_cost=0.0013799999999999997, output=None)
+INFO:root:Web search found url https://github.com/topics/random-package
+ERROR:root:Failed to clone a repository at https://github.com/topics/random-package
+INFO:root:Web search found url https://github.com/topics/random-module
+ERROR:root:Failed to clone a repository at https://github.com/topics/random-module
+INFO:root:Web search found url https://www.reddit.com/r/github/comments/9uft8l/random_github_repositories/
+ERROR:root:The provided git url https://www.reddit.com/r/github/comments/9uft8l/random_github_repositories/ is not properly formatted
+INFO:root:Web search found url https://github.com/topics/random
+ERROR:root:Failed to clone a repository at https://github.com/topics/random
+INFO:root:Web search found url https://stackoverflow.com/questions/15055145/randomly-sample-github-repositories
+ERROR:root:The provided git url https://stackoverflow.com/questions/15055145/randomly-sample-github-repositories is not properly formatted
+INFO:root:Web search found url https://pkg.go.dev/github.com/mmcloughlin/random
+ERROR:root:The provided git url https://pkg.go.dev/github.com/mmcloughlin/random is not properly formatted
+INFO:root:Web search found url https://forum.freecodecamp.org/t/help-regarding-github-deployment-of-random-quote-generator-app/458073
+ERROR:root:The provided git url https://forum.freecodecamp.org/t/help-regarding-github-deployment-of-random-quote-generator-app/458073 is not properly formatted
+INFO:root:Web search found url https://gitrandom.digitalbunker.dev/
+ERROR:root:The provided git url https://gitrandom.digitalbunker.dev/ is not properly formatted
+INFO:root:Web search found url https://discourse.julialang.org/t/julia-packages-and-github/26196
+ERROR:root:The provided git url https://discourse.julialang.org/t/julia-packages-and-github/26196 is not properly formatted
+INFO:root:Web search found url https://snyk.io/advisor/npm-package/random
+ERROR:root:The provided git url https://snyk.io/advisor/npm-package/random is not properly formatted
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+INFO:root:LLM proposed url LLMResponse(total_tokens=45, prompt_tokens=44, completion_tokens=1, total_cost=0.0013799999999999997, output=None)
+INFO:root:Web search found url https://github.com/topics/random-package
+ERROR:root:Failed to clone a repository at https://github.com/topics/random-package
+INFO:root:Web search found url https://github.com/topics/random-module
+ERROR:root:Failed to clone a repository at https://github.com/topics/random-module
+INFO:root:Web search found url https://www.reddit.com/r/github/comments/9uft8l/random_github_repositories/
+ERROR:root:The provided git url https://www.reddit.com/r/github/comments/9uft8l/random_github_repositories/ is not properly formatted
+INFO:root:Web search found url https://github.com/topics/random
+ERROR:root:Failed to clone a repository at https://github.com/topics/random
+INFO:root:Web search found url https://stackoverflow.com/questions/15055145/randomly-sample-github-repositories
+ERROR:root:The provided git url https://stackoverflow.com/questions/15055145/randomly-sample-github-repositories is not properly formatted
+INFO:root:Web search found url https://pkg.go.dev/github.com/mmcloughlin/random
+ERROR:root:The provided git url https://pkg.go.dev/github.com/mmcloughlin/random is not properly formatted
+INFO:root:Web search found url https://forum.freecodecamp.org/t/help-regarding-github-deployment-of-random-quote-generator-app/458073
+ERROR:root:The provided git url https://forum.freecodecamp.org/t/help-regarding-github-deployment-of-random-quote-generator-app/458073 is not properly formatted
+INFO:root:Web search found url https://gitrandom.digitalbunker.dev/
+ERROR:root:The provided git url https://gitrandom.digitalbunker.dev/ is not properly formatted
+INFO:root:Web search found url https://discourse.julialang.org/t/julia-packages-and-github/26196
+ERROR:root:The provided git url https://discourse.julialang.org/t/julia-packages-and-github/26196 is not properly formatted
+INFO:root:Web search found url https://snyk.io/advisor/npm-package/random
+ERROR:root:The provided git url https://snyk.io/advisor/npm-package/random is not properly formatted
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+INFO:root:LLM proposed url LLMResponse(total_tokens=45, prompt_tokens=44, completion_tokens=1, total_cost=0.0013799999999999997, output=None)
+INFO:root:Web search found url https://github.com/topics/random-package
+ERROR:root:Failed to clone a repository at https://github.com/topics/random-package
+INFO:root:Web search found url https://github.com/topics/random-module
+ERROR:root:Failed to clone a repository at https://github.com/topics/random-module
+INFO:root:Web search found url https://www.reddit.com/r/github/comments/9uft8l/random_github_repositories/
+ERROR:root:The provided git url https://www.reddit.com/r/github/comments/9uft8l/random_github_repositories/ is not properly formatted
+INFO:root:Web search found url https://github.com/topics/random
+ERROR:root:Failed to clone a repository at https://github.com/topics/random
+INFO:root:Web search found url https://stackoverflow.com/questions/15055145/randomly-sample-github-repositories
+ERROR:root:The provided git url https://stackoverflow.com/questions/15055145/randomly-sample-github-repositories is not properly formatted
+INFO:root:Web search found url https://pkg.go.dev/github.com/mmcloughlin/random
+ERROR:root:The provided git url https://pkg.go.dev/github.com/mmcloughlin/random is not properly formatted
+INFO:root:Web search found url https://forum.freecodecamp.org/t/help-regarding-github-deployment-of-random-quote-generator-app/458073
+ERROR:root:The provided git url https://forum.freecodecamp.org/t/help-regarding-github-deployment-of-random-quote-generator-app/458073 is not properly formatted
+INFO:root:Web search found url https://gitrandom.digitalbunker.dev/
+ERROR:root:The provided git url https://gitrandom.digitalbunker.dev/ is not properly formatted
+INFO:root:Web search found url https://discourse.julialang.org/t/julia-packages-and-github/26196
+ERROR:root:The provided git url https://discourse.julialang.org/t/julia-packages-and-github/26196 is not properly formatted
+INFO:root:Web search found url https://snyk.io/advisor/npm-package/random
+ERROR:root:The provided git url https://snyk.io/advisor/npm-package/random is not properly formatted
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+ERROR:root:LLM failed to provide a url
+INFO:root:Web search found url https://github.com/topics/random-package
+ERROR:root:Failed to clone a repository at https://github.com/topics/random-package
+INFO:root:Web search found url https://github.com/topics/random-module
+ERROR:root:Failed to clone a repository at https://github.com/topics/random-module
+INFO:root:Web search found url https://www.reddit.com/r/github/comments/9uft8l/random_github_repositories/
+ERROR:root:The provided git url https://www.reddit.com/r/github/comments/9uft8l/random_github_repositories/ is not properly formatted
+INFO:root:Web search found url https://github.com/topics/random

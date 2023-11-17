@@ -1,11 +1,11 @@
 import logging
-from repo import (GitRepo,
-                  GitResourceNotFoundError,
-                  GitOpTimeoutError,
-                  clone_repo)
-from web import repo_url_from_web_search
-from llm.repo_url import repo_url_from_llm
-from llm.repo_branch_or_tag import repo_branch_or_tag_from_llm
+from c3po.repo import (GitRepo,
+                       GitResourceNotFoundError,
+                       GitOpTimeoutError,
+                       clone_repo)
+from c3po.web import repo_url_from_web_search
+from c3po.llm.repo_url import repo_url_from_llm
+from c3po.llm.repo_branch_or_tag import repo_branch_or_tag_from_llm
 
 
 def _try_clone(url: str) -> GitRepo:
@@ -29,12 +29,12 @@ def _clone_repo_url_from_user(package: str) -> GitRepo:
     prompt = f"Failed to determine GitHub repository url for {package}. Please provide it: "
     while True:
         url = input(prompt)
-        logging.info(f"User provided url {url}")
+        logging.info("User provided url %s", url)
         repo = _try_clone(url)
         if repo is not None:
-            logging.info(f"Cloned url {url}")
+            logging.info("Cloned url %s", url)
             break
-        logging.error(f"Failed to clone user provided url {url}")
+        logging.error("Failed to clone user provided url %s", url)
         prompt = f"Failed to clone {url}. Please provide a different repository url: "
     return repo
 
@@ -45,15 +45,15 @@ def _get_repo(package: str) -> GitRepo:
     the provided package.
     """
     for url in repo_url_from_web_search(package):
-        logging.info(f"Web search found url {url}")
+        logging.info("Web search found url %s", url)
         repo = _try_clone(url)
         if repo is not None:
             return repo
 
     try:
-        url = repo_url_from_llm(package)
+        url = repo_url_from_llm(package).output
         if url is not None:
-            logging.info(f"LLM proposed url {url}")
+            logging.info("LLM proposed url %s", url)
             repo = _try_clone(url)
             if repo is not None:
                 return repo
@@ -97,11 +97,11 @@ def _checkout_branch_or_tag_from_user(package: str, version: str,
     prompt = f"Failed to determine branch or tag for {package} version {version}. Please provide it: "
     while True:
         bt = input(prompt)
-        logging.info(f"User provided branch/tag {bt}")
+        logging.info("User provided branch/tag %s", bt)
         if _try_checkout(bt, repo):
-            logging.info(f"Checked out branch/tag {bt}")
+            logging.info("Checked out branch/tag %s", bt)
             return bt
-        logging.error(f"Failed to checkout user provided branch/tag {bt}")
+        logging.error("Failed to checkout user provided branch/tag %s", bt)
         prompt = f"Failed to checkout {bt}. Please provide a different branch/tag: "
 
 
@@ -111,9 +111,9 @@ def _checkout_version(package: str, version: str, repo: GitRepo) -> str:
     """
     bt = _branch_or_tag_from_str_search(version, repo)
     if bt is not None:
-        logging.info(f"String search yielded branch/tag {bt}")
+        logging.info("String search yielded branch/tag %s", bt)
         if _try_checkout(bt, repo):
-            logging.info(f"Checked out branch/tag {bt}")
+            logging.info("Checked out branch/tag %s", bt)
             return bt
     else:
         logging.error("String search failed to find branch/tag")
@@ -122,7 +122,7 @@ def _checkout_version(package: str, version: str, repo: GitRepo) -> str:
                                         branches=repo.get_branches(),
                                         tags=repo.get_tags()).output
         if bt is not None:
-            logging.info(f"LLM proposed branch/tag {bt}")
+            logging.info("LLM proposed branch/tag %s", bt)
             if _try_checkout(bt, repo):
                 return bt
         else:
@@ -146,7 +146,8 @@ def init_repository(package: str, version: str) -> GitRepo:
     
     The correct branch or tag is found by
         1) Searching for tags or branches that contain the version in their name
-        2) Otherwise, ask an LLM to choose from the list of branches and tags given the package and version
+        2) Otherwise, ask an LLM to choose from the list of branches and tags given
+           the package and version
         3) Otherwise ask the user
     
     @param package: The package to search for and clone

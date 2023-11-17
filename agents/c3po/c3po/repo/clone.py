@@ -40,9 +40,10 @@ def clone_repo(url: str) -> GitRepo:
     try:
         result = subprocess.run(cmd, shell=True,
                                 capture_output=True,
-                                timeout=CLONE_TIMEOUT) #TODO: shell=True is dangerous
+                                timeout=CLONE_TIMEOUT,
+                                check=False) #TODO: shell=True is dangerous
         if result.returncode == FATAL_ERRNO:
             raise GitResourceNotFoundError(f"Failed to clone a repository at {url}")
         return GitRepo(relpath)
-    except subprocess.TimeoutExpired:
-        raise GitOpTimeoutError(f"Cloning {url} took too long")
+    except subprocess.TimeoutExpired as e:
+        raise GitOpTimeoutError(f"Cloning {url} took too long") from e

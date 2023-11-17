@@ -9,13 +9,12 @@ from .utils import invoke_chain, IDK_TOKEN
 MODEL = "gpt-4"
 TEMPERATURE = 0
 PROMPT_TEXT = """
-You are creating an APK build package for
-the {package} software project (version {version}).
-Given the provided excerpts from various documentation
-files found in the repository of the source code, report
-what the license used is. Response with only the license
-name in all lowercase with no spaces. If the provided excerpts do not contain enough information
-to determine the license, respond with '%s' only.
+What is the license used by the software
+project {package} version {version}? Below is
+some excerpts from the project's documentation
+to help you find the answer. Respond with only
+the license name in all lowercase with no spaces.
+If you don't know the answer, respond with '%s' only.
 
 <excerpts>
 {content}
@@ -24,7 +23,7 @@ to determine the license, respond with '%s' only.
 
 
 def repo_license_from_llm(package: str, version: str,
-                              content: str) -> LLMResponse:
+                          content: str) -> LLMResponse:
     """
     Asks the LLM to the license of the package
     given the provided content from documentation. The LLM

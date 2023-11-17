@@ -1,6 +1,6 @@
 import logging
 from langchain.schema.vectorstore import VectorStore
-from llm.repo_description import repo_description_from_llm
+from c3po.llm.repo_description import repo_description_from_llm
 
 
 MAX_CONTENT_LEN = 1000
@@ -26,9 +26,9 @@ def scan_docs_for_description(package: str, version: str,
                                          content[:MAX_CONTENT_LEN])
     desc = response.output
     if desc is None:
-        logging.error(f"LLM failed to generate a description")
+        logging.error("LLM failed to generate a description")
         desc = input(f"Failed to generate a description for version {version} of package {package}. Please provide one: ")
-        logging.info(f"User provided description {desc}")
+        logging.info("User provided description %s", desc)
     return desc
 
 
@@ -52,7 +52,8 @@ def scan_docs_for_license(package: str, version: str,
                                          content[:MAX_CONTENT_LEN])
     li = response.output
     if li is None:
-        logging.error(f"LLM failed to determine the license")
-        li = input(f"Failed to determine the license for version {version} of package {package}. Please provide it: ")
-        logging.info(f"User provided license {li}")
+        logging.error("LLM failed to determine the license")
+        li = input(f"Failed to determine the license for version {version} of package {package}. \
+                   Please provide it: ")
+        logging.info("User provided license %s", li)
     return li

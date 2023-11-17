@@ -1,3 +1,4 @@
+import pytest
 from c3po.llm.repo_license import repo_license_from_llm
 
 
@@ -11,10 +12,13 @@ def test__repo_license_from_llm__enough_info():
     assert response.output == "apache2.0"
 
 
+@pytest.mark.repeat(3)
 def test__repo_license_from_llm__not_enough_info_on_known_project():
     """
     Checks that the correct license is returned
     for a known repository even when not provided enough content.
+
+    Repeat 3 times. The LLM's response is a little stochastic.
     """
     content = """
     In the heart of a bustling city, a small, unassuming coffee shop sat tucked between

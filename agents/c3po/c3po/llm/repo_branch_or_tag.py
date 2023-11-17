@@ -3,7 +3,7 @@ from operator import itemgetter
 from langchain.prompts import PromptTemplate
 from langchain.chat_models import ChatOpenAI
 from langchain.schema.output_parser import StrOutputParser
-from repo.validate import check_branch_or_tag
+from c3po.repo.validate import check_branch_or_tag
 from .response import LLMResponse
 from .utils import invoke_chain, IDK_TOKEN
 

@@ -5,7 +5,7 @@ from .exceptions import (GitResourceNotFoundError,
                          GitOpTimeoutError,
                          MissingLocalGitRepoError)
 from .validate import check_branch_or_tag
-            
+          
 
 CHECKOUT_TIMEOUT = 15
 ERRNO = 1
