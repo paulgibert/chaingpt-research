@@ -8,7 +8,6 @@ from .utils import invoke_chain, IDK_TOKEN
 
 MODEL = "gpt-4"
 TEMPERATURE = 0
-MAX_CONTENT_LEN = 1000
 PROMPT_TEXT = """
 You are creating an APK build package for
 the {package} software project (version {version}).
@@ -16,19 +15,20 @@ Given the provided excerpts from various documentation
 files found in the repository of the source code, generate
 a short, 1 sentence description of what the software is for
 the build file. Only respond with the description.
+
 If the provided excerpts do not contain enough
-information to create a description from, respond
-with '%s' only.
+information or are irrelevant are you familiar with
+{package}? If so, generate your own description for it
+without referencing the provided content. Again, only
+respond with the description.
+
+If you are unfamiliar with the package and have not been provided
+with sufficient information on it respond with '%s' only.
 
 <excerpts>
 {content}
 </excerpts>
 """ % IDK_TOKEN
-
-
-def _check_content(content: str):
-    if len(content) > MAX_CONTENT_LEN:
-        raise ValueError(f"Size of `content` exceeds max allowed value of {MAX_CONTENT_LEN}")
 
 
 def repo_description_from_llm(package: str, version: str,
@@ -47,10 +47,7 @@ def repo_description_from_llm(package: str, version: str,
     @returns An `LLMResponse` with the description. If no
              description could be generated, `LLMResponse.output`
              is set to `None`.
-    @raises `ValueError` if size of `content` is too large
     """
-    _check_content(content)
-
     prompt = PromptTemplate.from_template(PROMPT_TEXT)
     llm = ChatOpenAI(model=MODEL,
                      temperature=TEMPERATURE)

@@ -45,7 +45,7 @@ def _get_repo(package: str) -> GitRepo:
     the provided package.
     """
     for url in repo_url_from_web_search(package):
-        logging.info(f"Web search found url {url} for package {package}")
+        logging.info(f"Web search found url {url}")
         repo = _try_clone(url)
         if repo is not None:
             return repo
@@ -53,12 +53,12 @@ def _get_repo(package: str) -> GitRepo:
     try:
         url = repo_url_from_llm(package)
         if url is not None:
-            logging.info(f"LLM proposed url {url} for package {package}")
+            logging.info(f"LLM proposed url {url}")
             repo = _try_clone(url)
             if repo is not None:
                 return repo
         else:
-            logging.error(f"LLM failed to find a url for package {package}")
+            logging.error("LLM failed to provide a url")
     except ValueError as e:
         logging.error(str(e))
 
@@ -97,11 +97,11 @@ def _checkout_branch_or_tag_from_user(package: str, version: str,
     prompt = f"Failed to determine branch or tag for {package} version {version}. Please provide it: "
     while True:
         bt = input(prompt)
-        logging.info(f"User provided branch/tag {bt} for version {version} of package {package}")
+        logging.info(f"User provided branch/tag {bt}")
         if _try_checkout(bt, repo):
             logging.info(f"Checked out branch/tag {bt}")
             return bt
-        logging.error(f"Failed to checkout user provided branch/tag {bt} of package {package}")
+        logging.error(f"Failed to checkout user provided branch/tag {bt}")
         prompt = f"Failed to checkout {bt}. Please provide a different branch/tag: "
 
 
@@ -111,22 +111,22 @@ def _checkout_version(package: str, version: str, repo: GitRepo) -> str:
     """
     bt = _branch_or_tag_from_str_search(version, repo)
     if bt is not None:
-        logging.info("String search yielded branch/tag {bt} for version {version} of package {package}")
+        logging.info(f"String search yielded branch/tag {bt}")
         if _try_checkout(bt, repo):
             logging.info(f"Checked out branch/tag {bt}")
             return bt
     else:
-        logging.error(f"String search failed to yield branch/tag for version {version} of package {package}")
+        logging.error("String search failed to find branch/tag")
     try:
         bt = repo_branch_or_tag_from_llm(package, version,
                                         branches=repo.get_branches(),
                                         tags=repo.get_tags()).output
         if bt is not None:
-            logging.info(f"LLM proposed branch/tag {bt} for version {version} of package {package}")
+            logging.info(f"LLM proposed branch/tag {bt}")
             if _try_checkout(bt, repo):
                 return bt
         else:
-            logging.error(f"LLM failed to suggest a branch/tag for version {version} of package {package}")
+            logging.error("LLM failed to suggest a branch/tag")
     except ValueError as e:
         logging.info(str(e))
 

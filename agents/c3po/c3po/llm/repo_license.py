@@ -8,14 +8,13 @@ from .utils import invoke_chain, IDK_TOKEN
 
 MODEL = "gpt-4"
 TEMPERATURE = 0
-MAX_CONTENT_LEN = 1000
 PROMPT_TEXT = """
 You are creating an APK build package for
 the {package} software project (version {version}).
 Given the provided excerpts from various documentation
 files found in the repository of the source code, report
 what the license used is. Response with only the license
-name. If the provided excerpts do not contain enough information
+name in all lowercase with no spaces. If the provided excerpts do not contain enough information
 to determine the license, respond with '%s' only.
 
 <excerpts>
@@ -24,12 +23,7 @@ to determine the license, respond with '%s' only.
 """ % IDK_TOKEN
 
 
-def _check_content(content: str):
-    if len(content) > MAX_CONTENT_LEN:
-        raise ValueError(f"Size of `content` exceeds max allowed value of {MAX_CONTENT_LEN}")
-
-
-def repo_description_from_llm(package: str, version: str,
+def repo_license_from_llm(package: str, version: str,
                               content: str) -> LLMResponse:
     """
     Asks the LLM to the license of the package
@@ -45,10 +39,7 @@ def repo_description_from_llm(package: str, version: str,
     @returns An `LLMResponse` with the license. If a license
              could not be determined, `LLMResponse.output`
              is set to `None`.
-    @raises `ValueError` if size of `content` is too large
     """
-    _check_content(content)
-
     prompt = PromptTemplate.from_template(PROMPT_TEXT)
     llm = ChatOpenAI(model=MODEL,
                      temperature=TEMPERATURE)
