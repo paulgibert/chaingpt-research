@@ -56,10 +56,11 @@ def repo_branch_or_tag_from_llm(package:str, version: str,
 
     @param package: The package to ask about
     @param version: The version to find a branch or tag for
-    @param branches: The list of branch names
-    @param tags: The list of tag names
-    @returns an LLMResponse with the suggested branch or tag
-    @raises ValueError if too many branches and tags are provided (max 1000 combined)
+    @param branches: A `List` of branch names
+    @param tags: A `List` of tag names
+    @returns an `LLMResponse` with the suggested branch or tag. If no
+             branch or tag is suggested, `LLMResponse.output` is set to `None`.
+    @raises `ValueError` if too many branches and tags are provided (max 1000 combined)
     """
     # Do nothing if there are 0 branches and tags
     if len(branches) + len(tags) == 0:

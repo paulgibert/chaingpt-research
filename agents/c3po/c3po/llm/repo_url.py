@@ -37,8 +37,10 @@ def repo_url_from_llm(package:str) -> LLMResponse:
     Uses `gpt-4` with `temperature=0`
 
     @param package: The package to ask about
-    @returns an LLMResponse with the repository url
-    @raises ValueError if the package name is too long or improperly
+    @returns an `LLMResponse` with the repository url. If no
+             url is suggested, `LLMResponse.output`
+             is set to `None`.
+    @raises `ValueError` if the package name is too long or improperly
             formatted
     """
     _check_package(package)
