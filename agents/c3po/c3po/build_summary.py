@@ -41,8 +41,7 @@ def summarize_build_steps(package: str, version: str, repo: GitRepo, db_docs: Ve
         logging.info("Found Makefile: %s", makefile_path)
         makefile = makefile_summary_from_llm(makefile_path).output
         logging.info("Summarized Makefile: %s", makefile)
-    makefile=None
-    docs = db_docs.similarity_search("Building from source", k=3)
+    docs = db_docs.similarity_search("Building from source", k=6)
     logging.info("Found documentation on build process: %s",
                  "\n\n".join([d.page_content for d in docs]))
     response = build_steps_from_llm(package, version, docs=docs, makefile=makefile)

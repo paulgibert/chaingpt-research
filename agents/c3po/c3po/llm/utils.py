@@ -1,3 +1,7 @@
+from typing import List
+from langchain.schema.document import Document
+from langchain.document_loaders import TextLoader
+from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain.chains.base import Chain
 from langchain.callbacks import get_openai_callback
 from .response import LLMResponse
@@ -27,3 +31,14 @@ def invoke_chain(chain: Chain, inputs: any):
                            completion_tokens=cb.completion_tokens,
                            total_cost=cb.total_cost,
                            output=response)
+
+
+def split_file(file_path: str, chunk_size: int,
+               chunk_overlap: int) -> List[Document]:
+    """
+    Loads the provided file and splits it into chunks.
+    """
+    loader = TextLoader(file_path)
+    splitter = RecursiveCharacterTextSplitter(chunk_size=chunk_size,
+                                              chunk_overlap=chunk_overlap)
+    return loader.load_and_split(splitter)

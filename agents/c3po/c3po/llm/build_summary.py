@@ -5,48 +5,37 @@ from langchain.chat_models import ChatOpenAI
 from langchain.schema.output_parser import StrOutputParser
 from langchain.schema.document import Document
 from .response import LLMResponse
-from .utils import invoke_chain
+from .utils import invoke_chain, IDK_TOKEN
 
 
 MODEL = "gpt-4"
 TEMPERATURE = 0
-BASE_PROMPT_TEXT = """
-You're goal is to describe how to build version {version}
-of the {package} software project from source. Give your
-response in exactly three parts.
+PROMPT_TEXT = """
+I need instructions on how to build a software project from source.
+Below is the documentation from the project's repository and the Makefile,
+if applicable. I require the response in JSON format with the following
+fields: a 'summary' containing a brief description of the build
+process, a 'dependencies' field listing all necessary dependencies,
+and a 'shell' field providing the exact commands needed to build
+the project. Please note that the build instructions should not include
+steps for cloning the repository or changing directories. Assume we are
+already in the correct directory on the correct branch. The instructions
+should be precise, clear, and directly executable.
 
-Part 1 is a short description that describes the general build process.
-
-Part 2 is the list of dependencies/build tools that will be necessary to
-build the project.
-
-Part 3 is a detailed list of shell commands that a user can follow to
-build the project. You may assume that the git commands to clone and
-navigate into the project's git repository have already been executed
-and all build dependencies are already installed.
-
-Do not include any additional content outside of the 3 parts defined.
-
-You are provided the following excerpts from the repositories documentation
-to reference when generating build instructions.
+In cases of multiple build methods, always prioritize the process as
+outlined in the documentation. If the documentation does not specify
+or is incomplete, refer to the Makefile. If neither source provides
+sufficient information, respond with '%s' instead of any JSON.
 
 <documentation>
-{docs_content}
+{docs}
 </documentation>
-"""
-
-MAKEFILE_PROMPT_ADDON_TEXT = """
-The repository also has a Makefile. A summary of the contents
-of the Makefile are provided below. Often times there are several
-ways to build a project from source. You should always prioritize
-what the documentation recommends. If the documentation does not
-discuss building from source, prioritize using the Makefile before
-considering other methods.
 
 <makefile>
-{makefile_content}
-</makefile
-"""
+{makefile}
+</makefile>
+""" % IDK_TOKEN
+
 
 
 def build_steps_from_llm(package: str, version: str,
@@ -67,19 +56,18 @@ def build_steps_from_llm(package: str, version: str,
              description could be generated, `LLMResponse.output`
              is set to `None`.
     """
-    if makefile is not None:
-        prompt = PromptTemplate.from_template(BASE_PROMPT_TEXT + MAKEFILE_PROMPT_ADDON_TEXT)
-    else:
-        prompt = PromptTemplate.from_template(BASE_PROMPT_TEXT)
+    if makefile is None:
+        makefile = "The project does not have a Makefile."
 
+    prompt = PromptTemplate.from_template(PROMPT_TEXT)
     llm = ChatOpenAI(model=MODEL,
                      temperature=TEMPERATURE)
     chain = (
         {"package": itemgetter("package"),
          "version": itemgetter("version"),
-         "docs_content": lambda x: "\n\n".join([
+         "docs": lambda x: "\n\n".join([
              d.page_content for d in x["docs"]]),
-         "makefile_content": itemgetter("makefile")}
+         "makefile": itemgetter("makefile")}
         | prompt
         | llm
         | StrOutputParser()

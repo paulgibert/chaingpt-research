@@ -1,6 +1,7 @@
 import os
 import shutil
 import logging
+import json
 from c3po.repo_setup import init_repository
 from c3po.store_setup import build_documentation_store
 from c3po.metadata import scan_readme_for_description, scan_docs_for_license
@@ -32,7 +33,11 @@ def run_agent(package: str, version: str):
     print(desc)
 
     build_summary = summarize_build_steps(package, version, repo, db_docs)
-    print(build_summary)
+    if build_summary is None:
+        print("Could not make a build summary")
+    else:
+        with open("summary.json", "w") as f:
+            json.dump(build_summary, f)
     # build_yaml(package, version, desc, license, build_summary)
 
 
