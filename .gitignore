@@ -5,3 +5,6 @@ samples
 results
 *.rsa
 *.rsa.pub
+*.egg-info
+*.pytest_cache
+.vscode

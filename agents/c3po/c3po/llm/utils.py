@@ -1,3 +1,4 @@
+from langchain.chains.base import Chain
 from langchain.callbacks import get_openai_callback
 from .response import LLMResponse
 
@@ -13,7 +14,7 @@ def is_idk(output: str) -> bool:
     return output == IDK_TOKEN
 
 
-def invoke_chain(chain, inputs):
+def invoke_chain(chain: Chain, inputs: any):
     """
     Invokes a chain with the provided inputs
     """

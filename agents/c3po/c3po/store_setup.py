@@ -51,6 +51,9 @@ def _common_doc_files_llm(repo: GitRepo) -> List[str]:
     Asks the LLM for the documentation files of the repo.
     """
     files = [os.path.join(d, f) for d, f in repo.get_files()]
+    if len(files) > 100:
+        logging.info("Trimming %d files down to 100 for LLM", len(files))
+        files = files[:100]
     return repo_doc_files_from_llm(files)
 
 
@@ -58,18 +61,18 @@ def _common_doc_files(repo: GitRepo) -> List[str]:
     """
     Returns common documentation files.
     """
-    print("TEEEESSTTT!")
     ssearch = _common_doc_files_str_search(repo)
     if len(ssearch) > 0:
-        logging.info("str search found documentation in the repo: {ssearch}")
+        logging.info("str search found documentation in the repo: %s", ssearch)
     else:
         logging.info("str search found no documentation in the repo")
-    llm = _common_doc_files_llm(repo)
+    llm = _common_doc_files_llm(repo).output
     if len(llm) > 0:
-        logging.info("LLM found documentation in the repo: {llm}")
+        logging.info("LLM found documentation in the repo: %s", llm)
     else:
         logging.info("LLM found no documentation in the repo")
-    return list(set(ssearch) | set(llm))
+    # return list(set(ssearch) | set(llm))
+    return llm
 
 
 def _load_and_split_doc_file(file_path: str, chunk_size:int,
@@ -83,8 +86,8 @@ def _load_and_split_doc_file(file_path: str, chunk_size:int,
     return loader.load_and_split(splitter)
 
 
-def build_documentation_store(repo: GitRepo, chunk_size: int,
-                              chunk_overlap:int) -> VectorStore:
+def build_documentation_store(repo: GitRepo, chunk_size: int=2000,
+                              chunk_overlap:int=250) -> VectorStore:
     """
     Searches the provided repo for documentation files and creates a ChromaDB
     vector store of them. Documentation is identified by searching for a few
@@ -94,7 +97,7 @@ def build_documentation_store(repo: GitRepo, chunk_size: int,
 
     @param repo: A `GitRepo` object to build the store from
     @param chunk_size: Chunk size
-    @param chunk_overlap: The amount contiguous chunks overlap
+    @param chunk_overlap: The amount that contiguous chunks overlap
     @returns A `VectorStore` of document chunks
     """
     doc_files = _common_doc_files(repo)
@@ -102,4 +105,38 @@ def build_documentation_store(repo: GitRepo, chunk_size: int,
     for file in doc_files:
         chunks += _load_and_split_doc_file(file, chunk_size=chunk_size,
                                            chunk_overlap=chunk_overlap)
+    return Chroma.from_documents(chunks, OpenAIEmbeddings())
+
+
+
+def _readme_path(repo: GitRepo) -> str:
+    """
+    Searches for README files and returns the
+    path of the first match.
+    """
+    for dir, filename in repo.get_files():
+        if "readme" in filename.lower():
+            return os.path.join(dir, filename)
+    return None
+
+
+def build_readme_store(repo: GitRepo, chunk_size: int=750,
+                       chunk_overlap:int=100) -> VectorStore:
+    """
+    Searches the provided `GitRepo` for a README file and builds
+    a ChromaDB `VectorStore`. The first identified README is split
+    into chunks with the provided size and overlap and used to build
+    the store.
+
+    @param repo: A `GitRepo` object to build the store from
+    @param chunk_size: Chunk size
+    @param chunk_overlap: The amount that contiguous chunks overlap
+    @returns A `VectorStore` of document chunks
+    """
+    path = _readme_path(repo)
+    if path is None:
+        return None
+    logging.info("Found README: %s", path)
+    chunks = _load_and_split_doc_file(path, chunk_size=chunk_size,
+                                    chunk_overlap=chunk_overlap)
     return Chroma.from_documents(chunks, OpenAIEmbeddings())
