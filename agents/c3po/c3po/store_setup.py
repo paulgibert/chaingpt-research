@@ -57,7 +57,7 @@ def _common_doc_files_llm(repo: GitRepo) -> List[str]:
     return repo_doc_files_from_llm(files)
 
 
-def _common_doc_files(repo: GitRepo) -> List[str]:
+def common_doc_files(repo: GitRepo) -> List[str]:
     """
     Returns common documentation files.
     """
@@ -100,7 +100,7 @@ def build_documentation_store(repo: GitRepo, chunk_size: int=2000,
     @param chunk_overlap: The amount that contiguous chunks overlap
     @returns A `VectorStore` of document chunks
     """
-    doc_files = _common_doc_files(repo)
+    doc_files = common_doc_files(repo)
     chunks = []
     for file in doc_files:
         chunks += _load_and_split_doc_file(file, chunk_size=chunk_size,
