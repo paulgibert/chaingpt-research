@@ -42,10 +42,11 @@ class GitRepo:
     """
     Represents a locally cloned GitHub repository.
     """
-    def __init__(self, relpath: str):
+    def __init__(self, url: str, relpath: str):
         """
         @param relpath: The relative path to the repository
         """
+        self.url = url
         self.relpath = relpath
         self.curr_branch_or_tag = _get_current_branch_or_tag(relpath)
 

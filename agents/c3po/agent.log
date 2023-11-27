@@ -1,0 +1,532 @@
+INFO:root:Web search found url https://github.com/anchore/grype
+INFO:root:String search yielded branch/tag v0.72.0
+INFO:root:Checked out branch/tag v0.72.0
+INFO:root:str search found documentation in the repo: ['grype/CONTRIBUTING.md', 'grype/README.md', 'grype/install.sh', 'grype/LICENSE', 'grype/templates/README.md', 'grype/grype/db/test-fixtures/tls/README.md', 'grype/schema/cyclonedx/README.md', 'grype/test/integration/test-fixtures/image-alpine-match-coverage/lib/apk/db/installed', 'grype/test/integration/test-fixtures/image-portage-match-coverage/var/db/pkg/app-containers/skopeo-1.5.1/LICENSE', 'grype/test/integration/test-fixtures/image-portage-match-coverage/var/db/repos/gentoo/skel.ebuild', 'grype/test/quality/README.md', 'grype/test/quality/requirements.txt', 'grype/test/install/3_install_asset_test.sh', 'grype/.github/scripts/goreleaser-install.sh']
+INFO:root:Trimming 667 files down to 100 for LLM
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+INFO:root:LLM found documentation in the repo: ['grype/CONTRIBUTING.md', 'grype/README.md', 'grype/DEVELOPING.md', 'grype/SECURITY.md', 'grype/LICENSE', 'grype/templates/README.md']
+INFO:root:Using assistant prompt:
+
+Generate minimalist and straightforward instructions for compiling and
+installing the source code of the software project grype,
+version 0.72.0. The instructions should be concise and
+solely focused on the build and installation process,
+excluding any steps related to testing, linting, or other unrelated tasks.
+If multiple build methods are available, choose the most direct and
+uncomplicated method and provide a consistent set of steps without
+mixing different approaches. You will respond in JSON form only.
+
+The response should contain the following fields:
+
+summary: A brief description of the components the project uses and how they are built.
+
+description: A single sentence description of the project.
+
+license: The license under which the project is released. Include the license name only.
+
+steps: An ordered list of build commands.
+       Each build step is an object with specific fields depending on its type.
+       There are different step types, each requiring unique fields. If using
+       a place holder value for a field that the user needs to fill in manually,
+       surround the value with <>.
+
+Step type: git-checkout - Clone a git repository and checkout a branch/tag
+Fields:
+'repository' (required) - Repository to clone. Omit the .git suffix
+'branch/tag' (required) - Branch or tag to checkout
+
+Step type: shell - Run a shell command. Use as a last resort when desired functionality cannot be captured by another build step type.
+Fields:
+'command' (required) - Command to run
+
+Step type: go/build - Build and install a project with `go build`
+Fields:
+'packages' (required) - Space-separated packages to compile. Files can also be specified. This value is passed to `go build`. Paths are relative to modroot.
+'output' (required) - Name of the output binary. The final install location will be in prefix/install_dir/output
+'modroot' (optional) - Top directory of the go module, this is where go.mod lives. Before building the go pipeline will cd into this directory.
+'prefix' (optional) - Prefix to relocate binaries. Defaults to 'usr'.
+'ldflags' (optional) - List of [pattern=]arg to pass to the go compiler with -ldflags
+'install_dir' (optional) - Directory where binaries will be installed. Defaults to 'bin'.   
+
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/files "HTTP/1.1 200 OK"
+INFO:root:Created file grype/CONTRIBUTING.md
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/files "HTTP/1.1 200 OK"
+INFO:root:Created file grype/README.md
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/files "HTTP/1.1 200 OK"
+INFO:root:Created file grype/DEVELOPING.md
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/files "HTTP/1.1 200 OK"
+INFO:root:Created file grype/SECURITY.md
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/files "HTTP/1.1 200 OK"
+INFO:root:Created file grype/LICENSE
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/files "HTTP/1.1 200 OK"
+INFO:root:Created file grype/templates/README.md
+INFO:root:Creating run
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/assistants/asst_6f9uzyHimrjjggaKfSw5DGeG "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/threads "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/threads/thread_HjtAGB74gBw3NxQXJYBNjNqg/messages "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/threads/thread_HjtAGB74gBw3NxQXJYBNjNqg/runs "HTTP/1.1 200 OK"
+INFO:root:Polling run_hvnsbGIBvCr0ru89oiJ4pzS2. Status: queued
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_HjtAGB74gBw3NxQXJYBNjNqg/runs/run_hvnsbGIBvCr0ru89oiJ4pzS2 "HTTP/1.1 200 OK"
+INFO:root:Polling run_hvnsbGIBvCr0ru89oiJ4pzS2. Status: in_progress
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_HjtAGB74gBw3NxQXJYBNjNqg/runs/run_hvnsbGIBvCr0ru89oiJ4pzS2 "HTTP/1.1 200 OK"
+INFO:root:Polling run_hvnsbGIBvCr0ru89oiJ4pzS2. Status: in_progress
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_HjtAGB74gBw3NxQXJYBNjNqg/runs/run_hvnsbGIBvCr0ru89oiJ4pzS2 "HTTP/1.1 200 OK"
+INFO:root:Polling run_hvnsbGIBvCr0ru89oiJ4pzS2. Status: in_progress
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_HjtAGB74gBw3NxQXJYBNjNqg/runs/run_hvnsbGIBvCr0ru89oiJ4pzS2 "HTTP/1.1 200 OK"
+INFO:root:Polling run_hvnsbGIBvCr0ru89oiJ4pzS2. Status: in_progress
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_HjtAGB74gBw3NxQXJYBNjNqg/runs/run_hvnsbGIBvCr0ru89oiJ4pzS2 "HTTP/1.1 200 OK"
+INFO:root:Polling run_hvnsbGIBvCr0ru89oiJ4pzS2. Status: in_progress
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_HjtAGB74gBw3NxQXJYBNjNqg/runs/run_hvnsbGIBvCr0ru89oiJ4pzS2 "HTTP/1.1 200 OK"
+INFO:root:Polling run_hvnsbGIBvCr0ru89oiJ4pzS2. Status: in_progress
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_HjtAGB74gBw3NxQXJYBNjNqg/runs/run_hvnsbGIBvCr0ru89oiJ4pzS2 "HTTP/1.1 200 OK"
+INFO:root:Polling run_hvnsbGIBvCr0ru89oiJ4pzS2. Status: in_progress
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_HjtAGB74gBw3NxQXJYBNjNqg/runs/run_hvnsbGIBvCr0ru89oiJ4pzS2 "HTTP/1.1 200 OK"
+INFO:root:Polling run_hvnsbGIBvCr0ru89oiJ4pzS2. Status: in_progress
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_HjtAGB74gBw3NxQXJYBNjNqg/runs/run_hvnsbGIBvCr0ru89oiJ4pzS2 "HTTP/1.1 200 OK"
+INFO:root:Polling run_hvnsbGIBvCr0ru89oiJ4pzS2. Status: in_progress
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_HjtAGB74gBw3NxQXJYBNjNqg/runs/run_hvnsbGIBvCr0ru89oiJ4pzS2 "HTTP/1.1 200 OK"
+INFO:root:Polling run_hvnsbGIBvCr0ru89oiJ4pzS2. Status: in_progress
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_HjtAGB74gBw3NxQXJYBNjNqg/runs/run_hvnsbGIBvCr0ru89oiJ4pzS2 "HTTP/1.1 200 OK"
+INFO:root:Polling run_hvnsbGIBvCr0ru89oiJ4pzS2. Status: in_progress
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_HjtAGB74gBw3NxQXJYBNjNqg/runs/run_hvnsbGIBvCr0ru89oiJ4pzS2 "HTTP/1.1 200 OK"
+INFO:root:Run complete
+INFO:httpx:HTTP Request: DELETE https://api.openai.com/v1/files/file-BsgsofmisvhMcS1IAZLoRusz "HTTP/1.1 200 OK"
+INFO:root:Deleted file-BsgsofmisvhMcS1IAZLoRusz
+INFO:httpx:HTTP Request: DELETE https://api.openai.com/v1/files/file-tDUeb7K9H0rNJV9GFpL6QXah "HTTP/1.1 200 OK"
+INFO:root:Deleted file-tDUeb7K9H0rNJV9GFpL6QXah
+INFO:httpx:HTTP Request: DELETE https://api.openai.com/v1/files/file-tUmEoieAag1eg4S6q7ev9WKN "HTTP/1.1 200 OK"
+INFO:root:Deleted file-tUmEoieAag1eg4S6q7ev9WKN
+INFO:httpx:HTTP Request: DELETE https://api.openai.com/v1/files/file-byqXxy7N6r9G9JQ7QSSbZCf0 "HTTP/1.1 200 OK"
+INFO:root:Deleted file-byqXxy7N6r9G9JQ7QSSbZCf0
+INFO:httpx:HTTP Request: DELETE https://api.openai.com/v1/files/file-PusOGCt7zBSaKN3UckIoyj7E "HTTP/1.1 200 OK"
+INFO:root:Deleted file-PusOGCt7zBSaKN3UckIoyj7E
+INFO:httpx:HTTP Request: DELETE https://api.openai.com/v1/files/file-vXVjaQUZtWmGPy65awl3oQVK "HTTP/1.1 200 OK"
+INFO:root:Deleted file-vXVjaQUZtWmGPy65awl3oQVK
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_HjtAGB74gBw3NxQXJYBNjNqg/messages "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_HjtAGB74gBw3NxQXJYBNjNqg/messages?after=msg_xMOQhq8t5bc6E7VnLnEEzSzQ "HTTP/1.1 200 OK"
+INFO:root:Web search found url https://github.com/anchore/grype
+INFO:root:String search yielded branch/tag v0.72.0
+INFO:root:Checked out branch/tag v0.72.0
+INFO:root:str search found documentation in the repo: ['grype/CONTRIBUTING.md', 'grype/README.md', 'grype/install.sh', 'grype/LICENSE', 'grype/templates/README.md', 'grype/grype/db/test-fixtures/tls/README.md', 'grype/schema/cyclonedx/README.md', 'grype/test/integration/test-fixtures/image-alpine-match-coverage/lib/apk/db/installed', 'grype/test/integration/test-fixtures/image-portage-match-coverage/var/db/pkg/app-containers/skopeo-1.5.1/LICENSE', 'grype/test/integration/test-fixtures/image-portage-match-coverage/var/db/repos/gentoo/skel.ebuild', 'grype/test/quality/README.md', 'grype/test/quality/requirements.txt', 'grype/test/install/3_install_asset_test.sh', 'grype/.github/scripts/goreleaser-install.sh']
+INFO:root:Trimming 667 files down to 100 for LLM
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+INFO:root:LLM found documentation in the repo: ['grype/CONTRIBUTING.md', 'grype/README.md', 'grype/DEVELOPING.md', 'grype/SECURITY.md', 'grype/LICENSE', 'grype/templates/README.md']
+INFO:root:Using assistant prompt:
+
+Generate minimalist and straightforward instructions for compiling and
+installing the source code of the software project grype,
+version 0.72.0. The instructions should be concise and
+solely focused on the build and installation process,
+excluding any steps related to testing, linting, or other unrelated tasks.
+If multiple build methods are available, choose the most direct and
+uncomplicated method and provide a consistent set of steps without
+mixing different approaches. You will respond in JSON form only.
+
+The response should contain the following fields:
+
+summary: A brief description of the components the project uses and how they are built.
+
+description: A single sentence description of the project.
+
+license: The license under which the project is released. Include the license name only.
+
+steps: An ordered list of build commands.
+       Each build step is an object with specific fields depending on its type.
+       There are different step types, each requiring unique fields. If using
+       a place holder value for a field that the user needs to fill in manually,
+       surround the value with <>.
+
+Step type: git-checkout - Clone a git repository and checkout a branch/tag
+Fields:
+'repository' (required) - Repository to clone. Omit the .git suffix
+'branch/tag' (required) - Branch or tag to checkout
+
+Step type: shell - Run a shell command. Use as a last resort when desired functionality cannot be captured by another build step type.
+Fields:
+'command' (required) - Command to run
+
+Step type: go/build - Build and install a project with `go build`
+Fields:
+'packages' (required) - Space-separated packages to compile. Files can also be specified. This value is passed to `go build`. Paths are relative to modroot.
+'output' (required) - Name of the output binary. The final install location will be in prefix/install_dir/output
+'modroot' (optional) - Top directory of the go module, this is where go.mod lives. Before building the go pipeline will cd into this directory.
+'prefix' (optional) - Prefix to relocate binaries. Defaults to 'usr'.
+'ldflags' (optional) - List of [pattern=]arg to pass to the go compiler with -ldflags
+'install_dir' (optional) - Directory where binaries will be installed. Defaults to 'bin'.   
+
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/files "HTTP/1.1 200 OK"
+INFO:root:Created file grype/CONTRIBUTING.md
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/files "HTTP/1.1 200 OK"
+INFO:root:Created file grype/README.md
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/files "HTTP/1.1 200 OK"
+INFO:root:Created file grype/DEVELOPING.md
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/files "HTTP/1.1 200 OK"
+INFO:root:Created file grype/SECURITY.md
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/files "HTTP/1.1 200 OK"
+INFO:root:Created file grype/LICENSE
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/files "HTTP/1.1 200 OK"
+INFO:root:Created file grype/templates/README.md
+INFO:root:Creating run
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/assistants/asst_6f9uzyHimrjjggaKfSw5DGeG "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/threads "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/threads/thread_VaXO97rO1QrRXsXQfIVvO1XJ/messages "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/threads/thread_VaXO97rO1QrRXsXQfIVvO1XJ/runs "HTTP/1.1 200 OK"
+INFO:root:Polling run_dyTpZ5ZpzxMzdK7gpOr8oA3V. Status: queued
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_VaXO97rO1QrRXsXQfIVvO1XJ/runs/run_dyTpZ5ZpzxMzdK7gpOr8oA3V "HTTP/1.1 200 OK"
+INFO:root:Polling run_dyTpZ5ZpzxMzdK7gpOr8oA3V. Status: in_progress
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_VaXO97rO1QrRXsXQfIVvO1XJ/runs/run_dyTpZ5ZpzxMzdK7gpOr8oA3V "HTTP/1.1 200 OK"
+INFO:root:Polling run_dyTpZ5ZpzxMzdK7gpOr8oA3V. Status: in_progress
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_VaXO97rO1QrRXsXQfIVvO1XJ/runs/run_dyTpZ5ZpzxMzdK7gpOr8oA3V "HTTP/1.1 200 OK"
+INFO:root:Polling run_dyTpZ5ZpzxMzdK7gpOr8oA3V. Status: in_progress
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_VaXO97rO1QrRXsXQfIVvO1XJ/runs/run_dyTpZ5ZpzxMzdK7gpOr8oA3V "HTTP/1.1 200 OK"
+INFO:root:Polling run_dyTpZ5ZpzxMzdK7gpOr8oA3V. Status: in_progress
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_VaXO97rO1QrRXsXQfIVvO1XJ/runs/run_dyTpZ5ZpzxMzdK7gpOr8oA3V "HTTP/1.1 200 OK"
+INFO:root:Polling run_dyTpZ5ZpzxMzdK7gpOr8oA3V. Status: in_progress
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_VaXO97rO1QrRXsXQfIVvO1XJ/runs/run_dyTpZ5ZpzxMzdK7gpOr8oA3V "HTTP/1.1 200 OK"
+INFO:root:Run complete
+INFO:httpx:HTTP Request: DELETE https://api.openai.com/v1/files/file-MM3MUpFvqxTnzsmJMa8QBp6o "HTTP/1.1 200 OK"
+INFO:root:Deleted file-MM3MUpFvqxTnzsmJMa8QBp6o
+INFO:httpx:HTTP Request: DELETE https://api.openai.com/v1/files/file-yO1XIc6skbLE1wTaUvJbLDcJ "HTTP/1.1 200 OK"
+INFO:root:Deleted file-yO1XIc6skbLE1wTaUvJbLDcJ
+INFO:httpx:HTTP Request: DELETE https://api.openai.com/v1/files/file-MTmcW7fYkadZ7oPBxuLpzGtQ "HTTP/1.1 200 OK"
+INFO:root:Deleted file-MTmcW7fYkadZ7oPBxuLpzGtQ
+INFO:httpx:HTTP Request: DELETE https://api.openai.com/v1/files/file-H7f6wsapM4oCz0WOWYmCoklQ "HTTP/1.1 200 OK"
+INFO:root:Deleted file-H7f6wsapM4oCz0WOWYmCoklQ
+INFO:httpx:HTTP Request: DELETE https://api.openai.com/v1/files/file-terdxpNvWgIoCL9zrX94prHU "HTTP/1.1 200 OK"
+INFO:root:Deleted file-terdxpNvWgIoCL9zrX94prHU
+INFO:httpx:HTTP Request: DELETE https://api.openai.com/v1/files/file-6pD9urCSTz23a1cA4XSC2DRX "HTTP/1.1 200 OK"
+INFO:root:Deleted file-6pD9urCSTz23a1cA4XSC2DRX
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_VaXO97rO1QrRXsXQfIVvO1XJ/messages "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_VaXO97rO1QrRXsXQfIVvO1XJ/messages?after=msg_C1KhRYFvv04pjhTWQX1QI0Xg "HTTP/1.1 200 OK"
+INFO:root:Web search found url https://github.com/anchore/grype
+INFO:root:String search yielded branch/tag v0.72.0
+INFO:root:Checked out branch/tag v0.72.0
+INFO:root:str search found documentation in the repo: ['grype/CONTRIBUTING.md', 'grype/README.md', 'grype/install.sh', 'grype/LICENSE', 'grype/templates/README.md', 'grype/grype/db/test-fixtures/tls/README.md', 'grype/schema/cyclonedx/README.md', 'grype/test/integration/test-fixtures/image-alpine-match-coverage/lib/apk/db/installed', 'grype/test/integration/test-fixtures/image-portage-match-coverage/var/db/pkg/app-containers/skopeo-1.5.1/LICENSE', 'grype/test/integration/test-fixtures/image-portage-match-coverage/var/db/repos/gentoo/skel.ebuild', 'grype/test/quality/README.md', 'grype/test/quality/requirements.txt', 'grype/test/install/3_install_asset_test.sh', 'grype/.github/scripts/goreleaser-install.sh']
+INFO:root:Trimming 667 files down to 100 for LLM
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+INFO:root:LLM found documentation in the repo: ['grype/CONTRIBUTING.md', 'grype/README.md', 'grype/DEVELOPING.md', 'grype/SECURITY.md', 'grype/LICENSE', 'grype/templates/README.md']
+INFO:root:Using assistant prompt:
+
+Generate minimalist and straightforward instructions for compiling and
+installing the source code of the software project grype,
+version 0.72.0. The instructions should be concise and
+solely focused on the build and installation process,
+excluding any steps related to testing, linting, or other unrelated tasks.
+If multiple build methods are available, choose the most direct and
+uncomplicated method and provide a consistent set of steps without
+mixing different approaches. You will respond in JSON form only.
+
+The response should contain the following fields:
+
+summary: A brief description of the components the project uses and how they are built.
+
+description: A single sentence description of the project.
+
+license: The license under which the project is released. Include the license name only.
+
+steps: An ordered list of build commands.
+       Each build step is an object with specific fields depending on its type.
+       There are different step types, each requiring unique fields. If using
+       a place holder value for a field that the user needs to fill in manually,
+       surround the value with <>.
+
+Step type: git-checkout - Clone a git repository and checkout a branch/tag
+Fields:
+'repository' (required) - Repository to clone. Omit the .git suffix
+'branch/tag' (required) - Branch or tag to checkout
+
+Step type: shell - Run a shell command. Use as a last resort when desired functionality cannot be captured by another build step type.
+Fields:
+'command' (required) - Command to run
+
+Step type: go/build - Build and install a project with `go build`
+Fields:
+'packages' (required) - Space-separated packages to compile. Files can also be specified. This value is passed to `go build`. Paths are relative to modroot.
+'output' (required) - Name of the output binary. The final install location will be in prefix/install_dir/output
+'modroot' (optional) - Top directory of the go module, this is where go.mod lives. Before building the go pipeline will cd into this directory.
+'prefix' (optional) - Prefix to relocate binaries. Defaults to 'usr'.
+'ldflags' (optional) - List of [pattern=]arg to pass to the go compiler with -ldflags
+'install_dir' (optional) - Directory where binaries will be installed. Defaults to 'bin'.   
+
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/files "HTTP/1.1 200 OK"
+INFO:root:Created file grype/CONTRIBUTING.md
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/files "HTTP/1.1 200 OK"
+INFO:root:Created file grype/README.md
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/files "HTTP/1.1 200 OK"
+INFO:root:Created file grype/DEVELOPING.md
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/files "HTTP/1.1 200 OK"
+INFO:root:Created file grype/SECURITY.md
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/files "HTTP/1.1 200 OK"
+INFO:root:Created file grype/LICENSE
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/files "HTTP/1.1 200 OK"
+INFO:root:Created file grype/templates/README.md
+INFO:root:Creating run
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/assistants/asst_6f9uzyHimrjjggaKfSw5DGeG "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/threads "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/threads/thread_zTP0dEB8T3fdif8kZXHnj8RL/messages "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/threads/thread_zTP0dEB8T3fdif8kZXHnj8RL/runs "HTTP/1.1 200 OK"
+INFO:root:Polling run_2mfs0yqWiquunht9I17dJJ5x. Status: queued
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_zTP0dEB8T3fdif8kZXHnj8RL/runs/run_2mfs0yqWiquunht9I17dJJ5x "HTTP/1.1 200 OK"
+INFO:root:Polling run_2mfs0yqWiquunht9I17dJJ5x. Status: in_progress
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_zTP0dEB8T3fdif8kZXHnj8RL/runs/run_2mfs0yqWiquunht9I17dJJ5x "HTTP/1.1 200 OK"
+INFO:root:Polling run_2mfs0yqWiquunht9I17dJJ5x. Status: in_progress
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_zTP0dEB8T3fdif8kZXHnj8RL/runs/run_2mfs0yqWiquunht9I17dJJ5x "HTTP/1.1 200 OK"
+INFO:root:Polling run_2mfs0yqWiquunht9I17dJJ5x. Status: in_progress
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_zTP0dEB8T3fdif8kZXHnj8RL/runs/run_2mfs0yqWiquunht9I17dJJ5x "HTTP/1.1 200 OK"
+INFO:root:Polling run_2mfs0yqWiquunht9I17dJJ5x. Status: in_progress
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_zTP0dEB8T3fdif8kZXHnj8RL/runs/run_2mfs0yqWiquunht9I17dJJ5x "HTTP/1.1 200 OK"
+INFO:root:Polling run_2mfs0yqWiquunht9I17dJJ5x. Status: in_progress
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_zTP0dEB8T3fdif8kZXHnj8RL/runs/run_2mfs0yqWiquunht9I17dJJ5x "HTTP/1.1 200 OK"
+INFO:root:Polling run_2mfs0yqWiquunht9I17dJJ5x. Status: in_progress
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_zTP0dEB8T3fdif8kZXHnj8RL/runs/run_2mfs0yqWiquunht9I17dJJ5x "HTTP/1.1 200 OK"
+INFO:root:Polling run_2mfs0yqWiquunht9I17dJJ5x. Status: in_progress
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_zTP0dEB8T3fdif8kZXHnj8RL/runs/run_2mfs0yqWiquunht9I17dJJ5x "HTTP/1.1 200 OK"
+INFO:root:Run complete
+INFO:httpx:HTTP Request: DELETE https://api.openai.com/v1/files/file-Ib2dNsTLCBgLkQCLfybEWQ3D "HTTP/1.1 200 OK"
+INFO:root:Deleted file-Ib2dNsTLCBgLkQCLfybEWQ3D
+INFO:httpx:HTTP Request: DELETE https://api.openai.com/v1/files/file-dW78315APrZS7fISFqE57Ukk "HTTP/1.1 200 OK"
+INFO:root:Deleted file-dW78315APrZS7fISFqE57Ukk
+INFO:httpx:HTTP Request: DELETE https://api.openai.com/v1/files/file-GgOBbpjEpq3lOfaZrVUTuB3G "HTTP/1.1 200 OK"
+INFO:root:Deleted file-GgOBbpjEpq3lOfaZrVUTuB3G
+INFO:httpx:HTTP Request: DELETE https://api.openai.com/v1/files/file-5A3soe8l7y3GojZi6SgStoTn "HTTP/1.1 200 OK"
+INFO:root:Deleted file-5A3soe8l7y3GojZi6SgStoTn
+INFO:httpx:HTTP Request: DELETE https://api.openai.com/v1/files/file-QQbaIpTuS64qPY1YBFt6iXcX "HTTP/1.1 200 OK"
+INFO:root:Deleted file-QQbaIpTuS64qPY1YBFt6iXcX
+INFO:httpx:HTTP Request: DELETE https://api.openai.com/v1/files/file-eZY1xQZNyKCNgdhnI2y23UJb "HTTP/1.1 200 OK"
+INFO:root:Deleted file-eZY1xQZNyKCNgdhnI2y23UJb
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_zTP0dEB8T3fdif8kZXHnj8RL/messages "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_zTP0dEB8T3fdif8kZXHnj8RL/messages?after=msg_CCfKJJWwuQXYfQJuFJlrnweu "HTTP/1.1 200 OK"
+INFO:root:Web search found url https://github.com/ko-build/ko
+INFO:root:String search yielded branch/tag v0.15.0
+INFO:root:Checked out branch/tag v0.15.0
+INFO:root:str search found documentation in the repo: ['ko/CONTRIBUTING.md', 'ko/README.md', 'ko/LICENSE', 'ko/vendor/google.golang.org/appengine/CONTRIBUTING.md', 'ko/vendor/google.golang.org/appengine/README.md', 'ko/vendor/google.golang.org/appengine/LICENSE', 'ko/vendor/google.golang.org/appengine/travis_install.sh', 'ko/vendor/google.golang.org/protobuf/LICENSE', 'ko/vendor/google.golang.org/protobuf/internal/filetype/build.go', 'ko/vendor/google.golang.org/protobuf/internal/filedesc/build.go', 'ko/vendor/google.golang.org/genproto/googleapis/rpc/LICENSE', 'ko/vendor/google.golang.org/grpc/CONTRIBUTING.md', 'ko/vendor/google.golang.org/grpc/README.md', 'ko/vendor/google.golang.org/grpc/LICENSE', 'ko/vendor/gopkg.in/ini.v1/README.md', 'ko/vendor/gopkg.in/ini.v1/LICENSE', 'ko/vendor/gopkg.in/square/go-jose.v2/CONTRIBUTING.md', 'ko/vendor/gopkg.in/square/go-jose.v2/README.md', 'ko/vendor/gopkg.in/square/go-jose.v2/LICENSE', 'ko/vendor/gopkg.in/square/go-jose.v2/json/README.md', 'ko/vendor/gopkg.in/square/go-jose.v2/json/LICENSE', 'ko/vendor/gopkg.in/yaml.v2/LICENSE.libyaml', 'ko/vendor/gopkg.in/yaml.v2/README.md', 'ko/vendor/gopkg.in/yaml.v2/LICENSE', 'ko/vendor/gopkg.in/yaml.v3/README.md', 'ko/vendor/gopkg.in/yaml.v3/LICENSE', 'ko/vendor/go.uber.org/automaxprocs/LICENSE', 'ko/vendor/go.uber.org/multierr/README.md', 'ko/vendor/go.uber.org/multierr/LICENSE.txt', 'ko/vendor/go.uber.org/multierr/CHANGELOG.md', 'ko/vendor/golang.org/x/text/LICENSE', 'ko/vendor/golang.org/x/exp/LICENSE', 'ko/vendor/golang.org/x/mod/LICENSE', 'ko/vendor/golang.org/x/sys/LICENSE', 'ko/vendor/golang.org/x/sys/unix/README.md', 'ko/vendor/golang.org/x/net/LICENSE', 'ko/vendor/golang.org/x/sync/LICENSE', 'ko/vendor/golang.org/x/crypto/LICENSE', 'ko/vendor/golang.org/x/tools/LICENSE', 'ko/vendor/golang.org/x/term/CONTRIBUTING.md', 'ko/vendor/golang.org/x/term/README.md', 'ko/vendor/golang.org/x/term/LICENSE', 'ko/vendor/golang.org/x/oauth2/CONTRIBUTING.md', 'ko/vendor/golang.org/x/oauth2/README.md', 'ko/vendor/golang.org/x/oauth2/LICENSE', 'ko/vendor/sigs.k8s.io/yaml/CONTRIBUTING.md', 'ko/vendor/sigs.k8s.io/yaml/README.md', 'ko/vendor/sigs.k8s.io/yaml/LICENSE', 'ko/vendor/sigs.k8s.io/kind/LICENSE', 'ko/vendor/github.com/sourcegraph/conc/README.md', 'ko/vendor/github.com/sourcegraph/conc/LICENSE', 'ko/vendor/github.com/evanphx/json-patch/v5/LICENSE', 'ko/vendor/github.com/josharian/intern/README.md', 'ko/vendor/github.com/josharian/intern/license.md', 'ko/vendor/github.com/subosito/gotenv/README.md', 'ko/vendor/github.com/subosito/gotenv/LICENSE', 'ko/vendor/github.com/subosito/gotenv/CHANGELOG.md', 'ko/vendor/github.com/vbatts/tar-split/LICENSE', 'ko/vendor/github.com/Microsoft/go-winio/README.md', 'ko/vendor/github.com/Microsoft/go-winio/LICENSE', 'ko/vendor/github.com/go-logr/logr/CONTRIBUTING.md', 'ko/vendor/github.com/go-logr/logr/README.md', 'ko/vendor/github.com/go-logr/logr/LICENSE', 'ko/vendor/github.com/go-logr/logr/CHANGELOG.md', 'ko/vendor/github.com/spf13/pflag/README.md', 'ko/vendor/github.com/spf13/pflag/LICENSE', 'ko/vendor/github.com/spf13/cast/README.md', 'ko/vendor/github.com/spf13/cast/LICENSE', 'ko/vendor/github.com/spf13/afero/README.md', 'ko/vendor/github.com/spf13/afero/LICENSE.txt', 'ko/vendor/github.com/spf13/cobra/CONTRIBUTING.md', 'ko/vendor/github.com/spf13/cobra/README.md', 'ko/vendor/github.com/spf13/cobra/LICENSE.txt', 'ko/vendor/github.com/spf13/cobra/doc/README.md', 'ko/vendor/github.com/spf13/viper/README.md', 'ko/vendor/github.com/spf13/viper/LICENSE', 'ko/vendor/github.com/inconshreveable/mousetrap/README.md', 'ko/vendor/github.com/inconshreveable/mousetrap/LICENSE', 'ko/vendor/github.com/titanous/rocacheck/README.md', 'ko/vendor/github.com/titanous/rocacheck/LICENSE', 'ko/vendor/github.com/Azure/go-autorest/README.md', 'ko/vendor/github.com/Azure/go-autorest/LICENSE', 'ko/vendor/github.com/Azure/go-autorest/CHANGELOG.md', 'ko/vendor/github.com/Azure/go-autorest/autorest/LICENSE', 'ko/vendor/github.com/Azure/go-autorest/autorest/adal/README.md', 'ko/vendor/github.com/Azure/go-autorest/autorest/adal/LICENSE', 'ko/vendor/github.com/Azure/go-autorest/autorest/date/LICENSE', 'ko/vendor/github.com/Azure/go-autorest/autorest/azure/auth/README.md', 'ko/vendor/github.com/Azure/go-autorest/autorest/azure/auth/LICENSE', 'ko/vendor/github.com/Azure/go-autorest/autorest/azure/cli/LICENSE', 'ko/vendor/github.com/Azure/go-autorest/logger/LICENSE', 'ko/vendor/github.com/Azure/go-autorest/tracing/LICENSE', 'ko/vendor/github.com/Azure/azure-sdk-for-go/LICENSE.txt', 'ko/vendor/github.com/Azure/azure-sdk-for-go/services/preview/containerregistry/runtime/2019-08-15-preview/containerregistry/CHANGELOG.md', 'ko/vendor/github.com/oklog/ulid/CONTRIBUTING.md', 'ko/vendor/github.com/oklog/ulid/README.md', 'ko/vendor/github.com/oklog/ulid/LICENSE', 'ko/vendor/github.com/oklog/ulid/CHANGELOG.md', 'ko/vendor/github.com/russross/blackfriday/v2/README.md', 'ko/vendor/github.com/russross/blackfriday/v2/LICENSE.txt', 'ko/vendor/github.com/letsencrypt/boulder/LICENSE.txt', 'ko/vendor/github.com/mailru/easyjson/LICENSE', 'ko/vendor/github.com/go-openapi/spec/README.md', 'ko/vendor/github.com/go-openapi/spec/license.go', 'ko/vendor/github.com/go-openapi/spec/LICENSE', 'ko/vendor/github.com/go-openapi/swag/README.md', 'ko/vendor/github.com/go-openapi/swag/LICENSE', 'ko/vendor/github.com/go-openapi/jsonreference/README.md', 'ko/vendor/github.com/go-openapi/jsonreference/LICENSE', 'ko/vendor/github.com/go-openapi/runtime/README.md', 'ko/vendor/github.com/go-openapi/runtime/LICENSE', 'ko/vendor/github.com/go-openapi/strfmt/README.md', 'ko/vendor/github.com/go-openapi/strfmt/LICENSE', 'ko/vendor/github.com/go-openapi/errors/README.md', 'ko/vendor/github.com/go-openapi/errors/LICENSE', 'ko/vendor/github.com/go-openapi/validate/README.md', 'ko/vendor/github.com/go-openapi/validate/LICENSE', 'ko/vendor/github.com/go-openapi/jsonpointer/README.md', 'ko/vendor/github.com/go-openapi/jsonpointer/LICENSE', 'ko/vendor/github.com/go-openapi/loads/README.md', 'ko/vendor/github.com/go-openapi/loads/LICENSE', 'ko/vendor/github.com/go-openapi/analysis/README.md', 'ko/vendor/github.com/go-openapi/analysis/LICENSE', 'ko/vendor/github.com/mattn/go-isatty/README.md', 'ko/vendor/github.com/mattn/go-isatty/LICENSE', 'ko/vendor/github.com/dimchansky/utfbom/README.md', 'ko/vendor/github.com/dimchansky/utfbom/LICENSE', 'ko/vendor/github.com/pkg/errors/README.md', 'ko/vendor/github.com/pkg/errors/LICENSE', 'ko/vendor/github.com/cpuguy83/go-md2man/v2/LICENSE.md', 'ko/vendor/github.com/sigstore/cosign/v2/LICENSE', 'ko/vendor/github.com/sigstore/sigstore/LICENSE', 'ko/vendor/github.com/sigstore/rekor/LICENSE', 'ko/vendor/github.com/golang-jwt/jwt/v4/README.md', 'ko/vendor/github.com/golang-jwt/jwt/v4/LICENSE', 'ko/vendor/github.com/google/go-containerregistry/LICENSE', 'ko/vendor/github.com/google/go-containerregistry/pkg/authn/README.md', 'ko/vendor/github.com/google/go-containerregistry/pkg/v1/empty/README.md', 'ko/vendor/github.com/google/go-containerregistry/pkg/v1/mutate/README.md', 'ko/vendor/github.com/google/go-containerregistry/pkg/v1/remote/README.md', 'ko/vendor/github.com/google/go-containerregistry/pkg/v1/remote/transport/README.md', 'ko/vendor/github.com/google/go-containerregistry/pkg/v1/stream/README.md', 'ko/vendor/github.com/google/go-containerregistry/pkg/v1/partial/README.md', 'ko/vendor/github.com/google/go-containerregistry/pkg/v1/tarball/README.md', 'ko/vendor/github.com/google/go-containerregistry/pkg/v1/google/README.md', 'ko/vendor/github.com/google/go-containerregistry/pkg/v1/layout/README.md', 'ko/vendor/github.com/google/go-containerregistry/pkg/v1/daemon/README.md', 'ko/vendor/github.com/google/go-containerregistry/pkg/registry/README.md', 'ko/vendor/github.com/google/go-containerregistry/pkg/legacy/tarball/README.md', 'ko/vendor/github.com/google/go-containerregistry/pkg/name/README.md', 'ko/vendor/github.com/google/safetext/LICENSE', 'ko/vendor/github.com/google/go-cmp/LICENSE', 'ko/vendor/github.com/sagikazarmark/slog-shim/README.md', 'ko/vendor/github.com/sagikazarmark/slog-shim/LICENSE', 'ko/vendor/github.com/sagikazarmark/locafero/README.md', 'ko/vendor/github.com/sagikazarmark/locafero/LICENSE', 'ko/vendor/github.com/awslabs/amazon-ecr-credential-helper/ecr-login/LICENSE', 'ko/vendor/github.com/awslabs/amazon-ecr-credential-helper/ecr-login/cache/build.go', 'ko/vendor/github.com/hashicorp/hcl/README.md', 'ko/vendor/github.com/hashicorp/hcl/LICENSE', 'ko/vendor/github.com/dprotaso/go-yit/README.md', 'ko/vendor/github.com/dprotaso/go-yit/LICENSE', 'ko/vendor/github.com/containerd/stargz-snapshotter/estargz/build.go', 'ko/vendor/github.com/containerd/stargz-snapshotter/estargz/LICENSE', 'ko/vendor/github.com/chrismellard/docker-credential-acr-env/LICENSE', 'ko/vendor/github.com/mitchellh/go-homedir/README.md', 'ko/vendor/github.com/mitchellh/go-homedir/LICENSE', 'ko/vendor/github.com/mitchellh/mapstructure/README.md', 'ko/vendor/github.com/mitchellh/mapstructure/LICENSE', 'ko/vendor/github.com/mitchellh/mapstructure/CHANGELOG.md', 'ko/vendor/github.com/go-training/helloworld/README.md', 'ko/vendor/github.com/go-training/helloworld/LICENSE', 'ko/vendor/github.com/sirupsen/logrus/README.md', 'ko/vendor/github.com/sirupsen/logrus/LICENSE', 'ko/vendor/github.com/sirupsen/logrus/CHANGELOG.md', 'ko/vendor/github.com/opencontainers/image-spec/LICENSE', 'ko/vendor/github.com/opencontainers/go-digest/CONTRIBUTING.md', 'ko/vendor/github.com/opencontainers/go-digest/LICENSE.docs', 'ko/vendor/github.com/opencontainers/go-digest/README.md', 'ko/vendor/github.com/opencontainers/go-digest/LICENSE', 'ko/vendor/github.com/aws/aws-sdk-go-v2/CONTRIBUTING.md', 'ko/vendor/github.com/aws/aws-sdk-go-v2/buildspec.yml', 'ko/vendor/github.com/aws/aws-sdk-go-v2/README.md', 'ko/vendor/github.com/aws/aws-sdk-go-v2/LICENSE.txt', 'ko/vendor/github.com/aws/aws-sdk-go-v2/CHANGELOG.md', 'ko/vendor/github.com/aws/aws-sdk-go-v2/internal/ini/LICENSE.txt', 'ko/vendor/github.com/aws/aws-sdk-go-v2/internal/ini/CHANGELOG.md', 'ko/vendor/github.com/aws/aws-sdk-go-v2/internal/configsources/LICENSE.txt', 'ko/vendor/github.com/aws/aws-sdk-go-v2/internal/configsources/CHANGELOG.md', 'ko/vendor/github.com/aws/aws-sdk-go-v2/internal/sync/singleflight/LICENSE', 'ko/vendor/github.com/aws/aws-sdk-go-v2/internal/endpoints/v2/LICENSE.txt', 'ko/vendor/github.com/aws/aws-sdk-go-v2/internal/endpoints/v2/CHANGELOG.md', 'ko/vendor/github.com/aws/aws-sdk-go-v2/service/internal/presigned-url/LICENSE.txt', 'ko/vendor/github.com/aws/aws-sdk-go-v2/service/internal/presigned-url/CHANGELOG.md', 'ko/vendor/github.com/aws/aws-sdk-go-v2/service/sso/LICENSE.txt', 'ko/vendor/github.com/aws/aws-sdk-go-v2/service/sso/CHANGELOG.md', 'ko/vendor/github.com/aws/aws-sdk-go-v2/service/ecr/LICENSE.txt', 'ko/vendor/github.com/aws/aws-sdk-go-v2/service/ecr/CHANGELOG.md', 'ko/vendor/github.com/aws/aws-sdk-go-v2/service/ecrpublic/LICENSE.txt', 'ko/vendor/github.com/aws/aws-sdk-go-v2/service/ecrpublic/CHANGELOG.md', 'ko/vendor/github.com/aws/aws-sdk-go-v2/service/ssooidc/LICENSE.txt', 'ko/vendor/github.com/aws/aws-sdk-go-v2/service/ssooidc/CHANGELOG.md', 'ko/vendor/github.com/aws/aws-sdk-go-v2/service/sts/LICENSE.txt', 'ko/vendor/github.com/aws/aws-sdk-go-v2/service/sts/CHANGELOG.md', 'ko/vendor/github.com/aws/aws-sdk-go-v2/feature/ec2/imds/LICENSE.txt', 'ko/vendor/github.com/aws/aws-sdk-go-v2/feature/ec2/imds/CHANGELOG.md', 'ko/vendor/github.com/aws/aws-sdk-go-v2/config/LICENSE.txt', 'ko/vendor/github.com/aws/aws-sdk-go-v2/config/CHANGELOG.md', 'ko/vendor/github.com/aws/aws-sdk-go-v2/credentials/LICENSE.txt', 'ko/vendor/github.com/aws/aws-sdk-go-v2/credentials/CHANGELOG.md', 'ko/vendor/github.com/aws/smithy-go/CONTRIBUTING.md', 'ko/vendor/github.com/aws/smithy-go/README.md', 'ko/vendor/github.com/aws/smithy-go/LICENSE', 'ko/vendor/github.com/aws/smithy-go/CHANGELOG.md', 'ko/vendor/github.com/aws/smithy-go/internal/sync/singleflight/LICENSE', 'ko/vendor/github.com/aws/smithy-go/middleware/step_build.go', 'ko/vendor/github.com/gogo/protobuf/LICENSE', 'ko/vendor/github.com/docker/cli/LICENSE', 'ko/vendor/github.com/docker/go-units/CONTRIBUTING.md', 'ko/vendor/github.com/docker/go-units/README.md', 'ko/vendor/github.com/docker/go-units/LICENSE', 'ko/vendor/github.com/docker/docker-credential-helpers/LICENSE', 'ko/vendor/github.com/docker/distribution/LICENSE', 'ko/vendor/github.com/docker/docker/LICENSE', 'ko/vendor/github.com/docker/docker/api/README.md', 'ko/vendor/github.com/docker/docker/api/types/versions/README.md', 'ko/vendor/github.com/docker/docker/client/build_cancel.go', 'ko/vendor/github.com/docker/docker/client/plugin_install.go', 'ko/vendor/github.com/docker/docker/client/README.md', 'ko/vendor/github.com/docker/docker/client/build_prune.go', 'ko/vendor/github.com/docker/docker/client/image_build.go', 'ko/vendor/github.com/docker/go-connections/LICENSE', 'ko/vendor/github.com/docker/go-connections/sockets/README.md', 'ko/vendor/github.com/golang/protobuf/LICENSE', 'ko/vendor/github.com/alessio/shellescape/README.md', 'ko/vendor/github.com/alessio/shellescape/LICENSE', 'ko/vendor/github.com/jmespath/go-jmespath/README.md', 'ko/vendor/github.com/jmespath/go-jmespath/LICENSE', 'ko/vendor/github.com/klauspost/compress/README.md', 'ko/vendor/github.com/klauspost/compress/LICENSE', 'ko/vendor/github.com/klauspost/compress/zstd/README.md', 'ko/vendor/github.com/klauspost/compress/zstd/internal/xxhash/README.md', 'ko/vendor/github.com/klauspost/compress/zstd/internal/xxhash/LICENSE.txt', 'ko/vendor/github.com/klauspost/compress/internal/snapref/LICENSE', 'ko/vendor/github.com/klauspost/compress/huff0/README.md', 'ko/vendor/github.com/klauspost/compress/fse/README.md', 'ko/vendor/github.com/BurntSushi/toml/README.md', 'ko/vendor/github.com/pelletier/go-toml/CONTRIBUTING.md', 'ko/vendor/github.com/pelletier/go-toml/README.md', 'ko/vendor/github.com/pelletier/go-toml/LICENSE', 'ko/vendor/github.com/pelletier/go-toml/v2/CONTRIBUTING.md', 'ko/vendor/github.com/pelletier/go-toml/v2/README.md', 'ko/vendor/github.com/pelletier/go-toml/v2/LICENSE', 'ko/vendor/github.com/pelletier/go-toml/v2/unstable/builder.go', 'ko/vendor/github.com/fsnotify/fsnotify/CONTRIBUTING.md', 'ko/vendor/github.com/fsnotify/fsnotify/README.md', 'ko/vendor/github.com/fsnotify/fsnotify/LICENSE', 'ko/vendor/github.com/fsnotify/fsnotify/CHANGELOG.md', 'ko/vendor/github.com/theupdateframework/go-tuf/LICENSE', 'ko/vendor/github.com/magiconair/properties/README.md', 'ko/vendor/github.com/magiconair/properties/LICENSE.md', 'ko/vendor/github.com/magiconair/properties/CHANGELOG.md', 'ko/vendor/github.com/asaskevich/govalidator/CONTRIBUTING.md', 'ko/vendor/github.com/asaskevich/govalidator/README.md', 'ko/vendor/github.com/asaskevich/govalidator/LICENSE', 'ko/vendor/go.mongodb.org/mongo-driver/LICENSE', 'ko/vendor/go.mongodb.org/mongo-driver/x/bsonx/bsoncore/bson_arraybuilder.go', 'ko/vendor/go.mongodb.org/mongo-driver/x/bsonx/bsoncore/bson_documentbuilder.go', 'ko/vendor/k8s.io/klog/v2/CONTRIBUTING.md', 'ko/vendor/k8s.io/klog/v2/README.md', 'ko/vendor/k8s.io/klog/v2/LICENSE', 'ko/vendor/k8s.io/klog/v2/internal/clock/README.md', 'ko/vendor/k8s.io/utils/LICENSE', 'ko/vendor/k8s.io/utils/internal/third_party/forked/golang/LICENSE', 'ko/vendor/k8s.io/apimachinery/LICENSE', 'ko/vendor/cloud.google.com/go/compute/LICENSE', 'ko/vendor/cloud.google.com/go/compute/metadata/README.md', 'ko/vendor/cloud.google.com/go/compute/metadata/LICENSE', 'ko/docs/README.md', 'ko/docs/install.md', 'ko/docs/features/build-cache.md', 'ko/docs/reference/ko_build.md', 'ko/pkg/commands/build.go', 'ko/pkg/commands/options/build_test.go', 'ko/pkg/commands/options/build.go', 'ko/pkg/build/gobuild_test.go', 'ko/pkg/build/gobuilds.go', 'ko/pkg/build/gobuild.go', 'ko/pkg/build/build.go', 'ko/pkg/build/gobuilds_test.go', 'ko/test/kodata/b', 'ko/test/kodata/a', 'ko/.github/workflows/build.yaml']
+INFO:root:Trimming 3624 files down to 100 for LLM
+INFO:root:Web search found url https://github.com/ko-build/ko
+INFO:root:String search yielded branch/tag v0.15.0
+INFO:root:Checked out branch/tag v0.15.0
+INFO:root:str search found documentation in the repo: ['ko/CONTRIBUTING.md', 'ko/README.md', 'ko/LICENSE', 'ko/vendor/google.golang.org/appengine/CONTRIBUTING.md', 'ko/vendor/google.golang.org/appengine/README.md', 'ko/vendor/google.golang.org/appengine/LICENSE', 'ko/vendor/google.golang.org/appengine/travis_install.sh', 'ko/vendor/google.golang.org/protobuf/LICENSE', 'ko/vendor/google.golang.org/protobuf/internal/filetype/build.go', 'ko/vendor/google.golang.org/protobuf/internal/filedesc/build.go', 'ko/vendor/google.golang.org/genproto/googleapis/rpc/LICENSE', 'ko/vendor/google.golang.org/grpc/CONTRIBUTING.md', 'ko/vendor/google.golang.org/grpc/README.md', 'ko/vendor/google.golang.org/grpc/LICENSE', 'ko/vendor/gopkg.in/ini.v1/README.md', 'ko/vendor/gopkg.in/ini.v1/LICENSE', 'ko/vendor/gopkg.in/square/go-jose.v2/CONTRIBUTING.md', 'ko/vendor/gopkg.in/square/go-jose.v2/README.md', 'ko/vendor/gopkg.in/square/go-jose.v2/LICENSE', 'ko/vendor/gopkg.in/square/go-jose.v2/json/README.md', 'ko/vendor/gopkg.in/square/go-jose.v2/json/LICENSE', 'ko/vendor/gopkg.in/yaml.v2/LICENSE.libyaml', 'ko/vendor/gopkg.in/yaml.v2/README.md', 'ko/vendor/gopkg.in/yaml.v2/LICENSE', 'ko/vendor/gopkg.in/yaml.v3/README.md', 'ko/vendor/gopkg.in/yaml.v3/LICENSE', 'ko/vendor/go.uber.org/automaxprocs/LICENSE', 'ko/vendor/go.uber.org/multierr/README.md', 'ko/vendor/go.uber.org/multierr/LICENSE.txt', 'ko/vendor/go.uber.org/multierr/CHANGELOG.md', 'ko/vendor/golang.org/x/text/LICENSE', 'ko/vendor/golang.org/x/exp/LICENSE', 'ko/vendor/golang.org/x/mod/LICENSE', 'ko/vendor/golang.org/x/sys/LICENSE', 'ko/vendor/golang.org/x/sys/unix/README.md', 'ko/vendor/golang.org/x/net/LICENSE', 'ko/vendor/golang.org/x/sync/LICENSE', 'ko/vendor/golang.org/x/crypto/LICENSE', 'ko/vendor/golang.org/x/tools/LICENSE', 'ko/vendor/golang.org/x/term/CONTRIBUTING.md', 'ko/vendor/golang.org/x/term/README.md', 'ko/vendor/golang.org/x/term/LICENSE', 'ko/vendor/golang.org/x/oauth2/CONTRIBUTING.md', 'ko/vendor/golang.org/x/oauth2/README.md', 'ko/vendor/golang.org/x/oauth2/LICENSE', 'ko/vendor/sigs.k8s.io/yaml/CONTRIBUTING.md', 'ko/vendor/sigs.k8s.io/yaml/README.md', 'ko/vendor/sigs.k8s.io/yaml/LICENSE', 'ko/vendor/sigs.k8s.io/kind/LICENSE', 'ko/vendor/github.com/sourcegraph/conc/README.md', 'ko/vendor/github.com/sourcegraph/conc/LICENSE', 'ko/vendor/github.com/evanphx/json-patch/v5/LICENSE', 'ko/vendor/github.com/josharian/intern/README.md', 'ko/vendor/github.com/josharian/intern/license.md', 'ko/vendor/github.com/subosito/gotenv/README.md', 'ko/vendor/github.com/subosito/gotenv/LICENSE', 'ko/vendor/github.com/subosito/gotenv/CHANGELOG.md', 'ko/vendor/github.com/vbatts/tar-split/LICENSE', 'ko/vendor/github.com/Microsoft/go-winio/README.md', 'ko/vendor/github.com/Microsoft/go-winio/LICENSE', 'ko/vendor/github.com/go-logr/logr/CONTRIBUTING.md', 'ko/vendor/github.com/go-logr/logr/README.md', 'ko/vendor/github.com/go-logr/logr/LICENSE', 'ko/vendor/github.com/go-logr/logr/CHANGELOG.md', 'ko/vendor/github.com/spf13/pflag/README.md', 'ko/vendor/github.com/spf13/pflag/LICENSE', 'ko/vendor/github.com/spf13/cast/README.md', 'ko/vendor/github.com/spf13/cast/LICENSE', 'ko/vendor/github.com/spf13/afero/README.md', 'ko/vendor/github.com/spf13/afero/LICENSE.txt', 'ko/vendor/github.com/spf13/cobra/CONTRIBUTING.md', 'ko/vendor/github.com/spf13/cobra/README.md', 'ko/vendor/github.com/spf13/cobra/LICENSE.txt', 'ko/vendor/github.com/spf13/cobra/doc/README.md', 'ko/vendor/github.com/spf13/viper/README.md', 'ko/vendor/github.com/spf13/viper/LICENSE', 'ko/vendor/github.com/inconshreveable/mousetrap/README.md', 'ko/vendor/github.com/inconshreveable/mousetrap/LICENSE', 'ko/vendor/github.com/titanous/rocacheck/README.md', 'ko/vendor/github.com/titanous/rocacheck/LICENSE', 'ko/vendor/github.com/Azure/go-autorest/README.md', 'ko/vendor/github.com/Azure/go-autorest/LICENSE', 'ko/vendor/github.com/Azure/go-autorest/CHANGELOG.md', 'ko/vendor/github.com/Azure/go-autorest/autorest/LICENSE', 'ko/vendor/github.com/Azure/go-autorest/autorest/adal/README.md', 'ko/vendor/github.com/Azure/go-autorest/autorest/adal/LICENSE', 'ko/vendor/github.com/Azure/go-autorest/autorest/date/LICENSE', 'ko/vendor/github.com/Azure/go-autorest/autorest/azure/auth/README.md', 'ko/vendor/github.com/Azure/go-autorest/autorest/azure/auth/LICENSE', 'ko/vendor/github.com/Azure/go-autorest/autorest/azure/cli/LICENSE', 'ko/vendor/github.com/Azure/go-autorest/logger/LICENSE', 'ko/vendor/github.com/Azure/go-autorest/tracing/LICENSE', 'ko/vendor/github.com/Azure/azure-sdk-for-go/LICENSE.txt', 'ko/vendor/github.com/Azure/azure-sdk-for-go/services/preview/containerregistry/runtime/2019-08-15-preview/containerregistry/CHANGELOG.md', 'ko/vendor/github.com/oklog/ulid/CONTRIBUTING.md', 'ko/vendor/github.com/oklog/ulid/README.md', 'ko/vendor/github.com/oklog/ulid/LICENSE', 'ko/vendor/github.com/oklog/ulid/CHANGELOG.md', 'ko/vendor/github.com/russross/blackfriday/v2/README.md', 'ko/vendor/github.com/russross/blackfriday/v2/LICENSE.txt', 'ko/vendor/github.com/letsencrypt/boulder/LICENSE.txt', 'ko/vendor/github.com/mailru/easyjson/LICENSE', 'ko/vendor/github.com/go-openapi/spec/README.md', 'ko/vendor/github.com/go-openapi/spec/license.go', 'ko/vendor/github.com/go-openapi/spec/LICENSE', 'ko/vendor/github.com/go-openapi/swag/README.md', 'ko/vendor/github.com/go-openapi/swag/LICENSE', 'ko/vendor/github.com/go-openapi/jsonreference/README.md', 'ko/vendor/github.com/go-openapi/jsonreference/LICENSE', 'ko/vendor/github.com/go-openapi/runtime/README.md', 'ko/vendor/github.com/go-openapi/runtime/LICENSE', 'ko/vendor/github.com/go-openapi/strfmt/README.md', 'ko/vendor/github.com/go-openapi/strfmt/LICENSE', 'ko/vendor/github.com/go-openapi/errors/README.md', 'ko/vendor/github.com/go-openapi/errors/LICENSE', 'ko/vendor/github.com/go-openapi/validate/README.md', 'ko/vendor/github.com/go-openapi/validate/LICENSE', 'ko/vendor/github.com/go-openapi/jsonpointer/README.md', 'ko/vendor/github.com/go-openapi/jsonpointer/LICENSE', 'ko/vendor/github.com/go-openapi/loads/README.md', 'ko/vendor/github.com/go-openapi/loads/LICENSE', 'ko/vendor/github.com/go-openapi/analysis/README.md', 'ko/vendor/github.com/go-openapi/analysis/LICENSE', 'ko/vendor/github.com/mattn/go-isatty/README.md', 'ko/vendor/github.com/mattn/go-isatty/LICENSE', 'ko/vendor/github.com/dimchansky/utfbom/README.md', 'ko/vendor/github.com/dimchansky/utfbom/LICENSE', 'ko/vendor/github.com/pkg/errors/README.md', 'ko/vendor/github.com/pkg/errors/LICENSE', 'ko/vendor/github.com/cpuguy83/go-md2man/v2/LICENSE.md', 'ko/vendor/github.com/sigstore/cosign/v2/LICENSE', 'ko/vendor/github.com/sigstore/sigstore/LICENSE', 'ko/vendor/github.com/sigstore/rekor/LICENSE', 'ko/vendor/github.com/golang-jwt/jwt/v4/README.md', 'ko/vendor/github.com/golang-jwt/jwt/v4/LICENSE', 'ko/vendor/github.com/google/go-containerregistry/LICENSE', 'ko/vendor/github.com/google/go-containerregistry/pkg/authn/README.md', 'ko/vendor/github.com/google/go-containerregistry/pkg/v1/empty/README.md', 'ko/vendor/github.com/google/go-containerregistry/pkg/v1/mutate/README.md', 'ko/vendor/github.com/google/go-containerregistry/pkg/v1/remote/README.md', 'ko/vendor/github.com/google/go-containerregistry/pkg/v1/remote/transport/README.md', 'ko/vendor/github.com/google/go-containerregistry/pkg/v1/stream/README.md', 'ko/vendor/github.com/google/go-containerregistry/pkg/v1/partial/README.md', 'ko/vendor/github.com/google/go-containerregistry/pkg/v1/tarball/README.md', 'ko/vendor/github.com/google/go-containerregistry/pkg/v1/google/README.md', 'ko/vendor/github.com/google/go-containerregistry/pkg/v1/layout/README.md', 'ko/vendor/github.com/google/go-containerregistry/pkg/v1/daemon/README.md', 'ko/vendor/github.com/google/go-containerregistry/pkg/registry/README.md', 'ko/vendor/github.com/google/go-containerregistry/pkg/legacy/tarball/README.md', 'ko/vendor/github.com/google/go-containerregistry/pkg/name/README.md', 'ko/vendor/github.com/google/safetext/LICENSE', 'ko/vendor/github.com/google/go-cmp/LICENSE', 'ko/vendor/github.com/sagikazarmark/slog-shim/README.md', 'ko/vendor/github.com/sagikazarmark/slog-shim/LICENSE', 'ko/vendor/github.com/sagikazarmark/locafero/README.md', 'ko/vendor/github.com/sagikazarmark/locafero/LICENSE', 'ko/vendor/github.com/awslabs/amazon-ecr-credential-helper/ecr-login/LICENSE', 'ko/vendor/github.com/awslabs/amazon-ecr-credential-helper/ecr-login/cache/build.go', 'ko/vendor/github.com/hashicorp/hcl/README.md', 'ko/vendor/github.com/hashicorp/hcl/LICENSE', 'ko/vendor/github.com/dprotaso/go-yit/README.md', 'ko/vendor/github.com/dprotaso/go-yit/LICENSE', 'ko/vendor/github.com/containerd/stargz-snapshotter/estargz/build.go', 'ko/vendor/github.com/containerd/stargz-snapshotter/estargz/LICENSE', 'ko/vendor/github.com/chrismellard/docker-credential-acr-env/LICENSE', 'ko/vendor/github.com/mitchellh/go-homedir/README.md', 'ko/vendor/github.com/mitchellh/go-homedir/LICENSE', 'ko/vendor/github.com/mitchellh/mapstructure/README.md', 'ko/vendor/github.com/mitchellh/mapstructure/LICENSE', 'ko/vendor/github.com/mitchellh/mapstructure/CHANGELOG.md', 'ko/vendor/github.com/go-training/helloworld/README.md', 'ko/vendor/github.com/go-training/helloworld/LICENSE', 'ko/vendor/github.com/sirupsen/logrus/README.md', 'ko/vendor/github.com/sirupsen/logrus/LICENSE', 'ko/vendor/github.com/sirupsen/logrus/CHANGELOG.md', 'ko/vendor/github.com/opencontainers/image-spec/LICENSE', 'ko/vendor/github.com/opencontainers/go-digest/CONTRIBUTING.md', 'ko/vendor/github.com/opencontainers/go-digest/LICENSE.docs', 'ko/vendor/github.com/opencontainers/go-digest/README.md', 'ko/vendor/github.com/opencontainers/go-digest/LICENSE', 'ko/vendor/github.com/aws/aws-sdk-go-v2/CONTRIBUTING.md', 'ko/vendor/github.com/aws/aws-sdk-go-v2/buildspec.yml', 'ko/vendor/github.com/aws/aws-sdk-go-v2/README.md', 'ko/vendor/github.com/aws/aws-sdk-go-v2/LICENSE.txt', 'ko/vendor/github.com/aws/aws-sdk-go-v2/CHANGELOG.md', 'ko/vendor/github.com/aws/aws-sdk-go-v2/internal/ini/LICENSE.txt', 'ko/vendor/github.com/aws/aws-sdk-go-v2/internal/ini/CHANGELOG.md', 'ko/vendor/github.com/aws/aws-sdk-go-v2/internal/configsources/LICENSE.txt', 'ko/vendor/github.com/aws/aws-sdk-go-v2/internal/configsources/CHANGELOG.md', 'ko/vendor/github.com/aws/aws-sdk-go-v2/internal/sync/singleflight/LICENSE', 'ko/vendor/github.com/aws/aws-sdk-go-v2/internal/endpoints/v2/LICENSE.txt', 'ko/vendor/github.com/aws/aws-sdk-go-v2/internal/endpoints/v2/CHANGELOG.md', 'ko/vendor/github.com/aws/aws-sdk-go-v2/service/internal/presigned-url/LICENSE.txt', 'ko/vendor/github.com/aws/aws-sdk-go-v2/service/internal/presigned-url/CHANGELOG.md', 'ko/vendor/github.com/aws/aws-sdk-go-v2/service/sso/LICENSE.txt', 'ko/vendor/github.com/aws/aws-sdk-go-v2/service/sso/CHANGELOG.md', 'ko/vendor/github.com/aws/aws-sdk-go-v2/service/ecr/LICENSE.txt', 'ko/vendor/github.com/aws/aws-sdk-go-v2/service/ecr/CHANGELOG.md', 'ko/vendor/github.com/aws/aws-sdk-go-v2/service/ecrpublic/LICENSE.txt', 'ko/vendor/github.com/aws/aws-sdk-go-v2/service/ecrpublic/CHANGELOG.md', 'ko/vendor/github.com/aws/aws-sdk-go-v2/service/ssooidc/LICENSE.txt', 'ko/vendor/github.com/aws/aws-sdk-go-v2/service/ssooidc/CHANGELOG.md', 'ko/vendor/github.com/aws/aws-sdk-go-v2/service/sts/LICENSE.txt', 'ko/vendor/github.com/aws/aws-sdk-go-v2/service/sts/CHANGELOG.md', 'ko/vendor/github.com/aws/aws-sdk-go-v2/feature/ec2/imds/LICENSE.txt', 'ko/vendor/github.com/aws/aws-sdk-go-v2/feature/ec2/imds/CHANGELOG.md', 'ko/vendor/github.com/aws/aws-sdk-go-v2/config/LICENSE.txt', 'ko/vendor/github.com/aws/aws-sdk-go-v2/config/CHANGELOG.md', 'ko/vendor/github.com/aws/aws-sdk-go-v2/credentials/LICENSE.txt', 'ko/vendor/github.com/aws/aws-sdk-go-v2/credentials/CHANGELOG.md', 'ko/vendor/github.com/aws/smithy-go/CONTRIBUTING.md', 'ko/vendor/github.com/aws/smithy-go/README.md', 'ko/vendor/github.com/aws/smithy-go/LICENSE', 'ko/vendor/github.com/aws/smithy-go/CHANGELOG.md', 'ko/vendor/github.com/aws/smithy-go/internal/sync/singleflight/LICENSE', 'ko/vendor/github.com/aws/smithy-go/middleware/step_build.go', 'ko/vendor/github.com/gogo/protobuf/LICENSE', 'ko/vendor/github.com/docker/cli/LICENSE', 'ko/vendor/github.com/docker/go-units/CONTRIBUTING.md', 'ko/vendor/github.com/docker/go-units/README.md', 'ko/vendor/github.com/docker/go-units/LICENSE', 'ko/vendor/github.com/docker/docker-credential-helpers/LICENSE', 'ko/vendor/github.com/docker/distribution/LICENSE', 'ko/vendor/github.com/docker/docker/LICENSE', 'ko/vendor/github.com/docker/docker/api/README.md', 'ko/vendor/github.com/docker/docker/api/types/versions/README.md', 'ko/vendor/github.com/docker/docker/client/build_cancel.go', 'ko/vendor/github.com/docker/docker/client/plugin_install.go', 'ko/vendor/github.com/docker/docker/client/README.md', 'ko/vendor/github.com/docker/docker/client/build_prune.go', 'ko/vendor/github.com/docker/docker/client/image_build.go', 'ko/vendor/github.com/docker/go-connections/LICENSE', 'ko/vendor/github.com/docker/go-connections/sockets/README.md', 'ko/vendor/github.com/golang/protobuf/LICENSE', 'ko/vendor/github.com/alessio/shellescape/README.md', 'ko/vendor/github.com/alessio/shellescape/LICENSE', 'ko/vendor/github.com/jmespath/go-jmespath/README.md', 'ko/vendor/github.com/jmespath/go-jmespath/LICENSE', 'ko/vendor/github.com/klauspost/compress/README.md', 'ko/vendor/github.com/klauspost/compress/LICENSE', 'ko/vendor/github.com/klauspost/compress/zstd/README.md', 'ko/vendor/github.com/klauspost/compress/zstd/internal/xxhash/README.md', 'ko/vendor/github.com/klauspost/compress/zstd/internal/xxhash/LICENSE.txt', 'ko/vendor/github.com/klauspost/compress/internal/snapref/LICENSE', 'ko/vendor/github.com/klauspost/compress/huff0/README.md', 'ko/vendor/github.com/klauspost/compress/fse/README.md', 'ko/vendor/github.com/BurntSushi/toml/README.md', 'ko/vendor/github.com/pelletier/go-toml/CONTRIBUTING.md', 'ko/vendor/github.com/pelletier/go-toml/README.md', 'ko/vendor/github.com/pelletier/go-toml/LICENSE', 'ko/vendor/github.com/pelletier/go-toml/v2/CONTRIBUTING.md', 'ko/vendor/github.com/pelletier/go-toml/v2/README.md', 'ko/vendor/github.com/pelletier/go-toml/v2/LICENSE', 'ko/vendor/github.com/pelletier/go-toml/v2/unstable/builder.go', 'ko/vendor/github.com/fsnotify/fsnotify/CONTRIBUTING.md', 'ko/vendor/github.com/fsnotify/fsnotify/README.md', 'ko/vendor/github.com/fsnotify/fsnotify/LICENSE', 'ko/vendor/github.com/fsnotify/fsnotify/CHANGELOG.md', 'ko/vendor/github.com/theupdateframework/go-tuf/LICENSE', 'ko/vendor/github.com/magiconair/properties/README.md', 'ko/vendor/github.com/magiconair/properties/LICENSE.md', 'ko/vendor/github.com/magiconair/properties/CHANGELOG.md', 'ko/vendor/github.com/asaskevich/govalidator/CONTRIBUTING.md', 'ko/vendor/github.com/asaskevich/govalidator/README.md', 'ko/vendor/github.com/asaskevich/govalidator/LICENSE', 'ko/vendor/go.mongodb.org/mongo-driver/LICENSE', 'ko/vendor/go.mongodb.org/mongo-driver/x/bsonx/bsoncore/bson_arraybuilder.go', 'ko/vendor/go.mongodb.org/mongo-driver/x/bsonx/bsoncore/bson_documentbuilder.go', 'ko/vendor/k8s.io/klog/v2/CONTRIBUTING.md', 'ko/vendor/k8s.io/klog/v2/README.md', 'ko/vendor/k8s.io/klog/v2/LICENSE', 'ko/vendor/k8s.io/klog/v2/internal/clock/README.md', 'ko/vendor/k8s.io/utils/LICENSE', 'ko/vendor/k8s.io/utils/internal/third_party/forked/golang/LICENSE', 'ko/vendor/k8s.io/apimachinery/LICENSE', 'ko/vendor/cloud.google.com/go/compute/LICENSE', 'ko/vendor/cloud.google.com/go/compute/metadata/README.md', 'ko/vendor/cloud.google.com/go/compute/metadata/LICENSE', 'ko/docs/README.md', 'ko/docs/install.md', 'ko/docs/features/build-cache.md', 'ko/docs/reference/ko_build.md', 'ko/pkg/commands/build.go', 'ko/pkg/commands/options/build_test.go', 'ko/pkg/commands/options/build.go', 'ko/pkg/build/gobuild_test.go', 'ko/pkg/build/gobuilds.go', 'ko/pkg/build/gobuild.go', 'ko/pkg/build/build.go', 'ko/pkg/build/gobuilds_test.go', 'ko/test/kodata/b', 'ko/test/kodata/a', 'ko/.github/workflows/build.yaml']
+INFO:root:Trimming 3624 files down to 100 for LLM
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+INFO:root:LLM found documentation in the repo: ['ko/CONTRIBUTING.md', 'ko/README.md', 'ko/code-of-conduct.md', 'ko/ROADMAP.md', 'ko/MAINTAINERS.md', 'ko/vendor/google.golang.org/appengine/CONTRIBUTING.md', 'ko/vendor/google.golang.org/appengine/README.md']
+INFO:root:Using assistant prompt:
+
+Generate minimalist and straightforward instructions for compiling and
+installing the source code of the software project ko,
+version 0.15.0. The instructions should be concise and
+solely focused on the build and installation process,
+excluding any steps related to testing, linting, or other unrelated tasks.
+If multiple build methods are available, choose the most direct and
+uncomplicated method and provide a consistent set of steps without
+mixing different approaches. You will respond in JSON form only.
+
+The response should contain the following fields:
+
+summary: A brief description of the components the project uses and how they are built.
+
+description: A single sentence description of the project.
+
+license: The license under which the project is released. Include the license name only.
+
+steps: An ordered list of build commands.
+       Each build step is an object with specific fields depending on its type.
+       There are different step types, each requiring unique fields. If using
+       a place holder value for a field that the user needs to fill in manually,
+       surround the value with <>.
+
+Step type: git-checkout - Clone a git repository and checkout a branch/tag
+Fields:
+'repository' (required) - Repository to clone. Omit the .git suffix
+'tag' (optional) - Branch or tag to checkout. Must specify either a branch or tag.
+'branch' (optional) - Branch to checkout. Do not specify both a branch and tag
+
+Step type: shell - Run a shell command. Use as a last resort when desired functionality cannot be captured by another build step type.
+Fields:
+'command' (required) - Command to run
+
+Step type: go/build - Build and install a project with `go build`
+Fields:
+'packages' (required) - Space-separated packages to compile. Files can also be specified. This value is passed to `go build`. Paths are relative to modroot.
+'output' (required) - Name of the output binary. The final install location will be in prefix/install_dir/output
+'modroot' (optional) - Top directory of the go module, this is where go.mod lives. Before building the go pipeline will cd into this directory.
+'prefix' (optional) - Prefix to relocate binaries. Defaults to 'usr'.
+'ldflags' (optional) - List of [pattern=]arg to pass to the go compiler with -ldflags
+'install_dir' (optional) - Directory where binaries will be installed. Defaults to 'bin'.   
+
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/files "HTTP/1.1 200 OK"
+INFO:root:Created file ko/CONTRIBUTING.md
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/files "HTTP/1.1 200 OK"
+INFO:root:Created file ko/README.md
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/files "HTTP/1.1 200 OK"
+INFO:root:Created file ko/code-of-conduct.md
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/files "HTTP/1.1 200 OK"
+INFO:root:Created file ko/ROADMAP.md
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/files "HTTP/1.1 200 OK"
+INFO:root:Created file ko/MAINTAINERS.md
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/files "HTTP/1.1 200 OK"
+INFO:root:Created file ko/vendor/google.golang.org/appengine/CONTRIBUTING.md
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/files "HTTP/1.1 200 OK"
+INFO:root:Created file ko/vendor/google.golang.org/appengine/README.md
+INFO:root:Creating run
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/assistants/asst_6f9uzyHimrjjggaKfSw5DGeG "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/threads "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/threads/thread_mMND35FDfHNtYmgQoh6SUkoF/messages "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/threads/thread_mMND35FDfHNtYmgQoh6SUkoF/runs "HTTP/1.1 200 OK"
+INFO:root:Polling run_NH3URKsoogqGWnSsGloJ2rFa. Status: queued
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_mMND35FDfHNtYmgQoh6SUkoF/runs/run_NH3URKsoogqGWnSsGloJ2rFa "HTTP/1.1 200 OK"
+INFO:root:Polling run_NH3URKsoogqGWnSsGloJ2rFa. Status: in_progress
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_mMND35FDfHNtYmgQoh6SUkoF/runs/run_NH3URKsoogqGWnSsGloJ2rFa "HTTP/1.1 200 OK"
+INFO:root:Polling run_NH3URKsoogqGWnSsGloJ2rFa. Status: in_progress
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_mMND35FDfHNtYmgQoh6SUkoF/runs/run_NH3URKsoogqGWnSsGloJ2rFa "HTTP/1.1 200 OK"
+INFO:root:Polling run_NH3URKsoogqGWnSsGloJ2rFa. Status: in_progress
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_mMND35FDfHNtYmgQoh6SUkoF/runs/run_NH3URKsoogqGWnSsGloJ2rFa "HTTP/1.1 200 OK"
+INFO:root:Polling run_NH3URKsoogqGWnSsGloJ2rFa. Status: in_progress
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_mMND35FDfHNtYmgQoh6SUkoF/runs/run_NH3URKsoogqGWnSsGloJ2rFa "HTTP/1.1 200 OK"
+INFO:root:Polling run_NH3URKsoogqGWnSsGloJ2rFa. Status: in_progress
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_mMND35FDfHNtYmgQoh6SUkoF/runs/run_NH3URKsoogqGWnSsGloJ2rFa "HTTP/1.1 200 OK"
+INFO:root:Polling run_NH3URKsoogqGWnSsGloJ2rFa. Status: in_progress
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_mMND35FDfHNtYmgQoh6SUkoF/runs/run_NH3URKsoogqGWnSsGloJ2rFa "HTTP/1.1 200 OK"
+INFO:root:Polling run_NH3URKsoogqGWnSsGloJ2rFa. Status: in_progress
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_mMND35FDfHNtYmgQoh6SUkoF/runs/run_NH3URKsoogqGWnSsGloJ2rFa "HTTP/1.1 200 OK"
+INFO:root:Polling run_NH3URKsoogqGWnSsGloJ2rFa. Status: in_progress
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_mMND35FDfHNtYmgQoh6SUkoF/runs/run_NH3URKsoogqGWnSsGloJ2rFa "HTTP/1.1 200 OK"
+INFO:root:Run complete
+INFO:httpx:HTTP Request: DELETE https://api.openai.com/v1/files/file-Id0qsY2SuM4shS1zwIeeSCic "HTTP/1.1 200 OK"
+INFO:root:Deleted file-Id0qsY2SuM4shS1zwIeeSCic
+INFO:httpx:HTTP Request: DELETE https://api.openai.com/v1/files/file-uSA0whgKxakVCVWG1A7Xxn22 "HTTP/1.1 200 OK"
+INFO:root:Deleted file-uSA0whgKxakVCVWG1A7Xxn22
+INFO:httpx:HTTP Request: DELETE https://api.openai.com/v1/files/file-KYO8XvDf4gnCEOwMgUNTZhjj "HTTP/1.1 200 OK"
+INFO:root:Deleted file-KYO8XvDf4gnCEOwMgUNTZhjj
+INFO:httpx:HTTP Request: DELETE https://api.openai.com/v1/files/file-lBfYMdmq5QCCv9KDmogVNu8e "HTTP/1.1 200 OK"
+INFO:root:Deleted file-lBfYMdmq5QCCv9KDmogVNu8e
+INFO:httpx:HTTP Request: DELETE https://api.openai.com/v1/files/file-FDc7wcnizcm1SQtwrxnxmqCC "HTTP/1.1 200 OK"
+INFO:root:Deleted file-FDc7wcnizcm1SQtwrxnxmqCC
+INFO:httpx:HTTP Request: DELETE https://api.openai.com/v1/files/file-bWdd6yObumORE3Y9lMko9sai "HTTP/1.1 200 OK"
+INFO:root:Deleted file-bWdd6yObumORE3Y9lMko9sai
+INFO:httpx:HTTP Request: DELETE https://api.openai.com/v1/files/file-Je8ZoZQobQPjQ7d2Q6o9G2LB "HTTP/1.1 200 OK"
+INFO:root:Deleted file-Je8ZoZQobQPjQ7d2Q6o9G2LB
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_mMND35FDfHNtYmgQoh6SUkoF/messages "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_mMND35FDfHNtYmgQoh6SUkoF/messages?after=msg_Pm7vS3bMoNhX40lgIkFBShw7 "HTTP/1.1 200 OK"
+INFO:root:Web search found url https://github.com/defenseunicorns/zarf
+INFO:root:String search yielded branch/tag v0.30.1
+INFO:root:Checked out branch/tag v0.30.1
+INFO:root:str search found documentation in the repo: ['zarf/CONTRIBUTING.md', 'zarf/README.md', 'zarf/LICENSE', 'zarf/src/internal/packager/kustomize/build.go', 'zarf/src/extensions/README.md', 'zarf/src/injector/README.md', 'zarf/src/test/external/README.md', 'zarf/src/test/e2e/README.md', 'zarf/src/test/packages/28-helm-no-wait/README.md', 'zarf/src/test/packages/04-file-folders-templating-sbom/requirements.txt', 'zarf/src/test/packages/04-file-folders-templating-sbom/include-files/requirements.txt', 'zarf/src/test/packages/52-oci-differential/README.md', 'zarf/src/test/packages/08-differential-package/README.md', 'zarf/src/test/upgrade/README.md', 'zarf/src/cmd/tools/helm/dependency_build.go', 'zarf/src/cmd/tools/helm/LICENSE', 'zarf/src/types/extensions/README.md', 'zarf/src/ui/lib/components/build-providence.svelte', 'zarf/docs/2-the-zarf-cli/0-building-your-own-cli.md', 'zarf/docs/2-the-zarf-cli/100-cli-commands/zarf_tools_helm_dependency_build.md', 'zarf/docs/.images/what-is-zarf/build-the-package.png', 'zarf/packages/README.md', 'zarf/packages/gitea/README.md', 'zarf/packages/zarf-registry/README.md', 'zarf/examples/README.md', 'zarf/examples/kiwix/README.md', 'zarf/examples/dos-games/README.md', 'zarf/examples/big-bang/README.md', 'zarf/examples/component-choice/README.md', 'zarf/examples/component-webhooks/README.md', 'zarf/examples/wordpress/README.md', 'zarf/examples/longhorn/README.md', 'zarf/examples/composable-packages/README.md', 'zarf/examples/podinfo-flux/README.md', 'zarf/examples/podinfo-flux/flux-install.yaml', 'zarf/examples/component-actions/README.md', 'zarf/examples/argocd/README.md', 'zarf/examples/helm-charts/README.md', 'zarf/examples/helm-charts/chart/LICENSE', 'zarf/examples/config-file/README.md', 'zarf/examples/manifests/README.md', 'zarf/examples/git-data/README.md', 'zarf/examples/yolo/README.md', 'zarf/examples/variables/README.md', 'zarf/.github/workflows/build-rust-injector.yml', 'zarf/docs-website/README.md', 'zarf/docs-website/static-components/README.md']
+INFO:root:Trimming 889 files down to 100 for LLM
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+INFO:root:LLM found documentation in the repo: ['zarf/CONTRIBUTING.md', 'zarf/README.md', 'zarf/SECURITY.md']
+INFO:root:Using assistant prompt:
+
+Generate minimalist and straightforward instructions for compiling and
+installing the source code of the software project zarf,
+version 0.30.1. The instructions should be concise and
+solely focused on the build and installation process,
+excluding any steps related to testing, linting, or other unrelated tasks.
+If multiple build methods are available, choose the most direct and
+uncomplicated method and provide a consistent set of steps without
+mixing different approaches. You will respond in JSON form only.
+
+The response should contain the following fields:
+
+summary: A brief description of the components the project uses and how they are built.
+
+description: A single sentence description of the project.
+
+license: The license under which the project is released. Include the license name only.
+
+steps: An ordered list of build commands.
+       Each build step is an object with specific fields depending on its type.
+       There are different step types, each requiring unique fields. If using
+       a place holder value for a field that the user needs to fill in manually,
+       surround the value with <>.
+
+Step type: git-checkout - Clone a git repository and checkout a branch/tag
+Fields:
+'repository' (required) - Repository to clone. Omit the .git suffix
+'tag' (optional) - Branch or tag to checkout. Must specify either a branch or tag.
+'branch' (optional) - Branch to checkout. Do not specify both a branch and tag
+
+Step type: shell - Run a shell command. Use as a last resort when desired functionality cannot be captured by another build step type.
+Fields:
+'command' (required) - Command to run
+
+Step type: go/build - Build and install a project with `go build`
+Fields:
+'packages' (required) - Space-separated packages to compile. Files can also be specified. This value is passed to `go build`. Paths are relative to modroot.
+'output' (required) - Name of the output binary. The final install location will be in prefix/install_dir/output
+'modroot' (optional) - Top directory of the go module, this is where go.mod lives. Before building the go pipeline will cd into this directory.
+'prefix' (optional) - Prefix to relocate binaries. Defaults to 'usr'.
+'ldflags' (optional) - List of [pattern=]arg to pass to the go compiler with -ldflags
+'install_dir' (optional) - Directory where binaries will be installed. Defaults to 'bin'.   
+
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/files "HTTP/1.1 200 OK"
+INFO:root:Created file zarf/CONTRIBUTING.md
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/files "HTTP/1.1 200 OK"
+INFO:root:Created file zarf/README.md
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/files "HTTP/1.1 200 OK"
+INFO:root:Created file zarf/SECURITY.md
+INFO:root:Creating run
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/assistants/asst_6f9uzyHimrjjggaKfSw5DGeG "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/threads "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/threads/thread_h9ic6sDv6s7NIxEw7PxUQ4zV/messages "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/threads/thread_h9ic6sDv6s7NIxEw7PxUQ4zV/runs "HTTP/1.1 200 OK"
+INFO:root:Polling run_oPj2Qf78GzIyuT66neI65tyr. Status: queued
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_h9ic6sDv6s7NIxEw7PxUQ4zV/runs/run_oPj2Qf78GzIyuT66neI65tyr "HTTP/1.1 200 OK"
+INFO:root:Polling run_oPj2Qf78GzIyuT66neI65tyr. Status: in_progress
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_h9ic6sDv6s7NIxEw7PxUQ4zV/runs/run_oPj2Qf78GzIyuT66neI65tyr "HTTP/1.1 200 OK"
+INFO:root:Polling run_oPj2Qf78GzIyuT66neI65tyr. Status: in_progress
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_h9ic6sDv6s7NIxEw7PxUQ4zV/runs/run_oPj2Qf78GzIyuT66neI65tyr "HTTP/1.1 200 OK"
+INFO:root:Polling run_oPj2Qf78GzIyuT66neI65tyr. Status: in_progress
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_h9ic6sDv6s7NIxEw7PxUQ4zV/runs/run_oPj2Qf78GzIyuT66neI65tyr "HTTP/1.1 200 OK"
+INFO:root:Polling run_oPj2Qf78GzIyuT66neI65tyr. Status: in_progress
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_h9ic6sDv6s7NIxEw7PxUQ4zV/runs/run_oPj2Qf78GzIyuT66neI65tyr "HTTP/1.1 200 OK"
+INFO:root:Polling run_oPj2Qf78GzIyuT66neI65tyr. Status: in_progress
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_h9ic6sDv6s7NIxEw7PxUQ4zV/runs/run_oPj2Qf78GzIyuT66neI65tyr "HTTP/1.1 200 OK"
+INFO:root:Polling run_oPj2Qf78GzIyuT66neI65tyr. Status: in_progress
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_h9ic6sDv6s7NIxEw7PxUQ4zV/runs/run_oPj2Qf78GzIyuT66neI65tyr "HTTP/1.1 200 OK"
+INFO:root:Polling run_oPj2Qf78GzIyuT66neI65tyr. Status: in_progress
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_h9ic6sDv6s7NIxEw7PxUQ4zV/runs/run_oPj2Qf78GzIyuT66neI65tyr "HTTP/1.1 200 OK"
+INFO:root:Polling run_oPj2Qf78GzIyuT66neI65tyr. Status: in_progress
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_h9ic6sDv6s7NIxEw7PxUQ4zV/runs/run_oPj2Qf78GzIyuT66neI65tyr "HTTP/1.1 200 OK"
+INFO:root:Polling run_oPj2Qf78GzIyuT66neI65tyr. Status: in_progress
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_h9ic6sDv6s7NIxEw7PxUQ4zV/runs/run_oPj2Qf78GzIyuT66neI65tyr "HTTP/1.1 200 OK"
+INFO:root:Polling run_oPj2Qf78GzIyuT66neI65tyr. Status: in_progress
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_h9ic6sDv6s7NIxEw7PxUQ4zV/runs/run_oPj2Qf78GzIyuT66neI65tyr "HTTP/1.1 200 OK"
+INFO:root:Polling run_oPj2Qf78GzIyuT66neI65tyr. Status: in_progress
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_h9ic6sDv6s7NIxEw7PxUQ4zV/runs/run_oPj2Qf78GzIyuT66neI65tyr "HTTP/1.1 200 OK"
+INFO:root:Polling run_oPj2Qf78GzIyuT66neI65tyr. Status: in_progress
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_h9ic6sDv6s7NIxEw7PxUQ4zV/runs/run_oPj2Qf78GzIyuT66neI65tyr "HTTP/1.1 200 OK"
+INFO:root:Polling run_oPj2Qf78GzIyuT66neI65tyr. Status: in_progress
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_h9ic6sDv6s7NIxEw7PxUQ4zV/runs/run_oPj2Qf78GzIyuT66neI65tyr "HTTP/1.1 200 OK"
+INFO:root:Run complete
+INFO:httpx:HTTP Request: DELETE https://api.openai.com/v1/files/file-xdXmUZlmyYKIakwAqeCVMm9r "HTTP/1.1 200 OK"
+INFO:root:Deleted file-xdXmUZlmyYKIakwAqeCVMm9r
+INFO:httpx:HTTP Request: DELETE https://api.openai.com/v1/files/file-nEqspXqwOx7I6EhNXRgk3RA5 "HTTP/1.1 200 OK"
+INFO:root:Deleted file-nEqspXqwOx7I6EhNXRgk3RA5
+INFO:httpx:HTTP Request: DELETE https://api.openai.com/v1/files/file-xbqLMBAWP18qTBGntMtIukTo "HTTP/1.1 200 OK"
+INFO:root:Deleted file-xbqLMBAWP18qTBGntMtIukTo
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_h9ic6sDv6s7NIxEw7PxUQ4zV/messages "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_h9ic6sDv6s7NIxEw7PxUQ4zV/messages?after=msg_LshmfoH1cqdk40UYjgNpTatq "HTTP/1.1 200 OK"
+INFO:root:Web search found url https://github.com/k3s-io/k3s
+ERROR:root:Cloning https://github.com/k3s-io/k3s took too long
+INFO:root:Web search found url https://github.com/k3s-io
+ERROR:root:The provided git url https://github.com/k3s-io is not properly formatted
+INFO:root:Web search found url https://github.com/k3s-io/k3s/releases
+ERROR:root:The provided git url https://github.com/k3s-io/k3s/releases is not properly formatted
+INFO:root:Web search found url https://github.com/k3s-io/docs
+ERROR:root:String search failed to find branch/tag
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+ERROR:root:LLM failed to suggest a branch/tag
+INFO:root:User provided branch/tag 
+ERROR:root:The provided branch/tag  is not properly formatted
+ERROR:root:Failed to checkout user provided branch/tag 
+INFO:root:User provided branch/tag 
+ERROR:root:The provided branch/tag  is not properly formatted
+ERROR:root:Failed to checkout user provided branch/tag 
+INFO:root:User provided branch/tag 
+ERROR:root:The provided branch/tag  is not properly formatted
+ERROR:root:Failed to checkout user provided branch/tag 
+INFO:root:User provided branch/tag 
+ERROR:root:The provided branch/tag  is not properly formatted
+ERROR:root:Failed to checkout user provided branch/tag 
+INFO:root:User provided branch/tag 
+ERROR:root:The provided branch/tag  is not properly formatted
+ERROR:root:Failed to checkout user provided branch/tag 

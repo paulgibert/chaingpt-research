@@ -1,0 +1,6 @@
+shell:
+  description: Run a shell command. Use as a last resort when desired functionality cannot be captured by another build step type.
+  fields:
+    command:
+      description: Command to run
+      required: true

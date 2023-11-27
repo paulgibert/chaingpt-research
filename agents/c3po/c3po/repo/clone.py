@@ -44,6 +44,6 @@ def clone_repo(url: str) -> GitRepo:
                                 check=False) #TODO: shell=True is dangerous
         if result.returncode == FATAL_ERRNO:
             raise GitResourceNotFoundError(f"Failed to clone a repository at {url}")
-        return GitRepo(relpath)
+        return GitRepo(url, relpath)
     except subprocess.TimeoutExpired as e:
         raise GitOpTimeoutError(f"Cloning {url} took too long") from e

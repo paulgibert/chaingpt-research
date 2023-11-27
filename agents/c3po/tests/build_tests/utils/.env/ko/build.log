@@ -1,0 +1,508 @@
+ℹ️  x86_64    | unable to detect git commit for build configuration: repository does not exist
+ℹ️  x86_64    | melange is building:
+ℹ️  x86_64    |   configuration file: ko.yaml
+ℹ️  x86_64    |   workspace dir: /tmp/melange-workspace-26731806
+ℹ️  x86_64    | evaluating pipelines for package requirements
+ℹ️  x86_64    |   adding package "git" for pipeline "Check out sources from git"
+ℹ️  x86_64    |   adding package "go" for pipeline "Run a build using the go compiler"
+ℹ️  x86_64    |   adding package "busybox" for pipeline "Run a build using the go compiler"
+ℹ️  x86_64    |   adding package "ca-certificates-bundle" for pipeline "Run a build using the go compiler"
+ℹ️  x86_64    | building workspace in '/tmp/melange-guest-424555395' with apko
+ℹ️  x86_64    | doing pre-flight checks
+ℹ️  x86_64    | initializing apk database
+ℹ️  x86_64    | finished initializing apk database
+ℹ️  x86_64    | setting apk world
+ℹ️  x86_64    | setting apk repositories
+ℹ️  x86_64    | initializing apk keyring
+❕ x86_64    | installing key keys/melange.rsa.pub
+❕ x86_64    | installing key https://packages.wolfi.dev/os/wolfi-signing.rsa.pub
+2023/11/24 18:45:52 [DEBUG] HEAD https://packages.wolfi.dev/os/wolfi-signing.rsa.pub
+2023/11/24 18:45:52 [DEBUG] GET https://packages.wolfi.dev/os/wolfi-signing.rsa.pub
+ℹ️  x86_64    | build context:
+ℹ️  x86_64    | build options:
+{
+	"sourceDateEpoch": "1970-01-01T00:00:00Z",
+	"extraKeyFiles": [
+		"keys/melange.rsa.pub",
+		"https://packages.wolfi.dev/os/wolfi-signing.rsa.pub"
+	],
+	"extraRepos": [
+		"https://packages.wolfi.dev/os",
+		"/work/packages"
+	],
+	"arch": "amd64",
+	"Log": {
+		"Out": {},
+		"Fields": {
+			"arch": "x86_64"
+		},
+		"Level": 5
+	}
+}
+ℹ️  x86_64    | image configuration:
+ℹ️  x86_64    |   contents:
+ℹ️  x86_64    |     repositories: []
+ℹ️  x86_64    |     keyring:      []
+ℹ️  x86_64    |     packages:     [build-base busybox ca-certificates-bundle git go wolfi-base]
+ℹ️  x86_64    |   accounts:
+ℹ️  x86_64    |     runas:  
+ℹ️  x86_64    |     users:
+ℹ️  x86_64    |       - uid=1000(build) gid=1000
+ℹ️  x86_64    |     groups:
+ℹ️  x86_64    |       - gid=1000(build) members=[build]
+ℹ️  x86_64    | synchronizing with desired apk world
+ℹ️  x86_64    | determining desired apk world
+2023/11/24 18:45:52 [DEBUG] HEAD https://packages.wolfi.dev/os/x86_64/APKINDEX.tar.gz
+2023/11/24 18:45:52 [DEBUG] GET https://packages.wolfi.dev/os/x86_64/APKINDEX.tar.gz
+❕ x86_64    | got 1 indexes:
+https://packages.wolfi.dev/os/x86_64/APKINDEX.tar.gz
+❕ x86_64    | got 46 packages to install:
+ca-certificates-bundle (20230506-r0) https://packages.wolfi.dev/os/x86_64/ca-certificates-bundle-20230506-r0.apk
+wolfi-baselayout (20230201-r6) https://packages.wolfi.dev/os/x86_64/wolfi-baselayout-20230201-r6.apk
+ld-linux (2.38-r6) https://packages.wolfi.dev/os/x86_64/ld-linux-2.38-r6.apk
+glibc-locale-posix (2.38-r6) https://packages.wolfi.dev/os/x86_64/glibc-locale-posix-2.38-r6.apk
+glibc (2.38-r6) https://packages.wolfi.dev/os/x86_64/glibc-2.38-r6.apk
+libgcc (13.2.0-r3) https://packages.wolfi.dev/os/x86_64/libgcc-13.2.0-r3.apk
+libstdc++ (13.2.0-r3) https://packages.wolfi.dev/os/x86_64/libstdc++-13.2.0-r3.apk
+binutils (2.41-r0) https://packages.wolfi.dev/os/x86_64/binutils-2.41-r0.apk
+libstdc++-dev (13.2.0-r3) https://packages.wolfi.dev/os/x86_64/libstdc++-dev-13.2.0-r3.apk
+posix-cc-wrappers (1-r0) https://packages.wolfi.dev/os/x86_64/posix-cc-wrappers-1-r0.apk
+libatomic (13.2.0-r3) https://packages.wolfi.dev/os/x86_64/libatomic-13.2.0-r3.apk
+gmp (6.3.0-r0) https://packages.wolfi.dev/os/x86_64/gmp-6.3.0-r0.apk
+libgo (13.2.0-r3) https://packages.wolfi.dev/os/x86_64/libgo-13.2.0-r3.apk
+libgomp (13.2.0-r3) https://packages.wolfi.dev/os/x86_64/libgomp-13.2.0-r3.apk
+isl (0.26-r0) https://packages.wolfi.dev/os/x86_64/isl-0.26-r0.apk
+mpfr (4.2.1-r0) https://packages.wolfi.dev/os/x86_64/mpfr-4.2.1-r0.apk
+mpc (1.3.1-r0) https://packages.wolfi.dev/os/x86_64/mpc-1.3.1-r0.apk
+zlib (1.3-r2) https://packages.wolfi.dev/os/x86_64/zlib-1.3-r2.apk
+gcc (13.2.0-r3) https://packages.wolfi.dev/os/x86_64/gcc-13.2.0-r3.apk
+linux-headers (5.19.17-r2) https://packages.wolfi.dev/os/x86_64/linux-headers-5.19.17-r2.apk
+libcrypt1 (2.38-r5) https://packages.wolfi.dev/os/x86_64/libcrypt1-2.38-r5.apk
+nss-db (2.38-r6) https://packages.wolfi.dev/os/x86_64/nss-db-2.38-r6.apk
+nss-hesiod (2.38-r6) https://packages.wolfi.dev/os/x86_64/nss-hesiod-2.38-r6.apk
+glibc-dev (2.38-r6) https://packages.wolfi.dev/os/x86_64/glibc-dev-2.38-r6.apk
+make (4.4.1-r0) https://packages.wolfi.dev/os/x86_64/make-4.4.1-r0.apk
+pkgconf (2.1.0-r0) https://packages.wolfi.dev/os/x86_64/pkgconf-2.1.0-r0.apk
+build-base (1-r5) https://packages.wolfi.dev/os/x86_64/build-base-1-r5.apk
+busybox (1.36.1-r2) https://packages.wolfi.dev/os/x86_64/busybox-1.36.1-r2.apk
+libbrotlicommon1 (1.1.0-r0) https://packages.wolfi.dev/os/x86_64/libbrotlicommon1-1.1.0-r0.apk
+libbrotlidec1 (1.1.0-r0) https://packages.wolfi.dev/os/x86_64/libbrotlidec1-1.1.0-r0.apk
+openssl-config (3.1.4-r1) https://packages.wolfi.dev/os/x86_64/openssl-config-3.1.4-r1.apk
+libcrypto3 (3.1.4-r1) https://packages.wolfi.dev/os/x86_64/libcrypto3-3.1.4-r1.apk
+libnghttp2-14 (1.58.0-r0) https://packages.wolfi.dev/os/x86_64/libnghttp2-14-1.58.0-r0.apk
+libssl3 (3.1.4-r1) https://packages.wolfi.dev/os/x86_64/libssl3-3.1.4-r1.apk
+libcurl-openssl4 (8.4.0-r1) https://packages.wolfi.dev/os/x86_64/libcurl-openssl4-8.4.0-r1.apk
+libexpat1 (2.5.0-r4) https://packages.wolfi.dev/os/x86_64/libexpat1-2.5.0-r4.apk
+libpcre2-8-0 (10.42-r2) https://packages.wolfi.dev/os/x86_64/libpcre2-8-0-10.42-r2.apk
+git (2.43.0-r0) https://packages.wolfi.dev/os/x86_64/git-2.43.0-r0.apk
+ncurses-terminfo-base (6.4-r2) https://packages.wolfi.dev/os/x86_64/ncurses-terminfo-base-6.4-r2.apk
+ncurses (6.4-r2) https://packages.wolfi.dev/os/x86_64/ncurses-6.4-r2.apk
+bash (5.2.21-r0) https://packages.wolfi.dev/os/x86_64/bash-5.2.21-r0.apk
+binutils-gold (2.41-r0) https://packages.wolfi.dev/os/x86_64/binutils-gold-2.41-r0.apk
+go-1.21 (1.21.4-r0) https://packages.wolfi.dev/os/x86_64/go-1.21-1.21.4-r0.apk
+apk-tools (2.14.0-r0) https://packages.wolfi.dev/os/x86_64/apk-tools-2.14.0-r0.apk
+wolfi-keys (1-r5) https://packages.wolfi.dev/os/x86_64/wolfi-keys-1-r5.apk
+wolfi-base (1-r3) https://packages.wolfi.dev/os/x86_64/wolfi-base-1-r3.apk
+❕ x86_64    | cache miss (libstdc++): stat /root/.cache/dev.chainguard.go-apk/https%3A%2F%2Fpackages.wolfi.dev%2Fos/x86_64/libstdc++-13.2.0-r3/3b9806f877661d12a47601ed489d7ebae36b5676.ctl.tar.gz: no such file or directory
+❕ x86_64    | cache miss (wolfi-baselayout): stat /root/.cache/dev.chainguard.go-apk/https%3A%2F%2Fpackages.wolfi.dev%2Fos/x86_64/wolfi-baselayout-20230201-r6/ed58408648c716ef218bd8fa54f1f194e5fde6c7.ctl.tar.gz: no such file or directory
+❕ x86_64    | cache miss (glibc): stat /root/.cache/dev.chainguard.go-apk/https%3A%2F%2Fpackages.wolfi.dev%2Fos/x86_64/glibc-2.38-r6/7d28000bf5864227e7dac0cfbf6e442fbdf3d61d.ctl.tar.gz: no such file or directory
+❕ x86_64    | cache miss (ca-certificates-bundle): stat /root/.cache/dev.chainguard.go-apk/https%3A%2F%2Fpackages.wolfi.dev%2Fos/x86_64/ca-certificates-bundle-20230506-r0/fd81a8de2512772176feb937b4a47a321b541338.ctl.tar.gz: no such file or directory
+❕ x86_64    | cache miss (binutils): stat /root/.cache/dev.chainguard.go-apk/https%3A%2F%2Fpackages.wolfi.dev%2Fos/x86_64/binutils-2.41-r0/64766d150066774a1cbe8551b14c0a1c68cacd6b.ctl.tar.gz: no such file or directory
+❕ x86_64    | cache miss (glibc-locale-posix): stat /root/.cache/dev.chainguard.go-apk/https%3A%2F%2Fpackages.wolfi.dev%2Fos/x86_64/glibc-locale-posix-2.38-r6/c910813e52628ef513409a414d63fe3074f60fc0.ctl.tar.gz: no such file or directory
+❕ x86_64    | fetching ca-certificates-bundle (20230506-r0)
+❕ x86_64    | fetching binutils (2.41-r0)
+2023/11/24 18:45:53 [DEBUG] GET https://packages.wolfi.dev/os/x86_64/binutils-2.41-r0.apk
+❕ x86_64    | fetching glibc-locale-posix (2.38-r6)
+2023/11/24 18:45:53 [DEBUG] GET https://packages.wolfi.dev/os/x86_64/ca-certificates-bundle-20230506-r0.apk
+2023/11/24 18:45:53 [DEBUG] GET https://packages.wolfi.dev/os/x86_64/glibc-locale-posix-2.38-r6.apk
+❕ x86_64    | cache miss (libgcc): stat /root/.cache/dev.chainguard.go-apk/https%3A%2F%2Fpackages.wolfi.dev%2Fos/x86_64/libgcc-13.2.0-r3/3dbc3c44f54f72fac97814e46a9eaed260f0d31c.ctl.tar.gz: no such file or directory
+❕ x86_64    | cache miss (ld-linux): stat /root/.cache/dev.chainguard.go-apk/https%3A%2F%2Fpackages.wolfi.dev%2Fos/x86_64/ld-linux-2.38-r6/c91b714cab879c41ae7d40f49a5aa27870de6c34.ctl.tar.gz: no such file or directory
+❕ x86_64    | fetching libgcc (13.2.0-r3)
+❕ x86_64    | fetching libstdc++ (13.2.0-r3)
+❕ x86_64    | fetching ld-linux (2.38-r6)
+2023/11/24 18:45:53 [DEBUG] GET https://packages.wolfi.dev/os/x86_64/libgcc-13.2.0-r3.apk
+2023/11/24 18:45:53 [DEBUG] GET https://packages.wolfi.dev/os/x86_64/libstdc++-13.2.0-r3.apk
+❕ x86_64    | fetching wolfi-baselayout (20230201-r6)
+2023/11/24 18:45:53 [DEBUG] GET https://packages.wolfi.dev/os/x86_64/ld-linux-2.38-r6.apk
+2023/11/24 18:45:53 [DEBUG] GET https://packages.wolfi.dev/os/x86_64/wolfi-baselayout-20230201-r6.apk
+❕ x86_64    | fetching glibc (2.38-r6)
+2023/11/24 18:45:53 [DEBUG] GET https://packages.wolfi.dev/os/x86_64/glibc-2.38-r6.apk
+❕ x86_64    | cache miss (libstdc++-dev): stat /root/.cache/dev.chainguard.go-apk/https%3A%2F%2Fpackages.wolfi.dev%2Fos/x86_64/libstdc++-dev-13.2.0-r3/1c27a81ea4118d86dec29635dc8214e4a0e55c2d.ctl.tar.gz: no such file or directory
+❕ x86_64    | fetching libstdc++-dev (13.2.0-r3)
+2023/11/24 18:45:53 [DEBUG] GET https://packages.wolfi.dev/os/x86_64/libstdc++-dev-13.2.0-r3.apk
+❕ x86_64    | cache miss (posix-cc-wrappers): stat /root/.cache/dev.chainguard.go-apk/https%3A%2F%2Fpackages.wolfi.dev%2Fos/x86_64/posix-cc-wrappers-1-r0/954248617132859906db6de3aa9c0ea290dcd999.ctl.tar.gz: no such file or directory
+❕ x86_64    | fetching posix-cc-wrappers (1-r0)
+2023/11/24 18:45:53 [DEBUG] GET https://packages.wolfi.dev/os/x86_64/posix-cc-wrappers-1-r0.apk
+❕ x86_64    | cache miss (libatomic): stat /root/.cache/dev.chainguard.go-apk/https%3A%2F%2Fpackages.wolfi.dev%2Fos/x86_64/libatomic-13.2.0-r3/23c812a744a1de8c4a523a4254c0f8fda335441f.ctl.tar.gz: no such file or directory
+❕ x86_64    | fetching libatomic (13.2.0-r3)
+2023/11/24 18:45:53 [DEBUG] GET https://packages.wolfi.dev/os/x86_64/libatomic-13.2.0-r3.apk
+❕ x86_64    | cache miss (gmp): stat /root/.cache/dev.chainguard.go-apk/https%3A%2F%2Fpackages.wolfi.dev%2Fos/x86_64/gmp-6.3.0-r0/ab568f184e22dc62ce7485a4b48deab965cc22ad.ctl.tar.gz: no such file or directory
+❕ x86_64    | installing ca-certificates-bundle (20230506-r0)
+❕ x86_64    | fetching gmp (6.3.0-r0)
+2023/11/24 18:45:53 [DEBUG] GET https://packages.wolfi.dev/os/x86_64/gmp-6.3.0-r0.apk
+❕ x86_64    | installing wolfi-baselayout (20230201-r6)
+❕ x86_64    | installing ld-linux (2.38-r6)
+❕ x86_64    | cache miss (libgo): stat /root/.cache/dev.chainguard.go-apk/https%3A%2F%2Fpackages.wolfi.dev%2Fos/x86_64/libgo-13.2.0-r3/4b5a5e71f9c8c7ad0b0e2d921f9d5f708f8b7430.ctl.tar.gz: no such file or directory
+❕ x86_64    | installing glibc-locale-posix (2.38-r6)
+❕ x86_64    | fetching libgo (13.2.0-r3)
+2023/11/24 18:45:53 [DEBUG] GET https://packages.wolfi.dev/os/x86_64/libgo-13.2.0-r3.apk
+❕ x86_64    | cache miss (libgomp): stat /root/.cache/dev.chainguard.go-apk/https%3A%2F%2Fpackages.wolfi.dev%2Fos/x86_64/libgomp-13.2.0-r3/ee5e9eb734500b9d2075f3ab418c811ae42fd1a3.ctl.tar.gz: no such file or directory
+❕ x86_64    | fetching libgomp (13.2.0-r3)
+2023/11/24 18:45:54 [DEBUG] GET https://packages.wolfi.dev/os/x86_64/libgomp-13.2.0-r3.apk
+❕ x86_64    | cache miss (isl): stat /root/.cache/dev.chainguard.go-apk/https%3A%2F%2Fpackages.wolfi.dev%2Fos/x86_64/isl-0.26-r0/40d0e397f4faef3f1b926e5130ce6dab450406f3.ctl.tar.gz: no such file or directory
+❕ x86_64    | fetching isl (0.26-r0)
+2023/11/24 18:45:54 [DEBUG] GET https://packages.wolfi.dev/os/x86_64/isl-0.26-r0.apk
+❕ x86_64    | cache miss (mpfr): stat /root/.cache/dev.chainguard.go-apk/https%3A%2F%2Fpackages.wolfi.dev%2Fos/x86_64/mpfr-4.2.1-r0/d43a2fef0fdcf4fd8bbe99015ca39d76ffd3c691.ctl.tar.gz: no such file or directory
+❕ x86_64    | fetching mpfr (4.2.1-r0)
+2023/11/24 18:45:55 [DEBUG] GET https://packages.wolfi.dev/os/x86_64/mpfr-4.2.1-r0.apk
+❕ x86_64    | cache miss (mpc): stat /root/.cache/dev.chainguard.go-apk/https%3A%2F%2Fpackages.wolfi.dev%2Fos/x86_64/mpc-1.3.1-r0/ac0a9fa8ee68dc2339ff02906aa2776c37be2479.ctl.tar.gz: no such file or directory
+❕ x86_64    | fetching mpc (1.3.1-r0)
+2023/11/24 18:45:55 [DEBUG] GET https://packages.wolfi.dev/os/x86_64/mpc-1.3.1-r0.apk
+❕ x86_64    | cache miss (zlib): stat /root/.cache/dev.chainguard.go-apk/https%3A%2F%2Fpackages.wolfi.dev%2Fos/x86_64/zlib-1.3-r2/0c2536358e91b3c3297dd518560150fbe20afaa8.ctl.tar.gz: no such file or directory
+❕ x86_64    | fetching zlib (1.3-r2)
+2023/11/24 18:45:55 [DEBUG] GET https://packages.wolfi.dev/os/x86_64/zlib-1.3-r2.apk
+❕ x86_64    | cache miss (gcc): stat /root/.cache/dev.chainguard.go-apk/https%3A%2F%2Fpackages.wolfi.dev%2Fos/x86_64/gcc-13.2.0-r3/b46ef6169a119178b723f940c6a7c44cb4723c49.ctl.tar.gz: no such file or directory
+❕ x86_64    | installing glibc (2.38-r6)
+❕ x86_64    | fetching gcc (13.2.0-r3)
+2023/11/24 18:45:56 [DEBUG] GET https://packages.wolfi.dev/os/x86_64/gcc-13.2.0-r3.apk
+❕ x86_64    | installing libgcc (13.2.0-r3)
+❕ x86_64    | installing libstdc++ (13.2.0-r3)
+❕ x86_64    | cache miss (linux-headers): stat /root/.cache/dev.chainguard.go-apk/https%3A%2F%2Fpackages.wolfi.dev%2Fos/x86_64/linux-headers-5.19.17-r2/cce876a98657acf14a53aba128548b4de86f2247.ctl.tar.gz: no such file or directory
+❕ x86_64    | fetching linux-headers (5.19.17-r2)
+2023/11/24 18:45:56 [DEBUG] GET https://packages.wolfi.dev/os/x86_64/linux-headers-5.19.17-r2.apk
+❕ x86_64    | cache miss (libcrypt1): stat /root/.cache/dev.chainguard.go-apk/https%3A%2F%2Fpackages.wolfi.dev%2Fos/x86_64/libcrypt1-2.38-r5/15f11e96735399240414664f8134e379bb9073c3.ctl.tar.gz: no such file or directory
+❕ x86_64    | fetching libcrypt1 (2.38-r5)
+2023/11/24 18:45:57 [DEBUG] GET https://packages.wolfi.dev/os/x86_64/libcrypt1-2.38-r5.apk
+❕ x86_64    | cache miss (nss-db): stat /root/.cache/dev.chainguard.go-apk/https%3A%2F%2Fpackages.wolfi.dev%2Fos/x86_64/nss-db-2.38-r6/feb4ab345ca415a72a694e6367a63a7c3f67492d.ctl.tar.gz: no such file or directory
+❕ x86_64    | fetching nss-db (2.38-r6)
+2023/11/24 18:45:57 [DEBUG] GET https://packages.wolfi.dev/os/x86_64/nss-db-2.38-r6.apk
+❕ x86_64    | cache miss (nss-hesiod): stat /root/.cache/dev.chainguard.go-apk/https%3A%2F%2Fpackages.wolfi.dev%2Fos/x86_64/nss-hesiod-2.38-r6/0e5dea9ef81a4eb2b8fd476406014505429308bc.ctl.tar.gz: no such file or directory
+❕ x86_64    | fetching nss-hesiod (2.38-r6)
+2023/11/24 18:45:57 [DEBUG] GET https://packages.wolfi.dev/os/x86_64/nss-hesiod-2.38-r6.apk
+❕ x86_64    | cache miss (glibc-dev): stat /root/.cache/dev.chainguard.go-apk/https%3A%2F%2Fpackages.wolfi.dev%2Fos/x86_64/glibc-dev-2.38-r6/f1a109905f8be08a8dde13c8c32241afa59ac098.ctl.tar.gz: no such file or directory
+❕ x86_64    | fetching glibc-dev (2.38-r6)
+2023/11/24 18:45:57 [DEBUG] GET https://packages.wolfi.dev/os/x86_64/glibc-dev-2.38-r6.apk
+❕ x86_64    | cache miss (make): stat /root/.cache/dev.chainguard.go-apk/https%3A%2F%2Fpackages.wolfi.dev%2Fos/x86_64/make-4.4.1-r0/6184f177c36b5b376eb90d24b2ea4c8a7a9438c2.ctl.tar.gz: no such file or directory
+❕ x86_64    | fetching make (4.4.1-r0)
+2023/11/24 18:45:58 [DEBUG] GET https://packages.wolfi.dev/os/x86_64/make-4.4.1-r0.apk
+❕ x86_64    | cache miss (pkgconf): stat /root/.cache/dev.chainguard.go-apk/https%3A%2F%2Fpackages.wolfi.dev%2Fos/x86_64/pkgconf-2.1.0-r0/b661f589dea081cf93a0015349d65ad6fa6525cf.ctl.tar.gz: no such file or directory
+❕ x86_64    | fetching pkgconf (2.1.0-r0)
+2023/11/24 18:45:58 [DEBUG] GET https://packages.wolfi.dev/os/x86_64/pkgconf-2.1.0-r0.apk
+❕ x86_64    | cache miss (build-base): stat /root/.cache/dev.chainguard.go-apk/https%3A%2F%2Fpackages.wolfi.dev%2Fos/x86_64/build-base-1-r5/8150c3309f443074c6870a2fdcbfd2cc05ea177e.ctl.tar.gz: no such file or directory
+❕ x86_64    | fetching build-base (1-r5)
+2023/11/24 18:45:59 [DEBUG] GET https://packages.wolfi.dev/os/x86_64/build-base-1-r5.apk
+❕ x86_64    | cache miss (busybox): stat /root/.cache/dev.chainguard.go-apk/https%3A%2F%2Fpackages.wolfi.dev%2Fos/x86_64/busybox-1.36.1-r2/7769187bd0f7ffb109f9bf42e9890aaa54ac53f3.ctl.tar.gz: no such file or directory
+❕ x86_64    | fetching busybox (1.36.1-r2)
+2023/11/24 18:45:59 [DEBUG] GET https://packages.wolfi.dev/os/x86_64/busybox-1.36.1-r2.apk
+❕ x86_64    | cache miss (libbrotlicommon1): stat /root/.cache/dev.chainguard.go-apk/https%3A%2F%2Fpackages.wolfi.dev%2Fos/x86_64/libbrotlicommon1-1.1.0-r0/6ce3cc5e89f78bfc3f33b57423fbf344624ab308.ctl.tar.gz: no such file or directory
+❕ x86_64    | fetching libbrotlicommon1 (1.1.0-r0)
+2023/11/24 18:46:00 [DEBUG] GET https://packages.wolfi.dev/os/x86_64/libbrotlicommon1-1.1.0-r0.apk
+❕ x86_64    | cache miss (libbrotlidec1): stat /root/.cache/dev.chainguard.go-apk/https%3A%2F%2Fpackages.wolfi.dev%2Fos/x86_64/libbrotlidec1-1.1.0-r0/35a3cc60ec1656d2369c167ff40a53fd018ef3cd.ctl.tar.gz: no such file or directory
+❕ x86_64    | fetching libbrotlidec1 (1.1.0-r0)
+2023/11/24 18:46:00 [DEBUG] GET https://packages.wolfi.dev/os/x86_64/libbrotlidec1-1.1.0-r0.apk
+❕ x86_64    | cache miss (openssl-config): stat /root/.cache/dev.chainguard.go-apk/https%3A%2F%2Fpackages.wolfi.dev%2Fos/x86_64/openssl-config-3.1.4-r1/659258528f000242b246dbe99f7078956deefbd4.ctl.tar.gz: no such file or directory
+❕ x86_64    | fetching openssl-config (3.1.4-r1)
+2023/11/24 18:46:01 [DEBUG] GET https://packages.wolfi.dev/os/x86_64/openssl-config-3.1.4-r1.apk
+❕ x86_64    | cache miss (libcrypto3): stat /root/.cache/dev.chainguard.go-apk/https%3A%2F%2Fpackages.wolfi.dev%2Fos/x86_64/libcrypto3-3.1.4-r1/70c9ae7f8b0247cf6844ef62a22c807c436dc0b1.ctl.tar.gz: no such file or directory
+❕ x86_64    | fetching libcrypto3 (3.1.4-r1)
+2023/11/24 18:46:01 [DEBUG] GET https://packages.wolfi.dev/os/x86_64/libcrypto3-3.1.4-r1.apk
+❕ x86_64    | cache miss (libnghttp2-14): stat /root/.cache/dev.chainguard.go-apk/https%3A%2F%2Fpackages.wolfi.dev%2Fos/x86_64/libnghttp2-14-1.58.0-r0/5d6214ae0515b1c3d9a027ff8780bea3eb24f43e.ctl.tar.gz: no such file or directory
+❕ x86_64    | fetching libnghttp2-14 (1.58.0-r0)
+2023/11/24 18:46:01 [DEBUG] GET https://packages.wolfi.dev/os/x86_64/libnghttp2-14-1.58.0-r0.apk
+❕ x86_64    | cache miss (libssl3): stat /root/.cache/dev.chainguard.go-apk/https%3A%2F%2Fpackages.wolfi.dev%2Fos/x86_64/libssl3-3.1.4-r1/5346b8c83e58e51d426490054a980d94e66b228b.ctl.tar.gz: no such file or directory
+❕ x86_64    | fetching libssl3 (3.1.4-r1)
+2023/11/24 18:46:01 [DEBUG] GET https://packages.wolfi.dev/os/x86_64/libssl3-3.1.4-r1.apk
+❕ x86_64    | cache miss (libcurl-openssl4): stat /root/.cache/dev.chainguard.go-apk/https%3A%2F%2Fpackages.wolfi.dev%2Fos/x86_64/libcurl-openssl4-8.4.0-r1/44008092953167ae51e803906238b7b631c27b1d.ctl.tar.gz: no such file or directory
+❕ x86_64    | fetching libcurl-openssl4 (8.4.0-r1)
+2023/11/24 18:46:02 [DEBUG] GET https://packages.wolfi.dev/os/x86_64/libcurl-openssl4-8.4.0-r1.apk
+❕ x86_64    | cache miss (libexpat1): stat /root/.cache/dev.chainguard.go-apk/https%3A%2F%2Fpackages.wolfi.dev%2Fos/x86_64/libexpat1-2.5.0-r4/10b3a70cf93a04580a0fb282c2df3109306c805b.ctl.tar.gz: no such file or directory
+❕ x86_64    | fetching libexpat1 (2.5.0-r4)
+2023/11/24 18:46:02 [DEBUG] GET https://packages.wolfi.dev/os/x86_64/libexpat1-2.5.0-r4.apk
+❕ x86_64    | cache miss (libpcre2-8-0): stat /root/.cache/dev.chainguard.go-apk/https%3A%2F%2Fpackages.wolfi.dev%2Fos/x86_64/libpcre2-8-0-10.42-r2/589122e0cdfed588ddd14274b1d6834e0e2fa77c.ctl.tar.gz: no such file or directory
+❕ x86_64    | fetching libpcre2-8-0 (10.42-r2)
+2023/11/24 18:46:03 [DEBUG] GET https://packages.wolfi.dev/os/x86_64/libpcre2-8-0-10.42-r2.apk
+❕ x86_64    | cache miss (git): stat /root/.cache/dev.chainguard.go-apk/https%3A%2F%2Fpackages.wolfi.dev%2Fos/x86_64/git-2.43.0-r0/5852751f5efbea74d047f1df9d6f88e248cc5455.ctl.tar.gz: no such file or directory
+❕ x86_64    | fetching git (2.43.0-r0)
+2023/11/24 18:46:03 [DEBUG] GET https://packages.wolfi.dev/os/x86_64/git-2.43.0-r0.apk
+❕ x86_64    | cache miss (ncurses-terminfo-base): stat /root/.cache/dev.chainguard.go-apk/https%3A%2F%2Fpackages.wolfi.dev%2Fos/x86_64/ncurses-terminfo-base-6.4-r2/3bd5b215fdaf7b3db61c41c70346a9d9ff966c4b.ctl.tar.gz: no such file or directory
+❕ x86_64    | fetching ncurses-terminfo-base (6.4-r2)
+2023/11/24 18:46:03 [DEBUG] GET https://packages.wolfi.dev/os/x86_64/ncurses-terminfo-base-6.4-r2.apk
+❕ x86_64    | cache miss (ncurses): stat /root/.cache/dev.chainguard.go-apk/https%3A%2F%2Fpackages.wolfi.dev%2Fos/x86_64/ncurses-6.4-r2/60c1d8b5a0b78af4dac53a67a991f5cea20e8463.ctl.tar.gz: no such file or directory
+❕ x86_64    | fetching ncurses (6.4-r2)
+2023/11/24 18:46:03 [DEBUG] GET https://packages.wolfi.dev/os/x86_64/ncurses-6.4-r2.apk
+❕ x86_64    | cache miss (bash): stat /root/.cache/dev.chainguard.go-apk/https%3A%2F%2Fpackages.wolfi.dev%2Fos/x86_64/bash-5.2.21-r0/6a576fea3324d661befd7bd4752bc2c0defe02a0.ctl.tar.gz: no such file or directory
+❕ x86_64    | fetching bash (5.2.21-r0)
+2023/11/24 18:46:04 [DEBUG] GET https://packages.wolfi.dev/os/x86_64/bash-5.2.21-r0.apk
+❕ x86_64    | cache miss (binutils-gold): stat /root/.cache/dev.chainguard.go-apk/https%3A%2F%2Fpackages.wolfi.dev%2Fos/x86_64/binutils-gold-2.41-r0/dd26642e15b48829ac5ceda9e62cd083a7b42b8c.ctl.tar.gz: no such file or directory
+❕ x86_64    | fetching binutils-gold (2.41-r0)
+2023/11/24 18:46:04 [DEBUG] GET https://packages.wolfi.dev/os/x86_64/binutils-gold-2.41-r0.apk
+❕ x86_64    | cache miss (go-1.21): stat /root/.cache/dev.chainguard.go-apk/https%3A%2F%2Fpackages.wolfi.dev%2Fos/x86_64/go-1.21-1.21.4-r0/061f6eacd8cfbf636b7cf201c6fd4faa11ccd1ca.ctl.tar.gz: no such file or directory
+❕ x86_64    | fetching go-1.21 (1.21.4-r0)
+2023/11/24 18:46:05 [DEBUG] GET https://packages.wolfi.dev/os/x86_64/go-1.21-1.21.4-r0.apk
+❕ x86_64    | cache miss (apk-tools): stat /root/.cache/dev.chainguard.go-apk/https%3A%2F%2Fpackages.wolfi.dev%2Fos/x86_64/apk-tools-2.14.0-r0/e6510ee09a21c832d407430c4aa560428af6520f.ctl.tar.gz: no such file or directory
+❕ x86_64    | fetching apk-tools (2.14.0-r0)
+2023/11/24 18:46:05 [DEBUG] GET https://packages.wolfi.dev/os/x86_64/apk-tools-2.14.0-r0.apk
+❕ x86_64    | cache miss (wolfi-keys): stat /root/.cache/dev.chainguard.go-apk/https%3A%2F%2Fpackages.wolfi.dev%2Fos/x86_64/wolfi-keys-1-r5/d1fa72f615fdc7ce22cc191395416d3572c47aa9.ctl.tar.gz: no such file or directory
+❕ x86_64    | fetching wolfi-keys (1-r5)
+2023/11/24 18:46:06 [DEBUG] GET https://packages.wolfi.dev/os/x86_64/wolfi-keys-1-r5.apk
+❕ x86_64    | cache miss (wolfi-base): stat /root/.cache/dev.chainguard.go-apk/https%3A%2F%2Fpackages.wolfi.dev%2Fos/x86_64/wolfi-base-1-r3/2ebcd3c6ae4cb9bc2f418df10ae0e75d520625e9.ctl.tar.gz: no such file or directory
+❕ x86_64    | fetching wolfi-base (1-r3)
+❕ x86_64    | installing binutils (2.41-r0)
+2023/11/24 18:46:07 [DEBUG] GET https://packages.wolfi.dev/os/x86_64/wolfi-base-1-r3.apk
+❕ x86_64    | installing libstdc++-dev (13.2.0-r3)
+❕ x86_64    | installing posix-cc-wrappers (1-r0)
+❕ x86_64    | installing libatomic (13.2.0-r3)
+❕ x86_64    | installing gmp (6.3.0-r0)
+❕ x86_64    | installing libgo (13.2.0-r3)
+❕ x86_64    | installing libgomp (13.2.0-r3)
+❕ x86_64    | installing isl (0.26-r0)
+❕ x86_64    | installing mpfr (4.2.1-r0)
+❕ x86_64    | installing mpc (1.3.1-r0)
+❕ x86_64    | installing zlib (1.3-r2)
+❕ x86_64    | installing gcc (13.2.0-r3)
+❕ x86_64    | installing linux-headers (5.19.17-r2)
+❕ x86_64    | installing libcrypt1 (2.38-r5)
+❕ x86_64    | installing nss-db (2.38-r6)
+❕ x86_64    | installing nss-hesiod (2.38-r6)
+❕ x86_64    | installing glibc-dev (2.38-r6)
+❕ x86_64    | installing make (4.4.1-r0)
+❕ x86_64    | installing pkgconf (2.1.0-r0)
+❕ x86_64    | installing build-base (1-r5)
+❕ x86_64    | installing busybox (1.36.1-r2)
+❕ x86_64    | installing libbrotlicommon1 (1.1.0-r0)
+❕ x86_64    | installing libbrotlidec1 (1.1.0-r0)
+❕ x86_64    | installing openssl-config (3.1.4-r1)
+❕ x86_64    | installing libcrypto3 (3.1.4-r1)
+❕ x86_64    | installing libnghttp2-14 (1.58.0-r0)
+❕ x86_64    | installing libssl3 (3.1.4-r1)
+❕ x86_64    | installing libcurl-openssl4 (8.4.0-r1)
+❕ x86_64    | installing libexpat1 (2.5.0-r4)
+❕ x86_64    | installing libpcre2-8-0 (10.42-r2)
+❕ x86_64    | installing git (2.43.0-r0)
+❕ x86_64    | installing ncurses-terminfo-base (6.4-r2)
+❕ x86_64    | installing ncurses (6.4-r2)
+❕ x86_64    | installing bash (5.2.21-r0)
+❕ x86_64    | installing binutils-gold (2.41-r0)
+❕ x86_64    | installing go-1.21 (1.21.4-r0)
+❕ x86_64    | installing apk-tools (2.14.0-r0)
+❕ x86_64    | installing wolfi-keys (1-r5)
+❕ x86_64    | installing wolfi-base (1-r3)
+ℹ️  x86_64    | creating group 1000(build)
+⚠️  x86_64    | did not generate /etc/os-release: already present
+ℹ️  x86_64    | generating supervision tree
+ℹ️  x86_64    | finished building filesystem
+ℹ️  x86_64    | built image layer tarball as /tmp/apko-temp-365442882/apko-x86_64.tar.gz
+ℹ️  x86_64    | using /tmp/apko-temp-365442882/apko-x86_64.tar.gz for image layer
+ℹ️  x86_64    | pushed /tmp/apko-temp-365442882/apko-x86_64.tar.gz as /tmp/melange-guest-2462069020
+ℹ️  x86_64    | successfully built workspace with apko
+ℹ️  x86_64    | populating cache from 
+ℹ️  x86_64    | empty workspace requested
+ℹ️  x86_64    | --cache-dir ./melange-cache/ not a dir; skipping
+ℹ️  x86_64    | ImgRef = /tmp/melange-guest-2462069020
+ℹ️  x86_64    | executing: bwrap --bind /tmp/melange-guest-2462069020 / --bind /tmp/melange-workspace-26731806 /home/build --bind /etc/resolv.conf /etc/resolv.conf --unshare-pid --dev /dev --proc /proc --chdir /home/build --clearenv --new-session --setenv SOURCE_DATE_EPOCH 0 --setenv HOME /home/build --setenv GOPATH /home/build/.cache/go /bin/sh -c [ -x /sbin/ldconfig ] && /sbin/ldconfig /lib || true
+ℹ️  x86_64    | running the main pipeline
+ℹ️  x86_64    | running step git-checkout
+ℹ️  x86_64    |   using git-checkout
+❕ x86_64    |     ${{package.version}}: 0.15.0
+❕ x86_64    |     ${{inputs.depth}}: 1
+❕ x86_64    |     ${{inputs.tag}}: v0.15.0
+❕ x86_64    |     ${{inputs.recurse-submodules}}: false
+❕ x86_64    |     ${{cross.triplet.gnu.musl}}: x86_64-pc-linux-musl
+❕ x86_64    |     ${{targets.package.ko}}: /home/build/melange-out/ko
+❕ x86_64    |     ${{inputs.repository}}: https://github.com/google/ko
+❕ x86_64    |     ${{host.triplet.gnu}}: x86_64-pc-linux-gnu
+❕ x86_64    |     ${{inputs.destination}}: .
+❕ x86_64    |     ${{package.epoch}}: 0
+❕ x86_64    |     ${{package.full-version}}: 0.15.0-r0
+❕ x86_64    |     ${{targets.contextdir}}: /home/build/melange-out/ko
+❕ x86_64    |     ${{cross.triplet.gnu.glibc}}: x86_64-pc-linux-gnu
+❕ x86_64    |     ${{build.arch}}: x86_64
+❕ x86_64    |     ${{package.name}}: ko
+❕ x86_64    |     ${{targets.destdir}}: /home/build/melange-out/ko
+❕ x86_64    |     ${{host.triplet.rust}}: x86_64-unknown-linux-gnu
+ℹ️  x86_64    | running step Check out sources from git
+❕ x86_64    |     ${{package.name}}: ko
+❕ x86_64    |     ${{package.full-version}}: 0.15.0-r0
+❕ x86_64    |     ${{targets.contextdir}}: /home/build/melange-out/ko
+❕ x86_64    |     ${{host.triplet.gnu}}: x86_64-pc-linux-gnu
+❕ x86_64    |     ${{cross.triplet.gnu.musl}}: x86_64-pc-linux-musl
+❕ x86_64    |     ${{build.arch}}: x86_64
+❕ x86_64    |     ${{inputs.repository}}: https://github.com/google/ko
+❕ x86_64    |     ${{package.version}}: 0.15.0
+❕ x86_64    |     ${{targets.destdir}}: /home/build/melange-out/ko
+❕ x86_64    |     ${{targets.package.ko}}: /home/build/melange-out/ko
+❕ x86_64    |     ${{inputs.tag}}: v0.15.0
+❕ x86_64    |     ${{inputs.recurse-submodules}}: false
+❕ x86_64    |     ${{inputs.destination}}: .
+❕ x86_64    |     ${{package.epoch}}: 0
+❕ x86_64    |     ${{host.triplet.rust}}: x86_64-unknown-linux-gnu
+❕ x86_64    |     ${{cross.triplet.gnu.glibc}}: x86_64-pc-linux-gnu
+❕ x86_64    |     ${{inputs.depth}}: 1
+ℹ️  x86_64    | executing: bwrap --bind /tmp/melange-guest-2462069020 / --bind /tmp/melange-workspace-26731806 /home/build --bind /etc/resolv.conf /etc/resolv.conf --unshare-pid --dev /dev --proc /proc --chdir /home/build --clearenv --new-session --setenv SOURCE_DATE_EPOCH 0 --setenv HOME /home/build --setenv GOPATH /home/build/.cache/go /bin/sh -c set -e 
+export PATH='/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+
+[ -d '/home/build' ] || mkdir -p '/home/build'
+cd '/home/build'
+if [ -z "" ] && [ -z "v0.15.0" ]; then
+  echo "Warning (git-checkout): you have not specified a branch or tag."
+fi
+
+git_clone_flags=""
+if [ "false" == "true" ]; then
+  git_clone_flags="--recurse-submodules"
+fi
+
+[ -n '' ] && clone_target='--branch '
+[ -n 'v0.15.0' ] && clone_target='--branch v0.15.0'
+
+workdir=$(mktemp -d)
+mkdir -p '.'
+clone_fullpath=$(realpath '.')
+
+git config --global --add safe.directory $workdir
+git config --global --add safe.directory $clone_fullpath
+git clone $git_clone_flags $clone_target --depth '1' 'https://github.com/google/ko' $workdir
+
+cd $workdir
+tar -c . | (cd $clone_fullpath && tar -x)
+rm -rf $workdir
+cd $clone_fullpath
+git config --global --add safe.directory $clone_fullpath
+
+if [ -z "" ]; then
+  echo "Warning (git-checkout): no expected-commit"
+elif [ -n '' ]; then
+  remote_commit=$(git rev-parse --verify --end-of-options "refs/heads/")
+  if [[ '' != "$remote_commit" ]]; then
+    echo "Error (git-checkout): expect commit , got $remote_commit"
+    exit 1
+  fi
+elif [ -n 'v0.15.0' ]; then
+  # If it's a tag, then it could be a lightweight or annotated tag.
+  # Lightweight tags point directly to the commit and do not have any messages, signatures, or other data.
+  # Annotated tags point to its own git object containing the tag data, with a reference to the underlying commit.
+  # We expect most tags to be using annotated tags.
+
+  # Compare direct tag value
+  remote_commit=$(git rev-parse --verify --end-of-options "refs/tags/v0.15.0")
+  if [[ '' == "$remote_commit" ]]; then
+    exit 0
+  fi
+
+  # Try to unpeel the tag and compare the underlying value.
+  echo "Warning (git-checkout): expected commit , does not match tag ${remote_commit}. Attempting to unpeel tag."
+
+  unpeeled_commit=$(git rev-parse --verify --end-of-options "refs/tags/v0.15.0^{}")
+  if [[ '' != "${unpeeled_commit}" ]]; then
+    echo "Error (git-checkout): expect commit , got ${unpeeled_commit}"
+    exit 1
+  fi
+else
+  echo "Error (git-checkout): no branch or tag provided"
+fi
+
+exit 0
+⚠️  x86_64    | Cloning into '/tmp/tmp.FfW5lc'...
+⚠️  x86_64    | Note: switching to '31035ad2026bfbafaa4f009baefe72463af1b3a7'.
+⚠️  x86_64    | 
+⚠️  x86_64    | You are in 'detached HEAD' state. You can look around, make experimental
+⚠️  x86_64    | changes and commit them, and you can discard any commits you make in this
+⚠️  x86_64    | state without impacting any branches by switching back to a branch.
+⚠️  x86_64    | 
+⚠️  x86_64    | If you want to create a new branch to retain commits you create, you may
+⚠️  x86_64    | do so (now or later) by using -c with the switch command. Example:
+⚠️  x86_64    | 
+⚠️  x86_64    |   git switch -c <new-branch-name>
+⚠️  x86_64    | 
+⚠️  x86_64    | Or undo this operation with:
+⚠️  x86_64    | 
+⚠️  x86_64    |   git switch -
+⚠️  x86_64    | 
+⚠️  x86_64    | Turn off this advice by setting config variable advice.detachedHead to false
+⚠️  x86_64    | 
+ℹ️  x86_64    | Warning (git-checkout): no expected-commit
+ℹ️  x86_64    | running step go/build
+ℹ️  x86_64    |   using go/build
+❕ x86_64    |     ${{package.version}}: 0.15.0
+❕ x86_64    |     ${{host.triplet.gnu}}: x86_64-pc-linux-gnu
+❕ x86_64    |     ${{inputs.ldflags}}: -X github.com/google/ko/pkg/commands.Version=v0.15.0
+❕ x86_64    |     ${{inputs.modroot}}: .
+❕ x86_64    |     ${{inputs.output}}: ko
+❕ x86_64    |     ${{inputs.prefix}}: usr
+❕ x86_64    |     ${{targets.destdir}}: /home/build/melange-out/ko
+❕ x86_64    |     ${{targets.package.ko}}: /home/build/melange-out/ko
+❕ x86_64    |     ${{inputs.packages}}: ./cmd/ko/
+❕ x86_64    |     ${{inputs.go-package}}: go
+❕ x86_64    |     ${{inputs.install-dir}}: bin
+❕ x86_64    |     ${{inputs.vendor}}: false
+❕ x86_64    |     ${{inputs.subpackage}}: false
+❕ x86_64    |     ${{package.name}}: ko
+❕ x86_64    |     ${{package.epoch}}: 0
+❕ x86_64    |     ${{targets.contextdir}}: /home/build/melange-out/ko
+❕ x86_64    |     ${{cross.triplet.gnu.glibc}}: x86_64-pc-linux-gnu
+❕ x86_64    |     ${{cross.triplet.gnu.musl}}: x86_64-pc-linux-musl
+❕ x86_64    |     ${{inputs.install_dir}}: bin
+❕ x86_64    |     ${{package.full-version}}: 0.15.0-r0
+❕ x86_64    |     ${{host.triplet.rust}}: x86_64-unknown-linux-gnu
+❕ x86_64    |     ${{build.arch}}: x86_64
+ℹ️  x86_64    | running step Run a build using the go compiler
+❕ x86_64    |     ${{inputs.output}}: ko
+❕ x86_64    |     ${{package.version}}: 0.15.0
+❕ x86_64    |     ${{inputs.prefix}}: usr
+❕ x86_64    |     ${{inputs.install_dir}}: bin
+❕ x86_64    |     ${{inputs.vendor}}: false
+❕ x86_64    |     ${{inputs.ldflags}}: -X github.com/google/ko/pkg/commands.Version=v0.15.0
+❕ x86_64    |     ${{inputs.packages}}: ./cmd/ko/
+❕ x86_64    |     ${{host.triplet.gnu}}: x86_64-pc-linux-gnu
+❕ x86_64    |     ${{host.triplet.rust}}: x86_64-unknown-linux-gnu
+❕ x86_64    |     ${{cross.triplet.gnu.glibc}}: x86_64-pc-linux-gnu
+❕ x86_64    |     ${{cross.triplet.gnu.musl}}: x86_64-pc-linux-musl
+❕ x86_64    |     ${{targets.package.ko}}: /home/build/melange-out/ko
+❕ x86_64    |     ${{inputs.subpackage}}: false
+❕ x86_64    |     ${{package.full-version}}: 0.15.0-r0
+❕ x86_64    |     ${{targets.destdir}}: /home/build/melange-out/ko
+❕ x86_64    |     ${{targets.contextdir}}: /home/build/melange-out/ko
+❕ x86_64    |     ${{inputs.modroot}}: .
+❕ x86_64    |     ${{inputs.go-package}}: go
+❕ x86_64    |     ${{inputs.install-dir}}: bin
+❕ x86_64    |     ${{package.name}}: ko
+❕ x86_64    |     ${{package.epoch}}: 0
+❕ x86_64    |     ${{build.arch}}: x86_64
+ℹ️  x86_64    | executing: bwrap --bind /tmp/melange-guest-2462069020 / --bind /tmp/melange-workspace-26731806 /home/build --bind /etc/resolv.conf /etc/resolv.conf --unshare-pid --dev /dev --proc /proc --chdir /home/build --clearenv --new-session --setenv SOURCE_DATE_EPOCH 0 --setenv HOME /home/build --setenv GOPATH /home/build/.cache/go /bin/sh -c set -e 
+export PATH='/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+
+[ -d '/home/build' ] || mkdir -p '/home/build'
+cd '/home/build'
+TAGS=""
+LDFLAGS=""
+
+if [ ! "" == "" ]; then
+  TAGS=""
+fi
+
+if [ ! "-X github.com/google/ko/pkg/commands.Version=v0.15.0" == "" ]; then
+  LDFLAGS="-X github.com/google/ko/pkg/commands.Version=v0.15.0"
+fi
+
+BASE_PATH="usr/bin/ko"
+
+cd "."
+
+# Install any specified dependencies
+if [ ! "" == "" ]; then
+  for dep in ; do
+    go get $dep
+  done
+  go mod tidy
+  # If vendor is specified, update the vendor directory
+  "false" && go mod vendor
+fi
+go build -o "/home/build/melange-out/ko"/${BASE_PATH} -tags "${TAGS}" -ldflags "${LDFLAGS}" -trimpath ./cmd/ko/
+
+exit 0
+⚠️  x86_64    | stat /home/build/cmd/ko: directory not found
+2023/11/24 18:47:02 ERROR: failed to build package. the build environment has been preserved:
+ℹ️  x86_64    |   workspace dir: /tmp/melange-workspace-26731806
+ℹ️  x86_64    |   guest dir: /tmp/melange-guest-424555395
+Error: failed to build package: unable to run pipeline: exit status 1
+2023/11/24 18:47:02 error during command execution: failed to build package: unable to run pipeline: exit status 1

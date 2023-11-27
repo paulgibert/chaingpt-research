@@ -1,0 +1,12 @@
+git-checkout:
+  description: Clone a git repository and checkout a branch/tag
+  fields:
+    repository:
+      description: Repository to clone. Omit the .git suffix
+      required: true
+    tag:
+      description: Branch or tag to checkout. Must specify either a branch or tag.
+      required: false
+    branch:
+      description: Branch to checkout. Do not specify both a branch and tag
+      required: false

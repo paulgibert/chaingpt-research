@@ -1,0 +1,2 @@
+class NoResultsFromSearchError(Exception):
+    pass

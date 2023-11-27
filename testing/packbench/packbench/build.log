@@ -1,0 +1,275 @@
+ℹ️  x86_64    | unable to detect git commit for build configuration: repository does not exist
+ℹ️  x86_64    | melange is building:
+ℹ️  x86_64    |   configuration file: grype.yaml
+ℹ️  x86_64    |   workspace dir: /tmp/melange-workspace-3522323595
+ℹ️  x86_64    | evaluating pipelines for package requirements
+ℹ️  x86_64    |   adding package "wget" for pipeline "Fetch and extract external object into workspace"
+ℹ️  x86_64    |   adding package "binutils" for pipeline "Strip binaries"
+ℹ️  x86_64    |   adding package "scanelf" for pipeline "Strip binaries"
+ℹ️  x86_64    | building workspace in '/tmp/melange-guest-605123155' with apko
+ℹ️  x86_64    | doing pre-flight checks
+ℹ️  x86_64    | initializing apk database
+ℹ️  x86_64    | finished initializing apk database
+ℹ️  x86_64    | setting apk world
+ℹ️  x86_64    | initializing apk keyring
+❕ x86_64    | installing key https://packages.wolfi.dev/os/wolfi-signing.rsa.pub
+ℹ️  x86_64    | setting apk repositories
+2023/11/27 13:42:48 [DEBUG] HEAD https://packages.wolfi.dev/os/wolfi-signing.rsa.pub
+ℹ️  x86_64    | build context:
+ℹ️  x86_64    | build options:
+{
+	"sourceDateEpoch": "1970-01-01T00:00:00Z",
+	"extraKeyFiles": [
+		"https://packages.wolfi.dev/os/wolfi-signing.rsa.pub"
+	],
+	"extraRepos": [
+		"https://packages.wolfi.dev/os"
+	],
+	"arch": "amd64",
+	"Log": {
+		"Out": {},
+		"Fields": {
+			"arch": "x86_64"
+		},
+		"Level": 5
+	}
+}
+ℹ️  x86_64    | image configuration:
+ℹ️  x86_64    |   contents:
+ℹ️  x86_64    |     repositories: []
+ℹ️  x86_64    |     keyring:      []
+ℹ️  x86_64    |     packages:     [binutils busybox ca-certificates-bundle scanelf wget]
+ℹ️  x86_64    |   accounts:
+ℹ️  x86_64    |     runas:  
+ℹ️  x86_64    |     users:
+ℹ️  x86_64    |       - uid=1000(build) gid=1000
+ℹ️  x86_64    |     groups:
+ℹ️  x86_64    |       - gid=1000(build) members=[build]
+ℹ️  x86_64    | synchronizing with desired apk world
+ℹ️  x86_64    | determining desired apk world
+2023/11/27 13:42:48 [DEBUG] HEAD https://packages.wolfi.dev/os/x86_64/APKINDEX.tar.gz
+❕ x86_64    | got 1 indexes:
+https://packages.wolfi.dev/os/x86_64/APKINDEX.tar.gz
+❕ x86_64    | got 15 packages to install:
+ca-certificates-bundle (20230506-r0) https://packages.wolfi.dev/os/x86_64/ca-certificates-bundle-20230506-r0.apk
+wolfi-baselayout (20230201-r6) https://packages.wolfi.dev/os/x86_64/wolfi-baselayout-20230201-r6.apk
+ld-linux (2.38-r6) https://packages.wolfi.dev/os/x86_64/ld-linux-2.38-r6.apk
+glibc-locale-posix (2.38-r6) https://packages.wolfi.dev/os/x86_64/glibc-locale-posix-2.38-r6.apk
+glibc (2.38-r6) https://packages.wolfi.dev/os/x86_64/glibc-2.38-r6.apk
+libgcc (13.2.0-r3) https://packages.wolfi.dev/os/x86_64/libgcc-13.2.0-r3.apk
+libstdc++ (13.2.0-r3) https://packages.wolfi.dev/os/x86_64/libstdc++-13.2.0-r3.apk
+binutils (2.41-r0) https://packages.wolfi.dev/os/x86_64/binutils-2.41-r0.apk
+libcrypt1 (2.38-r5) https://packages.wolfi.dev/os/x86_64/libcrypt1-2.38-r5.apk
+busybox (1.36.1-r2) https://packages.wolfi.dev/os/x86_64/busybox-1.36.1-r2.apk
+scanelf (1.3.7-r1) https://packages.wolfi.dev/os/x86_64/scanelf-1.3.7-r1.apk
+openssl-config (3.2.0-r0) https://packages.wolfi.dev/os/x86_64/openssl-config-3.2.0-r0.apk
+libcrypto3 (3.2.0-r0) https://packages.wolfi.dev/os/x86_64/libcrypto3-3.2.0-r0.apk
+libssl3 (3.2.0-r0) https://packages.wolfi.dev/os/x86_64/libssl3-3.2.0-r0.apk
+wget (1.21.4-r0) https://packages.wolfi.dev/os/x86_64/wget-1.21.4-r0.apk
+❕ x86_64    | cache hit (libgcc)
+❕ x86_64    | cache hit (libstdc++)
+❕ x86_64    | cache hit (glibc)
+❕ x86_64    | cache hit (ca-certificates-bundle)
+❕ x86_64    | cache hit (scanelf)
+❕ x86_64    | installing ca-certificates-bundle (20230506-r0)
+❕ x86_64    | cache hit (openssl-config)
+❕ x86_64    | cache hit (busybox)
+❕ x86_64    | cache hit (ld-linux)
+❕ x86_64    | cache hit (glibc-locale-posix)
+❕ x86_64    | cache hit (libcrypt1)
+❕ x86_64    | cache hit (wolfi-baselayout)
+❕ x86_64    | installing wolfi-baselayout (20230201-r6)
+❕ x86_64    | cache hit (libcrypto3)
+❕ x86_64    | cache hit (libssl3)
+❕ x86_64    | cache hit (wget)
+❕ x86_64    | cache hit (binutils)
+❕ x86_64    | installing ld-linux (2.38-r6)
+❕ x86_64    | installing glibc-locale-posix (2.38-r6)
+❕ x86_64    | installing glibc (2.38-r6)
+❕ x86_64    | installing libgcc (13.2.0-r3)
+❕ x86_64    | installing libstdc++ (13.2.0-r3)
+❕ x86_64    | installing binutils (2.41-r0)
+❕ x86_64    | installing libcrypt1 (2.38-r5)
+❕ x86_64    | installing busybox (1.36.1-r2)
+❕ x86_64    | installing scanelf (1.3.7-r1)
+❕ x86_64    | installing openssl-config (3.2.0-r0)
+❕ x86_64    | installing libcrypto3 (3.2.0-r0)
+❕ x86_64    | installing libssl3 (3.2.0-r0)
+❕ x86_64    | installing wget (1.21.4-r0)
+ℹ️  x86_64    | creating group 1000(build)
+ℹ️  x86_64    | did not generate /etc/os-release: already present
+ℹ️  x86_64    | generating supervision tree
+ℹ️  x86_64    | finished building filesystem
+ℹ️  x86_64    | built image layer tarball as /tmp/apko-temp-3100832745/apko-x86_64.tar.gz
+ℹ️  x86_64    | using /tmp/apko-temp-3100832745/apko-x86_64.tar.gz for image layer
+ℹ️  x86_64    | pushed /tmp/apko-temp-3100832745/apko-x86_64.tar.gz as /tmp/melange-guest-1162218073
+ℹ️  x86_64    | successfully built workspace with apko
+ℹ️  x86_64    | populating cache from 
+ℹ️  x86_64    | populating workspace /tmp/melange-workspace-3522323595 from .
+❕ x86_64    |   -> __init__.py
+❕ x86_64    |   -> __pycache__/log_parser.cpython-311.pyc
+❕ x86_64    |   -> __pycache__/melange.cpython-311.pyc
+❕ x86_64    |   -> build.log
+❕ x86_64    |   -> grype.yaml
+❕ x86_64    |   -> log_parser.py
+❕ x86_64    |   -> main.py
+❕ x86_64    |   -> melange.py
+❕ x86_64    |   -> packages/x86_64/APKINDEX.json
+❕ x86_64    |   -> packages/x86_64/APKINDEX.tar.gz
+❕ x86_64    |   -> packages/x86_64/grype-0.72.0-r0.apk
+ℹ️  x86_64    | --cache-dir ./melange-cache/ not a dir; skipping
+ℹ️  x86_64    | ImgRef = /tmp/melange-guest-1162218073
+ℹ️  x86_64    | executing: bwrap --bind /tmp/melange-guest-1162218073 / --bind /tmp/melange-workspace-3522323595 /home/build --bind /etc/resolv.conf /etc/resolv.conf --unshare-pid --dev /dev --proc /proc --chdir /home/build --clearenv --new-session --setenv SOURCE_DATE_EPOCH 0 --setenv HOME /home/build --setenv GOPATH /home/build/.cache/go /bin/sh -c [ -x /sbin/ldconfig ] && /sbin/ldconfig /lib || true
+ℹ️  x86_64    | running the main pipeline
+ℹ️  x86_64    | running step fetch
+ℹ️  x86_64    |   using fetch
+❕ x86_64    |     ${{host.triplet.rust}}: x86_64-unknown-linux-gnu
+❕ x86_64    |     ${{cross.triplet.gnu.glibc}}: x86_64-pc-linux-gnu
+❕ x86_64    |     ${{inputs.delete}}: false
+❕ x86_64    |     ${{inputs.dns-timeout}}: 20
+❕ x86_64    |     ${{targets.contextdir}}: /home/build/melange-out/grype
+❕ x86_64    |     ${{package.epoch}}: 0
+❕ x86_64    |     ${{inputs.strip-components}}: 1
+❕ x86_64    |     ${{package.name}}: grype
+❕ x86_64    |     ${{build.arch}}: x86_64
+❕ x86_64    |     ${{targets.package.grype}}: /home/build/melange-out/grype
+❕ x86_64    |     ${{inputs.extract}}: true
+❕ x86_64    |     ${{inputs.expected-sha512}}: 8335de5cba0b11500df1404afeee311be50c7e55d1a57c85cbebe830c9e8d9d21ff7b35ab6110200e57f464e999576f395814a56485115f8c7ed7b6e9f7dafb9
+❕ x86_64    |     ${{inputs.timeout}}: 5
+❕ x86_64    |     ${{cross.triplet.gnu.musl}}: x86_64-pc-linux-musl
+❕ x86_64    |     ${{package.full-version}}: 0.72.0-r0
+❕ x86_64    |     ${{targets.destdir}}: /home/build/melange-out/grype
+❕ x86_64    |     ${{host.triplet.gnu}}: x86_64-pc-linux-gnu
+❕ x86_64    |     ${{inputs.retry-limit}}: 5
+❕ x86_64    |     ${{inputs.uri}}: https://github.com/anchore/grype/archive/v0.72.0/grype-0.72.0.tar.gz
+❕ x86_64    |     ${{package.version}}: 0.72.0
+ℹ️  x86_64    | running step Fetch and extract external object into workspace
+❕ x86_64    |     ${{package.epoch}}: 0
+❕ x86_64    |     ${{targets.destdir}}: /home/build/melange-out/grype
+❕ x86_64    |     ${{cross.triplet.gnu.musl}}: x86_64-pc-linux-musl
+❕ x86_64    |     ${{targets.package.grype}}: /home/build/melange-out/grype
+❕ x86_64    |     ${{inputs.delete}}: false
+❕ x86_64    |     ${{inputs.timeout}}: 5
+❕ x86_64    |     ${{package.name}}: grype
+❕ x86_64    |     ${{build.arch}}: x86_64
+❕ x86_64    |     ${{inputs.strip-components}}: 1
+❕ x86_64    |     ${{inputs.uri}}: https://github.com/anchore/grype/archive/v0.72.0/grype-0.72.0.tar.gz
+❕ x86_64    |     ${{inputs.dns-timeout}}: 20
+❕ x86_64    |     ${{inputs.retry-limit}}: 5
+❕ x86_64    |     ${{targets.contextdir}}: /home/build/melange-out/grype
+❕ x86_64    |     ${{package.full-version}}: 0.72.0-r0
+❕ x86_64    |     ${{cross.triplet.gnu.glibc}}: x86_64-pc-linux-gnu
+❕ x86_64    |     ${{package.version}}: 0.72.0
+❕ x86_64    |     ${{host.triplet.rust}}: x86_64-unknown-linux-gnu
+❕ x86_64    |     ${{inputs.extract}}: true
+❕ x86_64    |     ${{inputs.expected-sha512}}: 8335de5cba0b11500df1404afeee311be50c7e55d1a57c85cbebe830c9e8d9d21ff7b35ab6110200e57f464e999576f395814a56485115f8c7ed7b6e9f7dafb9
+❕ x86_64    |     ${{host.triplet.gnu}}: x86_64-pc-linux-gnu
+ℹ️  x86_64    | executing: bwrap --bind /tmp/melange-guest-1162218073 / --bind /tmp/melange-workspace-3522323595 /home/build --bind /etc/resolv.conf /etc/resolv.conf --unshare-pid --dev /dev --proc /proc --chdir /home/build --clearenv --new-session --setenv SOURCE_DATE_EPOCH 0 --setenv HOME /home/build --setenv GOPATH /home/build/.cache/go /bin/sh -c set -e 
+export PATH='/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+
+[ -d '/home/build' ] || mkdir -p '/home/build'
+cd '/home/build'
+if [ "" == "" ] && [ "8335de5cba0b11500df1404afeee311be50c7e55d1a57c85cbebe830c9e8d9d21ff7b35ab6110200e57f464e999576f395814a56485115f8c7ed7b6e9f7dafb9" == "" ]; then
+  printf "One of expected-sha256 or expected-sha512 is required"
+  exit 1
+fi
+
+bn=$(basename https://github.com/anchore/grype/archive/v0.72.0/grype-0.72.0.tar.gz)
+
+if [ ! "" == "" ]; then
+  fn="/var/cache/melange/sha256:"
+  if [ -f $fn ]; then
+    printf "fetch: found $fn in cache\n"
+    cp $fn $bn
+  fi
+else
+  fn="/var/cache/melange/sha512:8335de5cba0b11500df1404afeee311be50c7e55d1a57c85cbebe830c9e8d9d21ff7b35ab6110200e57f464e999576f395814a56485115f8c7ed7b6e9f7dafb9"
+  if [ -f $fn ]; then
+    printf "fetch: found $fn in cache\n"
+    cp $fn $bn
+  fi
+fi
+
+if [ ! -f $bn ]; then
+  wget '-T5' '--dns-timeout=20' '--tries=5' --random-wait --retry-connrefused --continue 'https://github.com/anchore/grype/archive/v0.72.0/grype-0.72.0.tar.gz'
+fi
+
+if [ "" != "" ]; then
+  printf "%s  %s\n" '' $bn | sha256sum -c
+else
+  printf "%s  %s\n" '8335de5cba0b11500df1404afeee311be50c7e55d1a57c85cbebe830c9e8d9d21ff7b35ab6110200e57f464e999576f395814a56485115f8c7ed7b6e9f7dafb9' $bn | sha512sum -c
+fi
+
+if [ "true" = "true" ]; then
+  tar -x '--strip-components=1' -f $bn
+fi
+
+if [ "false" = "true" ]; then
+  rm $bn
+fi
+
+exit 0
+⚠️  x86_64    | --2023-11-27 18:42:50--  https://github.com/anchore/grype/archive/v0.72.0/grype-0.72.0.tar.gz
+⚠️  x86_64    | Resolving github.com... 140.82.113.3
+⚠️  x86_64    | Connecting to github.com|140.82.113.3|:443... connected.
+⚠️  x86_64    | HTTP request sent, awaiting response... 302 Found
+⚠️  x86_64    | Location: https://codeload.github.com/anchore/grype/tar.gz/refs/tags/v0.72.0 [following]
+⚠️  x86_64    | --2023-11-27 18:42:50--  https://codeload.github.com/anchore/grype/tar.gz/refs/tags/v0.72.0
+⚠️  x86_64    | Resolving codeload.github.com... 140.82.112.10
+⚠️  x86_64    | Connecting to codeload.github.com|140.82.112.10|:443... connected.
+⚠️  x86_64    | HTTP request sent, awaiting response... 200 OK
+⚠️  x86_64    | Length: 1114440 (1.1M) [application/x-gzip]
+⚠️  x86_64    | Saving to: 'grype-0.72.0.tar.gz'
+⚠️  x86_64    | 
+⚠️  x86_64    |      0K .......... .......... .......... .......... ..........  4% 1.04M 1s
+⚠️  x86_64    |     50K .......... .......... .......... .......... ..........  9% 2.06M 1s
+⚠️  x86_64    |    100K .......... .......... .......... .......... .......... 13% 34.5M 0s
+⚠️  x86_64    |    150K .......... .......... .......... .......... .......... 18% 2.27M 0s
+⚠️  x86_64    |    200K .......... .......... .......... .......... .......... 22% 52.7M 0s
+⚠️  x86_64    |    250K .......... .......... .......... .......... .......... 27% 65.3M 0s
+⚠️  x86_64    |    300K .......... .......... .......... .......... .......... 32% 2.34M 0s
+⚠️  x86_64    |    350K .......... .......... .......... .......... .......... 36% 57.6M 0s
+⚠️  x86_64    |    400K .......... .......... .......... .......... .......... 41% 51.6M 0s
+⚠️  x86_64    |    450K .......... .......... .......... .......... .......... 45% 55.3M 0s
+⚠️  x86_64    |    500K .......... .......... .......... .......... .......... 50% 61.6M 0s
+⚠️  x86_64    |    550K .......... .......... .......... .......... .......... 55% 69.4M 0s
+⚠️  x86_64    |    600K .......... .......... .......... .......... .......... 59% 68.0M 0s
+⚠️  x86_64    |    650K .......... .......... .......... .......... .......... 64% 2.70M 0s
+⚠️  x86_64    |    700K .......... .......... .......... .......... .......... 68% 66.7M 0s
+⚠️  x86_64    |    750K .......... .......... .......... .......... .......... 73%  111M 0s
+⚠️  x86_64    |    800K .......... .......... .......... .......... .......... 78%  112M 0s
+⚠️  x86_64    |    850K .......... .......... .......... .......... .......... 82%  115M 0s
+⚠️  x86_64    |    900K .......... .......... .......... .......... .......... 87%  112M 0s
+⚠️  x86_64    |    950K .......... .......... .......... .......... .......... 91%  135M 0s
+⚠️  x86_64    |   1000K .......... .......... .......... .......... .......... 96%  118M 0s
+⚠️  x86_64    |   1050K .......... .......... .......... ........             100%  145M=0.1s
+⚠️  x86_64    | 
+⚠️  x86_64    | 2023-11-27 18:42:50 (7.46 MB/s) - 'grype-0.72.0.tar.gz' saved [1114440/1114440]
+⚠️  x86_64    | 
+ℹ️  x86_64    | grype-0.72.0.tar.gz: OK
+❕ x86_64    |     ${{package.epoch}}: 0
+❕ x86_64    |     ${{package.full-version}}: 0.72.0-r0
+❕ x86_64    |     ${{cross.triplet.gnu.musl}}: x86_64-pc-linux-musl
+❕ x86_64    |     ${{build.arch}}: x86_64
+❕ x86_64    |     ${{host.triplet.rust}}: x86_64-unknown-linux-gnu
+❕ x86_64    |     ${{cross.triplet.gnu.glibc}}: x86_64-pc-linux-gnu
+❕ x86_64    |     ${{targets.package.grype}}: /home/build/melange-out/grype
+❕ x86_64    |     ${{package.name}}: grype
+❕ x86_64    |     ${{package.version}}: 0.72.0
+❕ x86_64    |     ${{targets.destdir}}: /home/build/melange-out/grype
+❕ x86_64    |     ${{targets.contextdir}}: /home/build/melange-out/grype
+❕ x86_64    |     ${{host.triplet.gnu}}: x86_64-pc-linux-gnu
+ℹ️  x86_64    | executing: bwrap --bind /tmp/melange-guest-1162218073 / --bind /tmp/melange-workspace-3522323595 /home/build --bind /etc/resolv.conf /etc/resolv.conf --unshare-pid --dev /dev --proc /proc --chdir /home/build --clearenv --new-session --setenv SOURCE_DATE_EPOCH 0 --setenv HOME /home/build --setenv GOPATH /home/build/.cache/go /bin/sh -c set -e 
+export PATH='/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+
+[ -d '/home/build' ] || mkdir -p '/home/build'
+cd '/home/build'
+go mod tidy
+
+exit 0
+⚠️  x86_64    | /bin/sh: go: not found
+2023/11/27 13:42:50 ERROR: failed to build package. the build environment has been preserved:
+ℹ️  x86_64    |   workspace dir: /tmp/melange-workspace-3522323595
+ℹ️  x86_64    |   guest dir: /tmp/melange-guest-605123155
+Error: failed to build package: unable to run pipeline: exit status 127
+2023/11/27 13:42:50 error during command execution: failed to build package: unable to run pipeline: exit status 127

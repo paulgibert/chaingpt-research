@@ -1,0 +1,29 @@
+{
+  "Signature": null,
+  "Description": "",
+  "Packages": [
+    {
+      "Name": "grype",
+      "Version": "0.72.0-r0",
+      "Arch": "x86_64",
+      "Description": "Vulnerability scanner for container images, filesystems, and SBOMs",
+      "License": "Apache-2.0",
+      "Origin": "grype",
+      "Maintainer": "",
+      "URL": "",
+      "Checksum": "hXbpRHrr5QqHTypB5AA+VF+lyo8=",
+      "Dependencies": null,
+      "Provides": [
+        "cmd:grype=0.72.0-r0"
+      ],
+      "InstallIf": null,
+      "Size": 19472115,
+      "InstalledSize": 56505284,
+      "ProviderPriority": 0,
+      "BuildTime": "1970-01-01T00:00:00Z",
+      "BuildDate": 0,
+      "RepoCommit": "",
+      "Replaces": ""
+    }
+  ]
+}

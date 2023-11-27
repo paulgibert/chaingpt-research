@@ -1,4 +1,7 @@
 import logging
+from yaspin import yaspin
+from yaspin.spinners import Spinners
+from colorama import Fore
 from c3po.repo import (GitRepo,
                        GitResourceNotFoundError,
                        GitOpTimeoutError,
@@ -6,6 +9,7 @@ from c3po.repo import (GitRepo,
 from c3po.web import repo_url_from_web_search
 from c3po.llm.repo_url import repo_url_from_llm
 from c3po.llm.repo_branch_or_tag import repo_branch_or_tag_from_llm
+from c3po.exceptions import NoResultsFromSearchError
 
 
 def _try_clone(url: str) -> GitRepo:
@@ -44,25 +48,28 @@ def _get_repo(package: str) -> GitRepo:
     Finds and clones the GitHub repository for
     the provided package.
     """
-    for url in repo_url_from_web_search(package):
-        logging.info("Web search found url %s", url)
-        repo = _try_clone(url)
-        if repo is not None:
-            return repo
-
-    try:
-        url = repo_url_from_llm(package).output
-        if url is not None:
-            logging.info("LLM proposed url %s", url)
+    with yaspin(Spinners.line, text=Fore.BLUE + "\tasking Google", color="blue"):
+        for url in repo_url_from_web_search(package):
+            logging.info("Web search found url %s", url)
             repo = _try_clone(url)
             if repo is not None:
                 return repo
-        else:
-            logging.error("LLM failed to provide a url")
-    except ValueError as e:
-        logging.error(str(e))
 
-    return _clone_repo_url_from_user(package)
+    with yaspin(Spinners.line, text=Fore.BLUE + "\tasking GPT-4", color="blue"):
+        try:
+            url = repo_url_from_llm(package).output
+            if url is not None:
+                logging.info("LLM proposed url %s", url)
+                repo = _try_clone(url)
+                if repo is not None:
+                    return repo
+            else:
+                logging.error("LLM failed to provide a url")
+        except ValueError as e:
+            logging.error(str(e))
+
+    return None
+    # return _clone_repo_url_from_user(package)
 
 
 def _try_checkout(branch_or_tag: str, repo: GitRepo) -> bool:
@@ -109,7 +116,8 @@ def _checkout_version(package: str, version: str, repo: GitRepo) -> str:
     """
     Find and checkout the correct branch or tag.
     """
-    bt = _branch_or_tag_from_str_search(version, repo)
+    with yaspin(Spinners.line, text=Fore.BLUE + "\ttrying with string search", color="blue"):
+        bt = _branch_or_tag_from_str_search(version, repo)
     if bt is not None:
         logging.info("String search yielded branch/tag %s", bt)
         if _try_checkout(bt, repo):
@@ -118,9 +126,10 @@ def _checkout_version(package: str, version: str, repo: GitRepo) -> str:
     else:
         logging.error("String search failed to find branch/tag")
     try:
-        bt = repo_branch_or_tag_from_llm(package, version,
-                                        branches=repo.get_branches(),
-                                        tags=repo.get_tags()).output
+        with yaspin(Spinners.line, text=Fore.BLUE + "\tasking GPT-4", color="blue"):
+            bt = repo_branch_or_tag_from_llm(package, version,
+                                            branches=repo.get_branches(),
+                                            tags=repo.get_tags()).output
         if bt is not None:
             logging.info("LLM proposed branch/tag %s", bt)
             if _try_checkout(bt, repo):
@@ -130,7 +139,8 @@ def _checkout_version(package: str, version: str, repo: GitRepo) -> str:
     except ValueError as e:
         logging.info(str(e))
 
-    return _checkout_branch_or_tag_from_user(package, version, repo)
+    return None
+    # return _checkout_branch_or_tag_from_user(package, version, repo)
 
 
 def init_repository(package: str, version: str) -> GitRepo:
@@ -155,6 +165,16 @@ def init_repository(package: str, version: str) -> GitRepo:
     @returns The GitRepo object representing the cloned repository checked-out to
              the correct branch
     """
+    print(Fore.BLUE + "Searching for GitHub repository")
     repo = _get_repo(package)
-    _checkout_version(package, version, repo)
+    if repo is None:
+        print(Fore.RED + f"Failed to find the GitHub repository for {package}")
+        return None
+    print(Fore.GREEN + f"Found {repo.url}")
+    print(Fore.BLUE + f"Searching for {version} branch or tag")
+    branch_or_tag = _checkout_version(package, version, repo)
+    if branch_or_tag is None:
+        print(Fore.RED + f"Failed to identify a branch or tag for {version}")
+        return None
+    print(Fore.GREEN + f"Checked-out {branch_or_tag}")
     return repo
