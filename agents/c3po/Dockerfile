@@ -9,7 +9,7 @@ RUN apk add build-base python-${py_version} py${py_version}-pip git
 
 COPY requirements.txt /work/
 COPY pyproject.toml /work/
-COPY c3po /work/c3po
+COPY . /work/c3po
 
 RUN pip3 install -r requirements.txt
-RUN pip3 install -e .
+RUN pip3 install /work/c3po

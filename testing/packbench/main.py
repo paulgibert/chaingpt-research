@@ -1,14 +1,19 @@
 from melange import melange_build_wolfi
+from apko import apko_build_wolfi_test_image, apko_run_command
 from log_parser import LogLevel, LogParser
 
 
-melange_build_wolfi("grype.yaml",
+err = melange_build_wolfi("grype.yaml",
                     arch="x86_64")
 
-parser = LogParser("build.log")
+if err is not None:
+    print("Build ERROR: " + err)
+    exit()
 
-for error_msg, history in parser.iter_melange_build_errors():
-    print(error_msg)
-    for level, msg in history:
-        print(f"\t{level.name}: {msg}")
-    print()
+image, tag = apko_build_wolfi_test_image("grype", "test", "x86_64")
+
+if image is not None:
+    r = apko_run_command(image, tag + "-amd64", "ls /usr/bin")
+    import pdb
+    pdb.set_trace()
+    print("done")

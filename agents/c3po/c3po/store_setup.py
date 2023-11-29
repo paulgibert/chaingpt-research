@@ -59,7 +59,8 @@ def _common_doc_files_llm(repo: GitRepo) -> List[str]:
 
 def common_doc_files(repo: GitRepo) -> List[str]:
     """
-    Returns common documentation files.
+    Returns common documentation files. Currently truncated
+    to the first 10 results to to restriction of OpenAI's Assistants API.
     """
     ssearch = _common_doc_files_str_search(repo)
     if len(ssearch) > 0:
@@ -72,7 +73,7 @@ def common_doc_files(repo: GitRepo) -> List[str]:
     else:
         logging.info("LLM found no documentation in the repo")
     # return list(set(ssearch) | set(llm))
-    return llm
+    return llm[:10]
 
 
 def _load_and_split_doc_file(file_path: str, chunk_size:int,

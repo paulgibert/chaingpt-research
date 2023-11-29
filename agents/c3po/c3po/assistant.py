@@ -107,6 +107,7 @@ def _create_files(client, doc_file_paths: List[str]) -> List[str]:
                 file = client.files.create(
                     file=f,
                     purpose="assistants")
+            print(Fore.GREEN + f"Uploaded {path}")
             logging.info("Created file %s", path)
             file_ids.append(file.id)
     return file_ids

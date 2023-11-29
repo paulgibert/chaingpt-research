@@ -1,1 +1,3 @@
-[] Merge in Bender TODO
+[] Check uploaded file extentions
+[] Ask llm for git repository given list instead of trying each 1 by 1
+[] Correct colors leaking onto other text from prev print statements

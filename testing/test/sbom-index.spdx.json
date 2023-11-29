@@ -1,0 +1,81 @@
+{
+  "SPDXID": "SPDXRef-DOCUMENT",
+  "name": "sbom-sha256:5fa57b741e2c596cc81b263dfdbff63469c2ee6faf24569355568c7df2fac6c5",
+  "spdxVersion": "SPDX-2.3",
+  "creationInfo": {
+    "created": "2023-11-27T11:10:37Z",
+    "creators": [
+      "Tool: apko (v0.11.2)",
+      "Organization: Chainguard, Inc"
+    ],
+    "licenseListVersion": "3.16"
+  },
+  "dataLicense": "CC0-1.0",
+  "documentNamespace": "https://spdx.org/spdxdocs/apko/",
+  "documentDescribes": [
+    "SPDXRef-Package-sha256-5fa57b741e2c596cc81b263dfdbff63469c2ee6faf24569355568c7df2fac6c5"
+  ],
+  "packages": [
+    {
+      "SPDXID": "SPDXRef-Package-sha256-5fa57b741e2c596cc81b263dfdbff63469c2ee6faf24569355568c7df2fac6c5",
+      "name": "sha256:5fa57b741e2c596cc81b263dfdbff63469c2ee6faf24569355568c7df2fac6c5",
+      "filesAnalyzed": false,
+      "description": "Multi-arch image index",
+      "downloadLocation": "NOASSERTION",
+      "sourceInfo": "Generated at image build time by apko",
+      "primaryPackagePurpose": "CONTAINER",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "5fa57b741e2c596cc81b263dfdbff63469c2ee6faf24569355568c7df2fac6c5"
+        }
+      ],
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:oci/test@sha256%3A5fa57b741e2c596cc81b263dfdbff63469c2ee6faf24569355568c7df2fac6c5?mediaType=application%2Fvnd.oci.image.index.v1%2Bjson",
+          "referenceType": "purl"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-Package-sha256-2aab2e6eb395e69ae3d94d80a1ab62aff38e7afced5178f359f0a236c7d7fb50",
+      "name": "sha256:2aab2e6eb395e69ae3d94d80a1ab62aff38e7afced5178f359f0a236c7d7fb50",
+      "filesAnalyzed": false,
+      "downloadLocation": "NOASSERTION",
+      "primaryPackagePurpose": "CONTAINER",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "2aab2e6eb395e69ae3d94d80a1ab62aff38e7afced5178f359f0a236c7d7fb50"
+        }
+      ],
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:oci/test@sha256%3A2aab2e6eb395e69ae3d94d80a1ab62aff38e7afced5178f359f0a236c7d7fb50?arch=amd64\u0026mediaType=application%2Fvnd.oci.image.manifest.v1%2Bjson\u0026os=linux",
+          "referenceType": "purl"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-Package-",
+      "name": "",
+      "filesAnalyzed": false,
+      "description": "Image configuration source",
+      "primaryPackagePurpose": "SOURCE"
+    }
+  ],
+  "relationships": [
+    {
+      "spdxElementId": "SPDXRef-Package-sha256-5fa57b741e2c596cc81b263dfdbff63469c2ee6faf24569355568c7df2fac6c5",
+      "relationshipType": "VARIANT_OF",
+      "relatedSpdxElement": "SPDXRef-Package-sha256-2aab2e6eb395e69ae3d94d80a1ab62aff38e7afced5178f359f0a236c7d7fb50"
+    },
+    {
+      "spdxElementId": "SPDXRef-Package-sha256-5fa57b741e2c596cc81b263dfdbff63469c2ee6faf24569355568c7df2fac6c5",
+      "relationshipType": "GENERATED_FROM",
+      "relatedSpdxElement": "SPDXRef-Package-"
+    }
+  ]
+}

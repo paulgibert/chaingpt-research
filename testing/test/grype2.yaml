@@ -1,0 +1,20 @@
+package:
+  name: grype2
+  version: 0.72.0
+  description: A vulnerability scanner for container images and filesystems.
+  copyright:
+  - license: Apache License 2.0
+environment:
+  contents:
+    packages:
+    - wolfi-base
+    - build-base
+pipeline:
+- uses: git-checkout
+  with:
+    repository: https://github.com/anchore/grype
+    tag: v0.72.0
+- uses: go/build
+  with:
+    packages: ./cmd/grype
+    output: grype2

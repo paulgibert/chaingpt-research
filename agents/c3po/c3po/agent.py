@@ -3,7 +3,6 @@ import os
 import shutil
 import logging
 import re
-import argparse
 import json
 import yaml
 from yaspin import yaspin
@@ -13,6 +12,36 @@ from c3po.repo_setup import init_repository
 from c3po.store_setup import common_doc_files
 from c3po.assistant import run_assistant
 from c3po.melange import create_melange_yaml
+
+
+def _print_banner():
+    banner = """
+██████╗██╗  ██╗ █████╗ ██╗███╗   ██╗ ██████╗ ██████╗ ████████╗
+██╔════╝██║  ██║██╔══██╗██║████╗  ██║██╔════╝ ██╔══██╗╚══██╔══╝
+██║     ███████║███████║██║██╔██╗ ██║██║  ███╗██████╔╝   ██║   
+██║     ██╔══██║██╔══██║██║██║╚██╗██║██║   ██║██╔═══╝    ██║   
+╚██████╗██║  ██║██║  ██║██║██║ ╚████║╚██████╔╝██║        ██║   
+ ╚═════╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝╚═╝  ╚═══╝ ╚═════╝ ╚═╝        ╚═╝   
+    
+
+                           /~\ 
+                          (O O)                 
+                          _\=/_                         
+          ___            /  _  \                         
+         / ()\          //|/.\|\\                        
+       _|_____|_       ||  \_/  ||                       
+      | | === | |      || |\ /| ||                       
+      |_|  O  |_|       # \_ _/ #                        
+       ||  O  ||          | | |                          
+       ||__*__||          | | |                          
+      |~ \___/ ~|         []|[]                          
+      /=\ /=\ /=\         | | |                          
+______[_]_[_]_[_]________/_]_[_\_____
+
+(github.com/loeschg/ascii-art.git)
+
+"""
+    print(banner)
 
 
 def _init_workspace(workspace):
@@ -45,40 +74,26 @@ def _validate_json_output(data: Dict):
             raise ValueError(msg)
 
 
-def _parse_args():
-    parser = argparse.ArgumentParser()
-    parser.add_argument("package",
-                        help="The name of the package")
-    parser.add_argument("version",
-                        help="The version of the package")
-    parser.add_argument("--repository",
-                        help="Force the agent to use a GitHub repository")
-    parser.add_argument("--workspace",
-                        default=".agent-workspace",
-                        help="The name of the tmp directory used as a workspace")
-    parser.add_argument("--output-yaml",
-                        default="out.yaml",
-                        help="The location to save the generated YAML")
-    parser.add_argument("--output-log",
-                        default="agent.log",
-                        help="The location to save the log file")
-    return parser.parse_args()
-
-
-
-def run_agent():
+def run_agent(package: str, version: str,
+              output_yaml: str,
+              repository: str=None,
+              workspace: str=".agent-workspace",
+              output_log: str="c3po.log"):
     # Parse args
-    args = _parse_args()
+    # args = _parse_args()
+    _print_banner()
 
     # Setup logging
-    logging.basicConfig(filename=args.output_log, encoding='utf-8', level=logging.INFO)
+    logging.basicConfig(filename=output_log, encoding='utf-8', level=logging.INFO)
+
+    print(Fore.BLUE + f"Generating Melange YAML for {package} {version}")
 
     # Create and cd into a workspace to store artifacts such as the cloned repo
-    print(Fore.BLUE + f"Creating workspace {args.workspace}")
-    _init_workspace(args.workspace)
+    print(Fore.BLUE + f"Creating workspace {workspace}")
+    _init_workspace(workspace)
 
     # Search for a clone the repository into the local workspace
-    repo = init_repository(args.package, args.version)
+    repo = init_repository(package, version)
     if repo is None:
         return
 
@@ -87,7 +102,7 @@ def run_agent():
         doc_file_paths = common_doc_files(repo)
 
     # Run OpenAI assistant to generate YAML from documentation
-    output = run_assistant(args.package, args.version, repo, doc_file_paths)
+    output = run_assistant(package, version, repo, doc_file_paths)
 
     # Parse and validate JSON from the assistant output
     print(Fore.BLUE + "Parsing assistant response")
@@ -105,7 +120,7 @@ def run_agent():
     print(Fore.GREEN + "Success :)")
 
     # Format the JSON assistant output as a melange YAML
-    yaml_data = create_melange_yaml(args.package, args.version,
+    yaml_data = create_melange_yaml(package, version,
                                     description=data["description"],
                                     license=data["license"],
                                     build_steps=data["steps"])
@@ -113,14 +128,10 @@ def run_agent():
     # Cleanup the workspace first to restore the original working directory of the program
     # before saving the generated YAML file
     print(Fore.BLUE + "Removing workspace")
-    _cleanup_workspace(args.workspace)
+    _cleanup_workspace(workspace)
 
     # Save the YAML
-    with open(args.output_yaml, "w", encoding="utf-8") as f:
+    with open(output_yaml, "w", encoding="utf-8") as f:
         yaml.safe_dump(yaml_data, f, sort_keys=False, indent=2)
 
-    print(Fore.GREEN + f"YAML saved to {args.output_yaml}")
-
-
-if __name__ == "__main__":
-    run_agent()
+    print(Fore.GREEN + f"YAML saved to {output_yaml}")

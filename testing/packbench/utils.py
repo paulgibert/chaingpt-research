@@ -1,7 +1,7 @@
 from typing import List
 
 
-def arg_to_strings(arg: str | List[str]=None) -> str:
+def arg_to_strings(arg_name: str, vals: str | List[str]) -> str:
     """
     Parses a `str` or `List[str]` into a strings argument.
     For example:
@@ -9,16 +9,13 @@ def arg_to_strings(arg: str | List[str]=None) -> str:
     arg="arg1" => "arg1"
     arg=["arg1", "arg2"] => "arg1 arg2"
     """
-    if arg is None:
-        return None
+    if isinstance(vals, str):
+        return f"{arg_name} {vals}"
 
-    if isinstance(arg, str):
-        return arg
+    if isinstance(vals, list):
+        return ' '.join([f"{arg_name} {v}" for v in vals])
 
-    if isinstance(arg, list):
-        return " ".join(arg)
-
-    return arg_to_strings(str(arg))
+    return arg_to_strings(arg_name, str(vals))
 
 
 def append_arg(val: str, arg: str | List[str]=None) -> str | List[str]:

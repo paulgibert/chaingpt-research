@@ -1,0 +1,32 @@
+{
+  "Signature": null,
+  "Description": "",
+  "Packages": [
+    {
+      "Name": "grype2",
+      "Version": "0.72.0-r0",
+      "Arch": "x86_64",
+      "Description": "A vulnerability scanner for container images and filesystems.",
+      "License": "Apache License 2.0",
+      "Origin": "grype2",
+      "Maintainer": "",
+      "URL": "",
+      "Checksum": "/3T9nGcRXq+qJbH9oAMzsWmDf/o=",
+      "Dependencies": [
+        "so:ld-linux-x86-64.so.2",
+        "so:libc.so.6",
+        "so:libresolv.so.2"
+      ],
+      "Provides": [
+        "cmd:grype2=0.72.0-r0"
+      ],
+      "InstallIf": null,
+      "Size": 44040006,
+      "InstalledSize": 95894492,
+      "ProviderPriority": 0,
+      "BuildTime": "1970-01-01T00:00:00Z",
+      "RepoCommit": "",
+      "Replaces": ""
+    }
+  ]
+}
