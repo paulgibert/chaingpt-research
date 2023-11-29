@@ -25,10 +25,9 @@ def _create_image(archive: str):
 
 def _run_command_in_image(image: str, command: str):
     command_args = command.split(" ")
-    r = docker("run", "--rm", "-it",
-               "-w", "/work",
+    output = docker("run", "--rm", "-it",
                image, *command_args, _tty_in=True)
-    return r
+    return output.strip("^@\r\n")
 
 
 def _rm_image(image: str):
@@ -42,6 +41,6 @@ def test_package_runs(package: str, test_command: str, expected_output: str):
     archive = apko_build_wolfi_test_image(package, workspace_dir, keys_dir, "x86_64")
     image = f"apko-{package}:test-amd64"
     _create_image(archive)
-    r = _run_command_in_image(image, test_command)
+    output = _run_command_in_image(image, test_command.strip("\n"))
     _rm_image(image)
-    assert r.stdout == expected_output
+    assert output == expected_output

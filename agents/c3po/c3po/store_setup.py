@@ -22,6 +22,33 @@ COMMON_DOC_FILES = [
     "CHANGELOG"
 ]
 
+SUPPORTED_EXT = [
+    ".c",
+    ".cpp",	
+    ".csv",	
+    ".docx",	
+    ".html",
+    ".java",	
+    ".json",	
+    ".md",
+    ".pdf",	
+    ".php",	
+    ".pptx",		
+    ".py",
+    ".rb",
+    ".tex",	
+    ".txt",	
+    ".css",		
+    ".jpeg",	
+    ".jpg",	
+    ".js",
+    ".gif",	
+    ".png",		
+    ".tar",	
+    ".ts",
+    ".xlsx",		
+    ".xml",
+    ".zip"]
 
 def _compare_filenames(name1: str, name2: str) -> bool:
     """
@@ -72,8 +99,13 @@ def common_doc_files(repo: GitRepo) -> List[str]:
         logging.info("LLM found documentation in the repo: %s", llm)
     else:
         logging.info("LLM found no documentation in the repo")
-    # return list(set(ssearch) | set(llm))
-    return llm[:10]
+    out = []
+    for doc in llm:
+        if len(out) >= 10:
+            break
+        if doc.split(".")[-1] in SUPPORTED_EXT:
+            out.append(doc)
+    return out
 
 
 def _load_and_split_doc_file(file_path: str, chunk_size:int,
