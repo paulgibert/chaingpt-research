@@ -1,3 +1,14 @@
 [x] Check uploaded file extentions
-[] Ask llm for git repository given list instead of trying each 1 by 1
+[] Report build summary with sources
+[] Implement build dependencies
+[] Implement runtime dependencies
+[x] Ask llm for git repository given list instead of trying each 1 by 1
 [] Correct colors leaking onto other text from prev print statements
+[x] Specify and assert formatting for ldflags. make sure they are no a list
+[...] Clarify that go build also installs
+[x] Clarify there is no need for sudo
+[x] Packages sometimes is wrong. Clarify purpose
+[x] Clarify role of modroot
+[] Consider restricting go build options and just use defaults
+[x] Make it very clear when using placeholders << >>
+[] Consider always using -s (disable symbol table) -w (disable source debugging) in ldflags

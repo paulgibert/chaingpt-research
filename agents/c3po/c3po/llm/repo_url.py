@@ -1,3 +1,4 @@
+from typing import List
 from operator import itemgetter
 import re
 from langchain.prompts import PromptTemplate
@@ -12,9 +13,15 @@ TEMPERATURE = 0
 MAX_PKG_LEN = 32
 PROMPT_TEXT = """
 What is the GitHub repository url for
-the {package} software project? Only respond
-with the url. If you do not know the answer
-reply with '%s' only.
+the {package} software project? Provided below are
+some options found with a web search that you may
+consider. Only respond with the url. If you do not
+know the answer and the provided urls do not contain
+the correct answer reply with '%s' only.
+
+<urls>
+{web_urls}
+</urls>
 """ % IDK_TOKEN
 
 
@@ -29,14 +36,16 @@ def _check_package(package: str):
         raise ValueError(f"The package name {package} is not properly formatted")
 
 
-def repo_url_from_llm(package:str) -> LLMResponse:
+def repo_url_from_llm(package:str, web_urls:List[str]) -> LLMResponse:
     """
-    Asks an LLM what the GitHub repo url is given a package name.
+    Asks an LLM what the GitHub repo url is given a package name
+    and urls found via a web search.
     A correct answer or any answer at all is not guaranteed.
 
     Uses `gpt-4` with `temperature=0`
 
     @param package: The package to ask about
+    @param web_urls: A `List` of potential urls found with a web search
     @returns an `LLMResponse` with the repository url. If no
              url is suggested, `LLMResponse.output`
              is set to `None`.
@@ -48,10 +57,15 @@ def repo_url_from_llm(package:str) -> LLMResponse:
     llm = ChatOpenAI(model=MODEL,
                      temperature=TEMPERATURE)
     chain = (
-        {"package": itemgetter("package")}
+        {"package": itemgetter("package"),
+         "web_urls": itemgetter("web_urls")}
         | prompt
         | llm
         | StrOutputParser()
     )
 
-    return invoke_chain(chain, {"package": package})
+    inputs = {
+        "package": package,
+        "web_urls": web_urls
+    }
+    return invoke_chain(chain, inputs)

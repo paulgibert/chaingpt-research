@@ -9,6 +9,7 @@ from langchain.vectorstores import Chroma
 from langchain.embeddings.openai import OpenAIEmbeddings
 from c3po.repo import GitRepo
 from c3po.llm.repo_doc_files import repo_doc_files_from_llm
+from c3po.llm.makefile_summary import makefile_summary_from_llm
 
 
 COMMON_DOC_FILES = [
@@ -84,6 +85,16 @@ def _common_doc_files_llm(repo: GitRepo) -> List[str]:
     return repo_doc_files_from_llm(files)
 
 
+def _create_makefile_summary(doc: str) -> str:
+    response = makefile_summary_from_llm(doc)
+    if response.output is None:
+        logging.info("Failed to summarize %s", doc)
+        return None
+    with open("Makefile_summary.txt", "w", encoding="utf-8") as f:
+        f.write(response.output)
+        logging.info("Summarized %s: %s", doc, response.output)
+    return "Makefile_summary.txt"
+
 def common_doc_files(repo: GitRepo) -> List[str]:
     """
     Returns common documentation files. Currently truncated
@@ -103,7 +114,15 @@ def common_doc_files(repo: GitRepo) -> List[str]:
     for doc in llm:
         if len(out) >= 10:
             break
-        if doc.split(".")[-1] in SUPPORTED_EXT:
+        if "makefile" in doc.lower():
+            fname = _create_makefile_summary(doc)
+            if fname is not None:
+                out.append(fname)
+        elif "." in doc:
+            if "." + doc.split(".")[-1] in SUPPORTED_EXT:
+                out.append(doc)
+        else:
+            # Assume it is markdown or text
             out.append(doc)
     return out
 

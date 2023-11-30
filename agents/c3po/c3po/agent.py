@@ -22,23 +22,13 @@ def _print_banner():
 ██║     ██╔══██║██╔══██║██║██║╚██╗██║██║   ██║██╔═══╝    ██║   
 ╚██████╗██║  ██║██║  ██║██║██║ ╚████║╚██████╔╝██║        ██║   
  ╚═════╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝╚═╝  ╚═══╝ ╚═════╝ ╚═╝        ╚═╝   
-    
 
-                           /~\ 
-                          (O O)                 
-                          _\=/_                         
-          ___            /  _  \                         
-         / ()\          //|/.\|\\                        
-       _|_____|_       ||  \_/  ||                       
-      | | === | |      || |\ /| ||                       
-      |_|  O  |_|       # \_ _/ #                        
-       ||  O  ||          | | |                          
-       ||__*__||          | | |                          
-      |~ \___/ ~|         []|[]                          
-      /=\ /=\ /=\         | | |                          
-______[_]_[_]_[_]________/_]_[_\_____
-
-(github.com/loeschg/ascii-art.git)
+ 
+               ( )
+     __       //|\\\\
+    /_0\      \\\\_//
+   [|o=|]      |||
+___/|--|\______|||________C3PO
 
 """
     print(banner)
@@ -65,7 +55,7 @@ def _parse_json_from_output_str(output_str) -> Dict:
 
 
 def _validate_json_output(data: Dict):
-    required = ["description", "license", "steps"]
+    required = ["summary", "description", "license", "steps"]
     for field in required:
         if field not in data.keys():
             msg = f"JSON output is missing `{field}` field"
@@ -78,7 +68,8 @@ def run_agent(package: str, version: str,
               output_yaml: str,
               repository: str=None,
               workspace: str=".agent-workspace",
-              output_log: str="c3po.log"):
+              output_log: str="c3po.log",
+              output_summary: str=None):
     # Parse args
     # args = _parse_args()
     _print_banner()
@@ -95,11 +86,12 @@ def run_agent(package: str, version: str,
     # Search for a clone the repository into the local workspace
     repo = init_repository(package, version)
     if repo is None:
+        _cleanup_workspace(workspace)
         return
 
     # Identify documentation
-    with yaspin(Spinners.line, text=Fore.BLUE + "Scanning repository for documentation", color="blue"):
-        doc_file_paths = common_doc_files(repo)
+    print(Fore.BLUE + "Scanning repository for documentation")
+    doc_file_paths = common_doc_files(repo)
 
     # Run OpenAI assistant to generate YAML from documentation
     output = run_assistant(package, version, repo, doc_file_paths)
@@ -107,14 +99,16 @@ def run_agent(package: str, version: str,
     # Parse and validate JSON from the assistant output
     print(Fore.BLUE + "Parsing assistant response")
     data = _parse_json_from_output_str(output)
-    try:
-        _validate_json_output(data)
-    except ValueError:
-        data = None
+    if data is not None:
+        try:
+            _validate_json_output(data)
+        except ValueError:
+            data = None
 
     if data is None:
         print(Fore.RED + "Failed :(")
         print(Fore.RED + output)
+        _cleanup_workspace(workspace)
         return
 
     print(Fore.GREEN + "Success :)")
@@ -133,5 +127,10 @@ def run_agent(package: str, version: str,
     # Save the YAML
     with open(output_yaml, "w", encoding="utf-8") as f:
         yaml.safe_dump(yaml_data, f, sort_keys=False, indent=2)
-
     print(Fore.GREEN + f"YAML saved to {output_yaml}")
+
+    # Save the summary
+    if output_summary is not None:
+        with open(output_summary, "w", encoding="utf-8") as f:
+            f.write(data["summary"])
+        print(Fore.GREEN + f"Summary saved to {output_summary}")

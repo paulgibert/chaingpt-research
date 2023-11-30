@@ -8,8 +8,6 @@ def parse_args():
                         help="The name of the package")
     parser.add_argument("version",
                         help="The version of the package")
-    parser.add_argument("--repository",
-                        help="Force the agent to use a GitHub repository")
     parser.add_argument("--workspace",
                         default=".agent-workspace",
                         help="The name of the tmp directory used as a workspace")
@@ -19,6 +17,12 @@ def parse_args():
     parser.add_argument("--output-log",
                         default="agent.log",
                         help="The location to save the log file")
+    parser.add_argument("--output-summary",
+                        required=False,
+                        help="The location to save the build summary")
+    parser.add_argument("--repository",
+                        required=False,
+                        help="Force the agent to use a GitHub repository")
     return parser.parse_args()
 
 
@@ -28,7 +32,8 @@ def run_agent_cmd():
               output_yaml=args.output_yaml,
               repository=args.repository,
               workspace=args.workspace,
-              output_log=args.output_log)
+              output_log=args.output_log,
+              output_summary=args.output_summary)
 
 
 if __name__ == "__main__":

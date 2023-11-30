@@ -1,21 +1,21 @@
 go/build:
-  description: Build and install a project with `go build`
+  description: Builds a project with `go build` and installs it to <prefix>/<install_dir>/<output> 
   fields:
     packages:
-      description: Space-separated packages to compile. Files can also be specified. This value is passed to `go build`. Paths are relative to modroot.
+      description: A single string of space-separated packages to compile. Files can also be specified. This is the value passed to `go build`. Paths are relative to modroot.
       required: true
     output:
-      description: Name of the output binary. The final install location will be in prefix/install_dir/output
+      description: Name of the output binary. The final install location will be in <prefix>/<install_dir>/<output>
       required: true
     modroot:
-      description: Top directory of the go module, this is where go.mod lives. Before building the go pipeline will cd into this directory.
+      description: Top directory of the go module, this is where `go.mod` lives. Before building the go pipeline will `cd` into this directory.
       required: false
     prefix:
-      description: Prefix to relocate binaries. Defaults to 'usr'.
+      description: Prefix to install binaries. Defaults to 'usr'.
       required: false
     ldflags:
-      description: List of [pattern=]arg to pass to the go compiler with -ldflags
+      description: A single string of space-separated flags ([pattern=]arg) to pass to the `-ldflags` arg of `go build`.
       required: false
     install_dir:
-      description: Directory where binaries will be installed. Defaults to 'bin'.
+      description: Binaries are installed in this directory <prefix>/<install_dir>. Defaults to 'bin'.
       required: false

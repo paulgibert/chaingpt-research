@@ -12,8 +12,9 @@ KEYS_DIR = "keys"
 
 def _get_workspaces(samples_dir: str) -> Iterator[Tuple[str, str]]:
     gen_dir = os.path.join(samples_dir, "generated")
-    for package in os.listdir(gen_dir):
-        yield package, os.path.join(gen_dir, package)
+    for package_dir in os.listdir(gen_dir):
+        package = package_dir.split("_")[0]
+        yield package, os.path.join(gen_dir, package_dir)
 
 
 @pytest.mark.parametrize("package, workspace_dir", _get_workspaces(SAMPLES_DIR))

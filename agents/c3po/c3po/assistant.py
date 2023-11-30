@@ -1,4 +1,5 @@
 from typing import List
+import os
 import logging
 import time
 from openai import OpenAI
@@ -22,7 +23,8 @@ mixing different approaches. You will respond in JSON form only.
 
 The response should contain the following fields:
 
-summary: A brief description of the components the project uses and how they are built.
+summary: A description of the components the project uses and how they are built. If able, provide
+         step-by-step build instructions.
 
 description: A single sentence description of the project. It should not start with the project's name.
 
@@ -31,10 +33,15 @@ license: The license under which the project is released. Include the license na
 steps: An ordered list of build commands.
        Each build step is an object with specific fields depending on its type.
        There are different step types, each requiring unique fields. If using
-       a place holder value for a field that the user needs to fill in manually,
-       surround the value with <>.
+       a place holder value or reporting any value that is not meant to be
+       interpreted literally, surround the value with  "<< >>" e.g <<place holder>>.
+       Assume you have root privileges on the system (no need to use sudo).
 
-%s   
+%s
+
+Here is a list of the first 100 files in the projects GitHub repository:
+
+%s
 """
 STATUS_DONE = ["cancelled", "failed", "completed", "expired"]
 POLL_INTERVAL = 3
@@ -94,9 +101,12 @@ def _create_run(client, prompt: str, file_ids: List[str]):
 #         tool_outputs=tool_outputs)
 
 
-def _make_prompt(package: str, version: str, repo: GitRepo) -> str:
+def _make_prompt(package: str, version: str, repo: GitRepo, file_list: List[str]) -> str:
     steps = "\n\n".join(get_build_step_prompts())
-    return PROMPT_TEXT % (package, version, repo.url, repo.curr_branch_or_tag, steps)
+    file_list_str = "\n".join(file_list)
+    return PROMPT_TEXT % (package, version, repo.url,
+                          repo.curr_branch_or_tag, steps,
+                          file_list_str)
 
 
 def _create_files(client, doc_file_paths: List[str]) -> List[str]:
@@ -124,6 +134,10 @@ def _get_top_message_text(client, run) -> str:
     return msg_list[0].content[0].text.value
 
 
+def _first_n_repo_files(repo: GitRepo, n: int=100) -> List[str]:
+    return [os.path.join(d, f) for d, f in repo.get_files()[:n]]
+
+
 def run_assistant(package: str, version: str, repo: GitRepo, doc_file_paths: List[str]) -> str:
     """
     Runs an OpenAI assistant configured to provide build instructions from uploaded
@@ -135,7 +149,8 @@ def run_assistant(package: str, version: str, repo: GitRepo, doc_file_paths: Lis
     @returns Build instructions
     """
     client = OpenAI()
-    prompt = _make_prompt(package, version, repo)
+    file_list = _first_n_repo_files(repo, n=100)
+    prompt = _make_prompt(package, version, repo, file_list)
     logging.info("Using assistant prompt:\n%s", prompt)
 
     print(Fore.BLUE + "Initializing OpenAI assistant")
@@ -153,6 +168,6 @@ def run_assistant(package: str, version: str, repo: GitRepo, doc_file_paths: Lis
             run = client.beta.threads.runs.retrieve(
                 run.id, thread_id=run.thread_id)
         logging.info("Run complete")
-        with yaspin(Spinners.line, text=Fore.BLUE + "Cleaning up OpenAI assistant env"):
-            _delete_files(client, file_ids)
-        return _get_top_message_text(client, run)
+    with yaspin(Spinners.line, text=Fore.BLUE + "Cleaning up OpenAI assistant env"):
+        _delete_files(client, file_ids)
+    return _get_top_message_text(client, run)

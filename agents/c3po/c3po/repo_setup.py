@@ -48,16 +48,10 @@ def _get_repo(package: str) -> GitRepo:
     Finds and clones the GitHub repository for
     the provided package.
     """
-    with yaspin(Spinners.line, text=Fore.BLUE + "\tasking Google", color="blue"):
-        for url in repo_url_from_web_search(package):
-            logging.info("Web search found url %s", url)
-            repo = _try_clone(url)
-            if repo is not None:
-                return repo
-
+    web_urls = repo_url_from_web_search(package)
     with yaspin(Spinners.line, text=Fore.BLUE + "\tasking GPT-4", color="blue"):
         try:
-            url = repo_url_from_llm(package).output
+            url = repo_url_from_llm(package, web_urls).output
             if url is not None:
                 logging.info("LLM proposed url %s", url)
                 repo = _try_clone(url)
@@ -150,15 +144,15 @@ def init_repository(package: str, version: str) -> GitRepo:
     branch for the provided version.
 
     The GitHub repository url is determined by
-        1) Finding it via google search
-        2) Otherwise, given the package, ask an LLM
-        3) Otherwise ask the user
+        1) Searching for urls on google
+        2) Asking the LLM given the package name and url results
+        3) Otherwise fail
     
     The correct branch or tag is found by
         1) Searching for tags or branches that contain the version in their name
         2) Otherwise, ask an LLM to choose from the list of branches and tags given
            the package and version
-        3) Otherwise ask the user
+        3) Otherwise fail
     
     @param package: The package to search for and clone
     @param version: The version to checkout

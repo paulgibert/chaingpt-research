@@ -22,8 +22,8 @@ the directories they are in, as both can provide insights into the content
 and relevance of the files.
 
 Criteria for Selection:
-- Include only text-based documentation. Exclude source code, binary files,
-  and files like Makefiles, even if they contain build-related information.
+- Include only text-based documentation. Exclude source code and binary files,
+  even if they contain build-related information. Do include relevant Makefiles.
 - The file name and its directory context are important. For example,
   files in a '/docs' directory are more likely to be relevant than those
   in a '/src' directory.
