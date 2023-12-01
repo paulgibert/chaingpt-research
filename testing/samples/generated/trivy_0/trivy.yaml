@@ -1,0 +1,24 @@
+package:
+  name: trivy
+  version: 0.46.0
+  description: A simple and comprehensive vulnerability scanner for containers and
+    other artifacts, designed to be easy to use.
+  copyright:
+  - license: Apache License 2.0
+environment:
+  contents:
+    packages:
+    - wolfi-base
+    - build-base
+pipeline:
+- uses: git-checkout
+  with:
+    repository: https://github.com/aquasecurity/trivy
+    tag: v0.46.0
+- uses: go/build
+  with:
+    packages: .
+    output: trivy
+    modroot: .
+    ldflags: -X main.version=v0.46.0
+- runs: cp trivy /usr/local/bin/trivy

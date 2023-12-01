@@ -1,0 +1,2 @@
+trivy --version
+Version: 0.46.0

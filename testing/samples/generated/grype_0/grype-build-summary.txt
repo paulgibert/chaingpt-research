@@ -1,0 +1,1 @@
+The grype project is written in Go, and it uses Go's native build tools for compilation. Based on the information provided, the project can be built by using the 'go build' command to compile the main executable binary.

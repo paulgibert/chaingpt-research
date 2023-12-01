@@ -1,0 +1,1 @@
+Trivy is built using Go, typically compiled with `go build` and installed by placing the binary in the system's PATH.

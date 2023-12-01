@@ -1,0 +1,1 @@
+Grype is built using Go. The simplest compilation process involves using `go build` to generate the binary from source.

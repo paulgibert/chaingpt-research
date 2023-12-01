@@ -1,0 +1,1 @@
+The 'guac' project builds the libguac-client-vnc plugin using GNU Automake, which involves the standard configure, make, and make install process.

@@ -1,0 +1,21 @@
+package:
+  name: guac
+  version: 0.3.0
+  description: A VNC protocol support plugin for the Guacamole proxy that uses libvncclient
+    for connectivity.
+  copyright:
+  - license: Unspecified in provided documentation
+environment:
+  contents:
+    packages:
+    - wolfi-base
+    - build-base
+pipeline:
+- uses: git-checkout
+  with:
+    repository: https://github.com/apache/guacamole-server
+    tag: 0.3.0
+- runs: ./configure
+- runs: make
+- runs: make install
+- runs: ldconfig

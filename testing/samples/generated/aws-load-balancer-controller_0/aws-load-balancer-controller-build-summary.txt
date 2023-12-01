@@ -1,0 +1,1 @@
+AWS Load Balancer Controller is used to manage Elastic Load Balancers for a Kubernetes cluster, provisioning Application Load Balancers and Network Load Balancers as needed. It is built using Go and can be compiled using 'make controller'【33†source】.

@@ -1,0 +1,1 @@
+Zarf is built using a Makefile, which invokes 'go build' for the Go components and provides make targets for building other sub-components like the Zarf injector, which is built within a Rust environment using Docker.

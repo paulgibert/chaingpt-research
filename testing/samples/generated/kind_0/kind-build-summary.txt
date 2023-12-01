@@ -1,0 +1,1 @@
+kind is a tool built in Go for running local Kubernetes clusters using Docker container 'nodes'. It is composed of Go packages that implement cluster creation, image build, and other functionalities, along with a command line interface and Docker images configured to run essential components.

@@ -1,7 +1,6 @@
 env
 *.secret
 __pycache__
-samples
 results
 *.rsa
 *.rsa.pub

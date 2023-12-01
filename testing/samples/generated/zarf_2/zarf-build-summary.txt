@@ -1,0 +1,1 @@
+Zarf uses Go to build its binaries, and Makefile provides straightforward targets for building.

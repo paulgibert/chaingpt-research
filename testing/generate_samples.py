@@ -18,8 +18,11 @@ def package_iter(samples_dir: str) -> Iterator[Tuple[str, str]]:
 
 
 def gen_with_c3po(package: str, version: str, yaml_out: str, log_file: str, summary_out: str):
-    run_agent(package, version, output_yaml=yaml_out, output_log=log_file,
-              output_summary=summary_out)
+    try:
+        run_agent(package, version, output_yaml=yaml_out, output_log=log_file,
+                output_summary=summary_out)
+    except Exception as e:
+        print(str(e))
 
 
 def parse_args():

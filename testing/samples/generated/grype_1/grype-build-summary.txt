@@ -1,0 +1,1 @@
+Grype leverages the Go programming language to compile its source code into executable binaries that can be used for scanning container images and file systems for vulnerabilities.

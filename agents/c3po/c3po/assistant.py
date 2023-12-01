@@ -10,11 +10,11 @@ from c3po.melange import get_build_step_prompts
 from c3po.repo import GitRepo
 
 
-ASSISTANT_ID = "asst_6f9uzyHimrjjggaKfSw5DGeG"
+ASSISTANT_ID = os.environ["OPENAI_API_ASSISTANT_ID"]
 PROMPT_TEXT = """
 Generate minimalist and straightforward instructions for compiling and
 installing the source code of the software project %s,
-version %s. The GitHub repository is %s. Checkout %s for version {version}.
+version %s. The GitHub repository is %s. Checkout %s for the correct version.
 The instructions should be concise and solely focused on the build and installation process,
 excluding any steps related to testing, linting, or other unrelated tasks.
 If multiple build methods are available, choose the most direct and
@@ -170,4 +170,6 @@ def run_assistant(package: str, version: str, repo: GitRepo, doc_file_paths: Lis
         logging.info("Run complete")
     with yaspin(Spinners.line, text=Fore.BLUE + "Cleaning up OpenAI assistant env"):
         _delete_files(client, file_ids)
+    # TODO: If the assistant fails, this method will sometimes fetch the prompt as there
+    # is no response on top.
     return _get_top_message_text(client, run)

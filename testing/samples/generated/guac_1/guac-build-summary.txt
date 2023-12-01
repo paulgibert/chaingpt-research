@@ -1,0 +1,1 @@
+The Guacamole server project, specifically libguac-client-vnc, uses GNU Automake for its build and installation process. It compiles the source into an installable library for VNC protocol support.
