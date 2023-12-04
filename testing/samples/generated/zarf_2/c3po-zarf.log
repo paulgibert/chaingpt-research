@@ -1,0 +1,388 @@
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+INFO:root:LLM proposed url https://github.com/defenseunicorns/zarf
+INFO:root:String search yielded branch/tag v0.30.1
+INFO:root:Checked out branch/tag v0.30.1
+INFO:root:str search found documentation in the repo: ['zarf/CONTRIBUTING.md', 'zarf/README.md', 'zarf/LICENSE', 'zarf/src/internal/packager/kustomize/build.go', 'zarf/src/extensions/README.md', 'zarf/src/injector/README.md', 'zarf/src/test/external/README.md', 'zarf/src/test/e2e/README.md', 'zarf/src/test/packages/28-helm-no-wait/README.md', 'zarf/src/test/packages/04-file-folders-templating-sbom/requirements.txt', 'zarf/src/test/packages/04-file-folders-templating-sbom/include-files/requirements.txt', 'zarf/src/test/packages/52-oci-differential/README.md', 'zarf/src/test/packages/08-differential-package/README.md', 'zarf/src/test/upgrade/README.md', 'zarf/src/cmd/tools/helm/dependency_build.go', 'zarf/src/cmd/tools/helm/LICENSE', 'zarf/src/types/extensions/README.md', 'zarf/src/ui/lib/components/build-providence.svelte', 'zarf/docs/2-the-zarf-cli/0-building-your-own-cli.md', 'zarf/docs/2-the-zarf-cli/100-cli-commands/zarf_tools_helm_dependency_build.md', 'zarf/docs/.images/what-is-zarf/build-the-package.png', 'zarf/packages/README.md', 'zarf/packages/gitea/README.md', 'zarf/packages/zarf-registry/README.md', 'zarf/examples/README.md', 'zarf/examples/kiwix/README.md', 'zarf/examples/dos-games/README.md', 'zarf/examples/big-bang/README.md', 'zarf/examples/component-choice/README.md', 'zarf/examples/component-webhooks/README.md', 'zarf/examples/wordpress/README.md', 'zarf/examples/longhorn/README.md', 'zarf/examples/composable-packages/README.md', 'zarf/examples/podinfo-flux/README.md', 'zarf/examples/podinfo-flux/flux-install.yaml', 'zarf/examples/component-actions/README.md', 'zarf/examples/argocd/README.md', 'zarf/examples/helm-charts/README.md', 'zarf/examples/helm-charts/chart/LICENSE', 'zarf/examples/config-file/README.md', 'zarf/examples/manifests/README.md', 'zarf/examples/git-data/README.md', 'zarf/examples/yolo/README.md', 'zarf/examples/variables/README.md', 'zarf/.github/workflows/build-rust-injector.yml', 'zarf/docs-website/README.md', 'zarf/docs-website/static-components/README.md']
+INFO:root:Trimming 889 files down to 100 for LLM
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+INFO:root:LLM found documentation in the repo: ['zarf/CONTRIBUTING.md', 'zarf/README.md', 'zarf/SECURITY.md', 'zarf/Makefile']
+INFO:root:zarf/CONTRIBUTING.md has a supported extension, including
+INFO:root:zarf/README.md has a supported extension, including
+INFO:root:zarf/SECURITY.md has a supported extension, including
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+INFO:root:Summarized zarf/Makefile: <list>
+1. `build-examples`: This target builds all of the example packages. It checks if the Zarf binary exists, if not, it builds the CLI. Then it uses the Zarf binary to create a package for each example if it does not already exist.
+
+2. `build-injector-linux`: This target builds the Zarf injector for AMD64 and ARM64. It uses a Docker container with Rust to build the injector.
+
+3. `test-e2e`: This target runs all of the core Zarf CLI E2E tests. It checks if the necessary dependencies are present, if not, it builds them. It requires an existing cluster or the environment variable APPLIANCE_MODE set to true.
+
+4. `test-unit`: This target runs unit tests for the project. It ensures the UI build directory is present, then runs tests in several directories with a failfast option and a 30-minute timeout.
+
+5. `test-ui`: This target runs the Zarf UI E2E tests. It requires the UI to be built first and sets up the environment for testing, running several npm scripts in the UI directory.
+</list>
+INFO:root:Using only supported extensions: ['zarf/CONTRIBUTING.md', 'zarf/README.md', 'zarf/SECURITY.md', 'Makefile_summary.txt']
+INFO:root:Using assistant prompt:
+
+Generate minimalist and straightforward instructions for compiling and
+installing the source code of the software project zarf,
+version 0.30.1. The GitHub repository is https://github.com/defenseunicorns/zarf. Checkout v0.30.1 for the correct version.
+The instructions should be concise and solely focused on the build and installation process,
+excluding any steps related to testing, linting, or other unrelated tasks.
+If multiple build methods are available, choose the most direct and
+uncomplicated method and provide a consistent set of steps without
+mixing different approaches. You will respond in JSON form only.
+
+The response should contain the following fields:
+
+summary: A description of the components the project uses and how they are built. If able, provide
+         step-by-step build instructions.
+
+description: A single sentence description of the project. It should not start with the project's name.
+
+license: The license under which the project is released. Include the license name only.
+
+steps: An ordered list of build commands.
+       Each build step is an object with specific fields depending on its type.
+       There are different step types, each requiring unique fields. If using
+       a place holder value or reporting any value that is not meant to be
+       interpreted literally, surround the value with  "<< >>" e.g <<place holder>>.
+       Assume you have root privileges on the system (no need to use sudo).
+
+Step type: git-checkout - Clone a git repository and checkout a branch/tag
+Fields:
+'repository' (required) - Repository to clone. Omit the .git suffix
+'tag' (optional) - Branch or tag to checkout. Must specify either a branch or tag.
+'branch' (optional) - Branch to checkout. Do not specify both a branch and tag
+
+Step type: shell - Run a shell command. Use as a last resort when desired functionality cannot be captured by another build step type.
+Fields:
+'command' (required) - Command to run
+
+Step type: go/build - Builds a project with `go build` and installs it to <prefix>/<install_dir>/<output>
+Fields:
+'packages' (required) - A single string of space-separated packages to compile. Files can also be specified. This is the value passed to `go build`. Paths are relative to modroot.
+'output' (required) - Name of the output binary. The final install location will be in <prefix>/<install_dir>/<output>
+'modroot' (optional) - Top directory of the go module, this is where `go.mod` lives. Before building the go pipeline will `cd` into this directory.
+'prefix' (optional) - Prefix to install binaries. Defaults to 'usr'.
+'ldflags' (optional) - A single string of space-separated flags ([pattern=]arg) to pass to the `-ldflags` arg of `go build`.
+'install_dir' (optional) - Binaries are installed in this directory <prefix>/<install_dir>. Defaults to 'bin'.
+
+Here is a list of the first 100 files in the projects GitHub repository:
+
+zarf/CONTRIBUTING.md
+zarf/.gitignore
+zarf/.grype.yaml
+zarf/CODEOWNERS
+zarf/.markdownlint.json
+zarf/zarf.schema.json
+zarf/netlify.toml
+zarf/zarf.yaml
+zarf/.editorconfig
+zarf/main.go
+zarf/README.md
+zarf/zarf-config.toml
+zarf/renovate.json
+zarf/.markdownlintignore
+zarf/revive.toml
+zarf/.pre-commit-config.yaml
+zarf/go.mod
+zarf/go.sum
+zarf/cosign.pub
+zarf/Dockerfile
+zarf/.gitattributes
+zarf/SECURITY.md
+zarf/.goreleaser.yaml
+zarf/.adr-dir
+zarf/LICENSE
+zarf/Makefile
+zarf/.git/packed-refs
+zarf/.git/description
+zarf/.git/HEAD
+zarf/.git/index
+zarf/.git/config
+zarf/.git/refs/remotes/origin/HEAD
+zarf/.git/refs/heads/main
+zarf/.git/objects/pack/pack-dae7bb746f7395e8c3d7a106f493773d89d49dd1.pack
+zarf/.git/objects/pack/pack-dae7bb746f7395e8c3d7a106f493773d89d49dd1.idx
+zarf/.git/info/exclude
+zarf/.git/hooks/update.sample
+zarf/.git/hooks/commit-msg.sample
+zarf/.git/hooks/prepare-commit-msg.sample
+zarf/.git/hooks/pre-merge-commit.sample
+zarf/.git/hooks/pre-push.sample
+zarf/.git/hooks/pre-commit.sample
+zarf/.git/hooks/pre-rebase.sample
+zarf/.git/hooks/post-update.sample
+zarf/.git/hooks/applypatch-msg.sample
+zarf/.git/hooks/pre-applypatch.sample
+zarf/.git/hooks/pre-receive.sample
+zarf/.git/hooks/fsmonitor-watchman.sample
+zarf/.git/logs/HEAD
+zarf/.git/logs/refs/remotes/origin/HEAD
+zarf/.git/logs/refs/heads/main
+zarf/src/internal/packager/template/yaml.go
+zarf/src/internal/packager/template/template.go
+zarf/src/internal/packager/helm/common.go
+zarf/src/internal/packager/helm/repo.go
+zarf/src/internal/packager/helm/chart.go
+zarf/src/internal/packager/helm/images.go
+zarf/src/internal/packager/helm/utils.go
+zarf/src/internal/packager/helm/post-render.go
+zarf/src/internal/packager/helm/destroy.go
+zarf/src/internal/packager/helm/zarf.go
+zarf/src/internal/packager/validate/validate.go
+zarf/src/internal/packager/images/common.go
+zarf/src/internal/packager/images/pull.go
+zarf/src/internal/packager/images/push.go
+zarf/src/internal/packager/sbom/viewer.go
+zarf/src/internal/packager/sbom/tools.go
+zarf/src/internal/packager/sbom/catalog.go
+zarf/src/internal/packager/sbom/viewer/styles.css
+zarf/src/internal/packager/sbom/viewer/theme.css
+zarf/src/internal/packager/sbom/viewer/compare.gohtml
+zarf/src/internal/packager/sbom/viewer/library.js
+zarf/src/internal/packager/sbom/viewer/viewer.js
+zarf/src/internal/packager/sbom/viewer/common.js
+zarf/src/internal/packager/sbom/viewer/template.gohtml
+zarf/src/internal/packager/sbom/viewer/compare.js
+zarf/src/internal/packager/kustomize/build.go
+zarf/src/internal/packager/git/common.go
+zarf/src/internal/packager/git/pull.go
+zarf/src/internal/packager/git/push.go
+zarf/src/internal/packager/git/gitea.go
+zarf/src/internal/packager/git/checkout.go
+zarf/src/internal/packager/git/clone.go
+zarf/src/internal/api/start.go
+zarf/src/internal/api/auth/token.go
+zarf/src/internal/api/components/list.go
+zarf/src/internal/api/packages/remove.go
+zarf/src/internal/api/packages/sbom.go
+zarf/src/internal/api/packages/list.go
+zarf/src/internal/api/packages/tunnels.go
+zarf/src/internal/api/packages/read.go
+zarf/src/internal/api/packages/find.go
+zarf/src/internal/api/packages/deploy.go
+zarf/src/internal/api/common/common.go
+zarf/src/internal/api/cluster/cluster.go
+zarf/src/internal/api/cluster/state.go
+zarf/src/internal/agent/start.go
+zarf/src/internal/agent/operations/hook.go
+zarf/src/internal/agent/operations/patch.go
+zarf/src/internal/agent/hooks/argocd-repository.go
+
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/files "HTTP/1.1 200 OK"
+INFO:root:Created file zarf/CONTRIBUTING.md
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/files "HTTP/1.1 200 OK"
+INFO:root:Created file zarf/README.md
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/files "HTTP/1.1 200 OK"
+INFO:root:Created file zarf/SECURITY.md
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/files "HTTP/1.1 200 OK"
+INFO:root:Created file Makefile_summary.txt
+INFO:root:Creating run
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/assistants/asst_RUUBZLtGLGE5pBDiYNnWAjlL "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/threads "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/threads/thread_QqhWH37Z5e39pyrjmsJdhRYZ/messages "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/threads/thread_QqhWH37Z5e39pyrjmsJdhRYZ/runs "HTTP/1.1 200 OK"
+INFO:root:Polling run_BXzOtVY9O1YxbvL7sgltllB5. Status: queued
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_QqhWH37Z5e39pyrjmsJdhRYZ/runs/run_BXzOtVY9O1YxbvL7sgltllB5 "HTTP/1.1 200 OK"
+INFO:root:Polling run_BXzOtVY9O1YxbvL7sgltllB5. Status: in_progress
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_QqhWH37Z5e39pyrjmsJdhRYZ/runs/run_BXzOtVY9O1YxbvL7sgltllB5 "HTTP/1.1 200 OK"
+INFO:root:Polling run_BXzOtVY9O1YxbvL7sgltllB5. Status: in_progress
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_QqhWH37Z5e39pyrjmsJdhRYZ/runs/run_BXzOtVY9O1YxbvL7sgltllB5 "HTTP/1.1 200 OK"
+INFO:root:Polling run_BXzOtVY9O1YxbvL7sgltllB5. Status: in_progress
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_QqhWH37Z5e39pyrjmsJdhRYZ/runs/run_BXzOtVY9O1YxbvL7sgltllB5 "HTTP/1.1 200 OK"
+INFO:root:Polling run_BXzOtVY9O1YxbvL7sgltllB5. Status: in_progress
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_QqhWH37Z5e39pyrjmsJdhRYZ/runs/run_BXzOtVY9O1YxbvL7sgltllB5 "HTTP/1.1 200 OK"
+INFO:root:Polling run_BXzOtVY9O1YxbvL7sgltllB5. Status: in_progress
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_QqhWH37Z5e39pyrjmsJdhRYZ/runs/run_BXzOtVY9O1YxbvL7sgltllB5 "HTTP/1.1 200 OK"
+INFO:root:Polling run_BXzOtVY9O1YxbvL7sgltllB5. Status: in_progress
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_QqhWH37Z5e39pyrjmsJdhRYZ/runs/run_BXzOtVY9O1YxbvL7sgltllB5 "HTTP/1.1 200 OK"
+INFO:root:Polling run_BXzOtVY9O1YxbvL7sgltllB5. Status: in_progress
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_QqhWH37Z5e39pyrjmsJdhRYZ/runs/run_BXzOtVY9O1YxbvL7sgltllB5 "HTTP/1.1 200 OK"
+INFO:root:Polling run_BXzOtVY9O1YxbvL7sgltllB5. Status: in_progress
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_QqhWH37Z5e39pyrjmsJdhRYZ/runs/run_BXzOtVY9O1YxbvL7sgltllB5 "HTTP/1.1 200 OK"
+INFO:root:Polling run_BXzOtVY9O1YxbvL7sgltllB5. Status: in_progress
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_QqhWH37Z5e39pyrjmsJdhRYZ/runs/run_BXzOtVY9O1YxbvL7sgltllB5 "HTTP/1.1 200 OK"
+INFO:root:Polling run_BXzOtVY9O1YxbvL7sgltllB5. Status: in_progress
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_QqhWH37Z5e39pyrjmsJdhRYZ/runs/run_BXzOtVY9O1YxbvL7sgltllB5 "HTTP/1.1 200 OK"
+INFO:root:Polling run_BXzOtVY9O1YxbvL7sgltllB5. Status: in_progress
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_QqhWH37Z5e39pyrjmsJdhRYZ/runs/run_BXzOtVY9O1YxbvL7sgltllB5 "HTTP/1.1 200 OK"
+INFO:root:Polling run_BXzOtVY9O1YxbvL7sgltllB5. Status: in_progress
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_QqhWH37Z5e39pyrjmsJdhRYZ/runs/run_BXzOtVY9O1YxbvL7sgltllB5 "HTTP/1.1 200 OK"
+INFO:root:Polling run_BXzOtVY9O1YxbvL7sgltllB5. Status: in_progress
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_QqhWH37Z5e39pyrjmsJdhRYZ/runs/run_BXzOtVY9O1YxbvL7sgltllB5 "HTTP/1.1 200 OK"
+INFO:root:Polling run_BXzOtVY9O1YxbvL7sgltllB5. Status: in_progress
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_QqhWH37Z5e39pyrjmsJdhRYZ/runs/run_BXzOtVY9O1YxbvL7sgltllB5 "HTTP/1.1 200 OK"
+INFO:root:Polling run_BXzOtVY9O1YxbvL7sgltllB5. Status: in_progress
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_QqhWH37Z5e39pyrjmsJdhRYZ/runs/run_BXzOtVY9O1YxbvL7sgltllB5 "HTTP/1.1 200 OK"
+INFO:root:Polling run_BXzOtVY9O1YxbvL7sgltllB5. Status: in_progress
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_QqhWH37Z5e39pyrjmsJdhRYZ/runs/run_BXzOtVY9O1YxbvL7sgltllB5 "HTTP/1.1 200 OK"
+INFO:root:Polling run_BXzOtVY9O1YxbvL7sgltllB5. Status: in_progress
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_QqhWH37Z5e39pyrjmsJdhRYZ/runs/run_BXzOtVY9O1YxbvL7sgltllB5 "HTTP/1.1 200 OK"
+INFO:root:Polling run_BXzOtVY9O1YxbvL7sgltllB5. Status: in_progress
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_QqhWH37Z5e39pyrjmsJdhRYZ/runs/run_BXzOtVY9O1YxbvL7sgltllB5 "HTTP/1.1 200 OK"
+INFO:root:Run complete
+INFO:httpx:HTTP Request: DELETE https://api.openai.com/v1/files/file-IOHqKpQCcFHr24tUt93aYy4M "HTTP/1.1 200 OK"
+INFO:root:Deleted file-IOHqKpQCcFHr24tUt93aYy4M
+INFO:httpx:HTTP Request: DELETE https://api.openai.com/v1/files/file-lvoh5XOjKY5Wqr8NUPCCcmlB "HTTP/1.1 200 OK"
+INFO:root:Deleted file-lvoh5XOjKY5Wqr8NUPCCcmlB
+INFO:httpx:HTTP Request: DELETE https://api.openai.com/v1/files/file-k1i2T1ZNQE4zixw9jPH284fK "HTTP/1.1 200 OK"
+INFO:root:Deleted file-k1i2T1ZNQE4zixw9jPH284fK
+INFO:httpx:HTTP Request: DELETE https://api.openai.com/v1/files/file-OStTgLvPgqPK5aIvYigL5nzJ "HTTP/1.1 200 OK"
+INFO:root:Deleted file-OStTgLvPgqPK5aIvYigL5nzJ
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_QqhWH37Z5e39pyrjmsJdhRYZ/messages "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_QqhWH37Z5e39pyrjmsJdhRYZ/messages?after=msg_Y278tXoXrzmv5ce1nXI41vzJ "HTTP/1.1 200 OK"
+INFO:root:Failed: 
+Generate minimalist and straightforward instructions for compiling and
+installing the source code of the software project zarf,
+version 0.30.1. The GitHub repository is https://github.com/defenseunicorns/zarf. Checkout v0.30.1 for the correct version.
+The instructions should be concise and solely focused on the build and installation process,
+excluding any steps related to testing, linting, or other unrelated tasks.
+If multiple build methods are available, choose the most direct and
+uncomplicated method and provide a consistent set of steps without
+mixing different approaches. You will respond in JSON form only.
+
+The response should contain the following fields:
+
+summary: A description of the components the project uses and how they are built. If able, provide
+         step-by-step build instructions.
+
+description: A single sentence description of the project. It should not start with the project's name.
+
+license: The license under which the project is released. Include the license name only.
+
+steps: An ordered list of build commands.
+       Each build step is an object with specific fields depending on its type.
+       There are different step types, each requiring unique fields. If using
+       a place holder value or reporting any value that is not meant to be
+       interpreted literally, surround the value with  "<< >>" e.g <<place holder>>.
+       Assume you have root privileges on the system (no need to use sudo).
+
+Step type: git-checkout - Clone a git repository and checkout a branch/tag
+Fields:
+'repository' (required) - Repository to clone. Omit the .git suffix
+'tag' (optional) - Branch or tag to checkout. Must specify either a branch or tag.
+'branch' (optional) - Branch to checkout. Do not specify both a branch and tag
+
+Step type: shell - Run a shell command. Use as a last resort when desired functionality cannot be captured by another build step type.
+Fields:
+'command' (required) - Command to run
+
+Step type: go/build - Builds a project with `go build` and installs it to <prefix>/<install_dir>/<output>
+Fields:
+'packages' (required) - A single string of space-separated packages to compile. Files can also be specified. This is the value passed to `go build`. Paths are relative to modroot.
+'output' (required) - Name of the output binary. The final install location will be in <prefix>/<install_dir>/<output>
+'modroot' (optional) - Top directory of the go module, this is where `go.mod` lives. Before building the go pipeline will `cd` into this directory.
+'prefix' (optional) - Prefix to install binaries. Defaults to 'usr'.
+'ldflags' (optional) - A single string of space-separated flags ([pattern=]arg) to pass to the `-ldflags` arg of `go build`.
+'install_dir' (optional) - Binaries are installed in this directory <prefix>/<install_dir>. Defaults to 'bin'.
+
+Here is a list of the first 100 files in the projects GitHub repository:
+
+zarf/CONTRIBUTING.md
+zarf/.gitignore
+zarf/.grype.yaml
+zarf/CODEOWNERS
+zarf/.markdownlint.json
+zarf/zarf.schema.json
+zarf/netlify.toml
+zarf/zarf.yaml
+zarf/.editorconfig
+zarf/main.go
+zarf/README.md
+zarf/zarf-config.toml
+zarf/renovate.json
+zarf/.markdownlintignore
+zarf/revive.toml
+zarf/.pre-commit-config.yaml
+zarf/go.mod
+zarf/go.sum
+zarf/cosign.pub
+zarf/Dockerfile
+zarf/.gitattributes
+zarf/SECURITY.md
+zarf/.goreleaser.yaml
+zarf/.adr-dir
+zarf/LICENSE
+zarf/Makefile
+zarf/.git/packed-refs
+zarf/.git/description
+zarf/.git/HEAD
+zarf/.git/index
+zarf/.git/config
+zarf/.git/refs/remotes/origin/HEAD
+zarf/.git/refs/heads/main
+zarf/.git/objects/pack/pack-dae7bb746f7395e8c3d7a106f493773d89d49dd1.pack
+zarf/.git/objects/pack/pack-dae7bb746f7395e8c3d7a106f493773d89d49dd1.idx
+zarf/.git/info/exclude
+zarf/.git/hooks/update.sample
+zarf/.git/hooks/commit-msg.sample
+zarf/.git/hooks/prepare-commit-msg.sample
+zarf/.git/hooks/pre-merge-commit.sample
+zarf/.git/hooks/pre-push.sample
+zarf/.git/hooks/pre-commit.sample
+zarf/.git/hooks/pre-rebase.sample
+zarf/.git/hooks/post-update.sample
+zarf/.git/hooks/applypatch-msg.sample
+zarf/.git/hooks/pre-applypatch.sample
+zarf/.git/hooks/pre-receive.sample
+zarf/.git/hooks/fsmonitor-watchman.sample
+zarf/.git/logs/HEAD
+zarf/.git/logs/refs/remotes/origin/HEAD
+zarf/.git/logs/refs/heads/main
+zarf/src/internal/packager/template/yaml.go
+zarf/src/internal/packager/template/template.go
+zarf/src/internal/packager/helm/common.go
+zarf/src/internal/packager/helm/repo.go
+zarf/src/internal/packager/helm/chart.go
+zarf/src/internal/packager/helm/images.go
+zarf/src/internal/packager/helm/utils.go
+zarf/src/internal/packager/helm/post-render.go
+zarf/src/internal/packager/helm/destroy.go
+zarf/src/internal/packager/helm/zarf.go
+zarf/src/internal/packager/validate/validate.go
+zarf/src/internal/packager/images/common.go
+zarf/src/internal/packager/images/pull.go
+zarf/src/internal/packager/images/push.go
+zarf/src/internal/packager/sbom/viewer.go
+zarf/src/internal/packager/sbom/tools.go
+zarf/src/internal/packager/sbom/catalog.go
+zarf/src/internal/packager/sbom/viewer/styles.css
+zarf/src/internal/packager/sbom/viewer/theme.css
+zarf/src/internal/packager/sbom/viewer/compare.gohtml
+zarf/src/internal/packager/sbom/viewer/library.js
+zarf/src/internal/packager/sbom/viewer/viewer.js
+zarf/src/internal/packager/sbom/viewer/common.js
+zarf/src/internal/packager/sbom/viewer/template.gohtml
+zarf/src/internal/packager/sbom/viewer/compare.js
+zarf/src/internal/packager/kustomize/build.go
+zarf/src/internal/packager/git/common.go
+zarf/src/internal/packager/git/pull.go
+zarf/src/internal/packager/git/push.go
+zarf/src/internal/packager/git/gitea.go
+zarf/src/internal/packager/git/checkout.go
+zarf/src/internal/packager/git/clone.go
+zarf/src/internal/api/start.go
+zarf/src/internal/api/auth/token.go
+zarf/src/internal/api/components/list.go
+zarf/src/internal/api/packages/remove.go
+zarf/src/internal/api/packages/sbom.go
+zarf/src/internal/api/packages/list.go
+zarf/src/internal/api/packages/tunnels.go
+zarf/src/internal/api/packages/read.go
+zarf/src/internal/api/packages/find.go
+zarf/src/internal/api/packages/deploy.go
+zarf/src/internal/api/common/common.go
+zarf/src/internal/api/cluster/cluster.go
+zarf/src/internal/api/cluster/state.go
+zarf/src/internal/agent/start.go
+zarf/src/internal/agent/operations/hook.go
+zarf/src/internal/agent/operations/patch.go
+zarf/src/internal/agent/hooks/argocd-repository.go
+

@@ -1,10 +1,10 @@
 package:
   name: buildkitd
   version: 0.12.3
-  description: A toolkit for converting source code to build artifacts in an efficient
-    and repeatable manner.
+  description: An open-source toolkit for performing complex builds and integrating
+    container security features.
   copyright:
-  - license: Apache License 2.0
+  - license: Apache-2.0
 environment:
   contents:
     packages:
@@ -15,5 +15,10 @@ pipeline:
   with:
     repository: https://github.com/moby/buildkit
     tag: v0.12.3
-- runs: docker buildx bake --set *.platform=linux/amd64 binaries
-- runs: docker buildx bake install
+- uses: go/build
+  with:
+    packages: .
+    output: buildkitd
+    modroot: buildkit
+    prefix: /usr/local
+    install_dir: bin

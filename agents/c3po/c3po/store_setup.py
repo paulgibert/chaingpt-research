@@ -121,13 +121,15 @@ def common_doc_files(repo: GitRepo) -> List[str]:
         elif "." in doc:
             if "." + doc.split(".")[-1] in SUPPORTED_EXT:
                 out.append(doc)
-                logging.info("%s has a supported extension, including")
+                logging.info("%s has a supported extension, including", doc)
             else:
-                logging.info("Excluded %s due to unsupported extension")
+                logging.info("Excluded %s due to unsupported extension", doc)
         else:
-            # Assume it is markdown or text
+            # Assume it is text
+            doc += ".txt"
             out.append(doc)
-            logging.info("%s has no extension but including")
+            logging.info("%s has no extension but including", doc)
+    logging.info("Using only supported extensions: %s", out)
     return out
 
 

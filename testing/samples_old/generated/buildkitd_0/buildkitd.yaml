@@ -1,0 +1,19 @@
+package:
+  name: buildkitd
+  version: 0.12.3
+  description: A tool designed to enlarge the flexibility and efficiency of building
+    Docker images.
+  copyright:
+  - license: See the LICENSE file in the repository.
+environment:
+  contents:
+    packages:
+    - wolfi-base
+    - build-base
+pipeline:
+- uses: git-checkout
+  with:
+    repository: https://github.com/moby/buildkit
+    tag: v0.12.3
+- runs: make buildkitd
+- runs: cp ./bin/buildkitd <<path_to_install_directory>>

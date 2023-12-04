@@ -1,0 +1,193 @@
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+INFO:root:LLM proposed url https://github.com/guacsec/guac
+INFO:root:String search yielded branch/tag v0.3.0
+INFO:root:Checked out branch/tag v0.3.0
+INFO:root:str search found documentation in the repo: ['guac/CONTRIBUTING.md', 'guac/README.md', 'guac/LICENSE', 'guac/internal/testing/testdata/exampledata/npm-cyclonedx-dependencies-missing-depends-on.json', 'guac/demo/README.md', 'guac/docs/README.md', 'guac/pkg/assembler/graphql/README.md', 'guac/pkg/assembler/graphql/resolvers/license.resolvers_test.go', 'guac/pkg/assembler/graphql/resolvers/license.resolvers.go', 'guac/pkg/assembler/graphql/resolvers/builder.resolvers.go', 'guac/pkg/assembler/graphql/schema/license.graphql', 'guac/pkg/assembler/graphql/schema/builder.graphql', 'guac/pkg/assembler/graphql/examples/artifact_builder.gql', 'guac/pkg/assembler/graphql/generated/builder.generated.go', 'guac/pkg/assembler/graphql/generated/license.generated.go', 'guac/pkg/assembler/backends/README.md', 'guac/pkg/assembler/backends/inmem/license_test.go', 'guac/pkg/assembler/backends/inmem/builder_test.go', 'guac/pkg/assembler/backends/inmem/license.go', 'guac/pkg/assembler/backends/inmem/builder.go', 'guac/pkg/assembler/backends/neo4j/builder.go', 'guac/pkg/assembler/backends/arangodb/license_test.go', 'guac/pkg/assembler/backends/arangodb/builder_test.go', 'guac/pkg/assembler/backends/arangodb/license.go', 'guac/pkg/assembler/backends/arangodb/builder.go', 'guac/pkg/assembler/backends/ent/README.md', 'guac/pkg/assembler/backends/ent/builder_delete.go', 'guac/pkg/assembler/backends/ent/builder_create.go', 'guac/pkg/assembler/backends/ent/builder_update.go', 'guac/pkg/assembler/backends/ent/builder_query.go', 'guac/pkg/assembler/backends/ent/license_update.go', 'guac/pkg/assembler/backends/ent/license_create.go', 'guac/pkg/assembler/backends/ent/license.go', 'guac/pkg/assembler/backends/ent/license_delete.go', 'guac/pkg/assembler/backends/ent/builder.go', 'guac/pkg/assembler/backends/ent/license_query.go', 'guac/pkg/assembler/backends/ent/backend/license_test.go', 'guac/pkg/assembler/backends/ent/backend/builders_test.go', 'guac/pkg/assembler/backends/ent/backend/license.go', 'guac/pkg/assembler/backends/ent/backend/builders.go', 'guac/pkg/assembler/backends/ent/license/license.go', 'guac/pkg/assembler/backends/ent/schema/license.go', 'guac/pkg/assembler/backends/ent/schema/builder.go', 'guac/pkg/assembler/backends/ent/builder/builder.go', 'guac/pkg/assembler/clients/README.md', 'guac/pkg/assembler/clients/operations/license.graphql', 'guac/pkg/assembler/clients/operations/builder.graphql', 'guac/pkg/ingestor/parser/common/license.go', 'guac/pkg/ingestor/parser/common/graph_builder.go', 'guac/cmd/README.md']
+INFO:root:Trimming 945 files down to 100 for LLM
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+INFO:root:LLM found documentation in the repo: ['guac/CONTRIBUTING.md', 'guac/README.md', 'guac/GOVERNANCE.md', 'guac/ROADMAP.md', 'guac/GUAC_FRIENDS.md', 'guac/use-cases.md', 'guac/Makefile', 'guac/TECHNICAL_ADVISORY_MEMBERS']
+INFO:root:guac/CONTRIBUTING.md has a supported extension, including
+INFO:root:guac/README.md has a supported extension, including
+INFO:root:guac/GOVERNANCE.md has a supported extension, including
+INFO:root:guac/ROADMAP.md has a supported extension, including
+INFO:root:guac/GUAC_FRIENDS.md has a supported extension, including
+INFO:root:guac/use-cases.md has a supported extension, including
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+INFO:root:Summarized guac/Makefile: <list>
+1. **all**: This target runs the test, cover, fmt, lint, build, and generate targets. It's a comprehensive target that performs a full build process including testing, coverage report generation, formatting checks, linting, and building the binary.
+
+2. **start-service**: This target starts the service using Docker Compose. It requires the Docker Compose tool to be installed and the container images to be available. If the container images are missing, it suggests running the `make container` target first.
+
+3. **stop-service**: This target stops the service by bringing down the Docker Compose setup. It's essential for stopping the service and cleaning up the containers.
+
+4. **check-tools**: This target checks if all the necessary tools are installed. It checks for Docker, Docker buildx, Docker Compose, Protoc, Golangci-lint, Mockgen, and Goreleaser. It's crucial for ensuring the environment is correctly set up for the build process.
+
+5. **container**: This target builds and packages a container for local testing. It's essential for creating a Docker container of the application for testing purposes.
+</list>
+INFO:root:guac/TECHNICAL_ADVISORY_MEMBERS.txt has no extension but including
+INFO:root:Using only supported extensions: ['guac/CONTRIBUTING.md', 'guac/README.md', 'guac/GOVERNANCE.md', 'guac/ROADMAP.md', 'guac/GUAC_FRIENDS.md', 'guac/use-cases.md', 'Makefile_summary.txt', 'guac/TECHNICAL_ADVISORY_MEMBERS.txt']
+INFO:root:Using assistant prompt:
+
+Generate minimalist and straightforward instructions for compiling and
+installing the source code of the software project guac,
+version 0.3.0. The GitHub repository is https://github.com/guacsec/guac. Checkout v0.3.0 for the correct version.
+The instructions should be concise and solely focused on the build and installation process,
+excluding any steps related to testing, linting, or other unrelated tasks.
+If multiple build methods are available, choose the most direct and
+uncomplicated method and provide a consistent set of steps without
+mixing different approaches. You will respond in JSON form only.
+
+The response should contain the following fields:
+
+summary: A description of the components the project uses and how they are built. If able, provide
+         step-by-step build instructions.
+
+description: A single sentence description of the project. It should not start with the project's name.
+
+license: The license under which the project is released. Include the license name only.
+
+steps: An ordered list of build commands.
+       Each build step is an object with specific fields depending on its type.
+       There are different step types, each requiring unique fields. If using
+       a place holder value or reporting any value that is not meant to be
+       interpreted literally, surround the value with  "<< >>" e.g <<place holder>>.
+       Assume you have root privileges on the system (no need to use sudo).
+
+Step type: git-checkout - Clone a git repository and checkout a branch/tag
+Fields:
+'repository' (required) - Repository to clone. Omit the .git suffix
+'tag' (optional) - Branch or tag to checkout. Must specify either a branch or tag.
+'branch' (optional) - Branch to checkout. Do not specify both a branch and tag
+
+Step type: shell - Run a shell command. Use as a last resort when desired functionality cannot be captured by another build step type.
+Fields:
+'command' (required) - Command to run
+
+Step type: go/build - Builds a project with `go build` and installs it to <prefix>/<install_dir>/<output>
+Fields:
+'packages' (required) - A single string of space-separated packages to compile. Files can also be specified. This is the value passed to `go build`. Paths are relative to modroot.
+'output' (required) - Name of the output binary. The final install location will be in <prefix>/<install_dir>/<output>
+'modroot' (optional) - Top directory of the go module, this is where `go.mod` lives. Before building the go pipeline will `cd` into this directory.
+'prefix' (optional) - Prefix to install binaries. Defaults to 'usr'.
+'ldflags' (optional) - A single string of space-separated flags ([pattern=]arg) to pass to the `-ldflags` arg of `go build`.
+'install_dir' (optional) - Binaries are installed in this directory <prefix>/<install_dir>. Defaults to 'bin'.
+
+Here is a list of the first 100 files in the projects GitHub repository:
+
+guac/CONTRIBUTING.md
+guac/.gitignore
+guac/.goreleaser-nightly.yaml
+guac/MAINTAINERS
+guac/.graphqlconfig.yaml
+guac/shell.nix
+guac/README.md
+guac/GOVERNANCE.md
+guac/.golangci.yaml
+guac/ROADMAP.md
+guac/GUAC_FRIENDS.md
+guac/go.mod
+guac/go.sum
+guac/use-cases.md
+guac/Tiltfile
+guac/docker-compose.yml
+guac/arango.docker-compose.yaml
+guac/guac.yaml
+guac/.goreleaser.yaml
+guac/TECHNICAL_ADVISORY_MEMBERS
+guac/SECURITY-INSIGHTS.yml
+guac/LICENSE
+guac/Makefile
+guac/.tiltignore
+guac/dockerignore
+guac/.env
+guac/.git/packed-refs
+guac/.git/description
+guac/.git/HEAD
+guac/.git/index
+guac/.git/config
+guac/.git/refs/remotes/origin/HEAD
+guac/.git/refs/heads/main
+guac/.git/objects/pack/pack-6b3b39af45a634ceca848159e0591e1d186fa35c.idx
+guac/.git/objects/pack/pack-6b3b39af45a634ceca848159e0591e1d186fa35c.pack
+guac/.git/info/exclude
+guac/.git/hooks/update.sample
+guac/.git/hooks/commit-msg.sample
+guac/.git/hooks/prepare-commit-msg.sample
+guac/.git/hooks/pre-merge-commit.sample
+guac/.git/hooks/pre-push.sample
+guac/.git/hooks/pre-commit.sample
+guac/.git/hooks/pre-rebase.sample
+guac/.git/hooks/post-update.sample
+guac/.git/hooks/applypatch-msg.sample
+guac/.git/hooks/pre-applypatch.sample
+guac/.git/hooks/pre-receive.sample
+guac/.git/hooks/fsmonitor-watchman.sample
+guac/.git/logs/HEAD
+guac/.git/logs/refs/remotes/origin/HEAD
+guac/.git/logs/refs/heads/main
+guac/internal/testing/e2e/expectIsDependencyQ2.json
+guac/internal/testing/e2e/e2e
+guac/internal/testing/e2e/expectCertifyVulnQ1.json
+guac/internal/testing/e2e/expectPkgQ1.json
+guac/internal/testing/e2e/expectPkgQ4.json
+guac/internal/testing/e2e/expectPathQ1.json
+guac/internal/testing/e2e/expectOSVQ1.json
+guac/internal/testing/e2e/expectPkgQ2.json
+guac/internal/testing/e2e/expectPathPy.json
+guac/internal/testing/e2e/expectPkgQ3.json
+guac/internal/testing/e2e/expectIsDependencyQ1.json
+guac/internal/testing/testdata/models.go
+guac/internal/testing/testdata/testdata.go
+guac/internal/testing/testdata/exampledata/open-vex-affected.json
+guac/internal/testing/testdata/exampledata/distroless-cyclonedx.json
+guac/internal/testing/testdata/exampledata/go-spdx-multi-arch_2.json
+guac/internal/testing/testdata/exampledata/kubernetes-scorecard.json
+guac/internal/testing/testdata/exampledata/rhsa-csaf.json
+guac/internal/testing/testdata/exampledata/go-spdx-multi-arch_3.json
+guac/internal/testing/testdata/exampledata/github-review.json
+guac/internal/testing/testdata/exampledata/oci-spdx.json
+guac/internal/testing/testdata/exampledata/ingest_predicates.json
+guac/internal/testing/testdata/exampledata/busybox-cyclonedx.json
+guac/internal/testing/testdata/exampledata/alpine-spdx.json
+guac/internal/testing/testdata/exampledata/go-spdx-multi-arch_1.json
+guac/internal/testing/testdata/exampledata/cyclonedx-vex-affected.json
+guac/internal/testing/testdata/exampledata/small-deps-cyclonedx.json
+guac/internal/testing/testdata/exampledata/npm-cyclonedx-dependencies-missing-depends-on.json
+guac/internal/testing/testdata/exampledata/cyclonedx-vex.xml
+guac/internal/testing/testdata/exampledata/laravel-cyclonedx.xml
+guac/internal/testing/testdata/exampledata/open-vex-not-affected.json
+guac/internal/testing/testdata/exampledata/small-spdx.json
+guac/internal/testing/testdata/exampledata/invalid-spdx-identifier-spdx.json
+guac/internal/testing/testdata/exampledata/quarkus-deps-cyclonedx.json
+guac/internal/testing/testdata/exampledata/crev-review.json
+guac/internal/testing/testdata/exampledata/no-dependent-components-cyclonedx.json
+guac/internal/testing/testdata/exampledata/cyclonedx-unaffected-vex.json
+guac/internal/testing/testdata/exampledata/invalid-spdx.json
+guac/internal/testing/testdata/exampledata/certify-novuln.json
+guac/internal/testing/testdata/exampledata/invalid-scorecard.json
+guac/internal/testing/testdata/exampledata/invalid-cyclonedx.xml
+guac/internal/testing/testdata/exampledata/oci-dsse-att.json
+guac/internal/testing/testdata/exampledata/certify-vuln.json
+guac/internal/testing/testdata/exampledata/big-mongo-cyclonedx.json
+guac/internal/testing/testdata/exampledata/invalid-cyclonedx.json
+guac/internal/testing/testdata/exampledata/cyclonedx-no-top-level.json
+guac/internal/testing/testdata/exampledata/alpine-small-spdx.json
+guac/internal/testing/testdata/exampledata/alpine-cyclonedx.json
+guac/internal/testing/nats/nats.go
+
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/files "HTTP/1.1 200 OK"
+INFO:root:Created file guac/CONTRIBUTING.md
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/files "HTTP/1.1 200 OK"
+INFO:root:Created file guac/README.md
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/files "HTTP/1.1 200 OK"
+INFO:root:Created file guac/GOVERNANCE.md
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/files "HTTP/1.1 200 OK"
+INFO:root:Created file guac/ROADMAP.md
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/files "HTTP/1.1 200 OK"
+INFO:root:Created file guac/GUAC_FRIENDS.md
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/files "HTTP/1.1 200 OK"
+INFO:root:Created file guac/use-cases.md
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/files "HTTP/1.1 200 OK"
+INFO:root:Created file Makefile_summary.txt

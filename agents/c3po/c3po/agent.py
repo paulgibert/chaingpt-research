@@ -75,7 +75,7 @@ def run_agent(package: str, version: str,
     _print_banner()
 
     # Setup logging
-    logging.basicConfig(filename=output_log, encoding='utf-8', level=logging.INFO)
+    logging.basicConfig(filename=output_log, encoding='utf-8', level=logging.INFO, force=True)
 
     print(Fore.BLUE + f"Generating Melange YAML for {package} {version}")
 
@@ -108,6 +108,7 @@ def run_agent(package: str, version: str,
     if data is None:
         print(Fore.RED + "Failed :(")
         print(Fore.RED + output)
+        logging.info("Failed: %s", output)
         _cleanup_workspace(workspace)
         return
 

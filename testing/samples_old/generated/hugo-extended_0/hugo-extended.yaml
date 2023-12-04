@@ -1,0 +1,19 @@
+package:
+  name: hugo-extended
+  version: 0.119.0
+  description: A plug-and-play binary wrapper for Hugo Extended, streamlining the
+    use of this static-site generator.
+  copyright:
+  - license: MIT
+environment:
+  contents:
+    packages:
+    - wolfi-base
+    - build-base
+pipeline:
+- uses: git-checkout
+  with:
+    repository: https://github.com/jakejarvis/hugo-extended
+    tag: v0.119.0
+- runs: npm install
+- runs: npm run postinstall

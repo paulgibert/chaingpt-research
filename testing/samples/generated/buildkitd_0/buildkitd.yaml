@@ -1,10 +1,10 @@
 package:
   name: buildkitd
   version: 0.12.3
-  description: A tool designed to enlarge the flexibility and efficiency of building
-    Docker images.
+  description: A toolkit for converting source code to build artifacts in an efficient,
+    expressive and repeatable manner.
   copyright:
-  - license: See the LICENSE file in the repository.
+  - license: Apache-2.0
 environment:
   contents:
     packages:
@@ -15,5 +15,5 @@ pipeline:
   with:
     repository: https://github.com/moby/buildkit
     tag: v0.12.3
-- runs: make buildkitd
-- runs: cp ./bin/buildkitd <<path_to_install_directory>>
+- runs: make
+- runs: cp ./bin/* /usr/local/bin/

@@ -1,0 +1,22 @@
+package:
+  name: ko
+  version: 0.15.0
+  description: A simple and fast container image builder for Go applications that
+    does not require Docker for the build process.
+  copyright:
+  - license: Apache License 2.0
+environment:
+  contents:
+    packages:
+    - wolfi-base
+    - build-base
+pipeline:
+- uses: git-checkout
+  with:
+    repository: https://github.com/google/ko
+    tag: v0.15.0
+- uses: go/build
+  with:
+    packages: .
+    output: ko
+    modroot: ko

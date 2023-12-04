@@ -1,9 +1,8 @@
 package:
   name: helm
   version: 3.13.1
-  description: "Helm is a tool streamline installing and managing Kubernetes applications\
-    \ and packages pre-configured Kubernetes resources as Charts\u301027\u2020source\u3011\
-    \u301039\u2020source\u3011."
+  description: Helm is a tool for managing Charts, which are packages of pre-configured
+    Kubernetes resources.
   copyright:
   - license: Apache License 2.0
 environment:
@@ -16,9 +15,5 @@ pipeline:
   with:
     repository: https://github.com/helm/helm
     tag: v3.13.1
-- uses: go/build
-  with:
-    packages: ./cmd/helm
-    output: helm
-    modroot: .
-    ldflags: -X helm.sh/helm/v3/internal/version.gitVersion=v3.13.1
+- runs: make build
+- runs: mv bin/helm /usr/local/bin/helm

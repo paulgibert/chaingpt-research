@@ -1,0 +1,1 @@
+The Helm project is built using Go and supports cross-compilation for multiple platforms. A distribution can be prepared with necessary files and then compressed into tar.gz and zip archives【17†source】【27†source】.

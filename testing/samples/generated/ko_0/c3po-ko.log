@@ -1,0 +1,218 @@
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+INFO:root:LLM proposed url https://github.com/google/ko
+INFO:root:String search yielded branch/tag v0.15.0
+INFO:root:Checked out branch/tag v0.15.0
+INFO:root:str search found documentation in the repo: ['ko/CONTRIBUTING.md', 'ko/README.md', 'ko/LICENSE', 'ko/vendor/google.golang.org/appengine/CONTRIBUTING.md', 'ko/vendor/google.golang.org/appengine/README.md', 'ko/vendor/google.golang.org/appengine/LICENSE', 'ko/vendor/google.golang.org/appengine/travis_install.sh', 'ko/vendor/google.golang.org/protobuf/LICENSE', 'ko/vendor/google.golang.org/protobuf/internal/filetype/build.go', 'ko/vendor/google.golang.org/protobuf/internal/filedesc/build.go', 'ko/vendor/google.golang.org/genproto/googleapis/rpc/LICENSE', 'ko/vendor/google.golang.org/grpc/CONTRIBUTING.md', 'ko/vendor/google.golang.org/grpc/README.md', 'ko/vendor/google.golang.org/grpc/LICENSE', 'ko/vendor/gopkg.in/ini.v1/README.md', 'ko/vendor/gopkg.in/ini.v1/LICENSE', 'ko/vendor/gopkg.in/square/go-jose.v2/CONTRIBUTING.md', 'ko/vendor/gopkg.in/square/go-jose.v2/README.md', 'ko/vendor/gopkg.in/square/go-jose.v2/LICENSE', 'ko/vendor/gopkg.in/square/go-jose.v2/json/README.md', 'ko/vendor/gopkg.in/square/go-jose.v2/json/LICENSE', 'ko/vendor/gopkg.in/yaml.v2/LICENSE.libyaml', 'ko/vendor/gopkg.in/yaml.v2/README.md', 'ko/vendor/gopkg.in/yaml.v2/LICENSE', 'ko/vendor/gopkg.in/yaml.v3/README.md', 'ko/vendor/gopkg.in/yaml.v3/LICENSE', 'ko/vendor/go.uber.org/automaxprocs/LICENSE', 'ko/vendor/go.uber.org/multierr/README.md', 'ko/vendor/go.uber.org/multierr/LICENSE.txt', 'ko/vendor/go.uber.org/multierr/CHANGELOG.md', 'ko/vendor/golang.org/x/text/LICENSE', 'ko/vendor/golang.org/x/exp/LICENSE', 'ko/vendor/golang.org/x/mod/LICENSE', 'ko/vendor/golang.org/x/sys/LICENSE', 'ko/vendor/golang.org/x/sys/unix/README.md', 'ko/vendor/golang.org/x/net/LICENSE', 'ko/vendor/golang.org/x/sync/LICENSE', 'ko/vendor/golang.org/x/crypto/LICENSE', 'ko/vendor/golang.org/x/tools/LICENSE', 'ko/vendor/golang.org/x/term/CONTRIBUTING.md', 'ko/vendor/golang.org/x/term/README.md', 'ko/vendor/golang.org/x/term/LICENSE', 'ko/vendor/golang.org/x/oauth2/CONTRIBUTING.md', 'ko/vendor/golang.org/x/oauth2/README.md', 'ko/vendor/golang.org/x/oauth2/LICENSE', 'ko/vendor/sigs.k8s.io/yaml/CONTRIBUTING.md', 'ko/vendor/sigs.k8s.io/yaml/README.md', 'ko/vendor/sigs.k8s.io/yaml/LICENSE', 'ko/vendor/sigs.k8s.io/kind/LICENSE', 'ko/vendor/github.com/sourcegraph/conc/README.md', 'ko/vendor/github.com/sourcegraph/conc/LICENSE', 'ko/vendor/github.com/evanphx/json-patch/v5/LICENSE', 'ko/vendor/github.com/josharian/intern/README.md', 'ko/vendor/github.com/josharian/intern/license.md', 'ko/vendor/github.com/subosito/gotenv/README.md', 'ko/vendor/github.com/subosito/gotenv/LICENSE', 'ko/vendor/github.com/subosito/gotenv/CHANGELOG.md', 'ko/vendor/github.com/vbatts/tar-split/LICENSE', 'ko/vendor/github.com/Microsoft/go-winio/README.md', 'ko/vendor/github.com/Microsoft/go-winio/LICENSE', 'ko/vendor/github.com/go-logr/logr/CONTRIBUTING.md', 'ko/vendor/github.com/go-logr/logr/README.md', 'ko/vendor/github.com/go-logr/logr/LICENSE', 'ko/vendor/github.com/go-logr/logr/CHANGELOG.md', 'ko/vendor/github.com/spf13/pflag/README.md', 'ko/vendor/github.com/spf13/pflag/LICENSE', 'ko/vendor/github.com/spf13/cast/README.md', 'ko/vendor/github.com/spf13/cast/LICENSE', 'ko/vendor/github.com/spf13/afero/README.md', 'ko/vendor/github.com/spf13/afero/LICENSE.txt', 'ko/vendor/github.com/spf13/cobra/CONTRIBUTING.md', 'ko/vendor/github.com/spf13/cobra/README.md', 'ko/vendor/github.com/spf13/cobra/LICENSE.txt', 'ko/vendor/github.com/spf13/cobra/doc/README.md', 'ko/vendor/github.com/spf13/viper/README.md', 'ko/vendor/github.com/spf13/viper/LICENSE', 'ko/vendor/github.com/inconshreveable/mousetrap/README.md', 'ko/vendor/github.com/inconshreveable/mousetrap/LICENSE', 'ko/vendor/github.com/titanous/rocacheck/README.md', 'ko/vendor/github.com/titanous/rocacheck/LICENSE', 'ko/vendor/github.com/Azure/go-autorest/README.md', 'ko/vendor/github.com/Azure/go-autorest/LICENSE', 'ko/vendor/github.com/Azure/go-autorest/CHANGELOG.md', 'ko/vendor/github.com/Azure/go-autorest/autorest/LICENSE', 'ko/vendor/github.com/Azure/go-autorest/autorest/adal/README.md', 'ko/vendor/github.com/Azure/go-autorest/autorest/adal/LICENSE', 'ko/vendor/github.com/Azure/go-autorest/autorest/date/LICENSE', 'ko/vendor/github.com/Azure/go-autorest/autorest/azure/auth/README.md', 'ko/vendor/github.com/Azure/go-autorest/autorest/azure/auth/LICENSE', 'ko/vendor/github.com/Azure/go-autorest/autorest/azure/cli/LICENSE', 'ko/vendor/github.com/Azure/go-autorest/logger/LICENSE', 'ko/vendor/github.com/Azure/go-autorest/tracing/LICENSE', 'ko/vendor/github.com/Azure/azure-sdk-for-go/LICENSE.txt', 'ko/vendor/github.com/Azure/azure-sdk-for-go/services/preview/containerregistry/runtime/2019-08-15-preview/containerregistry/CHANGELOG.md', 'ko/vendor/github.com/oklog/ulid/CONTRIBUTING.md', 'ko/vendor/github.com/oklog/ulid/README.md', 'ko/vendor/github.com/oklog/ulid/LICENSE', 'ko/vendor/github.com/oklog/ulid/CHANGELOG.md', 'ko/vendor/github.com/russross/blackfriday/v2/README.md', 'ko/vendor/github.com/russross/blackfriday/v2/LICENSE.txt', 'ko/vendor/github.com/letsencrypt/boulder/LICENSE.txt', 'ko/vendor/github.com/mailru/easyjson/LICENSE', 'ko/vendor/github.com/go-openapi/spec/README.md', 'ko/vendor/github.com/go-openapi/spec/license.go', 'ko/vendor/github.com/go-openapi/spec/LICENSE', 'ko/vendor/github.com/go-openapi/swag/README.md', 'ko/vendor/github.com/go-openapi/swag/LICENSE', 'ko/vendor/github.com/go-openapi/jsonreference/README.md', 'ko/vendor/github.com/go-openapi/jsonreference/LICENSE', 'ko/vendor/github.com/go-openapi/runtime/README.md', 'ko/vendor/github.com/go-openapi/runtime/LICENSE', 'ko/vendor/github.com/go-openapi/strfmt/README.md', 'ko/vendor/github.com/go-openapi/strfmt/LICENSE', 'ko/vendor/github.com/go-openapi/errors/README.md', 'ko/vendor/github.com/go-openapi/errors/LICENSE', 'ko/vendor/github.com/go-openapi/validate/README.md', 'ko/vendor/github.com/go-openapi/validate/LICENSE', 'ko/vendor/github.com/go-openapi/jsonpointer/README.md', 'ko/vendor/github.com/go-openapi/jsonpointer/LICENSE', 'ko/vendor/github.com/go-openapi/loads/README.md', 'ko/vendor/github.com/go-openapi/loads/LICENSE', 'ko/vendor/github.com/go-openapi/analysis/README.md', 'ko/vendor/github.com/go-openapi/analysis/LICENSE', 'ko/vendor/github.com/mattn/go-isatty/README.md', 'ko/vendor/github.com/mattn/go-isatty/LICENSE', 'ko/vendor/github.com/dimchansky/utfbom/README.md', 'ko/vendor/github.com/dimchansky/utfbom/LICENSE', 'ko/vendor/github.com/pkg/errors/README.md', 'ko/vendor/github.com/pkg/errors/LICENSE', 'ko/vendor/github.com/cpuguy83/go-md2man/v2/LICENSE.md', 'ko/vendor/github.com/sigstore/cosign/v2/LICENSE', 'ko/vendor/github.com/sigstore/sigstore/LICENSE', 'ko/vendor/github.com/sigstore/rekor/LICENSE', 'ko/vendor/github.com/golang-jwt/jwt/v4/README.md', 'ko/vendor/github.com/golang-jwt/jwt/v4/LICENSE', 'ko/vendor/github.com/google/go-containerregistry/LICENSE', 'ko/vendor/github.com/google/go-containerregistry/pkg/authn/README.md', 'ko/vendor/github.com/google/go-containerregistry/pkg/v1/empty/README.md', 'ko/vendor/github.com/google/go-containerregistry/pkg/v1/mutate/README.md', 'ko/vendor/github.com/google/go-containerregistry/pkg/v1/remote/README.md', 'ko/vendor/github.com/google/go-containerregistry/pkg/v1/remote/transport/README.md', 'ko/vendor/github.com/google/go-containerregistry/pkg/v1/stream/README.md', 'ko/vendor/github.com/google/go-containerregistry/pkg/v1/partial/README.md', 'ko/vendor/github.com/google/go-containerregistry/pkg/v1/tarball/README.md', 'ko/vendor/github.com/google/go-containerregistry/pkg/v1/google/README.md', 'ko/vendor/github.com/google/go-containerregistry/pkg/v1/layout/README.md', 'ko/vendor/github.com/google/go-containerregistry/pkg/v1/daemon/README.md', 'ko/vendor/github.com/google/go-containerregistry/pkg/registry/README.md', 'ko/vendor/github.com/google/go-containerregistry/pkg/legacy/tarball/README.md', 'ko/vendor/github.com/google/go-containerregistry/pkg/name/README.md', 'ko/vendor/github.com/google/safetext/LICENSE', 'ko/vendor/github.com/google/go-cmp/LICENSE', 'ko/vendor/github.com/sagikazarmark/slog-shim/README.md', 'ko/vendor/github.com/sagikazarmark/slog-shim/LICENSE', 'ko/vendor/github.com/sagikazarmark/locafero/README.md', 'ko/vendor/github.com/sagikazarmark/locafero/LICENSE', 'ko/vendor/github.com/awslabs/amazon-ecr-credential-helper/ecr-login/LICENSE', 'ko/vendor/github.com/awslabs/amazon-ecr-credential-helper/ecr-login/cache/build.go', 'ko/vendor/github.com/hashicorp/hcl/README.md', 'ko/vendor/github.com/hashicorp/hcl/LICENSE', 'ko/vendor/github.com/dprotaso/go-yit/README.md', 'ko/vendor/github.com/dprotaso/go-yit/LICENSE', 'ko/vendor/github.com/containerd/stargz-snapshotter/estargz/build.go', 'ko/vendor/github.com/containerd/stargz-snapshotter/estargz/LICENSE', 'ko/vendor/github.com/chrismellard/docker-credential-acr-env/LICENSE', 'ko/vendor/github.com/mitchellh/go-homedir/README.md', 'ko/vendor/github.com/mitchellh/go-homedir/LICENSE', 'ko/vendor/github.com/mitchellh/mapstructure/README.md', 'ko/vendor/github.com/mitchellh/mapstructure/LICENSE', 'ko/vendor/github.com/mitchellh/mapstructure/CHANGELOG.md', 'ko/vendor/github.com/go-training/helloworld/README.md', 'ko/vendor/github.com/go-training/helloworld/LICENSE', 'ko/vendor/github.com/sirupsen/logrus/README.md', 'ko/vendor/github.com/sirupsen/logrus/LICENSE', 'ko/vendor/github.com/sirupsen/logrus/CHANGELOG.md', 'ko/vendor/github.com/opencontainers/image-spec/LICENSE', 'ko/vendor/github.com/opencontainers/go-digest/CONTRIBUTING.md', 'ko/vendor/github.com/opencontainers/go-digest/LICENSE.docs', 'ko/vendor/github.com/opencontainers/go-digest/README.md', 'ko/vendor/github.com/opencontainers/go-digest/LICENSE', 'ko/vendor/github.com/aws/aws-sdk-go-v2/CONTRIBUTING.md', 'ko/vendor/github.com/aws/aws-sdk-go-v2/buildspec.yml', 'ko/vendor/github.com/aws/aws-sdk-go-v2/README.md', 'ko/vendor/github.com/aws/aws-sdk-go-v2/LICENSE.txt', 'ko/vendor/github.com/aws/aws-sdk-go-v2/CHANGELOG.md', 'ko/vendor/github.com/aws/aws-sdk-go-v2/internal/ini/LICENSE.txt', 'ko/vendor/github.com/aws/aws-sdk-go-v2/internal/ini/CHANGELOG.md', 'ko/vendor/github.com/aws/aws-sdk-go-v2/internal/configsources/LICENSE.txt', 'ko/vendor/github.com/aws/aws-sdk-go-v2/internal/configsources/CHANGELOG.md', 'ko/vendor/github.com/aws/aws-sdk-go-v2/internal/sync/singleflight/LICENSE', 'ko/vendor/github.com/aws/aws-sdk-go-v2/internal/endpoints/v2/LICENSE.txt', 'ko/vendor/github.com/aws/aws-sdk-go-v2/internal/endpoints/v2/CHANGELOG.md', 'ko/vendor/github.com/aws/aws-sdk-go-v2/service/internal/presigned-url/LICENSE.txt', 'ko/vendor/github.com/aws/aws-sdk-go-v2/service/internal/presigned-url/CHANGELOG.md', 'ko/vendor/github.com/aws/aws-sdk-go-v2/service/sso/LICENSE.txt', 'ko/vendor/github.com/aws/aws-sdk-go-v2/service/sso/CHANGELOG.md', 'ko/vendor/github.com/aws/aws-sdk-go-v2/service/ecr/LICENSE.txt', 'ko/vendor/github.com/aws/aws-sdk-go-v2/service/ecr/CHANGELOG.md', 'ko/vendor/github.com/aws/aws-sdk-go-v2/service/ecrpublic/LICENSE.txt', 'ko/vendor/github.com/aws/aws-sdk-go-v2/service/ecrpublic/CHANGELOG.md', 'ko/vendor/github.com/aws/aws-sdk-go-v2/service/ssooidc/LICENSE.txt', 'ko/vendor/github.com/aws/aws-sdk-go-v2/service/ssooidc/CHANGELOG.md', 'ko/vendor/github.com/aws/aws-sdk-go-v2/service/sts/LICENSE.txt', 'ko/vendor/github.com/aws/aws-sdk-go-v2/service/sts/CHANGELOG.md', 'ko/vendor/github.com/aws/aws-sdk-go-v2/feature/ec2/imds/LICENSE.txt', 'ko/vendor/github.com/aws/aws-sdk-go-v2/feature/ec2/imds/CHANGELOG.md', 'ko/vendor/github.com/aws/aws-sdk-go-v2/config/LICENSE.txt', 'ko/vendor/github.com/aws/aws-sdk-go-v2/config/CHANGELOG.md', 'ko/vendor/github.com/aws/aws-sdk-go-v2/credentials/LICENSE.txt', 'ko/vendor/github.com/aws/aws-sdk-go-v2/credentials/CHANGELOG.md', 'ko/vendor/github.com/aws/smithy-go/CONTRIBUTING.md', 'ko/vendor/github.com/aws/smithy-go/README.md', 'ko/vendor/github.com/aws/smithy-go/LICENSE', 'ko/vendor/github.com/aws/smithy-go/CHANGELOG.md', 'ko/vendor/github.com/aws/smithy-go/internal/sync/singleflight/LICENSE', 'ko/vendor/github.com/aws/smithy-go/middleware/step_build.go', 'ko/vendor/github.com/gogo/protobuf/LICENSE', 'ko/vendor/github.com/docker/cli/LICENSE', 'ko/vendor/github.com/docker/go-units/CONTRIBUTING.md', 'ko/vendor/github.com/docker/go-units/README.md', 'ko/vendor/github.com/docker/go-units/LICENSE', 'ko/vendor/github.com/docker/docker-credential-helpers/LICENSE', 'ko/vendor/github.com/docker/distribution/LICENSE', 'ko/vendor/github.com/docker/docker/LICENSE', 'ko/vendor/github.com/docker/docker/api/README.md', 'ko/vendor/github.com/docker/docker/api/types/versions/README.md', 'ko/vendor/github.com/docker/docker/client/build_cancel.go', 'ko/vendor/github.com/docker/docker/client/plugin_install.go', 'ko/vendor/github.com/docker/docker/client/README.md', 'ko/vendor/github.com/docker/docker/client/build_prune.go', 'ko/vendor/github.com/docker/docker/client/image_build.go', 'ko/vendor/github.com/docker/go-connections/LICENSE', 'ko/vendor/github.com/docker/go-connections/sockets/README.md', 'ko/vendor/github.com/golang/protobuf/LICENSE', 'ko/vendor/github.com/alessio/shellescape/README.md', 'ko/vendor/github.com/alessio/shellescape/LICENSE', 'ko/vendor/github.com/jmespath/go-jmespath/README.md', 'ko/vendor/github.com/jmespath/go-jmespath/LICENSE', 'ko/vendor/github.com/klauspost/compress/README.md', 'ko/vendor/github.com/klauspost/compress/LICENSE', 'ko/vendor/github.com/klauspost/compress/zstd/README.md', 'ko/vendor/github.com/klauspost/compress/zstd/internal/xxhash/README.md', 'ko/vendor/github.com/klauspost/compress/zstd/internal/xxhash/LICENSE.txt', 'ko/vendor/github.com/klauspost/compress/internal/snapref/LICENSE', 'ko/vendor/github.com/klauspost/compress/huff0/README.md', 'ko/vendor/github.com/klauspost/compress/fse/README.md', 'ko/vendor/github.com/BurntSushi/toml/README.md', 'ko/vendor/github.com/pelletier/go-toml/CONTRIBUTING.md', 'ko/vendor/github.com/pelletier/go-toml/README.md', 'ko/vendor/github.com/pelletier/go-toml/LICENSE', 'ko/vendor/github.com/pelletier/go-toml/v2/CONTRIBUTING.md', 'ko/vendor/github.com/pelletier/go-toml/v2/README.md', 'ko/vendor/github.com/pelletier/go-toml/v2/LICENSE', 'ko/vendor/github.com/pelletier/go-toml/v2/unstable/builder.go', 'ko/vendor/github.com/fsnotify/fsnotify/CONTRIBUTING.md', 'ko/vendor/github.com/fsnotify/fsnotify/README.md', 'ko/vendor/github.com/fsnotify/fsnotify/LICENSE', 'ko/vendor/github.com/fsnotify/fsnotify/CHANGELOG.md', 'ko/vendor/github.com/theupdateframework/go-tuf/LICENSE', 'ko/vendor/github.com/magiconair/properties/README.md', 'ko/vendor/github.com/magiconair/properties/LICENSE.md', 'ko/vendor/github.com/magiconair/properties/CHANGELOG.md', 'ko/vendor/github.com/asaskevich/govalidator/CONTRIBUTING.md', 'ko/vendor/github.com/asaskevich/govalidator/README.md', 'ko/vendor/github.com/asaskevich/govalidator/LICENSE', 'ko/vendor/go.mongodb.org/mongo-driver/LICENSE', 'ko/vendor/go.mongodb.org/mongo-driver/x/bsonx/bsoncore/bson_arraybuilder.go', 'ko/vendor/go.mongodb.org/mongo-driver/x/bsonx/bsoncore/bson_documentbuilder.go', 'ko/vendor/k8s.io/klog/v2/CONTRIBUTING.md', 'ko/vendor/k8s.io/klog/v2/README.md', 'ko/vendor/k8s.io/klog/v2/LICENSE', 'ko/vendor/k8s.io/klog/v2/internal/clock/README.md', 'ko/vendor/k8s.io/utils/LICENSE', 'ko/vendor/k8s.io/utils/internal/third_party/forked/golang/LICENSE', 'ko/vendor/k8s.io/apimachinery/LICENSE', 'ko/vendor/cloud.google.com/go/compute/LICENSE', 'ko/vendor/cloud.google.com/go/compute/metadata/README.md', 'ko/vendor/cloud.google.com/go/compute/metadata/LICENSE', 'ko/docs/README.md', 'ko/docs/install.md', 'ko/docs/features/build-cache.md', 'ko/docs/reference/ko_build.md', 'ko/pkg/commands/build.go', 'ko/pkg/commands/options/build_test.go', 'ko/pkg/commands/options/build.go', 'ko/pkg/build/gobuild_test.go', 'ko/pkg/build/gobuilds.go', 'ko/pkg/build/gobuild.go', 'ko/pkg/build/build.go', 'ko/pkg/build/gobuilds_test.go', 'ko/test/kodata/b', 'ko/test/kodata/a', 'ko/.github/workflows/build.yaml']
+INFO:root:Trimming 3624 files down to 100 for LLM
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+INFO:root:LLM found documentation in the repo: ['ko/CONTRIBUTING.md', 'ko/README.md', 'ko/ROADMAP.md', 'ko/mkdocs.yml', 'ko/MAINTAINERS.md', 'ko/.goreleaser.yml', 'ko/vendor/google.golang.org/appengine/CONTRIBUTING.md', 'ko/vendor/google.golang.org/appengine/README.md']
+INFO:root:ko/CONTRIBUTING.md has a supported extension, including
+INFO:root:ko/README.md has a supported extension, including
+INFO:root:ko/ROADMAP.md has a supported extension, including
+INFO:root:Excluded ko/mkdocs.yml due to unsupported extension
+INFO:root:ko/MAINTAINERS.md has a supported extension, including
+INFO:root:Excluded ko/.goreleaser.yml due to unsupported extension
+INFO:root:ko/vendor/google.golang.org/appengine/CONTRIBUTING.md has a supported extension, including
+INFO:root:ko/vendor/google.golang.org/appengine/README.md has a supported extension, including
+INFO:root:Using only supported extensions: ['ko/CONTRIBUTING.md', 'ko/README.md', 'ko/ROADMAP.md', 'ko/MAINTAINERS.md', 'ko/vendor/google.golang.org/appengine/CONTRIBUTING.md', 'ko/vendor/google.golang.org/appengine/README.md']
+INFO:root:Using assistant prompt:
+
+Generate minimalist and straightforward instructions for compiling and
+installing the source code of the software project ko,
+version 0.15.0. The GitHub repository is https://github.com/google/ko. Checkout v0.15.0 for the correct version.
+The instructions should be concise and solely focused on the build and installation process,
+excluding any steps related to testing, linting, or other unrelated tasks.
+If multiple build methods are available, choose the most direct and
+uncomplicated method and provide a consistent set of steps without
+mixing different approaches. You will respond in JSON form only.
+
+The response should contain the following fields:
+
+summary: A description of the components the project uses and how they are built. If able, provide
+         step-by-step build instructions.
+
+description: A single sentence description of the project. It should not start with the project's name.
+
+license: The license under which the project is released. Include the license name only.
+
+steps: An ordered list of build commands.
+       Each build step is an object with specific fields depending on its type.
+       There are different step types, each requiring unique fields. If using
+       a place holder value or reporting any value that is not meant to be
+       interpreted literally, surround the value with  "<< >>" e.g <<place holder>>.
+       Assume you have root privileges on the system (no need to use sudo).
+
+Step type: git-checkout - Clone a git repository and checkout a branch/tag
+Fields:
+'repository' (required) - Repository to clone. Omit the .git suffix
+'tag' (optional) - Branch or tag to checkout. Must specify either a branch or tag.
+'branch' (optional) - Branch to checkout. Do not specify both a branch and tag
+
+Step type: shell - Run a shell command. Use as a last resort when desired functionality cannot be captured by another build step type.
+Fields:
+'command' (required) - Command to run
+
+Step type: go/build - Builds a project with `go build` and installs it to <prefix>/<install_dir>/<output>
+Fields:
+'packages' (required) - A single string of space-separated packages to compile. Files can also be specified. This is the value passed to `go build`. Paths are relative to modroot.
+'output' (required) - Name of the output binary. The final install location will be in <prefix>/<install_dir>/<output>
+'modroot' (optional) - Top directory of the go module, this is where `go.mod` lives. Before building the go pipeline will `cd` into this directory.
+'prefix' (optional) - Prefix to install binaries. Defaults to 'usr'.
+'ldflags' (optional) - A single string of space-separated flags ([pattern=]arg) to pass to the `-ldflags` arg of `go build`.
+'install_dir' (optional) - Binaries are installed in this directory <prefix>/<install_dir>. Defaults to 'bin'.
+
+Here is a list of the first 100 files in the projects GitHub repository:
+
+ko/CONTRIBUTING.md
+ko/.gitignore
+ko/main.go
+ko/.ko.yaml
+ko/README.md
+ko/code-of-conduct.md
+ko/.wokeignore
+ko/.golangci.yaml
+ko/ROADMAP.md
+ko/mkdocs.yml
+ko/MAINTAINERS.md
+ko/go.mod
+ko/go.sum
+ko/.goreleaser.yml
+ko/integration_test.sh
+ko/CNAME
+ko/LICENSE
+ko/.git/packed-refs
+ko/.git/description
+ko/.git/HEAD
+ko/.git/index
+ko/.git/config
+ko/.git/refs/remotes/origin/HEAD
+ko/.git/refs/heads/main
+ko/.git/objects/pack/pack-426d63d2f6c78b554b4b96c293e00f4747ee0c46.pack
+ko/.git/objects/pack/pack-426d63d2f6c78b554b4b96c293e00f4747ee0c46.idx
+ko/.git/info/exclude
+ko/.git/hooks/update.sample
+ko/.git/hooks/commit-msg.sample
+ko/.git/hooks/prepare-commit-msg.sample
+ko/.git/hooks/pre-merge-commit.sample
+ko/.git/hooks/pre-push.sample
+ko/.git/hooks/pre-commit.sample
+ko/.git/hooks/pre-rebase.sample
+ko/.git/hooks/post-update.sample
+ko/.git/hooks/applypatch-msg.sample
+ko/.git/hooks/pre-applypatch.sample
+ko/.git/hooks/pre-receive.sample
+ko/.git/hooks/fsmonitor-watchman.sample
+ko/.git/logs/HEAD
+ko/.git/logs/refs/remotes/origin/HEAD
+ko/.git/logs/refs/heads/main
+ko/internal/sbom/sbom.go
+ko/internal/sbom/cyclonedx.go
+ko/internal/sbom/spdx.go
+ko/vendor/modules.txt
+ko/vendor/google.golang.org/appengine/CONTRIBUTING.md
+ko/vendor/google.golang.org/appengine/errors.go
+ko/vendor/google.golang.org/appengine/namespace.go
+ko/vendor/google.golang.org/appengine/README.md
+ko/vendor/google.golang.org/appengine/identity.go
+ko/vendor/google.golang.org/appengine/travis_test.sh
+ko/vendor/google.golang.org/appengine/appengine_vm.go
+ko/vendor/google.golang.org/appengine/.travis.yml
+ko/vendor/google.golang.org/appengine/LICENSE
+ko/vendor/google.golang.org/appengine/appengine.go
+ko/vendor/google.golang.org/appengine/timeout.go
+ko/vendor/google.golang.org/appengine/travis_install.sh
+ko/vendor/google.golang.org/appengine/internal/app_id.go
+ko/vendor/google.golang.org/appengine/internal/internal.go
+ko/vendor/google.golang.org/appengine/internal/metadata.go
+ko/vendor/google.golang.org/appengine/internal/main.go
+ko/vendor/google.golang.org/appengine/internal/regen.sh
+ko/vendor/google.golang.org/appengine/internal/identity_vm.go
+ko/vendor/google.golang.org/appengine/internal/identity.go
+ko/vendor/google.golang.org/appengine/internal/api_classic.go
+ko/vendor/google.golang.org/appengine/internal/main_common.go
+ko/vendor/google.golang.org/appengine/internal/api_common.go
+ko/vendor/google.golang.org/appengine/internal/transaction.go
+ko/vendor/google.golang.org/appengine/internal/api.go
+ko/vendor/google.golang.org/appengine/internal/main_vm.go
+ko/vendor/google.golang.org/appengine/internal/identity_flex.go
+ko/vendor/google.golang.org/appengine/internal/net.go
+ko/vendor/google.golang.org/appengine/internal/identity_classic.go
+ko/vendor/google.golang.org/appengine/internal/app_identity/app_identity_service.proto
+ko/vendor/google.golang.org/appengine/internal/app_identity/app_identity_service.pb.go
+ko/vendor/google.golang.org/appengine/internal/modules/modules_service.proto
+ko/vendor/google.golang.org/appengine/internal/modules/modules_service.pb.go
+ko/vendor/google.golang.org/appengine/internal/remote_api/remote_api.proto
+ko/vendor/google.golang.org/appengine/internal/remote_api/remote_api.pb.go
+ko/vendor/google.golang.org/appengine/internal/base/api_base.proto
+ko/vendor/google.golang.org/appengine/internal/base/api_base.pb.go
+ko/vendor/google.golang.org/appengine/internal/log/log_service.proto
+ko/vendor/google.golang.org/appengine/internal/log/log_service.pb.go
+ko/vendor/google.golang.org/appengine/internal/datastore/datastore_v3.pb.go
+ko/vendor/google.golang.org/appengine/internal/datastore/datastore_v3.proto
+ko/vendor/google.golang.org/appengine/internal/urlfetch/urlfetch_service.pb.go
+ko/vendor/google.golang.org/appengine/internal/urlfetch/urlfetch_service.proto
+ko/vendor/google.golang.org/appengine/urlfetch/urlfetch.go
+ko/vendor/google.golang.org/protobuf/PATENTS
+ko/vendor/google.golang.org/protobuf/LICENSE
+ko/vendor/google.golang.org/protobuf/internal/order/range.go
+ko/vendor/google.golang.org/protobuf/internal/order/order.go
+ko/vendor/google.golang.org/protobuf/internal/pragma/pragma.go
+ko/vendor/google.golang.org/protobuf/internal/filetype/build.go
+ko/vendor/google.golang.org/protobuf/internal/errors/is_go112.go
+ko/vendor/google.golang.org/protobuf/internal/errors/errors.go
+ko/vendor/google.golang.org/protobuf/internal/errors/is_go113.go
+ko/vendor/google.golang.org/protobuf/internal/flags/proto_legacy_enable.go
+ko/vendor/google.golang.org/protobuf/internal/flags/proto_legacy_disable.go
+
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/files "HTTP/1.1 200 OK"
+INFO:root:Created file ko/CONTRIBUTING.md
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/files "HTTP/1.1 200 OK"
+INFO:root:Created file ko/README.md
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/files "HTTP/1.1 200 OK"
+INFO:root:Created file ko/ROADMAP.md
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/files "HTTP/1.1 200 OK"
+INFO:root:Created file ko/MAINTAINERS.md
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/files "HTTP/1.1 200 OK"
+INFO:root:Created file ko/vendor/google.golang.org/appengine/CONTRIBUTING.md
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/files "HTTP/1.1 200 OK"
+INFO:root:Created file ko/vendor/google.golang.org/appengine/README.md
+INFO:root:Creating run
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/assistants/asst_RUUBZLtGLGE5pBDiYNnWAjlL "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/threads "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/threads/thread_GLpIFkS0YWEbE8tbhIQFEhCI/messages "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/threads/thread_GLpIFkS0YWEbE8tbhIQFEhCI/runs "HTTP/1.1 200 OK"
+INFO:root:Polling run_9EL2acIOz8xJcvJr8NIPgEFf. Status: queued
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_GLpIFkS0YWEbE8tbhIQFEhCI/runs/run_9EL2acIOz8xJcvJr8NIPgEFf "HTTP/1.1 200 OK"
+INFO:root:Polling run_9EL2acIOz8xJcvJr8NIPgEFf. Status: in_progress
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_GLpIFkS0YWEbE8tbhIQFEhCI/runs/run_9EL2acIOz8xJcvJr8NIPgEFf "HTTP/1.1 200 OK"
+INFO:root:Polling run_9EL2acIOz8xJcvJr8NIPgEFf. Status: in_progress
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_GLpIFkS0YWEbE8tbhIQFEhCI/runs/run_9EL2acIOz8xJcvJr8NIPgEFf "HTTP/1.1 200 OK"
+INFO:root:Polling run_9EL2acIOz8xJcvJr8NIPgEFf. Status: in_progress
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_GLpIFkS0YWEbE8tbhIQFEhCI/runs/run_9EL2acIOz8xJcvJr8NIPgEFf "HTTP/1.1 200 OK"
+INFO:root:Polling run_9EL2acIOz8xJcvJr8NIPgEFf. Status: in_progress
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_GLpIFkS0YWEbE8tbhIQFEhCI/runs/run_9EL2acIOz8xJcvJr8NIPgEFf "HTTP/1.1 200 OK"
+INFO:root:Polling run_9EL2acIOz8xJcvJr8NIPgEFf. Status: in_progress
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_GLpIFkS0YWEbE8tbhIQFEhCI/runs/run_9EL2acIOz8xJcvJr8NIPgEFf "HTTP/1.1 200 OK"
+INFO:root:Polling run_9EL2acIOz8xJcvJr8NIPgEFf. Status: in_progress
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_GLpIFkS0YWEbE8tbhIQFEhCI/runs/run_9EL2acIOz8xJcvJr8NIPgEFf "HTTP/1.1 200 OK"
+INFO:root:Polling run_9EL2acIOz8xJcvJr8NIPgEFf. Status: in_progress
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_GLpIFkS0YWEbE8tbhIQFEhCI/runs/run_9EL2acIOz8xJcvJr8NIPgEFf "HTTP/1.1 200 OK"
+INFO:root:Polling run_9EL2acIOz8xJcvJr8NIPgEFf. Status: in_progress
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_GLpIFkS0YWEbE8tbhIQFEhCI/runs/run_9EL2acIOz8xJcvJr8NIPgEFf "HTTP/1.1 200 OK"
+INFO:root:Polling run_9EL2acIOz8xJcvJr8NIPgEFf. Status: in_progress
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_GLpIFkS0YWEbE8tbhIQFEhCI/runs/run_9EL2acIOz8xJcvJr8NIPgEFf "HTTP/1.1 200 OK"
+INFO:root:Run complete
+INFO:httpx:HTTP Request: DELETE https://api.openai.com/v1/files/file-GpvkbW4aRl19UAVlZP49Sd6O "HTTP/1.1 200 OK"
+INFO:root:Deleted file-GpvkbW4aRl19UAVlZP49Sd6O
+INFO:httpx:HTTP Request: DELETE https://api.openai.com/v1/files/file-t7m8JTifh0i233duCIr0Pa0e "HTTP/1.1 200 OK"
+INFO:root:Deleted file-t7m8JTifh0i233duCIr0Pa0e
+INFO:httpx:HTTP Request: DELETE https://api.openai.com/v1/files/file-oyYxNpgNPwjsAtkMXsMKagGo "HTTP/1.1 200 OK"
+INFO:root:Deleted file-oyYxNpgNPwjsAtkMXsMKagGo
+INFO:httpx:HTTP Request: DELETE https://api.openai.com/v1/files/file-tGdICVPYqdjBzptRpFwhqo3w "HTTP/1.1 200 OK"
+INFO:root:Deleted file-tGdICVPYqdjBzptRpFwhqo3w
+INFO:httpx:HTTP Request: DELETE https://api.openai.com/v1/files/file-bJ7RRr8bIXjs8grBfN5MwjVE "HTTP/1.1 200 OK"
+INFO:root:Deleted file-bJ7RRr8bIXjs8grBfN5MwjVE
+INFO:httpx:HTTP Request: DELETE https://api.openai.com/v1/files/file-BlbRmf1WV4HuTbAoaf21LjE1 "HTTP/1.1 200 OK"
+INFO:root:Deleted file-BlbRmf1WV4HuTbAoaf21LjE1
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_GLpIFkS0YWEbE8tbhIQFEhCI/messages "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_GLpIFkS0YWEbE8tbhIQFEhCI/messages?after=msg_EEJwRKtlA7tK372Ql46NYjnk "HTTP/1.1 200 OK"

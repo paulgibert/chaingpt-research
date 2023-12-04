@@ -1,8 +1,8 @@
 package:
   name: kind
   version: 0.20.0
-  description: A Go tool for running local Kubernetes clusters using Docker container
-    'nodes', intended for testing Kubernetes, local development, or CI environments.
+  description: A tool for running local Kubernetes clusters using Docker container
+    'nodes'.
   copyright:
   - license: Apache-2.0
 environment:
@@ -15,10 +15,5 @@ pipeline:
   with:
     repository: https://github.com/kubernetes-sigs/kind
     tag: v0.20.0
-- uses: go/build
-  with:
-    packages: sigs.k8s.io/kind
-    output: kind
-    modroot: .
-    prefix: /usr/local
-    install_dir: bin
+- runs: make build
+- runs: make install

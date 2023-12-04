@@ -1,0 +1,2 @@
+grype -h > /dev/null && echo $?
+0

@@ -1,0 +1,1 @@
+kind is a project that involves a Go command-line interface to run local Kubernetes clusters using Docker. The software compiles and installs using the `go build` command from the Go source files.

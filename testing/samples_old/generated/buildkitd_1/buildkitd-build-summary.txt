@@ -1,0 +1,1 @@
+Buildkitd is part of BuildKit which is a toolkit that converts source code into build artifacts through docker buildx and bash shell commands【9†source】【10†source】.

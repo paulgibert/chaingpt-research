@@ -1,0 +1,1 @@
+The 'buildkitd' component runs as a daemon and requires runC and optionally containerd if utilizing the containerd worker. By default, it uses OCI (runC) worker backend. BuildKit builds are based on LLB, a binary intermediate format for dependency graph definitions which are marshaled as Protobuf messages.

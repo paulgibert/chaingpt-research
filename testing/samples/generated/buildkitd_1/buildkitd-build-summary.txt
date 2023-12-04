@@ -1,1 +1,1 @@
-Buildkitd is part of BuildKit which is a toolkit that converts source code into build artifacts through docker buildx and bash shell commands【9†source】【10†source】.
+BuildKit uses Go modules for managing dependencies. The project can be built by using 'go build' from the project's root directory where 'go.mod' is located.

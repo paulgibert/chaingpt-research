@@ -1,8 +1,7 @@
 package:
   name: grype
   version: 0.72.0
-  description: A vulnerability scanner for container images and filesystems that works
-    with Syft.
+  description: A vulnerability scanner for container images and filesystems.
   copyright:
   - license: Apache License Version 2.0
 environment:
@@ -19,3 +18,4 @@ pipeline:
   with:
     packages: ./cmd/grype
     output: grype
+    modroot: .

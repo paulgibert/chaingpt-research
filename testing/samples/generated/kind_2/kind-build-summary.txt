@@ -1,1 +1,1 @@
-The kind project utilizes Go modules for setting up dependencies and utilizes the 'go build' tool for compiling the binaries. The build process includes compiling the 'kind' binary and installing it to a specified directory.
+The 'kind' project uses Go for building the software. Compiling is handled by the 'build' target, and installation is performed by the 'install' target which depends on 'build'【11†source】.

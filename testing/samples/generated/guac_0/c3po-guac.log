@@ -1,0 +1,111 @@
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+INFO:root:LLM proposed url https://github.com/apache/guacamole-server
+INFO:root:String search yielded branch/tag 0.3.0
+INFO:root:Checked out branch/tag 0.3.0
+INFO:root:str search found documentation in the repo: ['guacamole-server/protocols/vnc/ChangeLog', 'guacamole-server/protocols/vnc/LICENSE', 'guacamole-server/protocols/vnc/README']
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+INFO:root:LLM found documentation in the repo: ['guacamole-server/protocols/vnc/Makefile.am', 'guacamole-server/protocols/vnc/README']
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+INFO:root:Summarized guacamole-server/protocols/vnc/Makefile.am: <list>
+1. Target: AUTOMAKE_OPTIONS
+   Description: This target sets the options for automake. The 'foreign' option is used to relax some of the GNU standards, allowing for a more portable Makefile.
+
+2. Target: ACLOCAL_AMFLAGS
+   Description: This target sets the flags for aclocal, a tool that generates an 'aclocal.m4' file based on the contents of 'configure.ac'. Here, it's set to look in the 'm4' directory.
+
+3. Target: AM_CFLAGS
+   Description: This target sets the flags for the C compiler. The '-Werror' and '-Wall' options enable all warning messages and treat them as errors.
+
+4. Target: lib_LTLIBRARIES
+   Description: This target specifies the libraries to be built by libtool. In this case, it's 'libguac-client-vnc.la'.
+
+5. Target: libguac_client_vnc_la_SOURCES
+   Description: This target specifies the source files for the 'libguac-client-vnc.la' library. Here, it's 'src/vnc_client.c'.
+</list>
+INFO:root:guacamole-server/protocols/vnc/README.txt has no extension but including
+INFO:root:Using only supported extensions: ['Makefile_summary.txt', 'guacamole-server/protocols/vnc/README.txt']
+INFO:root:Using assistant prompt:
+
+Generate minimalist and straightforward instructions for compiling and
+installing the source code of the software project guac,
+version 0.3.0. The GitHub repository is https://github.com/apache/guacamole-server. Checkout 0.3.0 for the correct version.
+The instructions should be concise and solely focused on the build and installation process,
+excluding any steps related to testing, linting, or other unrelated tasks.
+If multiple build methods are available, choose the most direct and
+uncomplicated method and provide a consistent set of steps without
+mixing different approaches. You will respond in JSON form only.
+
+The response should contain the following fields:
+
+summary: A description of the components the project uses and how they are built. If able, provide
+         step-by-step build instructions.
+
+description: A single sentence description of the project. It should not start with the project's name.
+
+license: The license under which the project is released. Include the license name only.
+
+steps: An ordered list of build commands.
+       Each build step is an object with specific fields depending on its type.
+       There are different step types, each requiring unique fields. If using
+       a place holder value or reporting any value that is not meant to be
+       interpreted literally, surround the value with  "<< >>" e.g <<place holder>>.
+       Assume you have root privileges on the system (no need to use sudo).
+
+Step type: git-checkout - Clone a git repository and checkout a branch/tag
+Fields:
+'repository' (required) - Repository to clone. Omit the .git suffix
+'tag' (optional) - Branch or tag to checkout. Must specify either a branch or tag.
+'branch' (optional) - Branch to checkout. Do not specify both a branch and tag
+
+Step type: shell - Run a shell command. Use as a last resort when desired functionality cannot be captured by another build step type.
+Fields:
+'command' (required) - Command to run
+
+Step type: go/build - Builds a project with `go build` and installs it to <prefix>/<install_dir>/<output>
+Fields:
+'packages' (required) - A single string of space-separated packages to compile. Files can also be specified. This is the value passed to `go build`. Paths are relative to modroot.
+'output' (required) - Name of the output binary. The final install location will be in <prefix>/<install_dir>/<output>
+'modroot' (optional) - Top directory of the go module, this is where `go.mod` lives. Before building the go pipeline will `cd` into this directory.
+'prefix' (optional) - Prefix to install binaries. Defaults to 'usr'.
+'ldflags' (optional) - A single string of space-separated flags ([pattern=]arg) to pass to the `-ldflags` arg of `go build`.
+'install_dir' (optional) - Binaries are installed in this directory <prefix>/<install_dir>. Defaults to 'bin'.
+
+Here is a list of the first 100 files in the projects GitHub repository:
+
+guacamole-server/.git/packed-refs
+guacamole-server/.git/description
+guacamole-server/.git/HEAD
+guacamole-server/.git/index
+guacamole-server/.git/config
+guacamole-server/.git/refs/remotes/origin/HEAD
+guacamole-server/.git/refs/heads/master
+guacamole-server/.git/objects/pack/pack-da8711bf1e2bc3300ce3b539bf0eb16b0d1760db.pack
+guacamole-server/.git/objects/pack/pack-da8711bf1e2bc3300ce3b539bf0eb16b0d1760db.idx
+guacamole-server/.git/info/exclude
+guacamole-server/.git/hooks/update.sample
+guacamole-server/.git/hooks/commit-msg.sample
+guacamole-server/.git/hooks/prepare-commit-msg.sample
+guacamole-server/.git/hooks/pre-merge-commit.sample
+guacamole-server/.git/hooks/pre-push.sample
+guacamole-server/.git/hooks/pre-commit.sample
+guacamole-server/.git/hooks/pre-rebase.sample
+guacamole-server/.git/hooks/post-update.sample
+guacamole-server/.git/hooks/applypatch-msg.sample
+guacamole-server/.git/hooks/pre-applypatch.sample
+guacamole-server/.git/hooks/pre-receive.sample
+guacamole-server/.git/hooks/fsmonitor-watchman.sample
+guacamole-server/.git/logs/HEAD
+guacamole-server/.git/logs/refs/remotes/origin/HEAD
+guacamole-server/.git/logs/refs/heads/master
+guacamole-server/protocols/vnc/ChangeLog
+guacamole-server/protocols/vnc/Makefile.am
+guacamole-server/protocols/vnc/.gitignore
+guacamole-server/protocols/vnc/AUTHORS
+guacamole-server/protocols/vnc/configure.in
+guacamole-server/protocols/vnc/.package.dsc
+guacamole-server/protocols/vnc/LICENSE
+guacamole-server/protocols/vnc/README
+guacamole-server/protocols/vnc/src/vnc_client.c
+
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/files "HTTP/1.1 200 OK"
+INFO:root:Created file Makefile_summary.txt

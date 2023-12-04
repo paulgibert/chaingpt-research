@@ -1,0 +1,1 @@
+Project ko uses Go to compile its source code to a binary. The most straightforward method will involve cloning the specified version from the repository, changing into the project directory where the `go.mod` file is located, and using the `go build` command.

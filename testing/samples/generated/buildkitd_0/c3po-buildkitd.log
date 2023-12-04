@@ -1,0 +1,231 @@
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+INFO:root:LLM proposed url https://github.com/moby/buildkit
+INFO:root:String search yielded branch/tag v0.12.3
+INFO:root:Checked out branch/tag v0.12.3
+INFO:root:str search found documentation in the repo: ['buildkit/README.md', 'buildkit/LICENSE', 'buildkit/vendor/google.golang.org/protobuf/LICENSE', 'buildkit/vendor/google.golang.org/protobuf/internal/filetype/build.go', 'buildkit/vendor/google.golang.org/protobuf/internal/filedesc/build.go', 'buildkit/vendor/google.golang.org/genproto/LICENSE', 'buildkit/vendor/google.golang.org/grpc/CONTRIBUTING.md', 'buildkit/vendor/google.golang.org/grpc/README.md', 'buildkit/vendor/google.golang.org/grpc/LICENSE', 'buildkit/vendor/google.golang.org/grpc/reflection/README.md', 'buildkit/vendor/gopkg.in/yaml.v3/README.md', 'buildkit/vendor/gopkg.in/yaml.v3/LICENSE', 'buildkit/vendor/go.etcd.io/bbolt/README.md', 'buildkit/vendor/go.etcd.io/bbolt/LICENSE', 'buildkit/vendor/go.opencensus.io/CONTRIBUTING.md', 'buildkit/vendor/go.opencensus.io/README.md', 'buildkit/vendor/go.opencensus.io/LICENSE', 'buildkit/vendor/go.opentelemetry.io/contrib/instrumentation/google.golang.org/grpc/otelgrpc/LICENSE', 'buildkit/vendor/go.opentelemetry.io/contrib/instrumentation/net/http/httptrace/otelhttptrace/LICENSE', 'buildkit/vendor/go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp/LICENSE', 'buildkit/vendor/go.opentelemetry.io/proto/otlp/LICENSE', 'buildkit/vendor/go.opentelemetry.io/otel/CONTRIBUTING.md', 'buildkit/vendor/go.opentelemetry.io/otel/README.md', 'buildkit/vendor/go.opentelemetry.io/otel/LICENSE', 'buildkit/vendor/go.opentelemetry.io/otel/CHANGELOG.md', 'buildkit/vendor/go.opentelemetry.io/otel/metric/LICENSE', 'buildkit/vendor/go.opentelemetry.io/otel/trace/LICENSE', 'buildkit/vendor/go.opentelemetry.io/otel/exporters/jaeger/README.md', 'buildkit/vendor/go.opentelemetry.io/otel/exporters/jaeger/LICENSE', 'buildkit/vendor/go.opentelemetry.io/otel/exporters/jaeger/internal/third_party/thrift/LICENSE', 'buildkit/vendor/go.opentelemetry.io/otel/exporters/otlp/internal/retry/LICENSE', 'buildkit/vendor/go.opentelemetry.io/otel/exporters/otlp/otlptrace/README.md', 'buildkit/vendor/go.opentelemetry.io/otel/exporters/otlp/otlptrace/LICENSE', 'buildkit/vendor/go.opentelemetry.io/otel/exporters/otlp/otlptrace/otlptracegrpc/LICENSE', 'buildkit/vendor/go.opentelemetry.io/otel/exporters/otlp/otlptrace/otlptracehttp/LICENSE', 'buildkit/vendor/go.opentelemetry.io/otel/sdk/LICENSE', 'buildkit/vendor/kernel.org/pub/linux/libs/security/libcap/psx/License', 'buildkit/vendor/kernel.org/pub/linux/libs/security/libcap/psx/README', 'buildkit/vendor/kernel.org/pub/linux/libs/security/libcap/cap/License', 'buildkit/vendor/kernel.org/pub/linux/libs/security/libcap/cap/README', 'buildkit/vendor/golang.org/x/text/LICENSE', 'buildkit/vendor/golang.org/x/mod/LICENSE', 'buildkit/vendor/golang.org/x/time/LICENSE', 'buildkit/vendor/golang.org/x/sys/LICENSE', 'buildkit/vendor/golang.org/x/sys/unix/README.md', 'buildkit/vendor/golang.org/x/net/LICENSE', 'buildkit/vendor/golang.org/x/sync/LICENSE', 'buildkit/vendor/golang.org/x/crypto/LICENSE', 'buildkit/vendor/golang.org/x/crypto/curve25519/internal/field/README', 'buildkit/vendor/golang.org/x/tools/LICENSE', 'buildkit/vendor/github.com/containernetworking/cni/LICENSE', 'buildkit/vendor/github.com/tonistiigi/units/readme.md', 'buildkit/vendor/github.com/tonistiigi/units/LICENSE', 'buildkit/vendor/github.com/tonistiigi/vt100/README.md', 'buildkit/vendor/github.com/tonistiigi/vt100/LICENSE', 'buildkit/vendor/github.com/tonistiigi/go-archvariant/README.md', 'buildkit/vendor/github.com/tonistiigi/go-archvariant/LICENSE', 'buildkit/vendor/github.com/tonistiigi/go-actions-cache/LICENSE', 'buildkit/vendor/github.com/tonistiigi/fsutil/readme.md', 'buildkit/vendor/github.com/tonistiigi/fsutil/LICENSE', 'buildkit/vendor/github.com/package-url/packageurl-go/README.md', 'buildkit/vendor/github.com/package-url/packageurl-go/LICENSE', 'buildkit/vendor/github.com/in-toto/in-toto-golang/LICENSE', 'buildkit/vendor/github.com/vbatts/tar-split/LICENSE', 'buildkit/vendor/github.com/moby/sys/mount/LICENSE', 'buildkit/vendor/github.com/moby/sys/signal/LICENSE', 'buildkit/vendor/github.com/moby/sys/sequential/LICENSE', 'buildkit/vendor/github.com/moby/sys/mountinfo/LICENSE', 'buildkit/vendor/github.com/moby/patternmatcher/LICENSE', 'buildkit/vendor/github.com/moby/locker/README.md', 'buildkit/vendor/github.com/moby/locker/LICENSE', 'buildkit/vendor/github.com/cyphar/filepath-securejoin/README.md', 'buildkit/vendor/github.com/cyphar/filepath-securejoin/LICENSE', 'buildkit/vendor/github.com/Microsoft/go-winio/README.md', 'buildkit/vendor/github.com/Microsoft/go-winio/LICENSE', 'buildkit/vendor/github.com/Microsoft/hcsshim/Protobuild.toml', 'buildkit/vendor/github.com/Microsoft/hcsshim/README.md', 'buildkit/vendor/github.com/Microsoft/hcsshim/LICENSE', 'buildkit/vendor/github.com/Microsoft/hcsshim/osversion/windowsbuilds.go', 'buildkit/vendor/github.com/go-logr/logr/CONTRIBUTING.md', 'buildkit/vendor/github.com/go-logr/logr/README.md', 'buildkit/vendor/github.com/go-logr/logr/LICENSE', 'buildkit/vendor/github.com/go-logr/logr/CHANGELOG.md', 'buildkit/vendor/github.com/go-logr/stdr/README.md', 'buildkit/vendor/github.com/go-logr/stdr/LICENSE', 'buildkit/vendor/github.com/morikuni/aec/README.md', 'buildkit/vendor/github.com/morikuni/aec/LICENSE', 'buildkit/vendor/github.com/morikuni/aec/builder.go', 'buildkit/vendor/github.com/Azure/azure-sdk-for-go/sdk/internal/LICENSE.txt', 'buildkit/vendor/github.com/Azure/azure-sdk-for-go/sdk/azidentity/README.md', 'buildkit/vendor/github.com/Azure/azure-sdk-for-go/sdk/azidentity/LICENSE.txt', 'buildkit/vendor/github.com/Azure/azure-sdk-for-go/sdk/azidentity/CHANGELOG.md', 'buildkit/vendor/github.com/Azure/azure-sdk-for-go/sdk/azcore/README.md', 'buildkit/vendor/github.com/Azure/azure-sdk-for-go/sdk/azcore/LICENSE.txt', 'buildkit/vendor/github.com/Azure/azure-sdk-for-go/sdk/azcore/CHANGELOG.md', 'buildkit/vendor/github.com/Azure/azure-sdk-for-go/sdk/storage/azblob/README.md', 'buildkit/vendor/github.com/Azure/azure-sdk-for-go/sdk/storage/azblob/LICENSE.txt', 'buildkit/vendor/github.com/Azure/azure-sdk-for-go/sdk/storage/azblob/CHANGELOG.md', 'buildkit/vendor/github.com/hanwen/go-fuse/v2/LICENSE', 'buildkit/vendor/github.com/hanwen/go-fuse/v2/fs/README.md', 'buildkit/vendor/github.com/armon/circbuf/README.md', 'buildkit/vendor/github.com/armon/circbuf/LICENSE', 'buildkit/vendor/github.com/russross/blackfriday/v2/README.md', 'buildkit/vendor/github.com/russross/blackfriday/v2/LICENSE.txt', 'buildkit/vendor/github.com/prometheus/client_model/LICENSE', 'buildkit/vendor/github.com/prometheus/client_golang/LICENSE', 'buildkit/vendor/github.com/prometheus/client_golang/prometheus/README.md', 'buildkit/vendor/github.com/prometheus/client_golang/prometheus/build_info_collector.go', 'buildkit/vendor/github.com/prometheus/common/LICENSE', 'buildkit/vendor/github.com/prometheus/common/internal/bitbucket.org/ww/goautoneg/README.txt', 'buildkit/vendor/github.com/prometheus/procfs/CONTRIBUTING.md', 'buildkit/vendor/github.com/prometheus/procfs/README.md', 'buildkit/vendor/github.com/prometheus/procfs/LICENSE', 'buildkit/vendor/github.com/felixge/httpsnoop/README.md', 'buildkit/vendor/github.com/felixge/httpsnoop/LICENSE.txt', 'buildkit/vendor/github.com/beorn7/perks/LICENSE', 'buildkit/vendor/github.com/pmezard/go-difflib/LICENSE', 'buildkit/vendor/github.com/dimchansky/utfbom/README.md', 'buildkit/vendor/github.com/dimchansky/utfbom/LICENSE', 'buildkit/vendor/github.com/kylelemons/godebug/LICENSE', 'buildkit/vendor/github.com/pkg/errors/README.md', 'buildkit/vendor/github.com/pkg/errors/LICENSE', 'buildkit/vendor/github.com/pkg/profile/README.md', 'buildkit/vendor/github.com/pkg/profile/LICENSE', 'buildkit/vendor/github.com/pkg/browser/README.md', 'buildkit/vendor/github.com/pkg/browser/LICENSE', 'buildkit/vendor/github.com/cpuguy83/go-md2man/v2/LICENSE.md', 'buildkit/vendor/github.com/coreos/go-systemd/v22/LICENSE', 'buildkit/vendor/github.com/golang-jwt/jwt/v4/README.md', 'buildkit/vendor/github.com/golang-jwt/jwt/v4/LICENSE', 'buildkit/vendor/github.com/google/uuid/CONTRIBUTING.md', 'buildkit/vendor/github.com/google/uuid/README.md', 'buildkit/vendor/github.com/google/uuid/LICENSE', 'buildkit/vendor/github.com/google/shlex/README', 'buildkit/vendor/github.com/google/go-cmp/LICENSE', 'buildkit/vendor/github.com/matttproud/golang_protobuf_extensions/LICENSE', 'buildkit/vendor/github.com/hashicorp/go-cleanhttp/README.md', 'buildkit/vendor/github.com/hashicorp/go-cleanhttp/LICENSE', 'buildkit/vendor/github.com/hashicorp/go-retryablehttp/README.md', 'buildkit/vendor/github.com/hashicorp/go-retryablehttp/LICENSE', 'buildkit/vendor/github.com/hashicorp/go-multierror/README.md', 'buildkit/vendor/github.com/hashicorp/go-multierror/LICENSE', 'buildkit/vendor/github.com/hashicorp/errwrap/README.md', 'buildkit/vendor/github.com/hashicorp/errwrap/LICENSE', 'buildkit/vendor/github.com/hashicorp/golang-lru/LICENSE', 'buildkit/vendor/github.com/hashicorp/go-immutable-radix/README.md', 'buildkit/vendor/github.com/hashicorp/go-immutable-radix/LICENSE', 'buildkit/vendor/github.com/hashicorp/go-immutable-radix/CHANGELOG.md', 'buildkit/vendor/github.com/containerd/go-runc/README.md', 'buildkit/vendor/github.com/containerd/go-runc/LICENSE', 'buildkit/vendor/github.com/containerd/ttrpc/Protobuild.toml', 'buildkit/vendor/github.com/containerd/ttrpc/README.md', 'buildkit/vendor/github.com/containerd/ttrpc/LICENSE', 'buildkit/vendor/github.com/containerd/fifo/readme.md', 'buildkit/vendor/github.com/containerd/fifo/LICENSE', 'buildkit/vendor/github.com/containerd/console/README.md', 'buildkit/vendor/github.com/containerd/console/LICENSE', 'buildkit/vendor/github.com/containerd/containerd/Protobuild.toml', 'buildkit/vendor/github.com/containerd/containerd/README.md', 'buildkit/vendor/github.com/containerd/containerd/BUILDING.md', 'buildkit/vendor/github.com/containerd/containerd/install.go', 'buildkit/vendor/github.com/containerd/containerd/LICENSE', 'buildkit/vendor/github.com/containerd/containerd/install_opts.go', 'buildkit/vendor/github.com/containerd/cgroups/LICENSE', 'buildkit/vendor/github.com/containerd/stargz-snapshotter/LICENSE', 'buildkit/vendor/github.com/containerd/stargz-snapshotter/estargz/build.go', 'buildkit/vendor/github.com/containerd/stargz-snapshotter/estargz/LICENSE', 'buildkit/vendor/github.com/containerd/go-cni/README.md', 'buildkit/vendor/github.com/containerd/go-cni/LICENSE', 'buildkit/vendor/github.com/containerd/nydus-snapshotter/LICENSE', 'buildkit/vendor/github.com/containerd/nydus-snapshotter/pkg/converter/tool/builder.go', 'buildkit/vendor/github.com/containerd/typeurl/v2/README.md', 'buildkit/vendor/github.com/containerd/typeurl/v2/LICENSE', 'buildkit/vendor/github.com/containerd/fuse-overlayfs-snapshotter/README.md', 'buildkit/vendor/github.com/containerd/fuse-overlayfs-snapshotter/LICENSE', 'buildkit/vendor/github.com/containerd/continuity/README.md', 'buildkit/vendor/github.com/containerd/continuity/LICENSE', 'buildkit/vendor/github.com/containerd/continuity/sysx/README.md', 'buildkit/vendor/github.com/serialx/hashring/README.md', 'buildkit/vendor/github.com/serialx/hashring/LICENSE', 'buildkit/vendor/github.com/mitchellh/hashstructure/v2/README.md', 'buildkit/vendor/github.com/mitchellh/hashstructure/v2/LICENSE', 'buildkit/vendor/github.com/anchore/go-struct-converter/CONTRIBUTING.md', 'buildkit/vendor/github.com/anchore/go-struct-converter/README.md', 'buildkit/vendor/github.com/anchore/go-struct-converter/LICENSE', 'buildkit/vendor/github.com/urfave/cli/README.md', 'buildkit/vendor/github.com/urfave/cli/LICENSE', 'buildkit/vendor/github.com/sirupsen/logrus/README.md', 'buildkit/vendor/github.com/sirupsen/logrus/LICENSE', 'buildkit/vendor/github.com/sirupsen/logrus/CHANGELOG.md', 'buildkit/vendor/github.com/stretchr/testify/LICENSE', 'buildkit/vendor/github.com/stretchr/testify/require/forward_requirements.go', 'buildkit/vendor/github.com/stretchr/testify/require/requirements.go', 'buildkit/vendor/github.com/shibumi/go-pathspec/README.md', 'buildkit/vendor/github.com/shibumi/go-pathspec/GO-LICENSE', 'buildkit/vendor/github.com/shibumi/go-pathspec/LICENSE', 'buildkit/vendor/github.com/grpc-ecosystem/grpc-gateway/v2/LICENSE.txt', 'buildkit/vendor/github.com/grpc-ecosystem/grpc-gateway/v2/internal/httprule/BUILD.bazel', 'buildkit/vendor/github.com/grpc-ecosystem/grpc-gateway/v2/runtime/BUILD.bazel', 'buildkit/vendor/github.com/grpc-ecosystem/grpc-gateway/v2/utilities/BUILD.bazel', 'buildkit/vendor/github.com/grpc-ecosystem/go-grpc-middleware/CONTRIBUTING.md', 'buildkit/vendor/github.com/grpc-ecosystem/go-grpc-middleware/README.md', 'buildkit/vendor/github.com/grpc-ecosystem/go-grpc-middleware/LICENSE', 'buildkit/vendor/github.com/grpc-ecosystem/go-grpc-middleware/CHANGELOG.md', 'buildkit/vendor/github.com/opencontainers/runc/LICENSE', 'buildkit/vendor/github.com/opencontainers/image-spec/LICENSE', 'buildkit/vendor/github.com/opencontainers/selinux/LICENSE', 'buildkit/vendor/github.com/opencontainers/selinux/pkg/pwalkdir/README.md', 'buildkit/vendor/github.com/opencontainers/runtime-spec/LICENSE', 'buildkit/vendor/github.com/opencontainers/go-digest/CONTRIBUTING.md', 'buildkit/vendor/github.com/opencontainers/go-digest/LICENSE.docs', 'buildkit/vendor/github.com/opencontainers/go-digest/README.md', 'buildkit/vendor/github.com/opencontainers/go-digest/LICENSE', 'buildkit/vendor/github.com/Masterminds/semver/v3/README.md', 'buildkit/vendor/github.com/Masterminds/semver/v3/LICENSE.txt', 'buildkit/vendor/github.com/Masterminds/semver/v3/CHANGELOG.md', 'buildkit/vendor/github.com/AdamKorcz/go-118-fuzz-build/LICENSE', 'buildkit/vendor/github.com/aws/aws-sdk-go-v2/CONTRIBUTING.md', 'buildkit/vendor/github.com/aws/aws-sdk-go-v2/buildspec.yml', 'buildkit/vendor/github.com/aws/aws-sdk-go-v2/README.md', 'buildkit/vendor/github.com/aws/aws-sdk-go-v2/LICENSE.txt', 'buildkit/vendor/github.com/aws/aws-sdk-go-v2/CHANGELOG.md', 'buildkit/vendor/github.com/aws/aws-sdk-go-v2/internal/ini/LICENSE.txt', 'buildkit/vendor/github.com/aws/aws-sdk-go-v2/internal/ini/CHANGELOG.md', 'buildkit/vendor/github.com/aws/aws-sdk-go-v2/internal/configsources/LICENSE.txt', 'buildkit/vendor/github.com/aws/aws-sdk-go-v2/internal/configsources/CHANGELOG.md', 'buildkit/vendor/github.com/aws/aws-sdk-go-v2/internal/sync/singleflight/LICENSE', 'buildkit/vendor/github.com/aws/aws-sdk-go-v2/internal/v4a/LICENSE.txt', 'buildkit/vendor/github.com/aws/aws-sdk-go-v2/internal/v4a/CHANGELOG.md', 'buildkit/vendor/github.com/aws/aws-sdk-go-v2/internal/endpoints/v2/LICENSE.txt', 'buildkit/vendor/github.com/aws/aws-sdk-go-v2/internal/endpoints/v2/CHANGELOG.md', 'buildkit/vendor/github.com/aws/aws-sdk-go-v2/service/internal/presigned-url/LICENSE.txt', 'buildkit/vendor/github.com/aws/aws-sdk-go-v2/service/internal/presigned-url/CHANGELOG.md', 'buildkit/vendor/github.com/aws/aws-sdk-go-v2/service/internal/accept-encoding/LICENSE.txt', 'buildkit/vendor/github.com/aws/aws-sdk-go-v2/service/internal/accept-encoding/CHANGELOG.md', 'buildkit/vendor/github.com/aws/aws-sdk-go-v2/service/internal/s3shared/LICENSE.txt', 'buildkit/vendor/github.com/aws/aws-sdk-go-v2/service/internal/s3shared/CHANGELOG.md', 'buildkit/vendor/github.com/aws/aws-sdk-go-v2/service/internal/checksum/LICENSE.txt', 'buildkit/vendor/github.com/aws/aws-sdk-go-v2/service/internal/checksum/CHANGELOG.md', 'buildkit/vendor/github.com/aws/aws-sdk-go-v2/service/sso/LICENSE.txt', 'buildkit/vendor/github.com/aws/aws-sdk-go-v2/service/sso/CHANGELOG.md', 'buildkit/vendor/github.com/aws/aws-sdk-go-v2/service/s3/LICENSE.txt', 'buildkit/vendor/github.com/aws/aws-sdk-go-v2/service/s3/CHANGELOG.md', 'buildkit/vendor/github.com/aws/aws-sdk-go-v2/service/ssooidc/LICENSE.txt', 'buildkit/vendor/github.com/aws/aws-sdk-go-v2/service/ssooidc/CHANGELOG.md', 'buildkit/vendor/github.com/aws/aws-sdk-go-v2/service/sts/LICENSE.txt', 'buildkit/vendor/github.com/aws/aws-sdk-go-v2/service/sts/CHANGELOG.md', 'buildkit/vendor/github.com/aws/aws-sdk-go-v2/feature/s3/manager/LICENSE.txt', 'buildkit/vendor/github.com/aws/aws-sdk-go-v2/feature/s3/manager/CHANGELOG.md', 'buildkit/vendor/github.com/aws/aws-sdk-go-v2/feature/ec2/imds/LICENSE.txt', 'buildkit/vendor/github.com/aws/aws-sdk-go-v2/feature/ec2/imds/CHANGELOG.md', 'buildkit/vendor/github.com/aws/aws-sdk-go-v2/config/LICENSE.txt', 'buildkit/vendor/github.com/aws/aws-sdk-go-v2/config/CHANGELOG.md', 'buildkit/vendor/github.com/aws/aws-sdk-go-v2/credentials/LICENSE.txt', 'buildkit/vendor/github.com/aws/aws-sdk-go-v2/credentials/CHANGELOG.md', 'buildkit/vendor/github.com/aws/aws-sdk-go-v2/aws/protocol/eventstream/LICENSE.txt', 'buildkit/vendor/github.com/aws/aws-sdk-go-v2/aws/protocol/eventstream/CHANGELOG.md', 'buildkit/vendor/github.com/aws/smithy-go/CONTRIBUTING.md', 'buildkit/vendor/github.com/aws/smithy-go/README.md', 'buildkit/vendor/github.com/aws/smithy-go/LICENSE', 'buildkit/vendor/github.com/aws/smithy-go/CHANGELOG.md', 'buildkit/vendor/github.com/aws/smithy-go/internal/sync/singleflight/LICENSE', 'buildkit/vendor/github.com/aws/smithy-go/middleware/step_build.go', 'buildkit/vendor/github.com/davecgh/go-spew/LICENSE', 'buildkit/vendor/github.com/gogo/protobuf/LICENSE', 'buildkit/vendor/github.com/gogo/googleapis/LICENSE', 'buildkit/vendor/github.com/docker/cli/LICENSE', 'buildkit/vendor/github.com/docker/go-units/CONTRIBUTING.md', 'buildkit/vendor/github.com/docker/go-units/README.md', 'buildkit/vendor/github.com/docker/go-units/LICENSE', 'buildkit/vendor/github.com/docker/docker-credential-helpers/LICENSE', 'buildkit/vendor/github.com/docker/distribution/LICENSE', 'buildkit/vendor/github.com/docker/go-metrics/CONTRIBUTING.md', 'buildkit/vendor/github.com/docker/go-metrics/LICENSE.docs', 'buildkit/vendor/github.com/docker/go-metrics/README.md', 'buildkit/vendor/github.com/docker/go-metrics/LICENSE', 'buildkit/vendor/github.com/docker/docker/LICENSE', 'buildkit/vendor/github.com/docker/docker/api/README.md', 'buildkit/vendor/github.com/docker/docker/api/types/versions/README.md', 'buildkit/vendor/github.com/docker/docker/client/build_cancel.go', 'buildkit/vendor/github.com/docker/docker/client/plugin_install.go', 'buildkit/vendor/github.com/docker/docker/client/README.md', 'buildkit/vendor/github.com/docker/docker/client/build_prune.go', 'buildkit/vendor/github.com/docker/docker/client/image_build.go', 'buildkit/vendor/github.com/docker/go-events/CONTRIBUTING.md', 'buildkit/vendor/github.com/docker/go-events/README.md', 'buildkit/vendor/github.com/docker/go-events/LICENSE', 'buildkit/vendor/github.com/docker/go-connections/LICENSE', 'buildkit/vendor/github.com/docker/go-connections/sockets/README.md', 'buildkit/vendor/github.com/cenkalti/backoff/v4/README.md', 'buildkit/vendor/github.com/cenkalti/backoff/v4/LICENSE', 'buildkit/vendor/github.com/secure-systems-lab/go-securesystemslib/LICENSE', 'buildkit/vendor/github.com/AzureAD/microsoft-authentication-library-for-go/LICENSE', 'buildkit/vendor/github.com/golang/groupcache/LICENSE', 'buildkit/vendor/github.com/golang/protobuf/LICENSE', 'buildkit/vendor/github.com/gofrs/flock/README.md', 'buildkit/vendor/github.com/gofrs/flock/LICENSE', 'buildkit/vendor/github.com/cespare/xxhash/v2/README.md', 'buildkit/vendor/github.com/cespare/xxhash/v2/LICENSE.txt', 'buildkit/vendor/github.com/jmespath/go-jmespath/README.md', 'buildkit/vendor/github.com/jmespath/go-jmespath/LICENSE', 'buildkit/vendor/github.com/AdaLogics/go-fuzz-headers/README.md', 'buildkit/vendor/github.com/AdaLogics/go-fuzz-headers/LICENSE', 'buildkit/vendor/github.com/klauspost/compress/README.md', 'buildkit/vendor/github.com/klauspost/compress/LICENSE', 'buildkit/vendor/github.com/klauspost/compress/zstd/README.md', 'buildkit/vendor/github.com/klauspost/compress/zstd/internal/xxhash/README.md', 'buildkit/vendor/github.com/klauspost/compress/zstd/internal/xxhash/LICENSE.txt', 'buildkit/vendor/github.com/klauspost/compress/internal/snapref/LICENSE', 'buildkit/vendor/github.com/klauspost/compress/huff0/README.md', 'buildkit/vendor/github.com/klauspost/compress/fse/README.md', 'buildkit/vendor/github.com/spdx/tools-golang/LICENSE.code', 'buildkit/vendor/github.com/spdx/tools-golang/LICENSE.docs', 'buildkit/vendor/github.com/spdx/tools-golang/spdx/v2/v2_3/other_license.go', 'buildkit/vendor/github.com/spdx/tools-golang/spdx/v2/v2_1/other_license.go', 'buildkit/vendor/github.com/spdx/tools-golang/spdx/v2/v2_2/other_license.go', 'buildkit/vendor/github.com/pelletier/go-toml/CONTRIBUTING.md', 'buildkit/vendor/github.com/pelletier/go-toml/README.md', 'buildkit/vendor/github.com/pelletier/go-toml/LICENSE', 'buildkit/vendor/github.com/agext/levenshtein/README.md', 'buildkit/vendor/github.com/agext/levenshtein/LICENSE', 'buildkit/frontend/dockerui/build.go', 'buildkit/frontend/dockerfile/builder/build.go', 'buildkit/client/build_test.go', 'buildkit/client/build.go', 'buildkit/client/llb/llbbuild/llbbuild.go', 'buildkit/client/llb/llbbuild/llbbuild_test.go', 'buildkit/docs/buildinfo.md', 'buildkit/docs/build-repro.md', 'buildkit/docs/buildkitd.toml.md', 'buildkit/docs/images-readme.md', 'buildkit/docs/attestations/README.md', 'buildkit/docs/dev/README.md', 'buildkit/docs/reference/buildctl.md', 'buildkit/examples/README.md', 'buildkit/examples/systemd/user/buildkit.service', 'buildkit/examples/systemd/user/buildkit-proxy.service', 'buildkit/examples/systemd/user/buildkit-proxy.socket', 'buildkit/examples/systemd/system/buildkit.service', 'buildkit/examples/systemd/system/buildkit.socket', 'buildkit/examples/kubernetes/README.md', 'buildkit/examples/kubernetes/consistenthash/README.md', 'buildkit/examples/buildkit2/buildkit.go', 'buildkit/examples/buildkit1/buildkit.go', 'buildkit/examples/buildkit3/buildkit.go', 'buildkit/examples/build-using-dockerfile/README.md', 'buildkit/examples/buildctl-daemonless/buildctl-daemonless.sh', 'buildkit/examples/buildkit0/buildkit.go', 'buildkit/examples/buildkit4/buildkit.go', 'buildkit/hack/bootstrap-buildx', 'buildkit/hack/install-buildx', 'buildkit/cmd/buildctl/build_test.go', 'buildkit/cmd/buildctl/buildctl_test.go', 'buildkit/cmd/buildctl/build.go', 'buildkit/cmd/buildctl/build/build.go', 'buildkit/.github/CONTRIBUTING.md', 'buildkit/.github/workflows/buildx-image.yml', 'buildkit/.github/workflows/buildkit.yml', 'buildkit/solver/llbsolver/ops/build.go', 'buildkit/solver/llbsolver/provenance/buildconfig.go']
+INFO:root:Trimming 5421 files down to 100 for LLM
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+INFO:root:LLM found documentation in the repo: ['buildkit/README.md', 'buildkit/Makefile']
+INFO:root:buildkit/README.md has a supported extension, including
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+INFO:root:Summarized buildkit/Makefile: <list>
+1. `binaries`: This target uses the `docker buildx` command to bake binaries. It's likely used to compile the source code into executable binaries.
+
+2. `install`: This target creates a directory (if it doesn't exist) and installs the binaries into it. This is a crucial step in making the software available for use on the system.
+
+3. `clean`: This target removes the `bin` directory, likely cleaning up the compiled binaries. This is often used when you want to ensure a clean, fresh build.
+
+4. `test`: This target runs a series of tests on the software. Testing is a crucial part of software development to ensure the software behaves as expected.
+
+5. `release`: This target seems to be responsible for preparing the software for a release. This could involve various tasks such as packaging the software, tagging a release in version control, etc.
+</list>
+INFO:root:Using only supported extensions: ['buildkit/README.md', 'Makefile_summary.txt']
+INFO:root:Using assistant prompt:
+
+Generate minimalist and straightforward instructions for compiling and
+installing the source code of the software project buildkitd,
+version 0.12.3. The GitHub repository is https://github.com/moby/buildkit. Checkout v0.12.3 for the correct version.
+The instructions should be concise and solely focused on the build and installation process,
+excluding any steps related to testing, linting, or other unrelated tasks.
+If multiple build methods are available, choose the most direct and
+uncomplicated method and provide a consistent set of steps without
+mixing different approaches. You will respond in JSON form only.
+
+The response should contain the following fields:
+
+summary: A description of the components the project uses and how they are built. If able, provide
+         step-by-step build instructions.
+
+description: A single sentence description of the project. It should not start with the project's name.
+
+license: The license under which the project is released. Include the license name only.
+
+steps: An ordered list of build commands.
+       Each build step is an object with specific fields depending on its type.
+       There are different step types, each requiring unique fields. If using
+       a place holder value or reporting any value that is not meant to be
+       interpreted literally, surround the value with  "<< >>" e.g <<place holder>>.
+       Assume you have root privileges on the system (no need to use sudo).
+
+Step type: git-checkout - Clone a git repository and checkout a branch/tag
+Fields:
+'repository' (required) - Repository to clone. Omit the .git suffix
+'tag' (optional) - Branch or tag to checkout. Must specify either a branch or tag.
+'branch' (optional) - Branch to checkout. Do not specify both a branch and tag
+
+Step type: shell - Run a shell command. Use as a last resort when desired functionality cannot be captured by another build step type.
+Fields:
+'command' (required) - Command to run
+
+Step type: go/build - Builds a project with `go build` and installs it to <prefix>/<install_dir>/<output>
+Fields:
+'packages' (required) - A single string of space-separated packages to compile. Files can also be specified. This is the value passed to `go build`. Paths are relative to modroot.
+'output' (required) - Name of the output binary. The final install location will be in <prefix>/<install_dir>/<output>
+'modroot' (optional) - Top directory of the go module, this is where `go.mod` lives. Before building the go pipeline will `cd` into this directory.
+'prefix' (optional) - Prefix to install binaries. Defaults to 'usr'.
+'ldflags' (optional) - A single string of space-separated flags ([pattern=]arg) to pass to the `-ldflags` arg of `go build`.
+'install_dir' (optional) - Binaries are installed in this directory <prefix>/<install_dir>. Defaults to 'bin'.
+
+Here is a list of the first 100 files in the projects GitHub repository:
+
+buildkit/codecov.yml
+buildkit/.gitignore
+buildkit/AUTHORS
+buildkit/MAINTAINERS
+buildkit/.yamllint.yml
+buildkit/.dockerignore
+buildkit/README.md
+buildkit/.golangci.yml
+buildkit/doc.go
+buildkit/go.mod
+buildkit/go.sum
+buildkit/Dockerfile
+buildkit/docker-bake.hcl
+buildkit/LICENSE
+buildkit/Makefile
+buildkit/.mailmap
+buildkit/.git/packed-refs
+buildkit/.git/description
+buildkit/.git/HEAD
+buildkit/.git/index
+buildkit/.git/config
+buildkit/.git/refs/remotes/origin/HEAD
+buildkit/.git/refs/heads/master
+buildkit/.git/objects/pack/pack-18e03cb1ea0b77cf26bf0a39e0844cb2eb7ac79c.pack
+buildkit/.git/objects/pack/pack-18e03cb1ea0b77cf26bf0a39e0844cb2eb7ac79c.idx
+buildkit/.git/info/exclude
+buildkit/.git/hooks/update.sample
+buildkit/.git/hooks/commit-msg.sample
+buildkit/.git/hooks/prepare-commit-msg.sample
+buildkit/.git/hooks/pre-merge-commit.sample
+buildkit/.git/hooks/pre-push.sample
+buildkit/.git/hooks/pre-commit.sample
+buildkit/.git/hooks/pre-rebase.sample
+buildkit/.git/hooks/post-update.sample
+buildkit/.git/hooks/applypatch-msg.sample
+buildkit/.git/hooks/pre-applypatch.sample
+buildkit/.git/hooks/pre-receive.sample
+buildkit/.git/hooks/fsmonitor-watchman.sample
+buildkit/.git/logs/HEAD
+buildkit/.git/logs/refs/remotes/origin/HEAD
+buildkit/.git/logs/refs/heads/master
+buildkit/worker/cacheresult.go
+buildkit/worker/workercontroller.go
+buildkit/worker/filter.go
+buildkit/worker/result.go
+buildkit/worker/worker.go
+buildkit/worker/runc/runc_test.go
+buildkit/worker/runc/runc.go
+buildkit/worker/base/worker_test.go
+buildkit/worker/base/worker.go
+buildkit/worker/containerd/containerd.go
+buildkit/worker/containerd/containerd_test.go
+buildkit/worker/tests/common.go
+buildkit/worker/label/label.go
+buildkit/vendor/modules.txt
+buildkit/vendor/google.golang.org/protobuf/PATENTS
+buildkit/vendor/google.golang.org/protobuf/LICENSE
+buildkit/vendor/google.golang.org/protobuf/internal/order/range.go
+buildkit/vendor/google.golang.org/protobuf/internal/order/order.go
+buildkit/vendor/google.golang.org/protobuf/internal/pragma/pragma.go
+buildkit/vendor/google.golang.org/protobuf/internal/filetype/build.go
+buildkit/vendor/google.golang.org/protobuf/internal/errors/is_go112.go
+buildkit/vendor/google.golang.org/protobuf/internal/errors/errors.go
+buildkit/vendor/google.golang.org/protobuf/internal/errors/is_go113.go
+buildkit/vendor/google.golang.org/protobuf/internal/flags/proto_legacy_enable.go
+buildkit/vendor/google.golang.org/protobuf/internal/flags/proto_legacy_disable.go
+buildkit/vendor/google.golang.org/protobuf/internal/flags/flags.go
+buildkit/vendor/google.golang.org/protobuf/internal/msgfmt/format.go
+buildkit/vendor/google.golang.org/protobuf/internal/encoding/text/decode_number.go
+buildkit/vendor/google.golang.org/protobuf/internal/encoding/text/decode_token.go
+buildkit/vendor/google.golang.org/protobuf/internal/encoding/text/decode_string.go
+buildkit/vendor/google.golang.org/protobuf/internal/encoding/text/doc.go
+buildkit/vendor/google.golang.org/protobuf/internal/encoding/text/encode.go
+buildkit/vendor/google.golang.org/protobuf/internal/encoding/text/decode.go
+buildkit/vendor/google.golang.org/protobuf/internal/encoding/defval/default.go
+buildkit/vendor/google.golang.org/protobuf/internal/encoding/messageset/messageset.go
+buildkit/vendor/google.golang.org/protobuf/internal/encoding/tag/tag.go
+buildkit/vendor/google.golang.org/protobuf/internal/encoding/json/decode_number.go
+buildkit/vendor/google.golang.org/protobuf/internal/encoding/json/decode_token.go
+buildkit/vendor/google.golang.org/protobuf/internal/encoding/json/decode_string.go
+buildkit/vendor/google.golang.org/protobuf/internal/encoding/json/encode.go
+buildkit/vendor/google.golang.org/protobuf/internal/encoding/json/decode.go
+buildkit/vendor/google.golang.org/protobuf/internal/descfmt/stringer.go
+buildkit/vendor/google.golang.org/protobuf/internal/set/ints.go
+buildkit/vendor/google.golang.org/protobuf/internal/genid/map_entry.go
+buildkit/vendor/google.golang.org/protobuf/internal/genid/type_gen.go
+buildkit/vendor/google.golang.org/protobuf/internal/genid/struct_gen.go
+buildkit/vendor/google.golang.org/protobuf/internal/genid/source_context_gen.go
+buildkit/vendor/google.golang.org/protobuf/internal/genid/duration_gen.go
+buildkit/vendor/google.golang.org/protobuf/internal/genid/field_mask_gen.go
+buildkit/vendor/google.golang.org/protobuf/internal/genid/goname.go
+buildkit/vendor/google.golang.org/protobuf/internal/genid/api_gen.go
+buildkit/vendor/google.golang.org/protobuf/internal/genid/wrappers_gen.go
+buildkit/vendor/google.golang.org/protobuf/internal/genid/timestamp_gen.go
+buildkit/vendor/google.golang.org/protobuf/internal/genid/empty_gen.go
+buildkit/vendor/google.golang.org/protobuf/internal/genid/doc.go
+buildkit/vendor/google.golang.org/protobuf/internal/genid/any_gen.go
+buildkit/vendor/google.golang.org/protobuf/internal/genid/descriptor_gen.go
+buildkit/vendor/google.golang.org/protobuf/internal/genid/wrappers.go
+buildkit/vendor/google.golang.org/protobuf/internal/descopts/options.go
+
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/files "HTTP/1.1 200 OK"
+INFO:root:Created file buildkit/README.md
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/files "HTTP/1.1 200 OK"
+INFO:root:Created file Makefile_summary.txt
+INFO:root:Creating run
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/assistants/asst_RUUBZLtGLGE5pBDiYNnWAjlL "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/threads "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/threads/thread_Esb0VMadRScUJVIr67hi953s/messages "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/threads/thread_Esb0VMadRScUJVIr67hi953s/runs "HTTP/1.1 200 OK"
+INFO:root:Polling run_mDdBGDgfQtpImEmJiNyN2L9G. Status: queued
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_Esb0VMadRScUJVIr67hi953s/runs/run_mDdBGDgfQtpImEmJiNyN2L9G "HTTP/1.1 200 OK"
+INFO:root:Polling run_mDdBGDgfQtpImEmJiNyN2L9G. Status: in_progress
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_Esb0VMadRScUJVIr67hi953s/runs/run_mDdBGDgfQtpImEmJiNyN2L9G "HTTP/1.1 200 OK"
+INFO:root:Polling run_mDdBGDgfQtpImEmJiNyN2L9G. Status: in_progress
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_Esb0VMadRScUJVIr67hi953s/runs/run_mDdBGDgfQtpImEmJiNyN2L9G "HTTP/1.1 200 OK"
+INFO:root:Polling run_mDdBGDgfQtpImEmJiNyN2L9G. Status: in_progress
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_Esb0VMadRScUJVIr67hi953s/runs/run_mDdBGDgfQtpImEmJiNyN2L9G "HTTP/1.1 200 OK"
+INFO:root:Polling run_mDdBGDgfQtpImEmJiNyN2L9G. Status: in_progress
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_Esb0VMadRScUJVIr67hi953s/runs/run_mDdBGDgfQtpImEmJiNyN2L9G "HTTP/1.1 200 OK"
+INFO:root:Polling run_mDdBGDgfQtpImEmJiNyN2L9G. Status: in_progress
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_Esb0VMadRScUJVIr67hi953s/runs/run_mDdBGDgfQtpImEmJiNyN2L9G "HTTP/1.1 200 OK"
+INFO:root:Polling run_mDdBGDgfQtpImEmJiNyN2L9G. Status: in_progress
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_Esb0VMadRScUJVIr67hi953s/runs/run_mDdBGDgfQtpImEmJiNyN2L9G "HTTP/1.1 200 OK"
+INFO:root:Polling run_mDdBGDgfQtpImEmJiNyN2L9G. Status: in_progress
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_Esb0VMadRScUJVIr67hi953s/runs/run_mDdBGDgfQtpImEmJiNyN2L9G "HTTP/1.1 200 OK"
+INFO:root:Polling run_mDdBGDgfQtpImEmJiNyN2L9G. Status: in_progress
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_Esb0VMadRScUJVIr67hi953s/runs/run_mDdBGDgfQtpImEmJiNyN2L9G "HTTP/1.1 200 OK"
+INFO:root:Polling run_mDdBGDgfQtpImEmJiNyN2L9G. Status: in_progress
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_Esb0VMadRScUJVIr67hi953s/runs/run_mDdBGDgfQtpImEmJiNyN2L9G "HTTP/1.1 200 OK"
+INFO:root:Polling run_mDdBGDgfQtpImEmJiNyN2L9G. Status: in_progress
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_Esb0VMadRScUJVIr67hi953s/runs/run_mDdBGDgfQtpImEmJiNyN2L9G "HTTP/1.1 200 OK"
+INFO:root:Polling run_mDdBGDgfQtpImEmJiNyN2L9G. Status: in_progress
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_Esb0VMadRScUJVIr67hi953s/runs/run_mDdBGDgfQtpImEmJiNyN2L9G "HTTP/1.1 200 OK"
+INFO:root:Polling run_mDdBGDgfQtpImEmJiNyN2L9G. Status: in_progress
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_Esb0VMadRScUJVIr67hi953s/runs/run_mDdBGDgfQtpImEmJiNyN2L9G "HTTP/1.1 200 OK"
+INFO:root:Polling run_mDdBGDgfQtpImEmJiNyN2L9G. Status: in_progress
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_Esb0VMadRScUJVIr67hi953s/runs/run_mDdBGDgfQtpImEmJiNyN2L9G "HTTP/1.1 200 OK"
+INFO:root:Polling run_mDdBGDgfQtpImEmJiNyN2L9G. Status: in_progress
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_Esb0VMadRScUJVIr67hi953s/runs/run_mDdBGDgfQtpImEmJiNyN2L9G "HTTP/1.1 200 OK"
+INFO:root:Polling run_mDdBGDgfQtpImEmJiNyN2L9G. Status: in_progress
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_Esb0VMadRScUJVIr67hi953s/runs/run_mDdBGDgfQtpImEmJiNyN2L9G "HTTP/1.1 200 OK"
+INFO:root:Polling run_mDdBGDgfQtpImEmJiNyN2L9G. Status: in_progress
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_Esb0VMadRScUJVIr67hi953s/runs/run_mDdBGDgfQtpImEmJiNyN2L9G "HTTP/1.1 200 OK"
+INFO:root:Polling run_mDdBGDgfQtpImEmJiNyN2L9G. Status: in_progress
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_Esb0VMadRScUJVIr67hi953s/runs/run_mDdBGDgfQtpImEmJiNyN2L9G "HTTP/1.1 200 OK"
+INFO:root:Polling run_mDdBGDgfQtpImEmJiNyN2L9G. Status: in_progress
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_Esb0VMadRScUJVIr67hi953s/runs/run_mDdBGDgfQtpImEmJiNyN2L9G "HTTP/1.1 200 OK"
+INFO:root:Polling run_mDdBGDgfQtpImEmJiNyN2L9G. Status: in_progress
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_Esb0VMadRScUJVIr67hi953s/runs/run_mDdBGDgfQtpImEmJiNyN2L9G "HTTP/1.1 200 OK"
+INFO:root:Polling run_mDdBGDgfQtpImEmJiNyN2L9G. Status: in_progress
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_Esb0VMadRScUJVIr67hi953s/runs/run_mDdBGDgfQtpImEmJiNyN2L9G "HTTP/1.1 200 OK"
+INFO:root:Polling run_mDdBGDgfQtpImEmJiNyN2L9G. Status: in_progress
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_Esb0VMadRScUJVIr67hi953s/runs/run_mDdBGDgfQtpImEmJiNyN2L9G "HTTP/1.1 200 OK"
+INFO:root:Run complete
+INFO:httpx:HTTP Request: DELETE https://api.openai.com/v1/files/file-yFTSgPAFrhfRbxOMHpnbtrJv "HTTP/1.1 200 OK"
+INFO:root:Deleted file-yFTSgPAFrhfRbxOMHpnbtrJv
+INFO:httpx:HTTP Request: DELETE https://api.openai.com/v1/files/file-adYvJcwxPXTPunQ1WWJchhHY "HTTP/1.1 200 OK"
+INFO:root:Deleted file-adYvJcwxPXTPunQ1WWJchhHY
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_Esb0VMadRScUJVIr67hi953s/messages "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_Esb0VMadRScUJVIr67hi953s/messages?after=msg_cPupnMpdDVku4ZOTwEYgRcNx "HTTP/1.1 200 OK"

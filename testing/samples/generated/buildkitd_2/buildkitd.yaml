@@ -1,0 +1,19 @@
+package:
+  name: buildkitd
+  version: 0.12.3
+  description: A toolkit that efficiently converts source code into build artifacts
+    in an expressive and repeatable manner.
+  copyright:
+  - license: Apache License 2.0
+environment:
+  contents:
+    packages:
+    - wolfi-base
+    - build-base
+pipeline:
+- uses: git-checkout
+  with:
+    repository: https://github.com/moby/buildkit
+    tag: v0.12.3
+- runs: make binaries
+- runs: make install

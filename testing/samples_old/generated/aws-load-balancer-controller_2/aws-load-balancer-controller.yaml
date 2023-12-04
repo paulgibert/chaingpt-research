@@ -1,0 +1,17 @@
+package:
+  name: aws-load-balancer-controller
+  version: 2.6.1
+  description: A controller that manages Elastic Load Balancers for a Kubernetes cluster.
+  copyright:
+  - license: Apache License
+environment:
+  contents:
+    packages:
+    - wolfi-base
+    - build-base
+pipeline:
+- uses: git-checkout
+  with:
+    repository: https://github.com/kubernetes-sigs/aws-load-balancer-controller
+    tag: v2.6.1
+- runs: make controller

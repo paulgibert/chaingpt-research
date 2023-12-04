@@ -1,0 +1,5 @@
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+INFO:root:LLM proposed url https://github.com/k3s-io/k3s
+INFO:root:String search yielded branch/tag v1.28.2+k3s1
+ERROR:root:The provided branch/tag v1.28.2+k3s1 is not properly formatted
+INFO:root:The provided branch/tag v1.16.10+k3s1 is not properly formatted

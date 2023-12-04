@@ -1,0 +1,252 @@
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+INFO:root:LLM proposed url https://github.com/kubernetes-sigs/aws-load-balancer-controller
+INFO:root:String search yielded branch/tag v2.6.1
+INFO:root:Checked out branch/tag v2.6.1
+INFO:root:str search found documentation in the repo: ['aws-load-balancer-controller/CONTRIBUTING.md', 'aws-load-balancer-controller/README.md', 'aws-load-balancer-controller/LICENSE', 'aws-load-balancer-controller/helm/aws-load-balancer-controller/README.md', 'aws-load-balancer-controller/docs/CONTRIBUTING.md', 'aws-load-balancer-controller/docs/deploy/installation.md', 'aws-load-balancer-controller/pkg/service/model_build_target_group.go', 'aws-load-balancer-controller/pkg/service/model_builder.go', 'aws-load-balancer-controller/pkg/service/model_build_load_balancer_test.go', 'aws-load-balancer-controller/pkg/service/model_build_listener_test.go', 'aws-load-balancer-controller/pkg/service/model_build_listener.go', 'aws-load-balancer-controller/pkg/service/model_builder_test.go', 'aws-load-balancer-controller/pkg/service/model_build_managed_sg.go', 'aws-load-balancer-controller/pkg/service/model_build_target_group_test.go', 'aws-load-balancer-controller/pkg/service/model_build_load_balancer.go', 'aws-load-balancer-controller/pkg/ingress/model_build_target_group.go', 'aws-load-balancer-controller/pkg/ingress/model_build_tags_test.go', 'aws-load-balancer-controller/pkg/ingress/model_build_load_balancer_addons.go', 'aws-load-balancer-controller/pkg/ingress/model_builder.go', 'aws-load-balancer-controller/pkg/ingress/model_build_load_balancer_test.go', 'aws-load-balancer-controller/pkg/ingress/model_build_listener_rules.go', 'aws-load-balancer-controller/pkg/ingress/model_build_load_balancer_attributes.go', 'aws-load-balancer-controller/pkg/ingress/enhanced_backend_builder_test.go', 'aws-load-balancer-controller/pkg/ingress/model_build_managed_sg_test.go', 'aws-load-balancer-controller/pkg/ingress/model_build_load_balancer_attributes_test.go', 'aws-load-balancer-controller/pkg/ingress/enhanced_backend_builder.go', 'aws-load-balancer-controller/pkg/ingress/model_build_actions.go', 'aws-load-balancer-controller/pkg/ingress/auth_config_builder_test.go', 'aws-load-balancer-controller/pkg/ingress/model_build_tags.go', 'aws-load-balancer-controller/pkg/ingress/model_build_actions_test.go', 'aws-load-balancer-controller/pkg/ingress/model_build_listener.go', 'aws-load-balancer-controller/pkg/ingress/model_builder_test.go', 'aws-load-balancer-controller/pkg/ingress/model_build_listener_rules_test.go', 'aws-load-balancer-controller/pkg/ingress/auth_config_builder.go', 'aws-load-balancer-controller/pkg/ingress/model_build_managed_sg.go', 'aws-load-balancer-controller/pkg/ingress/model_build_target_group_test.go', 'aws-load-balancer-controller/pkg/ingress/model_build_load_balancer.go', 'aws-load-balancer-controller/pkg/deploy/stack_schema_builder.go', 'aws-load-balancer-controller/pkg/deploy/stack_schema_builder_test.go', 'aws-load-balancer-controller/test/framework/manifest/ingress_builder.go', 'aws-load-balancer-controller/test/framework/manifest/fixed_response_service_builder.go', 'aws-load-balancer-controller/test/framework/controller/installation_manager.go', 'aws-load-balancer-controller/hack/install-ko.sh', 'aws-load-balancer-controller/config/samples/install_v2_0_0_rc3.yaml', 'aws-load-balancer-controller/config/samples/install_v2_0_0_rc4.yaml', 'aws-load-balancer-controller/config/samples/install_v2_0_0_rc2.yaml', 'aws-load-balancer-controller/config/samples/install_v2_0_0_rc1.yaml', 'aws-load-balancer-controller/config/samples/install_v2_0_0_rc0.yaml']
+INFO:root:Trimming 547 files down to 100 for LLM
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+INFO:root:LLM found documentation in the repo: ['aws-load-balancer-controller/CONTRIBUTING.md', 'aws-load-balancer-controller/README.md', 'aws-load-balancer-controller/mkdocs.yml', 'aws-load-balancer-controller/Makefile', 'aws-load-balancer-controller/helm/aws-load-balancer-controller/README.md', 'aws-load-balancer-controller/helm/aws-load-balancer-controller/Chart.yaml', 'aws-load-balancer-controller/helm/aws-load-balancer-controller/values.yaml', 'aws-load-balancer-controller/docs/how-it-works.md', 'aws-load-balancer-controller/docs/CONTRIBUTING.md', 'aws-load-balancer-controller/docs/controller-devel.md', 'aws-load-balancer-controller/docs/release.md', 'aws-load-balancer-controller/docs/index.md', 'aws-load-balancer-controller/docs/deploy/security_groups.md', 'aws-load-balancer-controller/docs/deploy/installation.md', 'aws-load-balancer-controller/docs/deploy/pod_readiness_gate.md', 'aws-load-balancer-controller/docs/deploy/subnet_discovery.md']
+INFO:root:aws-load-balancer-controller/CONTRIBUTING.md has a supported extension, including
+INFO:root:aws-load-balancer-controller/README.md has a supported extension, including
+INFO:root:Excluded aws-load-balancer-controller/mkdocs.yml due to unsupported extension
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+INFO:root:Summarized aws-load-balancer-controller/Makefile: <list>
+1. **mockgen** - This target checks for the presence of the mockgen tool in the system. If not found, it downloads and installs it.
+2. **kustomize** - This target checks for the presence of the kustomize tool in the system. If not found, it downloads and installs it.
+3. **quick-ci: verify-versions verify-generate verify-crds** - This target runs a quick continuous integration check by verifying versions, generated files, and custom resource definitions.
+4. **unit-test** - This target runs unit tests using the script ci_unit_test.sh.
+5. **e2e-test** - This target runs end-to-end tests using the script ci_e2e_test.sh.
+</list>
+INFO:root:aws-load-balancer-controller/helm/aws-load-balancer-controller/README.md has a supported extension, including
+INFO:root:Excluded aws-load-balancer-controller/helm/aws-load-balancer-controller/Chart.yaml due to unsupported extension
+INFO:root:Excluded aws-load-balancer-controller/helm/aws-load-balancer-controller/values.yaml due to unsupported extension
+INFO:root:aws-load-balancer-controller/docs/how-it-works.md has a supported extension, including
+INFO:root:aws-load-balancer-controller/docs/CONTRIBUTING.md has a supported extension, including
+INFO:root:aws-load-balancer-controller/docs/controller-devel.md has a supported extension, including
+INFO:root:aws-load-balancer-controller/docs/release.md has a supported extension, including
+INFO:root:aws-load-balancer-controller/docs/index.md has a supported extension, including
+INFO:root:aws-load-balancer-controller/docs/deploy/security_groups.md has a supported extension, including
+INFO:root:Using only supported extensions: ['aws-load-balancer-controller/CONTRIBUTING.md', 'aws-load-balancer-controller/README.md', 'Makefile_summary.txt', 'aws-load-balancer-controller/helm/aws-load-balancer-controller/README.md', 'aws-load-balancer-controller/docs/how-it-works.md', 'aws-load-balancer-controller/docs/CONTRIBUTING.md', 'aws-load-balancer-controller/docs/controller-devel.md', 'aws-load-balancer-controller/docs/release.md', 'aws-load-balancer-controller/docs/index.md', 'aws-load-balancer-controller/docs/deploy/security_groups.md']
+INFO:root:Using assistant prompt:
+
+Generate minimalist and straightforward instructions for compiling and
+installing the source code of the software project aws-load-balancer-controller,
+version 2.6.1. The GitHub repository is https://github.com/kubernetes-sigs/aws-load-balancer-controller. Checkout v2.6.1 for the correct version.
+The instructions should be concise and solely focused on the build and installation process,
+excluding any steps related to testing, linting, or other unrelated tasks.
+If multiple build methods are available, choose the most direct and
+uncomplicated method and provide a consistent set of steps without
+mixing different approaches. You will respond in JSON form only.
+
+The response should contain the following fields:
+
+summary: A description of the components the project uses and how they are built. If able, provide
+         step-by-step build instructions.
+
+description: A single sentence description of the project. It should not start with the project's name.
+
+license: The license under which the project is released. Include the license name only.
+
+steps: An ordered list of build commands.
+       Each build step is an object with specific fields depending on its type.
+       There are different step types, each requiring unique fields. If using
+       a place holder value or reporting any value that is not meant to be
+       interpreted literally, surround the value with  "<< >>" e.g <<place holder>>.
+       Assume you have root privileges on the system (no need to use sudo).
+
+Step type: git-checkout - Clone a git repository and checkout a branch/tag
+Fields:
+'repository' (required) - Repository to clone. Omit the .git suffix
+'tag' (optional) - Branch or tag to checkout. Must specify either a branch or tag.
+'branch' (optional) - Branch to checkout. Do not specify both a branch and tag
+
+Step type: shell - Run a shell command. Use as a last resort when desired functionality cannot be captured by another build step type.
+Fields:
+'command' (required) - Command to run
+
+Step type: go/build - Builds a project with `go build` and installs it to <prefix>/<install_dir>/<output>
+Fields:
+'packages' (required) - A single string of space-separated packages to compile. Files can also be specified. This is the value passed to `go build`. Paths are relative to modroot.
+'output' (required) - Name of the output binary. The final install location will be in <prefix>/<install_dir>/<output>
+'modroot' (optional) - Top directory of the go module, this is where `go.mod` lives. Before building the go pipeline will `cd` into this directory.
+'prefix' (optional) - Prefix to install binaries. Defaults to 'usr'.
+'ldflags' (optional) - A single string of space-separated flags ([pattern=]arg) to pass to the `-ldflags` arg of `go build`.
+'install_dir' (optional) - Binaries are installed in this directory <prefix>/<install_dir>. Defaults to 'bin'.
+
+Here is a list of the first 100 files in the projects GitHub repository:
+
+aws-load-balancer-controller/CONTRIBUTING.md
+aws-load-balancer-controller/.gitignore
+aws-load-balancer-controller/version.txt
+aws-load-balancer-controller/OWNERS
+aws-load-balancer-controller/main.go
+aws-load-balancer-controller/.ko.yaml
+aws-load-balancer-controller/README.md
+aws-load-balancer-controller/code-of-conduct.md
+aws-load-balancer-controller/mkdocs.yml
+aws-load-balancer-controller/go.mod
+aws-load-balancer-controller/go.sum
+aws-load-balancer-controller/PROJECT
+aws-load-balancer-controller/Pipfile
+aws-load-balancer-controller/Dockerfile
+aws-load-balancer-controller/version-stable.txt
+aws-load-balancer-controller/SECURITY_CONTACTS
+aws-load-balancer-controller/LICENSE
+aws-load-balancer-controller/Makefile
+aws-load-balancer-controller/Pipfile.lock
+aws-load-balancer-controller/.git/packed-refs
+aws-load-balancer-controller/.git/description
+aws-load-balancer-controller/.git/HEAD
+aws-load-balancer-controller/.git/index
+aws-load-balancer-controller/.git/config
+aws-load-balancer-controller/.git/refs/remotes/origin/HEAD
+aws-load-balancer-controller/.git/refs/heads/main
+aws-load-balancer-controller/.git/objects/pack/pack-90089da9a790b26174ddf987aad2dcadef6afba8.idx
+aws-load-balancer-controller/.git/objects/pack/pack-90089da9a790b26174ddf987aad2dcadef6afba8.pack
+aws-load-balancer-controller/.git/info/exclude
+aws-load-balancer-controller/.git/hooks/update.sample
+aws-load-balancer-controller/.git/hooks/commit-msg.sample
+aws-load-balancer-controller/.git/hooks/prepare-commit-msg.sample
+aws-load-balancer-controller/.git/hooks/pre-merge-commit.sample
+aws-load-balancer-controller/.git/hooks/pre-push.sample
+aws-load-balancer-controller/.git/hooks/pre-commit.sample
+aws-load-balancer-controller/.git/hooks/pre-rebase.sample
+aws-load-balancer-controller/.git/hooks/post-update.sample
+aws-load-balancer-controller/.git/hooks/applypatch-msg.sample
+aws-load-balancer-controller/.git/hooks/pre-applypatch.sample
+aws-load-balancer-controller/.git/hooks/pre-receive.sample
+aws-load-balancer-controller/.git/hooks/fsmonitor-watchman.sample
+aws-load-balancer-controller/.git/logs/HEAD
+aws-load-balancer-controller/.git/logs/refs/remotes/origin/HEAD
+aws-load-balancer-controller/.git/logs/refs/heads/main
+aws-load-balancer-controller/scripts/run-e2e-test.sh
+aws-load-balancer-controller/scripts/sync-to-eks-charts.sh
+aws-load-balancer-controller/scripts/ci_unit_test.sh
+aws-load-balancer-controller/scripts/gen_mocks.sh
+aws-load-balancer-controller/scripts/ci_e2e_test.sh
+aws-load-balancer-controller/scripts/lib/ecr.sh
+aws-load-balancer-controller/scripts/lib/iam.sh
+aws-load-balancer-controller/scripts/lib/common.sh
+aws-load-balancer-controller/scripts/lib/eksctl_tmpl_cluster.yaml
+aws-load-balancer-controller/scripts/lib/eksctl.sh
+aws-load-balancer-controller/scripts/aws_sdk_model_override/setup.sh
+aws-load-balancer-controller/scripts/aws_sdk_model_override/cleanup.sh
+aws-load-balancer-controller/helm/aws-load-balancer-controller/README.md
+aws-load-balancer-controller/helm/aws-load-balancer-controller/Chart.yaml
+aws-load-balancer-controller/helm/aws-load-balancer-controller/test.yaml
+aws-load-balancer-controller/helm/aws-load-balancer-controller/.helmignore
+aws-load-balancer-controller/helm/aws-load-balancer-controller/values.yaml
+aws-load-balancer-controller/helm/aws-load-balancer-controller/crds/kustomization.yaml
+aws-load-balancer-controller/helm/aws-load-balancer-controller/crds/crds.yaml
+aws-load-balancer-controller/helm/aws-load-balancer-controller/templates/NOTES.txt
+aws-load-balancer-controller/helm/aws-load-balancer-controller/templates/_helpers.tpl
+aws-load-balancer-controller/helm/aws-load-balancer-controller/templates/deployment.yaml
+aws-load-balancer-controller/helm/aws-load-balancer-controller/templates/servicemonitor.yaml
+aws-load-balancer-controller/helm/aws-load-balancer-controller/templates/service.yaml
+aws-load-balancer-controller/helm/aws-load-balancer-controller/templates/serviceaccount.yaml
+aws-load-balancer-controller/helm/aws-load-balancer-controller/templates/rbac.yaml
+aws-load-balancer-controller/helm/aws-load-balancer-controller/templates/pdb.yaml
+aws-load-balancer-controller/helm/aws-load-balancer-controller/templates/webhook.yaml
+aws-load-balancer-controller/helm/aws-load-balancer-controller/templates/ingressclass.yaml
+aws-load-balancer-controller/helm/aws-load-balancer-controller/ci/extra_args
+aws-load-balancer-controller/helm/aws-load-balancer-controller/ci/values.yaml
+aws-load-balancer-controller/docs/how-it-works.md
+aws-load-balancer-controller/docs/CONTRIBUTING.md
+aws-load-balancer-controller/docs/controller-devel.md
+aws-load-balancer-controller/docs/code-of-conduct.md
+aws-load-balancer-controller/docs/release.md
+aws-load-balancer-controller/docs/index.md
+aws-load-balancer-controller/docs/examples/grpc_server.md
+aws-load-balancer-controller/docs/examples/secrets_access.md
+aws-load-balancer-controller/docs/examples/echo_server.md
+aws-load-balancer-controller/docs/examples/external-dns.yaml
+aws-load-balancer-controller/docs/examples/cognito-ingress-template.yaml
+aws-load-balancer-controller/docs/examples/echoservice/echoserver-service.yaml
+aws-load-balancer-controller/docs/examples/echoservice/echoserver-deployment.yaml
+aws-load-balancer-controller/docs/examples/echoservice/echoserver-ingress.yaml
+aws-load-balancer-controller/docs/examples/echoservice/echoserver-namespace.yaml
+aws-load-balancer-controller/docs/examples/2048/2048_full_dualstack.yaml
+aws-load-balancer-controller/docs/examples/2048/2048_full.yaml
+aws-load-balancer-controller/docs/examples/grpc/grpcserver-service.yaml
+aws-load-balancer-controller/docs/examples/grpc/grpcserver-namespace.yaml
+aws-load-balancer-controller/docs/examples/grpc/grpcserver-deployment.yaml
+aws-load-balancer-controller/docs/examples/grpc/grpcserver-ingress.yaml
+aws-load-balancer-controller/docs/deploy/security_groups.md
+aws-load-balancer-controller/docs/deploy/installation.md
+aws-load-balancer-controller/docs/deploy/pod_readiness_gate.md
+aws-load-balancer-controller/docs/deploy/subnet_discovery.md
+
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/files "HTTP/1.1 200 OK"
+INFO:root:Created file aws-load-balancer-controller/CONTRIBUTING.md
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/files "HTTP/1.1 200 OK"
+INFO:root:Created file aws-load-balancer-controller/README.md
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/files "HTTP/1.1 200 OK"
+INFO:root:Created file Makefile_summary.txt
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/files "HTTP/1.1 200 OK"
+INFO:root:Created file aws-load-balancer-controller/helm/aws-load-balancer-controller/README.md
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/files "HTTP/1.1 200 OK"
+INFO:root:Created file aws-load-balancer-controller/docs/how-it-works.md
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/files "HTTP/1.1 200 OK"
+INFO:root:Created file aws-load-balancer-controller/docs/CONTRIBUTING.md
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/files "HTTP/1.1 200 OK"
+INFO:root:Created file aws-load-balancer-controller/docs/controller-devel.md
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/files "HTTP/1.1 200 OK"
+INFO:root:Created file aws-load-balancer-controller/docs/release.md
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/files "HTTP/1.1 200 OK"
+INFO:root:Created file aws-load-balancer-controller/docs/index.md
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/files "HTTP/1.1 200 OK"
+INFO:root:Created file aws-load-balancer-controller/docs/deploy/security_groups.md
+INFO:root:Creating run
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/assistants/asst_RUUBZLtGLGE5pBDiYNnWAjlL "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/threads "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/threads/thread_dU8gqegl3ErsH9kpfnX7cYeR/messages "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/threads/thread_dU8gqegl3ErsH9kpfnX7cYeR/runs "HTTP/1.1 200 OK"
+INFO:root:Polling run_6u9NgzAFrAbOBu9RCDSzxfHp. Status: queued
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_dU8gqegl3ErsH9kpfnX7cYeR/runs/run_6u9NgzAFrAbOBu9RCDSzxfHp "HTTP/1.1 200 OK"
+INFO:root:Polling run_6u9NgzAFrAbOBu9RCDSzxfHp. Status: in_progress
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_dU8gqegl3ErsH9kpfnX7cYeR/runs/run_6u9NgzAFrAbOBu9RCDSzxfHp "HTTP/1.1 200 OK"
+INFO:root:Polling run_6u9NgzAFrAbOBu9RCDSzxfHp. Status: in_progress
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_dU8gqegl3ErsH9kpfnX7cYeR/runs/run_6u9NgzAFrAbOBu9RCDSzxfHp "HTTP/1.1 200 OK"
+INFO:root:Polling run_6u9NgzAFrAbOBu9RCDSzxfHp. Status: in_progress
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_dU8gqegl3ErsH9kpfnX7cYeR/runs/run_6u9NgzAFrAbOBu9RCDSzxfHp "HTTP/1.1 200 OK"
+INFO:root:Polling run_6u9NgzAFrAbOBu9RCDSzxfHp. Status: in_progress
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_dU8gqegl3ErsH9kpfnX7cYeR/runs/run_6u9NgzAFrAbOBu9RCDSzxfHp "HTTP/1.1 200 OK"
+INFO:root:Polling run_6u9NgzAFrAbOBu9RCDSzxfHp. Status: in_progress
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_dU8gqegl3ErsH9kpfnX7cYeR/runs/run_6u9NgzAFrAbOBu9RCDSzxfHp "HTTP/1.1 200 OK"
+INFO:root:Polling run_6u9NgzAFrAbOBu9RCDSzxfHp. Status: in_progress
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_dU8gqegl3ErsH9kpfnX7cYeR/runs/run_6u9NgzAFrAbOBu9RCDSzxfHp "HTTP/1.1 200 OK"
+INFO:root:Polling run_6u9NgzAFrAbOBu9RCDSzxfHp. Status: in_progress
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_dU8gqegl3ErsH9kpfnX7cYeR/runs/run_6u9NgzAFrAbOBu9RCDSzxfHp "HTTP/1.1 200 OK"
+INFO:root:Polling run_6u9NgzAFrAbOBu9RCDSzxfHp. Status: in_progress
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_dU8gqegl3ErsH9kpfnX7cYeR/runs/run_6u9NgzAFrAbOBu9RCDSzxfHp "HTTP/1.1 200 OK"
+INFO:root:Polling run_6u9NgzAFrAbOBu9RCDSzxfHp. Status: in_progress
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_dU8gqegl3ErsH9kpfnX7cYeR/runs/run_6u9NgzAFrAbOBu9RCDSzxfHp "HTTP/1.1 200 OK"
+INFO:root:Polling run_6u9NgzAFrAbOBu9RCDSzxfHp. Status: in_progress
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_dU8gqegl3ErsH9kpfnX7cYeR/runs/run_6u9NgzAFrAbOBu9RCDSzxfHp "HTTP/1.1 200 OK"
+INFO:root:Polling run_6u9NgzAFrAbOBu9RCDSzxfHp. Status: in_progress
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_dU8gqegl3ErsH9kpfnX7cYeR/runs/run_6u9NgzAFrAbOBu9RCDSzxfHp "HTTP/1.1 200 OK"
+INFO:root:Run complete
+INFO:httpx:HTTP Request: DELETE https://api.openai.com/v1/files/file-Bpqhbg9B0dcZFpePgjAsoGaz "HTTP/1.1 200 OK"
+INFO:root:Deleted file-Bpqhbg9B0dcZFpePgjAsoGaz
+INFO:httpx:HTTP Request: DELETE https://api.openai.com/v1/files/file-BDnsxoxnbDSpbmVB6fQ9VOOw "HTTP/1.1 200 OK"
+INFO:root:Deleted file-BDnsxoxnbDSpbmVB6fQ9VOOw
+INFO:httpx:HTTP Request: DELETE https://api.openai.com/v1/files/file-JXLioSb9NQs8xy4EAVU4ceFG "HTTP/1.1 200 OK"
+INFO:root:Deleted file-JXLioSb9NQs8xy4EAVU4ceFG
+INFO:httpx:HTTP Request: DELETE https://api.openai.com/v1/files/file-JyIEUUB5hIT6isv4dgmtrrms "HTTP/1.1 200 OK"
+INFO:root:Deleted file-JyIEUUB5hIT6isv4dgmtrrms
+INFO:httpx:HTTP Request: DELETE https://api.openai.com/v1/files/file-j0NplYo6x59P4TrW0Mns14OH "HTTP/1.1 200 OK"
+INFO:root:Deleted file-j0NplYo6x59P4TrW0Mns14OH
+INFO:httpx:HTTP Request: DELETE https://api.openai.com/v1/files/file-wx5gSg1uCF8tuUBeCKeCC3MZ "HTTP/1.1 200 OK"
+INFO:root:Deleted file-wx5gSg1uCF8tuUBeCKeCC3MZ
+INFO:httpx:HTTP Request: DELETE https://api.openai.com/v1/files/file-z3TSY2Ko7vL4igD9zQUZEENN "HTTP/1.1 200 OK"
+INFO:root:Deleted file-z3TSY2Ko7vL4igD9zQUZEENN
+INFO:httpx:HTTP Request: DELETE https://api.openai.com/v1/files/file-jU0PG5ircvPf2NAkv2VbhQjz "HTTP/1.1 200 OK"
+INFO:root:Deleted file-jU0PG5ircvPf2NAkv2VbhQjz
+INFO:httpx:HTTP Request: DELETE https://api.openai.com/v1/files/file-DP0f5M5MtmbNufB8T7VetYEv "HTTP/1.1 200 OK"
+INFO:root:Deleted file-DP0f5M5MtmbNufB8T7VetYEv
+INFO:httpx:HTTP Request: DELETE https://api.openai.com/v1/files/file-GJJLen3mU1xnSGLovBzciX7i "HTTP/1.1 200 OK"
+INFO:root:Deleted file-GJJLen3mU1xnSGLovBzciX7i
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_dU8gqegl3ErsH9kpfnX7cYeR/messages "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_dU8gqegl3ErsH9kpfnX7cYeR/messages?after=msg_tlHh4XPfpi9vd9i4FqDk4old "HTTP/1.1 200 OK"

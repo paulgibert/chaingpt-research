@@ -1,0 +1,1 @@
+Helm uses Go and its own Makefile to build binaries for multiple platforms via cross-compilation. The Makefile employs the gox tool to handle the build process【23†source】.

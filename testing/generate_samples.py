@@ -19,9 +19,11 @@ def package_iter(samples_dir: str) -> Iterator[Tuple[str, str]]:
 
 def gen_with_c3po(package: str, version: str, yaml_out: str, log_file: str, summary_out: str):
     try:
+        print(log_file)
         run_agent(package, version, output_yaml=yaml_out, output_log=log_file,
-                output_summary=summary_out)
+                  output_summary=summary_out)
     except Exception as e:
+        os.chdir("..") # If c3po errors, it is likely that we are still in the build env. This is a hack
         print(str(e))
 
 
@@ -30,19 +32,21 @@ def parse_args():
     parser.add_argument("-n", default=3,
                         type=int,
                         help="Number of runs per package")
+    parser.add_argument("--samples-dir", "-s", default="samples",
+                        help="The directory to source YAML samples")
     return parser.parse_args()
 
 
 def main():
     args = parse_args()
 
-    gen_path = os.path.join("samples", "generated")
+    gen_path = os.path.join(args.samples_dir, "generated")
     if not os.path.exists(gen_path):
         os.mkdir(gen_path)
 
-    for package, version in package_iter("samples"):
+    for package, version in package_iter(args.samples_dir):
         for i in range(args.n):
-            out_file_dir = os.path.join("samples", "generated", f"{package}_{i}")
+            out_file_dir = os.path.join(args.samples_dir, "generated", f"{package}_{i}")
             if os.path.exists(out_file_dir):
                 shutil.rmtree(out_file_dir)
             os.mkdir(out_file_dir)

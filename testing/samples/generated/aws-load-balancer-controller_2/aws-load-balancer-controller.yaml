@@ -1,9 +1,10 @@
 package:
   name: aws-load-balancer-controller
   version: 2.6.1
-  description: A controller that manages Elastic Load Balancers for a Kubernetes cluster.
+  description: Allows for the management of AWS Load Balancers within a Kubernetes
+    cluster.
   copyright:
-  - license: Apache License
+  - license: Apache-2.0
 environment:
   contents:
     packages:
@@ -15,3 +16,5 @@ pipeline:
     repository: https://github.com/kubernetes-sigs/aws-load-balancer-controller
     tag: v2.6.1
 - runs: make controller
+- runs: make install
+- runs: make deploy

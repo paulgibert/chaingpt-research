@@ -1,1 +1,1 @@
-The hugo-extended project is a binary wrapper for Hugo Extended, a static site generator. The build process involves cloning the repository and executing npm install to manage dependencies and build the project.
+The hugo-extended project wraps Hugo Extended as a Node.js package for simple installation and use within Node.js projects. It is built using npm commands to install the package as a dev dependency in Node.js projects.

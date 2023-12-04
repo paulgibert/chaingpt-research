@@ -1,0 +1,186 @@
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+INFO:root:LLM proposed url https://github.com/anchore/grype
+INFO:root:String search yielded branch/tag v0.72.0
+INFO:root:Checked out branch/tag v0.72.0
+INFO:root:str search found documentation in the repo: ['grype/CONTRIBUTING.md', 'grype/README.md', 'grype/install.sh', 'grype/LICENSE', 'grype/templates/README.md', 'grype/grype/db/test-fixtures/tls/README.md', 'grype/schema/cyclonedx/README.md', 'grype/test/integration/test-fixtures/image-alpine-match-coverage/lib/apk/db/installed', 'grype/test/integration/test-fixtures/image-portage-match-coverage/var/db/pkg/app-containers/skopeo-1.5.1/LICENSE', 'grype/test/integration/test-fixtures/image-portage-match-coverage/var/db/repos/gentoo/skel.ebuild', 'grype/test/quality/README.md', 'grype/test/quality/requirements.txt', 'grype/test/install/3_install_asset_test.sh', 'grype/.github/scripts/goreleaser-install.sh']
+INFO:root:Trimming 667 files down to 100 for LLM
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+INFO:root:LLM found documentation in the repo: ['grype/CONTRIBUTING.md', 'grype/README.md', 'grype/Dockerfile.debug', 'grype/DEVELOPING.md', 'grype/Dockerfile', 'grype/SECURITY.md', 'grype/Makefile', 'grype/templates/README.md']
+INFO:root:grype/CONTRIBUTING.md has a supported extension, including
+INFO:root:grype/README.md has a supported extension, including
+INFO:root:Excluded grype/Dockerfile.debug due to unsupported extension
+INFO:root:grype/DEVELOPING.md has a supported extension, including
+INFO:root:grype/Dockerfile.txt has no extension but including
+INFO:root:grype/SECURITY.md has a supported extension, including
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+INFO:root:Summarized grype/Makefile: 1. build: This target builds snapshot release binaries and packages. It is crucial for creating the final product that will be distributed.
+
+2. release: This target triggers the release process. It is important for the distribution of the final product.
+
+3. ci-check: This target runs a script to check the continuous integration. It is crucial for ensuring the quality and readiness of the product for release.
+
+4. clean: This target removes previous builds, result reports, and test cache. It is important for maintaining a clean workspace and ensuring accurate builds and tests.
+
+5. validate-grype-test-config: This target ensures the update URL is not overridden. It is crucial for ensuring the testing did not use staging values and used production values instead.
+INFO:root:grype/templates/README.md has a supported extension, including
+INFO:root:Using only supported extensions: ['grype/CONTRIBUTING.md', 'grype/README.md', 'grype/DEVELOPING.md', 'grype/Dockerfile.txt', 'grype/SECURITY.md', 'Makefile_summary.txt', 'grype/templates/README.md']
+INFO:root:Using assistant prompt:
+
+Generate minimalist and straightforward instructions for compiling and
+installing the source code of the software project grype,
+version 0.72.0. The GitHub repository is https://github.com/anchore/grype. Checkout v0.72.0 for the correct version.
+The instructions should be concise and solely focused on the build and installation process,
+excluding any steps related to testing, linting, or other unrelated tasks.
+If multiple build methods are available, choose the most direct and
+uncomplicated method and provide a consistent set of steps without
+mixing different approaches. You will respond in JSON form only.
+
+The response should contain the following fields:
+
+summary: A description of the components the project uses and how they are built. If able, provide
+         step-by-step build instructions.
+
+description: A single sentence description of the project. It should not start with the project's name.
+
+license: The license under which the project is released. Include the license name only.
+
+steps: An ordered list of build commands.
+       Each build step is an object with specific fields depending on its type.
+       There are different step types, each requiring unique fields. If using
+       a place holder value or reporting any value that is not meant to be
+       interpreted literally, surround the value with  "<< >>" e.g <<place holder>>.
+       Assume you have root privileges on the system (no need to use sudo).
+
+Step type: git-checkout - Clone a git repository and checkout a branch/tag
+Fields:
+'repository' (required) - Repository to clone. Omit the .git suffix
+'tag' (optional) - Branch or tag to checkout. Must specify either a branch or tag.
+'branch' (optional) - Branch to checkout. Do not specify both a branch and tag
+
+Step type: shell - Run a shell command. Use as a last resort when desired functionality cannot be captured by another build step type.
+Fields:
+'command' (required) - Command to run
+
+Step type: go/build - Builds a project with `go build` and installs it to <prefix>/<install_dir>/<output>
+Fields:
+'packages' (required) - A single string of space-separated packages to compile. Files can also be specified. This is the value passed to `go build`. Paths are relative to modroot.
+'output' (required) - Name of the output binary. The final install location will be in <prefix>/<install_dir>/<output>
+'modroot' (optional) - Top directory of the go module, this is where `go.mod` lives. Before building the go pipeline will `cd` into this directory.
+'prefix' (optional) - Prefix to install binaries. Defaults to 'usr'.
+'ldflags' (optional) - A single string of space-separated flags ([pattern=]arg) to pass to the `-ldflags` arg of `go build`.
+'install_dir' (optional) - Binaries are installed in this directory <prefix>/<install_dir>. Defaults to 'bin'.
+
+Here is a list of the first 100 files in the projects GitHub repository:
+
+grype/.chronicle.yaml
+grype/CONTRIBUTING.md
+grype/.gitignore
+grype/README.md
+grype/Dockerfile.debug
+grype/.golangci.yaml
+grype/artifacthub-repo.yml
+grype/DEVELOPING.md
+grype/go.mod
+grype/go.sum
+grype/.gitmodules
+grype/install.sh
+grype/Dockerfile
+grype/SECURITY.md
+grype/.goreleaser.yaml
+grype/.bouncer.yaml
+grype/LICENSE
+grype/Makefile
+grype/.git/packed-refs
+grype/.git/description
+grype/.git/HEAD
+grype/.git/index
+grype/.git/config
+grype/.git/refs/remotes/origin/HEAD
+grype/.git/refs/heads/main
+grype/.git/objects/pack/pack-226e5a274c295f80fe321397b617ab60506e8e3c.pack
+grype/.git/objects/pack/pack-226e5a274c295f80fe321397b617ab60506e8e3c.idx
+grype/.git/info/exclude
+grype/.git/hooks/update.sample
+grype/.git/hooks/commit-msg.sample
+grype/.git/hooks/prepare-commit-msg.sample
+grype/.git/hooks/pre-merge-commit.sample
+grype/.git/hooks/pre-push.sample
+grype/.git/hooks/pre-commit.sample
+grype/.git/hooks/pre-rebase.sample
+grype/.git/hooks/post-update.sample
+grype/.git/hooks/applypatch-msg.sample
+grype/.git/hooks/pre-applypatch.sample
+grype/.git/hooks/pre-receive.sample
+grype/.git/hooks/fsmonitor-watchman.sample
+grype/.git/logs/HEAD
+grype/.git/logs/refs/remotes/origin/HEAD
+grype/.git/logs/refs/heads/main
+grype/internal/constants.go
+grype/internal/input.go
+grype/internal/logger/logrus.go
+grype/internal/file/hasher_test.go
+grype/internal/file/copy.go
+grype/internal/file/tar.go
+grype/internal/file/getter_test.go
+grype/internal/file/hasher.go
+grype/internal/file/tar_test.go
+grype/internal/file/getter.go
+grype/internal/file/exists.go
+grype/internal/redact/redact.go
+grype/internal/stringutil/stringset.go
+grype/internal/stringutil/string_helpers_test.go
+grype/internal/stringutil/color.go
+grype/internal/stringutil/parse.go
+grype/internal/stringutil/string_helpers.go
+grype/internal/stringutil/tprint.go
+grype/internal/bus/bus.go
+grype/internal/bus/helpers.go
+grype/internal/format/writer.go
+grype/internal/format/presenter.go
+grype/internal/format/format.go
+grype/internal/format/format_test.go
+grype/internal/format/writer_test.go
+grype/internal/log/log.go
+grype/templates/junit.tmpl
+grype/templates/README.md
+grype/templates/table.tmpl
+grype/templates/csv.tmpl
+grype/grype/load_vulnerability_db.go
+grype/grype/vulnerability_matcher.go
+grype/grype/deprecated.go
+grype/grype/lib.go
+grype/grype/vulnerability_matcher_test.go
+grype/grype/grypeerr/expected_error.go
+grype/grype/grypeerr/errors.go
+grype/grype/distro/distro.go
+grype/grype/distro/distro_test.go
+grype/grype/distro/type.go
+grype/grype/distro/test-fixtures/centos-8
+grype/grype/distro/test-fixtures/bad-system-release-cpe
+grype/grype/distro/test-fixtures/debian-8
+grype/grype/distro/test-fixtures/bad-redhat-release
+grype/grype/distro/test-fixtures/bad-id
+grype/grype/distro/test-fixtures/unprintable
+grype/grype/distro/test-fixtures/ubuntu-20.04
+grype/grype/distro/test-fixtures/rhel-8
+grype/grype/distro/test-fixtures/partial-fields/unknown-id/usr/lib/os-release
+grype/grype/distro/test-fixtures/partial-fields/missing-version/usr/lib/os-release
+grype/grype/distro/test-fixtures/partial-fields/missing-id/usr/lib/os-release
+grype/grype/distro/test-fixtures/os/centos/usr/lib/os-release
+grype/grype/distro/test-fixtures/os/redhat/usr/lib/os-release
+grype/grype/distro/test-fixtures/os/chainguard/etc/os-release
+grype/grype/distro/test-fixtures/os/centos5/etc/redhat-release
+grype/grype/distro/test-fixtures/os/sles/etc/os-release
+grype/grype/distro/test-fixtures/os/rockylinux/etc/os-release
+
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/files "HTTP/1.1 200 OK"
+INFO:root:Created file grype/CONTRIBUTING.md
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/files "HTTP/1.1 200 OK"
+INFO:root:Created file grype/README.md
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/files "HTTP/1.1 200 OK"
+INFO:root:Created file grype/DEVELOPING.md

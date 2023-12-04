@@ -1,0 +1,1 @@
+The AWS Load Balancer Controller is built using Go, leveraging 'make' for its build process. It manages Elastic Load Balancers for Kubernetes clusters, handling both Ingress resources with Application Load Balancers, and Service resources with Network Load Balancers.

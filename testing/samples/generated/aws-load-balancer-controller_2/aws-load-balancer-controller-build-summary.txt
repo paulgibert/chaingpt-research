@@ -1,1 +1,1 @@
-The AWS Load Balancer Controller manages Elastic Load Balancers for a Kubernetes cluster using a Go-based controller binary that is built with make.
+The AWS Load Balancer Controller is a Go project that uses Make to build the controller binary. It includes commands to manage CRDs and to build and push the Docker container image.
