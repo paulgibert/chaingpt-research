@@ -1,0 +1,7 @@
+REMOVE_FIELD("modroot", "go/build", 1, false)
+ADD_FIELD("ldflags", "-w -X github.com/anchore/grype/internal/version.version=${{package.version}}" ,"go/build", 1, false)
+
+Notes:
+The ldflags version setter does not work
+There is also a valid build route that utilizes the Makefile and goreleaser
+C3PO Uses what is documented in CONTRIBUTING

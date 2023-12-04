@@ -1,0 +1,5 @@
+EDIT_FIELD("", "make build", "make build \n install -Dm755 ./bin/kind /usr/bin/kind", 1, true)
+REMOVE_PIPELINE_STATE("runs", 2, true)
+
+Notes:
+Install command not working for unknown reason

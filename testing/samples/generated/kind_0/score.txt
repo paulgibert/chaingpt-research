@@ -1,0 +1,3 @@
+REMOVE_FIELD("modroot", "go/build", 1, false)
+REMOVE_FIELD("prefix", "go/build", 1, false)
+REMOVE_FIELD("install_dir", "go/build", 1, false)

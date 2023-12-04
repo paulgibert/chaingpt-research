@@ -1,0 +1,6 @@
+REMOVE_FIELD("modroot", "go/build", 1, false)
+EDIT_FIELD("ldflags", "-X main.version=v0.46.0", "-X=main.version=v0.46.0", "go/build", 1, false)
+REMOVE_PIPELINE_STAGE("runs", "2", true)
+
+Notes:
+ldflags version setting is not working for an unknown reason

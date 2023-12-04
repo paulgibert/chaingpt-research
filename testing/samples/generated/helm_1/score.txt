@@ -1,0 +1,1 @@
+REMOVE_FIELD("modroot", "go/build", 1, false)

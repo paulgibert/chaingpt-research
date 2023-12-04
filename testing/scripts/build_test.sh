@@ -1,8 +1,9 @@
 #!/bin/bash
 
-docker run --rm -v $1:/work \
+docker run --rm -v .:/work \
     -w /work cgr.dev/chainguard/apko \
     build apko.yaml test:test test.tar \
-    -k keys/melange.rsa.pub
+    -k melange.rsa.pub \
+    --sbom=false
 
-docker load < $1/test.tar
+docker load < ./test.tar

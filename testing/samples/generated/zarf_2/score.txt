@@ -1,0 +1,5 @@
+EDIT_FIELD("", "make build", "make build-ui", "runs", 1, true)
+ADD_PIPELINE_STAGE("go/build", 2, true)
+ADD_FIELD("packages", ".", "go/build", 2, true)
+ADD_FIELD("output", "zarf", "go/build", 2, true)
+ADD_FIELD("ldflags", "-s -w -X 'github.com/defenseunicorns/zarf/src/config.CLIVersion=$(git describe --tags)'", "go/build", 2, false)

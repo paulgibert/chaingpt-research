@@ -1,0 +1,4 @@
+Notes:
+
+C3PO uses the Makefile which has functionality commented out on formal releases.
+Unknown if the Makefile is event meant to be leveraged for production builds.

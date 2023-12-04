@@ -1,0 +1,6 @@
+EDIT_FIELD("", "make build-injector-linux", "make build-ui", "runs", 1, true)
+EDIT_FIELD("packages", "./...", ".", "go/build", 2, true)
+REMOVE_FIELD("modroot", "go/build", 2, false)
+REMOVE_FIELD("prefix", "go/build", 2, false)
+REMOVE_FIELD("install_dir", "go/build", 2, false)
+ADD_FIELD("ldflags", "-s -w -X 'github.com/defenseunicorns/zarf/src/config.CLIVersion=$(git describe --tags)'", )

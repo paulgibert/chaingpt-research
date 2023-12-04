@@ -2,5 +2,4 @@
 
 ARCH=amd64
 
-docker run --rm -it -v $1:/work \
-    -w /work test:test-$ARCH $2
+docker run --rm -it -w /work test:test-$ARCH /bin/sh
