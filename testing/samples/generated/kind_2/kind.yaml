@@ -1,8 +1,7 @@
 package:
   name: kind
   version: 0.20.0
-  description: A tool for running local Kubernetes clusters using Docker container
-    'nodes'.
+  description: A Kubernetes IN Docker - local clusters for testing Kubernetes.
   copyright:
   - license: Apache-2.0
 environment:
@@ -15,9 +14,4 @@ pipeline:
   with:
     repository: https://github.com/kubernetes-sigs/kind
     tag: v0.20.0
-- uses: go/build
-  with:
-    packages: ./...
-    output: kind
-    modroot: kind
-- runs: mv kind /usr/local/bin
+- runs: make build

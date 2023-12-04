@@ -1,8 +1,8 @@
 package:
   name: buildkitd
   version: 0.12.3
-  description: A toolkit for converting source code to build artifacts in an efficient,
-    expressive and repeatable manner.
+  description: An extensible framework that enables building container images in a
+    reliable and efficient manner.
   copyright:
   - license: Apache-2.0
 environment:
@@ -15,5 +15,5 @@ pipeline:
   with:
     repository: https://github.com/moby/buildkit
     tag: v0.12.3
-- runs: make
-- runs: cp ./bin/* /usr/local/bin/
+- runs: make binaries
+- runs: make install

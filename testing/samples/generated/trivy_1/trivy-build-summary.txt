@@ -1,0 +1,1 @@
+The build instructions are not available in the provided content. Trivy is a Go-based project and its general build process would involve cloning the repository, fetching dependencies, and compiling the source code using `go build`.

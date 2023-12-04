@@ -1,1 +1,1 @@
-The AWS Load Balancer Controller is a Go project that uses Make to build the controller binary. It includes commands to manage CRDs and to build and push the Docker container image.
+The aws-load-balancer-controller project utilizes Go modules for dependency management and uses a Makefile to abstract build commands.

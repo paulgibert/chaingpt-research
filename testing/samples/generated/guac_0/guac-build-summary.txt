@@ -1,0 +1,1 @@
+libguac-client-vnc is a VNC support plugin for the Guacamole proxy, built using GNU Automake, which compiles into a shared library installed to the system library directory.

@@ -1,0 +1,1 @@
+Trivy is a Go-based project for scanning vulnerabilities in container images, file systems, and Git repositories. The build process typically involves using 'go build' to compile the source into a binary.

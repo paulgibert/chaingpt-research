@@ -1,0 +1,1 @@
+The Zarf project uses a Go-based build system. The software project is built into a statically compiled binary that can run on various operating systems with zero dependencies.

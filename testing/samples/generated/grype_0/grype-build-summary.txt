@@ -1,0 +1,1 @@
+Grype uses Go as its primary programming language. The compilation from source is straightforward, using the `go build` command.

@@ -1,1 +1,1 @@
-The 'kind' project uses Go for building the software. Compiling is handled by the 'build' target, and installation is performed by the 'install' target which depends on 'build'【11†source】.
+The project 'kind' uses Go for building the 'kind' binary. The most straightforward method involves using Docker and the `make build` command from the root of the repository.

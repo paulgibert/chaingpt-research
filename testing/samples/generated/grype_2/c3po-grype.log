@@ -5,34 +5,30 @@ INFO:root:Checked out branch/tag v0.72.0
 INFO:root:str search found documentation in the repo: ['grype/CONTRIBUTING.md', 'grype/README.md', 'grype/install.sh', 'grype/LICENSE', 'grype/templates/README.md', 'grype/grype/db/test-fixtures/tls/README.md', 'grype/schema/cyclonedx/README.md', 'grype/test/integration/test-fixtures/image-alpine-match-coverage/lib/apk/db/installed', 'grype/test/integration/test-fixtures/image-portage-match-coverage/var/db/pkg/app-containers/skopeo-1.5.1/LICENSE', 'grype/test/integration/test-fixtures/image-portage-match-coverage/var/db/repos/gentoo/skel.ebuild', 'grype/test/quality/README.md', 'grype/test/quality/requirements.txt', 'grype/test/install/3_install_asset_test.sh', 'grype/.github/scripts/goreleaser-install.sh']
 INFO:root:Trimming 667 files down to 100 for LLM
 INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
-INFO:root:LLM found documentation in the repo: ['grype/CONTRIBUTING.md', 'grype/README.md', 'grype/Dockerfile.debug', 'grype/DEVELOPING.md', 'grype/Dockerfile', 'grype/SECURITY.md', 'grype/Makefile', 'grype/templates/README.md']
+INFO:root:LLM found documentation in the repo: ['grype/CONTRIBUTING.md', 'grype/README.md', 'grype/DEVELOPING.md', 'grype/SECURITY.md', 'grype/Makefile', 'grype/templates/README.md']
 INFO:root:grype/CONTRIBUTING.md has a supported extension, including
 INFO:root:grype/README.md has a supported extension, including
-INFO:root:Excluded grype/Dockerfile.debug due to unsupported extension
 INFO:root:grype/DEVELOPING.md has a supported extension, including
-INFO:root:grype/Dockerfile.txt has no extension but including
 INFO:root:grype/SECURITY.md has a supported extension, including
 INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
 INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
 INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
 INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
 INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
-INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 502 Bad Gateway"
-INFO:openai._base_client:Retrying request to /chat/completions in 0.766573 seconds
 INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
 INFO:root:Summarized grype/Makefile: <list>
-1. build: This target builds snapshot release binaries and packages. It's crucial for creating the executable versions of the software.
+1. build: This target builds snapshot release binaries and packages. It is used to create a build of the software.
 
-2. release: This target triggers the release process. It's important for the distribution of the software.
+2. release: This target triggers the release process. It is used to start the release of the software.
 
-3. ci-release: This target checks the continuous integration and cleans the distribution before releasing the software. It's crucial for ensuring the software is ready for release.
+3. ci-release: This target checks the CI, cleans the distribution, generates the changelog, and publishes release artifacts. It is used in the continuous integration process to prepare and publish a new release.
 
-4. clean: This target removes previous builds, result reports, and test cache. It's important for maintaining a clean workspace and ensuring accurate builds and tests.
+4. clean: This target removes previous builds, result reports, and test cache. It is used to clean up the project directory and prepare for a fresh build.
 
-5. ci-check: This target runs a script to check the continuous integration. It's crucial for ensuring the software is ready for release.
+5. ci-check: This target runs a script to check the continuous integration process. It is used to ensure the CI process is functioning correctly.
 </list>
 INFO:root:grype/templates/README.md has a supported extension, including
-INFO:root:Using only supported extensions: ['grype/CONTRIBUTING.md', 'grype/README.md', 'grype/DEVELOPING.md', 'grype/Dockerfile.txt', 'grype/SECURITY.md', 'Makefile_summary.txt', 'grype/templates/README.md']
+INFO:root:Using only supported extensions: ['grype/CONTRIBUTING.md', 'grype/README.md', 'grype/DEVELOPING.md', 'grype/SECURITY.md', 'Makefile_summary.txt', 'grype/templates/README.md']
 INFO:root:Using assistant prompt:
 
 Generate minimalist and straightforward instructions for compiling and
@@ -106,8 +102,8 @@ grype/.git/index
 grype/.git/config
 grype/.git/refs/remotes/origin/HEAD
 grype/.git/refs/heads/main
-grype/.git/objects/pack/pack-06e8ce2af38ea93be943f6ab769ed38a9c45605c.idx
-grype/.git/objects/pack/pack-06e8ce2af38ea93be943f6ab769ed38a9c45605c.pack
+grype/.git/objects/pack/pack-bb01c2902deb12c99062a3fd3aee885e3d51bf89.pack
+grype/.git/objects/pack/pack-bb01c2902deb12c99062a3fd3aee885e3d51bf89.idx
 grype/.git/info/exclude
 grype/.git/hooks/update.sample
 grype/.git/hooks/commit-msg.sample
@@ -182,9 +178,53 @@ grype/grype/distro/test-fixtures/os/centos5/etc/redhat-release
 grype/grype/distro/test-fixtures/os/sles/etc/os-release
 grype/grype/distro/test-fixtures/os/rockylinux/etc/os-release
 
+INFO:root:Creating file grype/CONTRIBUTING.md
 INFO:httpx:HTTP Request: POST https://api.openai.com/v1/files "HTTP/1.1 200 OK"
 INFO:root:Created file grype/CONTRIBUTING.md
+INFO:root:Creating file grype/README.md
 INFO:httpx:HTTP Request: POST https://api.openai.com/v1/files "HTTP/1.1 200 OK"
 INFO:root:Created file grype/README.md
+INFO:root:Creating file grype/DEVELOPING.md
 INFO:httpx:HTTP Request: POST https://api.openai.com/v1/files "HTTP/1.1 200 OK"
 INFO:root:Created file grype/DEVELOPING.md
+INFO:root:Creating file grype/SECURITY.md
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/files "HTTP/1.1 200 OK"
+INFO:root:Created file grype/SECURITY.md
+INFO:root:Creating file Makefile_summary.txt
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/files "HTTP/1.1 200 OK"
+INFO:root:Created file Makefile_summary.txt
+INFO:root:Creating file grype/templates/README.md
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/files "HTTP/1.1 200 OK"
+INFO:root:Created file grype/templates/README.md
+INFO:root:Creating run
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/assistants/asst_RUUBZLtGLGE5pBDiYNnWAjlL "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/threads "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/threads/thread_kaYLW2LLSvoPrQ9H6m48CJ0D/messages "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/threads/thread_kaYLW2LLSvoPrQ9H6m48CJ0D/runs "HTTP/1.1 200 OK"
+INFO:root:Polling run_kEG7GEdgjibWnWeTAdzeGGb7. Status: queued
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_kaYLW2LLSvoPrQ9H6m48CJ0D/runs/run_kEG7GEdgjibWnWeTAdzeGGb7 "HTTP/1.1 200 OK"
+INFO:root:Polling run_kEG7GEdgjibWnWeTAdzeGGb7. Status: in_progress
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_kaYLW2LLSvoPrQ9H6m48CJ0D/runs/run_kEG7GEdgjibWnWeTAdzeGGb7 "HTTP/1.1 200 OK"
+INFO:root:Polling run_kEG7GEdgjibWnWeTAdzeGGb7. Status: in_progress
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_kaYLW2LLSvoPrQ9H6m48CJ0D/runs/run_kEG7GEdgjibWnWeTAdzeGGb7 "HTTP/1.1 200 OK"
+INFO:root:Polling run_kEG7GEdgjibWnWeTAdzeGGb7. Status: in_progress
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_kaYLW2LLSvoPrQ9H6m48CJ0D/runs/run_kEG7GEdgjibWnWeTAdzeGGb7 "HTTP/1.1 200 OK"
+INFO:root:Polling run_kEG7GEdgjibWnWeTAdzeGGb7. Status: in_progress
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_kaYLW2LLSvoPrQ9H6m48CJ0D/runs/run_kEG7GEdgjibWnWeTAdzeGGb7 "HTTP/1.1 200 OK"
+INFO:root:Polling run_kEG7GEdgjibWnWeTAdzeGGb7. Status: in_progress
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_kaYLW2LLSvoPrQ9H6m48CJ0D/runs/run_kEG7GEdgjibWnWeTAdzeGGb7 "HTTP/1.1 200 OK"
+INFO:root:Run complete
+INFO:httpx:HTTP Request: DELETE https://api.openai.com/v1/files/file-a6L277Dsad0OpkyVF1HJRbk5 "HTTP/1.1 200 OK"
+INFO:root:Deleted file-a6L277Dsad0OpkyVF1HJRbk5
+INFO:httpx:HTTP Request: DELETE https://api.openai.com/v1/files/file-yTqPXGejmHGw8tohgtBfvXqA "HTTP/1.1 200 OK"
+INFO:root:Deleted file-yTqPXGejmHGw8tohgtBfvXqA
+INFO:httpx:HTTP Request: DELETE https://api.openai.com/v1/files/file-aRSJ5poFf2397i9MArjk75oe "HTTP/1.1 200 OK"
+INFO:root:Deleted file-aRSJ5poFf2397i9MArjk75oe
+INFO:httpx:HTTP Request: DELETE https://api.openai.com/v1/files/file-EbPQiAZnBAsLEaOJp10aSDnv "HTTP/1.1 200 OK"
+INFO:root:Deleted file-EbPQiAZnBAsLEaOJp10aSDnv
+INFO:httpx:HTTP Request: DELETE https://api.openai.com/v1/files/file-oknFigvCOSWB3T01HUvmAq3A "HTTP/1.1 200 OK"
+INFO:root:Deleted file-oknFigvCOSWB3T01HUvmAq3A
+INFO:httpx:HTTP Request: DELETE https://api.openai.com/v1/files/file-d4Uy9MKlZPb5iHInADWk8V2Z "HTTP/1.1 200 OK"
+INFO:root:Deleted file-d4Uy9MKlZPb5iHInADWk8V2Z
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_kaYLW2LLSvoPrQ9H6m48CJ0D/messages "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_kaYLW2LLSvoPrQ9H6m48CJ0D/messages?after=msg_OkjpDdcqhWLdWCFlD5FD57je "HTTP/1.1 200 OK"

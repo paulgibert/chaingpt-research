@@ -1,0 +1,1 @@
+The guac project comprises components built using GNU Automake. The primary plugin discussed is libguac-client-vnc, which provides support for VNC via libvncclient. The standard build process involves configuration, compilation, and installation steps using the 'configure', 'make', and 'make install' commands respectively.

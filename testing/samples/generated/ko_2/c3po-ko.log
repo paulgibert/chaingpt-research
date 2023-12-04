@@ -87,8 +87,8 @@ ko/.git/index
 ko/.git/config
 ko/.git/refs/remotes/origin/HEAD
 ko/.git/refs/heads/main
-ko/.git/objects/pack/pack-b69ab090e637284873314a6795acbfd3d4fa4931.idx
-ko/.git/objects/pack/pack-b69ab090e637284873314a6795acbfd3d4fa4931.pack
+ko/.git/objects/pack/pack-67bd7c0bd423aef8fe05cdb651abf8b22f62fb29.pack
+ko/.git/objects/pack/pack-67bd7c0bd423aef8fe05cdb651abf8b22f62fb29.idx
 ko/.git/info/exclude
 ko/.git/hooks/update.sample
 ko/.git/hooks/commit-msg.sample
@@ -164,57 +164,53 @@ ko/vendor/google.golang.org/protobuf/internal/errors/is_go113.go
 ko/vendor/google.golang.org/protobuf/internal/flags/proto_legacy_enable.go
 ko/vendor/google.golang.org/protobuf/internal/flags/proto_legacy_disable.go
 
+INFO:root:Creating file ko/CONTRIBUTING.md
 INFO:httpx:HTTP Request: POST https://api.openai.com/v1/files "HTTP/1.1 200 OK"
 INFO:root:Created file ko/CONTRIBUTING.md
+INFO:root:Creating file ko/README.md
 INFO:httpx:HTTP Request: POST https://api.openai.com/v1/files "HTTP/1.1 200 OK"
 INFO:root:Created file ko/README.md
+INFO:root:Creating file ko/ROADMAP.md
 INFO:httpx:HTTP Request: POST https://api.openai.com/v1/files "HTTP/1.1 200 OK"
 INFO:root:Created file ko/ROADMAP.md
+INFO:root:Creating file ko/MAINTAINERS.md
 INFO:httpx:HTTP Request: POST https://api.openai.com/v1/files "HTTP/1.1 200 OK"
 INFO:root:Created file ko/MAINTAINERS.md
+INFO:root:Creating file ko/vendor/google.golang.org/appengine/CONTRIBUTING.md
 INFO:httpx:HTTP Request: POST https://api.openai.com/v1/files "HTTP/1.1 200 OK"
 INFO:root:Created file ko/vendor/google.golang.org/appengine/CONTRIBUTING.md
+INFO:root:Creating file ko/vendor/google.golang.org/appengine/README.md
 INFO:httpx:HTTP Request: POST https://api.openai.com/v1/files "HTTP/1.1 200 OK"
 INFO:root:Created file ko/vendor/google.golang.org/appengine/README.md
 INFO:root:Creating run
 INFO:httpx:HTTP Request: GET https://api.openai.com/v1/assistants/asst_RUUBZLtGLGE5pBDiYNnWAjlL "HTTP/1.1 200 OK"
 INFO:httpx:HTTP Request: POST https://api.openai.com/v1/threads "HTTP/1.1 200 OK"
-INFO:httpx:HTTP Request: POST https://api.openai.com/v1/threads/thread_HJpWsWGXvukQfPQ0HaaPBj6q/messages "HTTP/1.1 200 OK"
-INFO:httpx:HTTP Request: POST https://api.openai.com/v1/threads/thread_HJpWsWGXvukQfPQ0HaaPBj6q/runs "HTTP/1.1 200 OK"
-INFO:root:Polling run_H1cwouinNQziaf1ZxCA6bamq. Status: queued
-INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_HJpWsWGXvukQfPQ0HaaPBj6q/runs/run_H1cwouinNQziaf1ZxCA6bamq "HTTP/1.1 200 OK"
-INFO:root:Polling run_H1cwouinNQziaf1ZxCA6bamq. Status: in_progress
-INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_HJpWsWGXvukQfPQ0HaaPBj6q/runs/run_H1cwouinNQziaf1ZxCA6bamq "HTTP/1.1 200 OK"
-INFO:root:Polling run_H1cwouinNQziaf1ZxCA6bamq. Status: in_progress
-INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_HJpWsWGXvukQfPQ0HaaPBj6q/runs/run_H1cwouinNQziaf1ZxCA6bamq "HTTP/1.1 200 OK"
-INFO:root:Polling run_H1cwouinNQziaf1ZxCA6bamq. Status: in_progress
-INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_HJpWsWGXvukQfPQ0HaaPBj6q/runs/run_H1cwouinNQziaf1ZxCA6bamq "HTTP/1.1 200 OK"
-INFO:root:Polling run_H1cwouinNQziaf1ZxCA6bamq. Status: in_progress
-INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_HJpWsWGXvukQfPQ0HaaPBj6q/runs/run_H1cwouinNQziaf1ZxCA6bamq "HTTP/1.1 200 OK"
-INFO:root:Polling run_H1cwouinNQziaf1ZxCA6bamq. Status: in_progress
-INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_HJpWsWGXvukQfPQ0HaaPBj6q/runs/run_H1cwouinNQziaf1ZxCA6bamq "HTTP/1.1 200 OK"
-INFO:root:Polling run_H1cwouinNQziaf1ZxCA6bamq. Status: in_progress
-INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_HJpWsWGXvukQfPQ0HaaPBj6q/runs/run_H1cwouinNQziaf1ZxCA6bamq "HTTP/1.1 200 OK"
-INFO:root:Polling run_H1cwouinNQziaf1ZxCA6bamq. Status: in_progress
-INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_HJpWsWGXvukQfPQ0HaaPBj6q/runs/run_H1cwouinNQziaf1ZxCA6bamq "HTTP/1.1 200 OK"
-INFO:root:Polling run_H1cwouinNQziaf1ZxCA6bamq. Status: in_progress
-INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_HJpWsWGXvukQfPQ0HaaPBj6q/runs/run_H1cwouinNQziaf1ZxCA6bamq "HTTP/1.1 200 OK"
-INFO:root:Polling run_H1cwouinNQziaf1ZxCA6bamq. Status: in_progress
-INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_HJpWsWGXvukQfPQ0HaaPBj6q/runs/run_H1cwouinNQziaf1ZxCA6bamq "HTTP/1.1 200 OK"
-INFO:root:Polling run_H1cwouinNQziaf1ZxCA6bamq. Status: in_progress
-INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_HJpWsWGXvukQfPQ0HaaPBj6q/runs/run_H1cwouinNQziaf1ZxCA6bamq "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/threads/thread_e6zCCzjlTUwg0VqdJOHYSqlG/messages "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/threads/thread_e6zCCzjlTUwg0VqdJOHYSqlG/runs "HTTP/1.1 200 OK"
+INFO:root:Polling run_214tiEXMkkhjGPLlGl36aVHD. Status: queued
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_e6zCCzjlTUwg0VqdJOHYSqlG/runs/run_214tiEXMkkhjGPLlGl36aVHD "HTTP/1.1 200 OK"
+INFO:root:Polling run_214tiEXMkkhjGPLlGl36aVHD. Status: in_progress
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_e6zCCzjlTUwg0VqdJOHYSqlG/runs/run_214tiEXMkkhjGPLlGl36aVHD "HTTP/1.1 200 OK"
+INFO:root:Polling run_214tiEXMkkhjGPLlGl36aVHD. Status: in_progress
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_e6zCCzjlTUwg0VqdJOHYSqlG/runs/run_214tiEXMkkhjGPLlGl36aVHD "HTTP/1.1 200 OK"
+INFO:root:Polling run_214tiEXMkkhjGPLlGl36aVHD. Status: in_progress
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_e6zCCzjlTUwg0VqdJOHYSqlG/runs/run_214tiEXMkkhjGPLlGl36aVHD "HTTP/1.1 200 OK"
+INFO:root:Polling run_214tiEXMkkhjGPLlGl36aVHD. Status: in_progress
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_e6zCCzjlTUwg0VqdJOHYSqlG/runs/run_214tiEXMkkhjGPLlGl36aVHD "HTTP/1.1 200 OK"
+INFO:root:Polling run_214tiEXMkkhjGPLlGl36aVHD. Status: in_progress
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_e6zCCzjlTUwg0VqdJOHYSqlG/runs/run_214tiEXMkkhjGPLlGl36aVHD "HTTP/1.1 200 OK"
 INFO:root:Run complete
-INFO:httpx:HTTP Request: DELETE https://api.openai.com/v1/files/file-3fD4tmNXiwQSynhXZte8MYY9 "HTTP/1.1 200 OK"
-INFO:root:Deleted file-3fD4tmNXiwQSynhXZte8MYY9
-INFO:httpx:HTTP Request: DELETE https://api.openai.com/v1/files/file-HrF6m9FutcvoBy5Nq37Uy9N2 "HTTP/1.1 200 OK"
-INFO:root:Deleted file-HrF6m9FutcvoBy5Nq37Uy9N2
-INFO:httpx:HTTP Request: DELETE https://api.openai.com/v1/files/file-qgpupi2zfieKxYAnXdxRss5b "HTTP/1.1 200 OK"
-INFO:root:Deleted file-qgpupi2zfieKxYAnXdxRss5b
-INFO:httpx:HTTP Request: DELETE https://api.openai.com/v1/files/file-WTyxowkRDplstOxpn2xQa7n2 "HTTP/1.1 200 OK"
-INFO:root:Deleted file-WTyxowkRDplstOxpn2xQa7n2
-INFO:httpx:HTTP Request: DELETE https://api.openai.com/v1/files/file-OhXcUC3C97QbRvn9qYyY7gcj "HTTP/1.1 200 OK"
-INFO:root:Deleted file-OhXcUC3C97QbRvn9qYyY7gcj
-INFO:httpx:HTTP Request: DELETE https://api.openai.com/v1/files/file-vEjWa043McfAAEYeJEIFBsV9 "HTTP/1.1 200 OK"
-INFO:root:Deleted file-vEjWa043McfAAEYeJEIFBsV9
-INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_HJpWsWGXvukQfPQ0HaaPBj6q/messages "HTTP/1.1 200 OK"
-INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_HJpWsWGXvukQfPQ0HaaPBj6q/messages?after=msg_vKXnUiFfAo8dsYvi7ZlD3lFc "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: DELETE https://api.openai.com/v1/files/file-pG7xDmYknrR7MfaRCJv6Kqfn "HTTP/1.1 200 OK"
+INFO:root:Deleted file-pG7xDmYknrR7MfaRCJv6Kqfn
+INFO:httpx:HTTP Request: DELETE https://api.openai.com/v1/files/file-lidy5N9eg2eAMkuYPOFLqGPR "HTTP/1.1 200 OK"
+INFO:root:Deleted file-lidy5N9eg2eAMkuYPOFLqGPR
+INFO:httpx:HTTP Request: DELETE https://api.openai.com/v1/files/file-Twa7imKvKWRILLgEL7WBFM4M "HTTP/1.1 200 OK"
+INFO:root:Deleted file-Twa7imKvKWRILLgEL7WBFM4M
+INFO:httpx:HTTP Request: DELETE https://api.openai.com/v1/files/file-b3zjYK5ooaZr6HBXGLX4S7F5 "HTTP/1.1 200 OK"
+INFO:root:Deleted file-b3zjYK5ooaZr6HBXGLX4S7F5
+INFO:httpx:HTTP Request: DELETE https://api.openai.com/v1/files/file-vJsDn6st559TzZ9hZMQ6IIZt "HTTP/1.1 200 OK"
+INFO:root:Deleted file-vJsDn6st559TzZ9hZMQ6IIZt
+INFO:httpx:HTTP Request: DELETE https://api.openai.com/v1/files/file-dRKcLQWjRtccPrpqTyUjx6kV "HTTP/1.1 200 OK"
+INFO:root:Deleted file-dRKcLQWjRtccPrpqTyUjx6kV
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_e6zCCzjlTUwg0VqdJOHYSqlG/messages "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_e6zCCzjlTUwg0VqdJOHYSqlG/messages?after=msg_8SsnUQl460x9uRYe417C61GK "HTTP/1.1 200 OK"

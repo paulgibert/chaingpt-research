@@ -1,8 +1,9 @@
 from typing import List
 import os
+import shutil
 import logging
 import time
-from openai import OpenAI
+from openai import OpenAI, APIStatusError
 from yaspin import yaspin
 from yaspin.spinners import Spinners
 from colorama import Fore
@@ -109,17 +110,29 @@ def _make_prompt(package: str, version: str, repo: GitRepo, file_list: List[str]
                           file_list_str)
 
 
+def _rename_file(path: str, new_path: str) -> str:
+    shutil.move(path, new_path)
+    return new_path
+
+
 def _create_files(client, doc_file_paths: List[str]) -> List[str]:
     file_ids = []
     for path in doc_file_paths:
+        if "." not in path:
+            path = _rename_file(path, path + ".txt") # For some reason this still does not ensure every file gets uploaded without error
+        logging.info("Creating file %s", path)
         with open(path, "rb") as f:
-            with yaspin(Spinners.line, text=Fore.BLUE + f"Uploading {path}", color="blue"):
-                file = client.files.create(
-                    file=f,
-                    purpose="assistants")
-            print(Fore.GREEN + f"Uploaded {path}")
-            logging.info("Created file %s", path)
-            file_ids.append(file.id)
+            try:
+                with yaspin(Spinners.line, text=Fore.BLUE + f"Uploading {path}", color="blue"):
+                        file = client.files.create(
+                            file=f,
+                            purpose="assistants")
+                print(Fore.GREEN + f"Uploaded {path}")
+                logging.info("Created file %s", path)
+                file_ids.append(file.id)
+            except APIStatusError as e:
+                print(Fore.RED + " Error uploading %s", path)
+                logging.error(str(e.response))
     return file_ids
 
 

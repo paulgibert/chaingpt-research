@@ -1,9 +1,10 @@
 package:
   name: ko
   version: 0.15.0
-  description: A simple, fast container image builder for Go applications.
+  description: A simple, fast container image builder for Go applications that compiles
+    Go binaries using `go build` and does not require Docker.
   copyright:
-  - license: Apache-2.0
+  - license: Apache License 2.0
 environment:
   contents:
     packages:
@@ -18,5 +19,4 @@ pipeline:
   with:
     packages: .
     output: ko
-    modroot: .
-- runs: mv ./ko /usr/local/bin/
+    modroot: cmd/ko/

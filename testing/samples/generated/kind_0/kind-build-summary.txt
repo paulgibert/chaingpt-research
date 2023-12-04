@@ -1,1 +1,0 @@
-The project 'kind' uses make as a build system to compile its Go based source code. The build process involves compiling the source code into a binary using the 'build' target and then installing it with the 'install' target.

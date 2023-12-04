@@ -1,1 +1,1 @@
-The hugo-extended project wraps Hugo Extended as a Node.js package for simple installation and use within Node.js projects. It is built using npm commands to install the package as a dev dependency in Node.js projects.
+The project hugo-extended wraps the Hugo Extended release for use via NPM, making it easy to install via npm or yarn. The build process involves retrieving the correct version of Hugo through npm dependencies, which handles compatibility checks for the extended version on supported platforms.

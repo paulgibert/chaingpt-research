@@ -1,1 +1,1 @@
-Hugo-extended is a wrapper for Hugo Extended built using Node.js. Installation involves cloning the repository and running the build script which handles the download of the necessary binaries.
+hugo-extended is a plug-and-play binary wrapper for Hugo Extended, a static site generator. It is built using Node.js and packages are managed through npm. To build the project, Node.js must be installed and the npm package manager is used to handle dependencies and execute the build script.

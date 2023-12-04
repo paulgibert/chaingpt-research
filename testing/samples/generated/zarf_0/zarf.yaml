@@ -1,0 +1,19 @@
+package:
+  name: zarf
+  version: 0.30.1
+  description: Zarf provides a solution to simplify the complexity of delivering software
+    to Kubernetes clusters in offline and semi-connected environments.
+  copyright:
+  - license: Apache License 2.0
+environment:
+  contents:
+    packages:
+    - wolfi-base
+    - build-base
+pipeline:
+- uses: git-checkout
+  with:
+    repository: https://github.com/defenseunicorns/zarf
+    tag: v0.30.1
+- runs: make all
+- runs: make install

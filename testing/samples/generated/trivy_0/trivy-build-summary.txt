@@ -1,0 +1,1 @@
+Trivy is a comprehensive security scanner that examines various targets like container images, filesystems, and Git repositories for issues such as vulnerabilities, misconfigurations, secrets, and software licenses. The build process requires cloning the repository and using Go to compile the binaries.

@@ -1,0 +1,21 @@
+package:
+  name: trivy
+  version: 0.46.0
+  description: "Trivy is a comprehensive and versatile security scanner offering various\
+    \ scanners and target analysis\u301015\u2020source\u3011."
+  copyright:
+  - license: "Apache-2.0\u301016\u2020source\u3011"
+environment:
+  contents:
+    packages:
+    - wolfi-base
+    - build-base
+pipeline:
+- uses: git-checkout
+  with:
+    repository: https://github.com/aquasecurity/trivy
+    tag: v0.46.0
+- uses: go/build
+  with:
+    packages: ./...
+    output: trivy

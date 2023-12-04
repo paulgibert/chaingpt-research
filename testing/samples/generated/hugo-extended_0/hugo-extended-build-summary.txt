@@ -1,1 +1,1 @@
-The hugo-extended project is a plug-and-play binary wrapper for Hugo Extended that simplifies installation through npm or yarn package managers. It is aligned with Hugo's version numbers and is built using Node.js tools, specifically npm or yarn.
+The hugo-extended project wraps the Hugo Extended binary as an NPM module for ease of use in Node.js projects. It is installed using npm or yarn and aligns its versions with Hugo's, automatically selecting the extended version for supported platforms or falling back to vanilla Hugo for unsupported ones.

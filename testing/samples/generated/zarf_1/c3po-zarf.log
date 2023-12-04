@@ -16,11 +16,11 @@ INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1
 INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
 INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
 INFO:root:Summarized zarf/Makefile: <list>
-1. `test-upgrade`: This target runs the Zarf CLI E2E tests for an external registry and cluster, ensuring that the Zarf binary is built and the correct version and package are installed before running the tests.
-2. `test-unit`: This target runs unit tests for the project, ensuring that the UI build directory is present before running the tests.
-3. `test-ui`: This target runs the Zarf UI E2E tests, requiring the UI to be built first.
-4. `cve-report`: This target creates a CVE report for the current project, excluding certain directories.
-5. `lint-go`: This target runs the revive tool to lint the Go code in the project.
+1. `build-examples`: This target builds all of the example packages.
+2. `build-injector-linux`: This target builds the Zarf injector for AMD64 and ARM64.
+3. `build-cli`: This target builds the Zarf CLI for multiple platforms including Linux (AMD64 and ARM), macOS (AMD64 and ARM), and Windows (AMD64 and ARM).
+4. `test-upgrade`: This target runs the Zarf CLI E2E tests for an external registry and cluster, ensuring that the Zarf is installed and initialized with the correct upgrade-test package before running the tests.
+5. `test-unit`: This target runs unit tests for the project, ensuring that the UI build directory is present before running the tests.
 </list>
 INFO:root:Using only supported extensions: ['zarf/CONTRIBUTING.md', 'zarf/README.md', 'zarf/SECURITY.md', 'Makefile_summary.txt']
 INFO:root:Using assistant prompt:
@@ -104,8 +104,8 @@ zarf/.git/index
 zarf/.git/config
 zarf/.git/refs/remotes/origin/HEAD
 zarf/.git/refs/heads/main
-zarf/.git/objects/pack/pack-8fc9e3e1a4c3fed518424a46d55eef3767fa70cf.idx
-zarf/.git/objects/pack/pack-8fc9e3e1a4c3fed518424a46d55eef3767fa70cf.pack
+zarf/.git/objects/pack/pack-2301531e485b3f71b7617cb1568a4c18077f0f9c.pack
+zarf/.git/objects/pack/pack-2301531e485b3f71b7617cb1568a4c18077f0f9c.idx
 zarf/.git/info/exclude
 zarf/.git/hooks/update.sample
 zarf/.git/hooks/commit-msg.sample
@@ -172,62 +172,54 @@ zarf/src/internal/agent/operations/hook.go
 zarf/src/internal/agent/operations/patch.go
 zarf/src/internal/agent/hooks/argocd-repository.go
 
+INFO:root:Creating file zarf/CONTRIBUTING.md
 INFO:httpx:HTTP Request: POST https://api.openai.com/v1/files "HTTP/1.1 200 OK"
 INFO:root:Created file zarf/CONTRIBUTING.md
+INFO:root:Creating file zarf/README.md
 INFO:httpx:HTTP Request: POST https://api.openai.com/v1/files "HTTP/1.1 200 OK"
 INFO:root:Created file zarf/README.md
+INFO:root:Creating file zarf/SECURITY.md
 INFO:httpx:HTTP Request: POST https://api.openai.com/v1/files "HTTP/1.1 200 OK"
 INFO:root:Created file zarf/SECURITY.md
+INFO:root:Creating file Makefile_summary.txt
 INFO:httpx:HTTP Request: POST https://api.openai.com/v1/files "HTTP/1.1 200 OK"
 INFO:root:Created file Makefile_summary.txt
 INFO:root:Creating run
 INFO:httpx:HTTP Request: GET https://api.openai.com/v1/assistants/asst_RUUBZLtGLGE5pBDiYNnWAjlL "HTTP/1.1 200 OK"
 INFO:httpx:HTTP Request: POST https://api.openai.com/v1/threads "HTTP/1.1 200 OK"
-INFO:httpx:HTTP Request: POST https://api.openai.com/v1/threads/thread_Rgp2JE7LMUhM5wOnAeYaM4IW/messages "HTTP/1.1 200 OK"
-INFO:httpx:HTTP Request: POST https://api.openai.com/v1/threads/thread_Rgp2JE7LMUhM5wOnAeYaM4IW/runs "HTTP/1.1 200 OK"
-INFO:root:Polling run_0vw37WWvyvJ1kMgWrqzQ9xDu. Status: queued
-INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_Rgp2JE7LMUhM5wOnAeYaM4IW/runs/run_0vw37WWvyvJ1kMgWrqzQ9xDu "HTTP/1.1 200 OK"
-INFO:root:Polling run_0vw37WWvyvJ1kMgWrqzQ9xDu. Status: in_progress
-INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_Rgp2JE7LMUhM5wOnAeYaM4IW/runs/run_0vw37WWvyvJ1kMgWrqzQ9xDu "HTTP/1.1 200 OK"
-INFO:root:Polling run_0vw37WWvyvJ1kMgWrqzQ9xDu. Status: in_progress
-INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_Rgp2JE7LMUhM5wOnAeYaM4IW/runs/run_0vw37WWvyvJ1kMgWrqzQ9xDu "HTTP/1.1 200 OK"
-INFO:root:Polling run_0vw37WWvyvJ1kMgWrqzQ9xDu. Status: in_progress
-INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_Rgp2JE7LMUhM5wOnAeYaM4IW/runs/run_0vw37WWvyvJ1kMgWrqzQ9xDu "HTTP/1.1 200 OK"
-INFO:root:Polling run_0vw37WWvyvJ1kMgWrqzQ9xDu. Status: in_progress
-INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_Rgp2JE7LMUhM5wOnAeYaM4IW/runs/run_0vw37WWvyvJ1kMgWrqzQ9xDu "HTTP/1.1 200 OK"
-INFO:root:Polling run_0vw37WWvyvJ1kMgWrqzQ9xDu. Status: in_progress
-INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_Rgp2JE7LMUhM5wOnAeYaM4IW/runs/run_0vw37WWvyvJ1kMgWrqzQ9xDu "HTTP/1.1 200 OK"
-INFO:root:Polling run_0vw37WWvyvJ1kMgWrqzQ9xDu. Status: in_progress
-INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_Rgp2JE7LMUhM5wOnAeYaM4IW/runs/run_0vw37WWvyvJ1kMgWrqzQ9xDu "HTTP/1.1 200 OK"
-INFO:root:Polling run_0vw37WWvyvJ1kMgWrqzQ9xDu. Status: in_progress
-INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_Rgp2JE7LMUhM5wOnAeYaM4IW/runs/run_0vw37WWvyvJ1kMgWrqzQ9xDu "HTTP/1.1 200 OK"
-INFO:root:Polling run_0vw37WWvyvJ1kMgWrqzQ9xDu. Status: in_progress
-INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_Rgp2JE7LMUhM5wOnAeYaM4IW/runs/run_0vw37WWvyvJ1kMgWrqzQ9xDu "HTTP/1.1 200 OK"
-INFO:root:Polling run_0vw37WWvyvJ1kMgWrqzQ9xDu. Status: in_progress
-INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_Rgp2JE7LMUhM5wOnAeYaM4IW/runs/run_0vw37WWvyvJ1kMgWrqzQ9xDu "HTTP/1.1 200 OK"
-INFO:root:Polling run_0vw37WWvyvJ1kMgWrqzQ9xDu. Status: in_progress
-INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_Rgp2JE7LMUhM5wOnAeYaM4IW/runs/run_0vw37WWvyvJ1kMgWrqzQ9xDu "HTTP/1.1 200 OK"
-INFO:root:Polling run_0vw37WWvyvJ1kMgWrqzQ9xDu. Status: in_progress
-INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_Rgp2JE7LMUhM5wOnAeYaM4IW/runs/run_0vw37WWvyvJ1kMgWrqzQ9xDu "HTTP/1.1 200 OK"
-INFO:root:Polling run_0vw37WWvyvJ1kMgWrqzQ9xDu. Status: in_progress
-INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_Rgp2JE7LMUhM5wOnAeYaM4IW/runs/run_0vw37WWvyvJ1kMgWrqzQ9xDu "HTTP/1.1 200 OK"
-INFO:root:Polling run_0vw37WWvyvJ1kMgWrqzQ9xDu. Status: in_progress
-INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_Rgp2JE7LMUhM5wOnAeYaM4IW/runs/run_0vw37WWvyvJ1kMgWrqzQ9xDu "HTTP/1.1 200 OK"
-INFO:root:Polling run_0vw37WWvyvJ1kMgWrqzQ9xDu. Status: in_progress
-INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_Rgp2JE7LMUhM5wOnAeYaM4IW/runs/run_0vw37WWvyvJ1kMgWrqzQ9xDu "HTTP/1.1 200 OK"
-INFO:root:Polling run_0vw37WWvyvJ1kMgWrqzQ9xDu. Status: in_progress
-INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_Rgp2JE7LMUhM5wOnAeYaM4IW/runs/run_0vw37WWvyvJ1kMgWrqzQ9xDu "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/threads/thread_0zydgIpPkRdywet9jo66vcLp/messages "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/threads/thread_0zydgIpPkRdywet9jo66vcLp/runs "HTTP/1.1 200 OK"
+INFO:root:Polling run_8kpSbinmehj8ZhNib7o8sN5D. Status: queued
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_0zydgIpPkRdywet9jo66vcLp/runs/run_8kpSbinmehj8ZhNib7o8sN5D "HTTP/1.1 200 OK"
+INFO:root:Polling run_8kpSbinmehj8ZhNib7o8sN5D. Status: in_progress
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_0zydgIpPkRdywet9jo66vcLp/runs/run_8kpSbinmehj8ZhNib7o8sN5D "HTTP/1.1 200 OK"
+INFO:root:Polling run_8kpSbinmehj8ZhNib7o8sN5D. Status: in_progress
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_0zydgIpPkRdywet9jo66vcLp/runs/run_8kpSbinmehj8ZhNib7o8sN5D "HTTP/1.1 200 OK"
+INFO:root:Polling run_8kpSbinmehj8ZhNib7o8sN5D. Status: in_progress
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_0zydgIpPkRdywet9jo66vcLp/runs/run_8kpSbinmehj8ZhNib7o8sN5D "HTTP/1.1 200 OK"
+INFO:root:Polling run_8kpSbinmehj8ZhNib7o8sN5D. Status: in_progress
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_0zydgIpPkRdywet9jo66vcLp/runs/run_8kpSbinmehj8ZhNib7o8sN5D "HTTP/1.1 200 OK"
+INFO:root:Polling run_8kpSbinmehj8ZhNib7o8sN5D. Status: in_progress
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_0zydgIpPkRdywet9jo66vcLp/runs/run_8kpSbinmehj8ZhNib7o8sN5D "HTTP/1.1 200 OK"
+INFO:root:Polling run_8kpSbinmehj8ZhNib7o8sN5D. Status: in_progress
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_0zydgIpPkRdywet9jo66vcLp/runs/run_8kpSbinmehj8ZhNib7o8sN5D "HTTP/1.1 200 OK"
+INFO:root:Polling run_8kpSbinmehj8ZhNib7o8sN5D. Status: in_progress
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_0zydgIpPkRdywet9jo66vcLp/runs/run_8kpSbinmehj8ZhNib7o8sN5D "HTTP/1.1 200 OK"
+INFO:root:Polling run_8kpSbinmehj8ZhNib7o8sN5D. Status: in_progress
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_0zydgIpPkRdywet9jo66vcLp/runs/run_8kpSbinmehj8ZhNib7o8sN5D "HTTP/1.1 200 OK"
+INFO:root:Polling run_8kpSbinmehj8ZhNib7o8sN5D. Status: in_progress
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_0zydgIpPkRdywet9jo66vcLp/runs/run_8kpSbinmehj8ZhNib7o8sN5D "HTTP/1.1 200 OK"
 INFO:root:Run complete
-INFO:httpx:HTTP Request: DELETE https://api.openai.com/v1/files/file-FrR650oVr2gvzV0EBaqujDoY "HTTP/1.1 200 OK"
-INFO:root:Deleted file-FrR650oVr2gvzV0EBaqujDoY
-INFO:httpx:HTTP Request: DELETE https://api.openai.com/v1/files/file-xM6KsqwPrhgWsaHgkkFJ4LX4 "HTTP/1.1 200 OK"
-INFO:root:Deleted file-xM6KsqwPrhgWsaHgkkFJ4LX4
-INFO:httpx:HTTP Request: DELETE https://api.openai.com/v1/files/file-T0RdFvNwXQemqRLyaB5tgqOl "HTTP/1.1 200 OK"
-INFO:root:Deleted file-T0RdFvNwXQemqRLyaB5tgqOl
-INFO:httpx:HTTP Request: DELETE https://api.openai.com/v1/files/file-VyL6odxblJUXLOJYSPMSNQHZ "HTTP/1.1 200 OK"
-INFO:root:Deleted file-VyL6odxblJUXLOJYSPMSNQHZ
-INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_Rgp2JE7LMUhM5wOnAeYaM4IW/messages "HTTP/1.1 200 OK"
-INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_Rgp2JE7LMUhM5wOnAeYaM4IW/messages?after=msg_oFSZZSp3MGtsUWOevUpweGIB "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: DELETE https://api.openai.com/v1/files/file-W7oxef3AocoWt7JUy3Z7425L "HTTP/1.1 200 OK"
+INFO:root:Deleted file-W7oxef3AocoWt7JUy3Z7425L
+INFO:httpx:HTTP Request: DELETE https://api.openai.com/v1/files/file-vjg0knriNpU3Z09h46f2a4dB "HTTP/1.1 200 OK"
+INFO:root:Deleted file-vjg0knriNpU3Z09h46f2a4dB
+INFO:httpx:HTTP Request: DELETE https://api.openai.com/v1/files/file-QqYtUbBxbEzMbCZCnc7t4HTD "HTTP/1.1 200 OK"
+INFO:root:Deleted file-QqYtUbBxbEzMbCZCnc7t4HTD
+INFO:httpx:HTTP Request: DELETE https://api.openai.com/v1/files/file-97bTSFAU98ajvVIOP0ygSf8K "HTTP/1.1 200 OK"
+INFO:root:Deleted file-97bTSFAU98ajvVIOP0ygSf8K
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_0zydgIpPkRdywet9jo66vcLp/messages "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_0zydgIpPkRdywet9jo66vcLp/messages?after=msg_sC4Ff5IoOyVFKl1fhSSVRBl8 "HTTP/1.1 200 OK"
 INFO:root:Failed: 
 Generate minimalist and straightforward instructions for compiling and
 installing the source code of the software project zarf,
@@ -308,8 +300,8 @@ zarf/.git/index
 zarf/.git/config
 zarf/.git/refs/remotes/origin/HEAD
 zarf/.git/refs/heads/main
-zarf/.git/objects/pack/pack-8fc9e3e1a4c3fed518424a46d55eef3767fa70cf.idx
-zarf/.git/objects/pack/pack-8fc9e3e1a4c3fed518424a46d55eef3767fa70cf.pack
+zarf/.git/objects/pack/pack-2301531e485b3f71b7617cb1568a4c18077f0f9c.pack
+zarf/.git/objects/pack/pack-2301531e485b3f71b7617cb1568a4c18077f0f9c.idx
 zarf/.git/info/exclude
 zarf/.git/hooks/update.sample
 zarf/.git/hooks/commit-msg.sample

@@ -1,1 +1,1 @@
-BuildKit consists of the `buildkitd` daemon and the `buildctl` client, primarily for Linux. The `buildkitd` daemon requires `runc` or `crun`, and optionally `containerd` for containerd workers. The build process in the source repository uses `docker buildx` to create binaries【25†source】【29†source】.
+The project uses Docker to build the binaries and provides a direct target for installation.

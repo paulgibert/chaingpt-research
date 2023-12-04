@@ -1,1 +1,1 @@
-Helm uses the Go compiler to build binaries from the source files, which are managed using a Makefile that encapsulates the build process with specific flags.
+Helm is a tool for managing Kubernetes applications that involves rendering templates and communicating with the Kubernetes API. Helm can be built directly from source using Go. The Makefile in the project provides multiple build targets including cross-compilation, distribution preparation, and signing the files.

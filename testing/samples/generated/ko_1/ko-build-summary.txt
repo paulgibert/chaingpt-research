@@ -1,1 +1,0 @@
-The ko project uses Go for building simple and fast container images specifically for Go applications, without requiring Docker. It is tailored for lightweight CI/CD use cases and is ideal when the image contains a Go application without many dependencies on the OS base image【17†source】.

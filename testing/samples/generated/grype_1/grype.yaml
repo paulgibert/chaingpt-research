@@ -1,9 +1,10 @@
 package:
   name: grype
   version: 0.72.0
-  description: A vulnerability scanner for container images and filesystems.
+  description: A vulnerability scanner for container images and filesystems that provides
+    accurate results with a user-friendly text format output.
   copyright:
-  - license: Apache License Version 2.0
+  - license: Apache License 2.0
 environment:
   contents:
     packages:

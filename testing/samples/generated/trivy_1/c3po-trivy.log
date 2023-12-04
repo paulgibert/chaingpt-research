@@ -103,8 +103,8 @@ trivy/.git/index
 trivy/.git/config
 trivy/.git/refs/remotes/origin/HEAD
 trivy/.git/refs/heads/main
-trivy/.git/objects/pack/pack-442a939a860f63f99c5e9ff6c743ee1ecdb1d729.idx
-trivy/.git/objects/pack/pack-442a939a860f63f99c5e9ff6c743ee1ecdb1d729.pack
+trivy/.git/objects/pack/pack-1cdaf214ddfc9f57bf81dc34ac9a308c1ccbab9e.pack
+trivy/.git/objects/pack/pack-1cdaf214ddfc9f57bf81dc34ac9a308c1ccbab9e.idx
 trivy/.git/info/exclude
 trivy/.git/hooks/update.sample
 trivy/.git/hooks/commit-msg.sample
@@ -169,199 +169,62 @@ trivy/integration/testdata/pom.json.golden
 trivy/integration/testdata/pubspec.lock.json.golden
 trivy/integration/testdata/npm.json.golden
 
+INFO:root:Creating file trivy/CONTRIBUTING.md
 INFO:httpx:HTTP Request: POST https://api.openai.com/v1/files "HTTP/1.1 200 OK"
 INFO:root:Created file trivy/CONTRIBUTING.md
+INFO:root:Creating file trivy/README.md
 INFO:httpx:HTTP Request: POST https://api.openai.com/v1/files "HTTP/1.1 200 OK"
 INFO:root:Created file trivy/README.md
+INFO:root:Creating file trivy/SECURITY.md
 INFO:httpx:HTTP Request: POST https://api.openai.com/v1/files "HTTP/1.1 200 OK"
 INFO:root:Created file trivy/SECURITY.md
 INFO:root:Creating run
 INFO:httpx:HTTP Request: GET https://api.openai.com/v1/assistants/asst_RUUBZLtGLGE5pBDiYNnWAjlL "HTTP/1.1 200 OK"
 INFO:httpx:HTTP Request: POST https://api.openai.com/v1/threads "HTTP/1.1 200 OK"
-INFO:httpx:HTTP Request: POST https://api.openai.com/v1/threads/thread_UhaEoW0MJ8GWhStMmU5hGcNI/messages "HTTP/1.1 200 OK"
-INFO:httpx:HTTP Request: POST https://api.openai.com/v1/threads/thread_UhaEoW0MJ8GWhStMmU5hGcNI/runs "HTTP/1.1 200 OK"
-INFO:root:Polling run_GEI7BBzTGy7OOKcIRxLOXghJ. Status: queued
-INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_UhaEoW0MJ8GWhStMmU5hGcNI/runs/run_GEI7BBzTGy7OOKcIRxLOXghJ "HTTP/1.1 200 OK"
-INFO:root:Polling run_GEI7BBzTGy7OOKcIRxLOXghJ. Status: in_progress
-INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_UhaEoW0MJ8GWhStMmU5hGcNI/runs/run_GEI7BBzTGy7OOKcIRxLOXghJ "HTTP/1.1 200 OK"
-INFO:root:Polling run_GEI7BBzTGy7OOKcIRxLOXghJ. Status: in_progress
-INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_UhaEoW0MJ8GWhStMmU5hGcNI/runs/run_GEI7BBzTGy7OOKcIRxLOXghJ "HTTP/1.1 200 OK"
-INFO:root:Polling run_GEI7BBzTGy7OOKcIRxLOXghJ. Status: in_progress
-INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_UhaEoW0MJ8GWhStMmU5hGcNI/runs/run_GEI7BBzTGy7OOKcIRxLOXghJ "HTTP/1.1 200 OK"
-INFO:root:Polling run_GEI7BBzTGy7OOKcIRxLOXghJ. Status: in_progress
-INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_UhaEoW0MJ8GWhStMmU5hGcNI/runs/run_GEI7BBzTGy7OOKcIRxLOXghJ "HTTP/1.1 200 OK"
-INFO:root:Polling run_GEI7BBzTGy7OOKcIRxLOXghJ. Status: in_progress
-INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_UhaEoW0MJ8GWhStMmU5hGcNI/runs/run_GEI7BBzTGy7OOKcIRxLOXghJ "HTTP/1.1 200 OK"
-INFO:root:Polling run_GEI7BBzTGy7OOKcIRxLOXghJ. Status: in_progress
-INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_UhaEoW0MJ8GWhStMmU5hGcNI/runs/run_GEI7BBzTGy7OOKcIRxLOXghJ "HTTP/1.1 200 OK"
-INFO:root:Polling run_GEI7BBzTGy7OOKcIRxLOXghJ. Status: in_progress
-INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_UhaEoW0MJ8GWhStMmU5hGcNI/runs/run_GEI7BBzTGy7OOKcIRxLOXghJ "HTTP/1.1 200 OK"
-INFO:root:Polling run_GEI7BBzTGy7OOKcIRxLOXghJ. Status: in_progress
-INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_UhaEoW0MJ8GWhStMmU5hGcNI/runs/run_GEI7BBzTGy7OOKcIRxLOXghJ "HTTP/1.1 200 OK"
-INFO:root:Polling run_GEI7BBzTGy7OOKcIRxLOXghJ. Status: in_progress
-INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_UhaEoW0MJ8GWhStMmU5hGcNI/runs/run_GEI7BBzTGy7OOKcIRxLOXghJ "HTTP/1.1 200 OK"
-INFO:root:Polling run_GEI7BBzTGy7OOKcIRxLOXghJ. Status: in_progress
-INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_UhaEoW0MJ8GWhStMmU5hGcNI/runs/run_GEI7BBzTGy7OOKcIRxLOXghJ "HTTP/1.1 200 OK"
-INFO:root:Polling run_GEI7BBzTGy7OOKcIRxLOXghJ. Status: in_progress
-INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_UhaEoW0MJ8GWhStMmU5hGcNI/runs/run_GEI7BBzTGy7OOKcIRxLOXghJ "HTTP/1.1 200 OK"
-INFO:root:Polling run_GEI7BBzTGy7OOKcIRxLOXghJ. Status: in_progress
-INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_UhaEoW0MJ8GWhStMmU5hGcNI/runs/run_GEI7BBzTGy7OOKcIRxLOXghJ "HTTP/1.1 200 OK"
-INFO:root:Polling run_GEI7BBzTGy7OOKcIRxLOXghJ. Status: in_progress
-INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_UhaEoW0MJ8GWhStMmU5hGcNI/runs/run_GEI7BBzTGy7OOKcIRxLOXghJ "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/threads/thread_9y7pW6Oh6ehQ5SY40VUQivbO/messages "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/threads/thread_9y7pW6Oh6ehQ5SY40VUQivbO/runs "HTTP/1.1 200 OK"
+INFO:root:Polling run_Cls7AyocKqBMLm0Dx2fsPseO. Status: queued
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_9y7pW6Oh6ehQ5SY40VUQivbO/runs/run_Cls7AyocKqBMLm0Dx2fsPseO "HTTP/1.1 200 OK"
+INFO:root:Polling run_Cls7AyocKqBMLm0Dx2fsPseO. Status: in_progress
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_9y7pW6Oh6ehQ5SY40VUQivbO/runs/run_Cls7AyocKqBMLm0Dx2fsPseO "HTTP/1.1 200 OK"
+INFO:root:Polling run_Cls7AyocKqBMLm0Dx2fsPseO. Status: in_progress
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_9y7pW6Oh6ehQ5SY40VUQivbO/runs/run_Cls7AyocKqBMLm0Dx2fsPseO "HTTP/1.1 200 OK"
+INFO:root:Polling run_Cls7AyocKqBMLm0Dx2fsPseO. Status: in_progress
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_9y7pW6Oh6ehQ5SY40VUQivbO/runs/run_Cls7AyocKqBMLm0Dx2fsPseO "HTTP/1.1 200 OK"
+INFO:root:Polling run_Cls7AyocKqBMLm0Dx2fsPseO. Status: in_progress
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_9y7pW6Oh6ehQ5SY40VUQivbO/runs/run_Cls7AyocKqBMLm0Dx2fsPseO "HTTP/1.1 200 OK"
+INFO:root:Polling run_Cls7AyocKqBMLm0Dx2fsPseO. Status: in_progress
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_9y7pW6Oh6ehQ5SY40VUQivbO/runs/run_Cls7AyocKqBMLm0Dx2fsPseO "HTTP/1.1 200 OK"
+INFO:root:Polling run_Cls7AyocKqBMLm0Dx2fsPseO. Status: in_progress
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_9y7pW6Oh6ehQ5SY40VUQivbO/runs/run_Cls7AyocKqBMLm0Dx2fsPseO "HTTP/1.1 200 OK"
+INFO:root:Polling run_Cls7AyocKqBMLm0Dx2fsPseO. Status: in_progress
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_9y7pW6Oh6ehQ5SY40VUQivbO/runs/run_Cls7AyocKqBMLm0Dx2fsPseO "HTTP/1.1 200 OK"
+INFO:root:Polling run_Cls7AyocKqBMLm0Dx2fsPseO. Status: in_progress
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_9y7pW6Oh6ehQ5SY40VUQivbO/runs/run_Cls7AyocKqBMLm0Dx2fsPseO "HTTP/1.1 200 OK"
+INFO:root:Polling run_Cls7AyocKqBMLm0Dx2fsPseO. Status: in_progress
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_9y7pW6Oh6ehQ5SY40VUQivbO/runs/run_Cls7AyocKqBMLm0Dx2fsPseO "HTTP/1.1 200 OK"
+INFO:root:Polling run_Cls7AyocKqBMLm0Dx2fsPseO. Status: in_progress
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_9y7pW6Oh6ehQ5SY40VUQivbO/runs/run_Cls7AyocKqBMLm0Dx2fsPseO "HTTP/1.1 200 OK"
+INFO:root:Polling run_Cls7AyocKqBMLm0Dx2fsPseO. Status: in_progress
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_9y7pW6Oh6ehQ5SY40VUQivbO/runs/run_Cls7AyocKqBMLm0Dx2fsPseO "HTTP/1.1 200 OK"
+INFO:root:Polling run_Cls7AyocKqBMLm0Dx2fsPseO. Status: in_progress
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_9y7pW6Oh6ehQ5SY40VUQivbO/runs/run_Cls7AyocKqBMLm0Dx2fsPseO "HTTP/1.1 200 OK"
+INFO:root:Polling run_Cls7AyocKqBMLm0Dx2fsPseO. Status: in_progress
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_9y7pW6Oh6ehQ5SY40VUQivbO/runs/run_Cls7AyocKqBMLm0Dx2fsPseO "HTTP/1.1 200 OK"
+INFO:root:Polling run_Cls7AyocKqBMLm0Dx2fsPseO. Status: in_progress
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_9y7pW6Oh6ehQ5SY40VUQivbO/runs/run_Cls7AyocKqBMLm0Dx2fsPseO "HTTP/1.1 200 OK"
+INFO:root:Polling run_Cls7AyocKqBMLm0Dx2fsPseO. Status: in_progress
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_9y7pW6Oh6ehQ5SY40VUQivbO/runs/run_Cls7AyocKqBMLm0Dx2fsPseO "HTTP/1.1 200 OK"
+INFO:root:Polling run_Cls7AyocKqBMLm0Dx2fsPseO. Status: in_progress
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_9y7pW6Oh6ehQ5SY40VUQivbO/runs/run_Cls7AyocKqBMLm0Dx2fsPseO "HTTP/1.1 200 OK"
+INFO:root:Polling run_Cls7AyocKqBMLm0Dx2fsPseO. Status: in_progress
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_9y7pW6Oh6ehQ5SY40VUQivbO/runs/run_Cls7AyocKqBMLm0Dx2fsPseO "HTTP/1.1 200 OK"
 INFO:root:Run complete
-INFO:httpx:HTTP Request: DELETE https://api.openai.com/v1/files/file-qAwCWpovC8obrPRO8YMcbHZO "HTTP/1.1 200 OK"
-INFO:root:Deleted file-qAwCWpovC8obrPRO8YMcbHZO
-INFO:httpx:HTTP Request: DELETE https://api.openai.com/v1/files/file-3nRcrsLwYxRKt1LjI3lVRqvO "HTTP/1.1 200 OK"
-INFO:root:Deleted file-3nRcrsLwYxRKt1LjI3lVRqvO
-INFO:httpx:HTTP Request: DELETE https://api.openai.com/v1/files/file-PlHhZZyhDuJpRbdVDFKVGgnU "HTTP/1.1 200 OK"
-INFO:root:Deleted file-PlHhZZyhDuJpRbdVDFKVGgnU
-INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_UhaEoW0MJ8GWhStMmU5hGcNI/messages "HTTP/1.1 200 OK"
-INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_UhaEoW0MJ8GWhStMmU5hGcNI/messages?after=msg_ObyGpVhuPQD1sH2sa1NUCRAD "HTTP/1.1 200 OK"
-INFO:root:Failed: 
-Generate minimalist and straightforward instructions for compiling and
-installing the source code of the software project trivy,
-version 0.46.0. The GitHub repository is https://github.com/aquasecurity/trivy. Checkout v0.46.0 for the correct version.
-The instructions should be concise and solely focused on the build and installation process,
-excluding any steps related to testing, linting, or other unrelated tasks.
-If multiple build methods are available, choose the most direct and
-uncomplicated method and provide a consistent set of steps without
-mixing different approaches. You will respond in JSON form only.
-
-The response should contain the following fields:
-
-summary: A description of the components the project uses and how they are built. If able, provide
-         step-by-step build instructions.
-
-description: A single sentence description of the project. It should not start with the project's name.
-
-license: The license under which the project is released. Include the license name only.
-
-steps: An ordered list of build commands.
-       Each build step is an object with specific fields depending on its type.
-       There are different step types, each requiring unique fields. If using
-       a place holder value or reporting any value that is not meant to be
-       interpreted literally, surround the value with  "<< >>" e.g <<place holder>>.
-       Assume you have root privileges on the system (no need to use sudo).
-
-Step type: git-checkout - Clone a git repository and checkout a branch/tag
-Fields:
-'repository' (required) - Repository to clone. Omit the .git suffix
-'tag' (optional) - Branch or tag to checkout. Must specify either a branch or tag.
-'branch' (optional) - Branch to checkout. Do not specify both a branch and tag
-
-Step type: shell - Run a shell command. Use as a last resort when desired functionality cannot be captured by another build step type.
-Fields:
-'command' (required) - Command to run
-
-Step type: go/build - Builds a project with `go build` and installs it to <prefix>/<install_dir>/<output>
-Fields:
-'packages' (required) - A single string of space-separated packages to compile. Files can also be specified. This is the value passed to `go build`. Paths are relative to modroot.
-'output' (required) - Name of the output binary. The final install location will be in <prefix>/<install_dir>/<output>
-'modroot' (optional) - Top directory of the go module, this is where `go.mod` lives. Before building the go pipeline will `cd` into this directory.
-'prefix' (optional) - Prefix to install binaries. Defaults to 'usr'.
-'ldflags' (optional) - A single string of space-separated flags ([pattern=]arg) to pass to the `-ldflags` arg of `go build`.
-'install_dir' (optional) - Binaries are installed in this directory <prefix>/<install_dir>. Defaults to 'bin'.
-
-Here is a list of the first 100 files in the projects GitHub repository:
-
-trivy/NOTICE
-trivy/CONTRIBUTING.md
-trivy/.gitignore
-trivy/Dockerfile.canary
-trivy/goreleaser-canary.yml
-trivy/.dockerignore
-trivy/README.md
-trivy/aqua.yaml
-trivy/.golangci.yaml
-trivy/.clang-format
-trivy/mkdocs.yml
-trivy/go.mod
-trivy/go.sum
-trivy/Dockerfile
-trivy/.gitattributes
-trivy/goreleaser.yml
-trivy/SECURITY.md
-trivy/Dockerfile.protoc
-trivy/LICENSE
-trivy/contrib/junit.tpl
-trivy/contrib/gitlab-codequality.tpl
-trivy/contrib/asff.tpl
-trivy/contrib/html.tpl
-trivy/contrib/install.sh
-trivy/contrib/gitlab.tpl
-trivy/contrib/Trivy.gitlab-ci.yml
-trivy/contrib/example_policy/basic.rego
-trivy/contrib/example_policy/advanced.rego
-trivy/.git/packed-refs
-trivy/.git/description
-trivy/.git/HEAD
-trivy/.git/index
-trivy/.git/config
-trivy/.git/refs/remotes/origin/HEAD
-trivy/.git/refs/heads/main
-trivy/.git/objects/pack/pack-442a939a860f63f99c5e9ff6c743ee1ecdb1d729.idx
-trivy/.git/objects/pack/pack-442a939a860f63f99c5e9ff6c743ee1ecdb1d729.pack
-trivy/.git/info/exclude
-trivy/.git/hooks/update.sample
-trivy/.git/hooks/commit-msg.sample
-trivy/.git/hooks/prepare-commit-msg.sample
-trivy/.git/hooks/pre-merge-commit.sample
-trivy/.git/hooks/pre-push.sample
-trivy/.git/hooks/pre-commit.sample
-trivy/.git/hooks/pre-rebase.sample
-trivy/.git/hooks/post-update.sample
-trivy/.git/hooks/applypatch-msg.sample
-trivy/.git/hooks/pre-applypatch.sample
-trivy/.git/hooks/pre-receive.sample
-trivy/.git/hooks/fsmonitor-watchman.sample
-trivy/.git/logs/HEAD
-trivy/.git/logs/refs/remotes/origin/HEAD
-trivy/.git/logs/refs/heads/main
-trivy/internal/testutil/error.go
-trivy/internal/testutil/gzip.go
-trivy/integration/client_server_test.go
-trivy/integration/sbom_test.go
-trivy/integration/registry_test.go
-trivy/integration/k8s_test.go
-trivy/integration/aws_cloud_test.go
-trivy/integration/vm_test.go
-trivy/integration/standalone_tar_test.go
-trivy/integration/module_test.go
-trivy/integration/repo_test.go
-trivy/integration/integration_test.go
-trivy/integration/docker_engine_test.go
-trivy/integration/testdata/dockerfile-namespace-exception.json.golden
-trivy/integration/testdata/helm_testchart.json.golden
-trivy/integration/testdata/secrets.asff.golden
-trivy/integration/testdata/pom-cyclonedx.json.golden
-trivy/integration/testdata/conda-cyclonedx.json.golden
-trivy/integration/testdata/helm_testchart.overridden.json.golden
-trivy/integration/testdata/fluentd-gems.json.golden
-trivy/integration/testdata/pip.json.golden
-trivy/integration/testdata/fluentd-multiple-lockfiles.json.golden
-trivy/integration/testdata/poetry.json.golden
-trivy/integration/testdata/opensuse-leap-151.json.golden
-trivy/integration/testdata/alpine-310.json.golden
-trivy/integration/testdata/alpine-310.asff.golden
-trivy/integration/testdata/gomod.json.golden
-trivy/integration/testdata/fluentd-multiple-lockfiles.cdx.json.golden
-trivy/integration/testdata/alpine-310.sarif.golden
-trivy/integration/testdata/test-repo.json.golden
-trivy/integration/testdata/npm-with-dev.json.golden
-trivy/integration/testdata/amazonlinux2-gp2-x86-vm.json.golden
-trivy/integration/testdata/dockerfile-custom-policies.json.golden
-trivy/integration/testdata/alpine-310-registry.json.golden
-trivy/integration/testdata/rockylinux-8.json.golden
-trivy/integration/testdata/amazon-1.json.golden
-trivy/integration/testdata/dockerfile_file_pattern.json.golden
-trivy/integration/testdata/pipenv.json.golden
-trivy/integration/testdata/mix.lock.json.golden
-trivy/integration/testdata/centos-7.json.golden
-trivy/integration/testdata/centos-7-medium.json.golden
-trivy/integration/testdata/gomod-skip.json.golden
-trivy/integration/testdata/mariner-1.0.json.golden
-trivy/integration/testdata/ubuntu-1804-ignore-unfixed.json.golden
-trivy/integration/testdata/pom.json.golden
-trivy/integration/testdata/pubspec.lock.json.golden
-trivy/integration/testdata/npm.json.golden
-
+INFO:httpx:HTTP Request: DELETE https://api.openai.com/v1/files/file-HzeBNTxL5FwXyPhU3n2ITJI4 "HTTP/1.1 200 OK"
+INFO:root:Deleted file-HzeBNTxL5FwXyPhU3n2ITJI4
+INFO:httpx:HTTP Request: DELETE https://api.openai.com/v1/files/file-bZ6ARqcJdg8q7tfCS1ShOZCy "HTTP/1.1 200 OK"
+INFO:root:Deleted file-bZ6ARqcJdg8q7tfCS1ShOZCy
+INFO:httpx:HTTP Request: DELETE https://api.openai.com/v1/files/file-owFteFHcP4jpCPkl3RuroMQ2 "HTTP/1.1 200 OK"
+INFO:root:Deleted file-owFteFHcP4jpCPkl3RuroMQ2
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_9y7pW6Oh6ehQ5SY40VUQivbO/messages "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_9y7pW6Oh6ehQ5SY40VUQivbO/messages?after=msg_5fHrZOWn5TzX0I4REVb5AJwc "HTTP/1.1 200 OK"

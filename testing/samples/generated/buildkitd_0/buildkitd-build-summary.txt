@@ -1,1 +1,1 @@
-BuildKit uses Go for compilation. The typical build process involves cloning the repository, checking out the specific tag, and using `go build` to compile the project.
+The buildkit project compiles source code into executables using a Makefile, which employs the 'docker buildx' command among others.

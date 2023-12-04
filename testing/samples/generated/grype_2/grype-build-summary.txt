@@ -1,0 +1,1 @@
+The grype project uses Go for compilation. The build process involves cloning the repository and then running 'go build' with the appropriate package path.

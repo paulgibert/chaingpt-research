@@ -1,10 +1,10 @@
 package:
   name: hugo-extended
   version: 0.119.0
-  description: A binary wrapper for Hugo Extended that simplifies integration into
-    Node.js projects.
+  description: An NPM module that acts as a plug-and-play binary wrapper for Hugo
+    Extended, simplifying Hugo integration into Node.js environments.
   copyright:
-  - license: MIT License
+  - license: MIT
 environment:
   contents:
     packages:

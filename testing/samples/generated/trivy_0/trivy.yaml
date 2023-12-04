@@ -1,0 +1,18 @@
+package:
+  name: trivy
+  version: 0.46.0
+  description: A security scanner that checks container images, filesystems, Git repositories,
+    virtual machine images, Kubernetes, and AWS for security issues.
+  copyright:
+  - license: Apache-2.0
+environment:
+  contents:
+    packages:
+    - wolfi-base
+    - build-base
+pipeline:
+- uses: git-checkout
+  with:
+    repository: https://github.com/aquasecurity/trivy
+    tag: v0.46.0
+- runs: make build

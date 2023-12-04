@@ -1,3 +1,5 @@
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 502 Bad Gateway"
+INFO:openai._base_client:Retrying request to /chat/completions in 0.951722 seconds
 INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
 INFO:root:LLM proposed url https://github.com/aquasecurity/trivy
 INFO:root:String search yielded branch/tag v0.46.0
@@ -5,13 +7,12 @@ INFO:root:Checked out branch/tag v0.46.0
 INFO:root:str search found documentation in the repo: ['trivy/CONTRIBUTING.md', 'trivy/README.md', 'trivy/LICENSE', 'trivy/contrib/install.sh', 'trivy/integration/testdata/fixtures/repo/pip/requirements.txt', 'trivy/brand/readme.md', 'trivy/helm/trivy/README.md', 'trivy/docs/getting-started/installation.md', 'trivy/docs/docs/references/configuration/cli/trivy_module_uninstall.md', 'trivy/docs/docs/references/configuration/cli/trivy_plugin_uninstall.md', 'trivy/docs/docs/references/configuration/cli/trivy_module_install.md', 'trivy/docs/docs/references/configuration/cli/trivy_plugin_install.md', 'trivy/docs/docs/scanner/license.md', 'trivy/docs/build/requirements.txt', 'trivy/pkg/licensing/testdata/LICENSE_creativecommons', 'trivy/pkg/licensing/testdata/LICENSE_apache2', 'trivy/pkg/licensing/testdata/unlicensed.c', 'trivy/pkg/licensing/testdata/licensed.c', 'trivy/pkg/flag/license_flags.go', 'trivy/pkg/fanal/analyzer/licensing/license_test.go', 'trivy/pkg/fanal/analyzer/licensing/license.go', 'trivy/pkg/fanal/analyzer/licensing/testdata/licensed.c', 'trivy/pkg/fanal/analyzer/testdata/lib/apk/db/installed', 'trivy/pkg/fanal/analyzer/pkg/dpkg/testdata/no-license-copyright', 'trivy/pkg/fanal/analyzer/pkg/dpkg/testdata/license-pattern-and-classifier-copyright', 'trivy/pkg/fanal/analyzer/pkg/dpkg/testdata/common-license-copyright', 'trivy/pkg/fanal/analyzer/language/python/pip/testdata/requirements.txt', 'trivy/pkg/fanal/analyzer/language/ruby/gemspec/testdata/multiple_licenses.gemspec', 'trivy/pkg/fanal/analyzer/language/nodejs/license/license_test.go', 'trivy/pkg/fanal/analyzer/language/nodejs/license/license.go', 'trivy/pkg/fanal/analyzer/language/nodejs/license/testdata/happy/node_modules/package-default-license-file/LICENSE', 'trivy/pkg/fanal/analyzer/language/nodejs/license/testdata/happy/node_modules/package-see-license/LICENSE.md', 'trivy/pkg/fanal/analyzer/language/nodejs/license/testdata/happy/node_modules/package-license-ref/LICENSE.txt', 'trivy/pkg/fanal/analyzer/language/nodejs/yarn/testdata/yarn-classic-licenses/node_modules/postcss/LICENSE', 'trivy/pkg/fanal/analyzer/language/nodejs/yarn/testdata/yarn-classic-licenses/node_modules/picocolors/LICENSE', 'trivy/pkg/fanal/analyzer/language/nodejs/yarn/testdata/yarn-classic-licenses/node_modules/@vue/compiler-sfc/LICENSE', 'trivy/pkg/fanal/analyzer/language/nodejs/yarn/testdata/yarn-classic-licenses/node_modules/nanoid/LICENSE', 'trivy/pkg/fanal/analyzer/language/nodejs/yarn/testdata/yarn-classic-licenses/node_modules/source-map/LICENSE', 'trivy/pkg/fanal/analyzer/language/nodejs/yarn/testdata/yarn-classic-licenses/node_modules/@babel/parser/LICENSE', 'trivy/pkg/fanal/analyzer/language/golang/mod/testdata/pkg/mod/github.com/aquasecurity/go-dep-parser@v0.0.0-20220406074731-71021a481237/LICENSE', 'trivy/pkg/fanal/artifact/local/testdata/requirements.txt', 'trivy/pkg/fanal/artifact/local/testdata/alpine/lib/apk/db/installed', 'trivy/pkg/fanal/test/README.md', 'trivy/pkg/fanal/types/license.go', 'trivy/pkg/types/license.go', 'trivy/examples/module/spring4shell/README.md']
 INFO:root:Trimming 1542 files down to 100 for LLM
 INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
-INFO:root:LLM found documentation in the repo: ['trivy/CONTRIBUTING.md', 'trivy/README.md', 'trivy/mkdocs.yml', 'trivy/goreleaser.yml', 'trivy/SECURITY.md', 'trivy/LICENSE', 'trivy/contrib/junit.tpl', 'trivy/contrib/gitlab-codequality.tpl', 'trivy/contrib/asff.tpl', 'trivy/contrib/html.tpl', 'trivy/contrib/gitlab.tpl', 'trivy/contrib/Trivy.gitlab-ci.yml', 'trivy/contrib/example_policy/basic.rego', 'trivy/contrib/example_policy/advanced.rego']
+INFO:root:LLM found documentation in the repo: ['trivy/CONTRIBUTING.md', 'trivy/README.md', 'trivy/mkdocs.yml', 'trivy/goreleaser.yml', 'trivy/SECURITY.md', 'trivy/contrib/junit.tpl', 'trivy/contrib/gitlab-codequality.tpl', 'trivy/contrib/asff.tpl', 'trivy/contrib/html.tpl', 'trivy/contrib/gitlab.tpl', 'trivy/contrib/Trivy.gitlab-ci.yml', 'trivy/contrib/example_policy/basic.rego', 'trivy/contrib/example_policy/advanced.rego']
 INFO:root:trivy/CONTRIBUTING.md has a supported extension, including
 INFO:root:trivy/README.md has a supported extension, including
 INFO:root:Excluded trivy/mkdocs.yml due to unsupported extension
 INFO:root:Excluded trivy/goreleaser.yml due to unsupported extension
 INFO:root:trivy/SECURITY.md has a supported extension, including
-INFO:root:trivy/LICENSE.txt has no extension but including
 INFO:root:Excluded trivy/contrib/junit.tpl due to unsupported extension
 INFO:root:Excluded trivy/contrib/gitlab-codequality.tpl due to unsupported extension
 INFO:root:Excluded trivy/contrib/asff.tpl due to unsupported extension
@@ -20,7 +21,7 @@ INFO:root:Excluded trivy/contrib/gitlab.tpl due to unsupported extension
 INFO:root:Excluded trivy/contrib/Trivy.gitlab-ci.yml due to unsupported extension
 INFO:root:Excluded trivy/contrib/example_policy/basic.rego due to unsupported extension
 INFO:root:Excluded trivy/contrib/example_policy/advanced.rego due to unsupported extension
-INFO:root:Using only supported extensions: ['trivy/CONTRIBUTING.md', 'trivy/README.md', 'trivy/SECURITY.md', 'trivy/LICENSE.txt']
+INFO:root:Using only supported extensions: ['trivy/CONTRIBUTING.md', 'trivy/README.md', 'trivy/SECURITY.md']
 INFO:root:Using assistant prompt:
 
 Generate minimalist and straightforward instructions for compiling and
@@ -104,8 +105,8 @@ trivy/.git/index
 trivy/.git/config
 trivy/.git/refs/remotes/origin/HEAD
 trivy/.git/refs/heads/main
-trivy/.git/objects/pack/pack-4da4c2c798b65054334a5fb8d8d195c829309a28.idx
-trivy/.git/objects/pack/pack-4da4c2c798b65054334a5fb8d8d195c829309a28.pack
+trivy/.git/objects/pack/pack-1cdaf214ddfc9f57bf81dc34ac9a308c1ccbab9e.pack
+trivy/.git/objects/pack/pack-1cdaf214ddfc9f57bf81dc34ac9a308c1ccbab9e.idx
 trivy/.git/info/exclude
 trivy/.git/hooks/update.sample
 trivy/.git/hooks/commit-msg.sample
@@ -170,9 +171,54 @@ trivy/integration/testdata/pom.json.golden
 trivy/integration/testdata/pubspec.lock.json.golden
 trivy/integration/testdata/npm.json.golden
 
+INFO:root:Creating file trivy/CONTRIBUTING.md
 INFO:httpx:HTTP Request: POST https://api.openai.com/v1/files "HTTP/1.1 200 OK"
 INFO:root:Created file trivy/CONTRIBUTING.md
+INFO:root:Creating file trivy/README.md
 INFO:httpx:HTTP Request: POST https://api.openai.com/v1/files "HTTP/1.1 200 OK"
 INFO:root:Created file trivy/README.md
+INFO:root:Creating file trivy/SECURITY.md
 INFO:httpx:HTTP Request: POST https://api.openai.com/v1/files "HTTP/1.1 200 OK"
 INFO:root:Created file trivy/SECURITY.md
+INFO:root:Creating run
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/assistants/asst_RUUBZLtGLGE5pBDiYNnWAjlL "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/threads "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/threads/thread_EgBWJltn62TmpxY0MVOLAHAP/messages "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/threads/thread_EgBWJltn62TmpxY0MVOLAHAP/runs "HTTP/1.1 200 OK"
+INFO:root:Polling run_6HHFNeL7Aq4D5uufj9uYzI1x. Status: queued
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_EgBWJltn62TmpxY0MVOLAHAP/runs/run_6HHFNeL7Aq4D5uufj9uYzI1x "HTTP/1.1 200 OK"
+INFO:root:Polling run_6HHFNeL7Aq4D5uufj9uYzI1x. Status: in_progress
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_EgBWJltn62TmpxY0MVOLAHAP/runs/run_6HHFNeL7Aq4D5uufj9uYzI1x "HTTP/1.1 200 OK"
+INFO:root:Polling run_6HHFNeL7Aq4D5uufj9uYzI1x. Status: in_progress
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_EgBWJltn62TmpxY0MVOLAHAP/runs/run_6HHFNeL7Aq4D5uufj9uYzI1x "HTTP/1.1 200 OK"
+INFO:root:Polling run_6HHFNeL7Aq4D5uufj9uYzI1x. Status: in_progress
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_EgBWJltn62TmpxY0MVOLAHAP/runs/run_6HHFNeL7Aq4D5uufj9uYzI1x "HTTP/1.1 200 OK"
+INFO:root:Polling run_6HHFNeL7Aq4D5uufj9uYzI1x. Status: in_progress
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_EgBWJltn62TmpxY0MVOLAHAP/runs/run_6HHFNeL7Aq4D5uufj9uYzI1x "HTTP/1.1 200 OK"
+INFO:root:Polling run_6HHFNeL7Aq4D5uufj9uYzI1x. Status: in_progress
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_EgBWJltn62TmpxY0MVOLAHAP/runs/run_6HHFNeL7Aq4D5uufj9uYzI1x "HTTP/1.1 200 OK"
+INFO:root:Polling run_6HHFNeL7Aq4D5uufj9uYzI1x. Status: in_progress
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_EgBWJltn62TmpxY0MVOLAHAP/runs/run_6HHFNeL7Aq4D5uufj9uYzI1x "HTTP/1.1 200 OK"
+INFO:root:Polling run_6HHFNeL7Aq4D5uufj9uYzI1x. Status: in_progress
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_EgBWJltn62TmpxY0MVOLAHAP/runs/run_6HHFNeL7Aq4D5uufj9uYzI1x "HTTP/1.1 200 OK"
+INFO:root:Polling run_6HHFNeL7Aq4D5uufj9uYzI1x. Status: in_progress
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_EgBWJltn62TmpxY0MVOLAHAP/runs/run_6HHFNeL7Aq4D5uufj9uYzI1x "HTTP/1.1 200 OK"
+INFO:root:Polling run_6HHFNeL7Aq4D5uufj9uYzI1x. Status: in_progress
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_EgBWJltn62TmpxY0MVOLAHAP/runs/run_6HHFNeL7Aq4D5uufj9uYzI1x "HTTP/1.1 200 OK"
+INFO:root:Polling run_6HHFNeL7Aq4D5uufj9uYzI1x. Status: in_progress
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_EgBWJltn62TmpxY0MVOLAHAP/runs/run_6HHFNeL7Aq4D5uufj9uYzI1x "HTTP/1.1 200 OK"
+INFO:root:Polling run_6HHFNeL7Aq4D5uufj9uYzI1x. Status: in_progress
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_EgBWJltn62TmpxY0MVOLAHAP/runs/run_6HHFNeL7Aq4D5uufj9uYzI1x "HTTP/1.1 200 OK"
+INFO:root:Polling run_6HHFNeL7Aq4D5uufj9uYzI1x. Status: in_progress
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_EgBWJltn62TmpxY0MVOLAHAP/runs/run_6HHFNeL7Aq4D5uufj9uYzI1x "HTTP/1.1 200 OK"
+INFO:root:Polling run_6HHFNeL7Aq4D5uufj9uYzI1x. Status: in_progress
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_EgBWJltn62TmpxY0MVOLAHAP/runs/run_6HHFNeL7Aq4D5uufj9uYzI1x "HTTP/1.1 200 OK"
+INFO:root:Run complete
+INFO:httpx:HTTP Request: DELETE https://api.openai.com/v1/files/file-YzG0elu3cbexTwZKUf4nrv05 "HTTP/1.1 200 OK"
+INFO:root:Deleted file-YzG0elu3cbexTwZKUf4nrv05
+INFO:httpx:HTTP Request: DELETE https://api.openai.com/v1/files/file-2qfVLn1dO46pVy1rgknm0Bcv "HTTP/1.1 200 OK"
+INFO:root:Deleted file-2qfVLn1dO46pVy1rgknm0Bcv
+INFO:httpx:HTTP Request: DELETE https://api.openai.com/v1/files/file-5PmjyjMCaCuEpSP3JqB0HmnR "HTTP/1.1 200 OK"
+INFO:root:Deleted file-5PmjyjMCaCuEpSP3JqB0HmnR
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_EgBWJltn62TmpxY0MVOLAHAP/messages "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_EgBWJltn62TmpxY0MVOLAHAP/messages?after=msg_FB3cSw8V9WK7O1pkpKSxdQCe "HTTP/1.1 200 OK"

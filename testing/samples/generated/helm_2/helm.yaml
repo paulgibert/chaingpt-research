@@ -1,10 +1,10 @@
 package:
   name: helm
   version: 3.13.1
-  description: A tool for managing Kubernetes applications, allowing users to manage
-    Charts, which are packages of pre-configured Kubernetes resources.
+  description: "A tool that manages Kubernetes Charts, which are packages of pre-configured\
+    \ Kubernetes resources\u301017\u2020source\u3011."
   copyright:
-  - license: Apache License 2.0
+  - license: "Apache License 2.0\u301033\u2020source\u3011"
 environment:
   contents:
     packages:
@@ -15,13 +15,10 @@ pipeline:
   with:
     repository: https://github.com/helm/helm
     tag: v3.13.1
-- runs: make build-cross
-- runs: make dist
 - uses: go/build
   with:
-    packages: .
+    packages: ./cmd/helm
     output: helm
-    ldflags: -X helm.sh/helm/v3/internal/version.gitCommit=<<GIT_COMMIT>> -X helm.sh/helm/v3/internal/version.gitTreeState=clean
-    modroot: path/to/helm/source
-    prefix: /usr/local
-    install_dir: bin
+    modroot: ./
+    ldflags: -X helm.sh/helm/v3/internal/version.gitCommit=<<commit_hash>> -X helm.sh/helm/v3/internal/version.gitTreeState=dirty
+    install_dir: /usr/local/bin

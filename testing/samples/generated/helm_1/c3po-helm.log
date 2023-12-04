@@ -5,7 +5,7 @@ INFO:root:Checked out branch/tag v3.13.1
 INFO:root:str search found documentation in the repo: ['helm/CONTRIBUTING.md', 'helm/README.md', 'helm/LICENSE', 'helm/scripts/validate-license.sh', 'helm/pkg/downloader/testdata/signtest/alpine/README.md', 'helm/pkg/chart/loader/testdata/LICENSE', 'helm/pkg/chart/loader/testdata/frobnitz.v2.reqs/README.md', 'helm/pkg/chart/loader/testdata/frobnitz.v2.reqs/requirements.yaml', 'helm/pkg/chart/loader/testdata/frobnitz.v2.reqs/INSTALL.txt', 'helm/pkg/chart/loader/testdata/frobnitz.v2.reqs/LICENSE', 'helm/pkg/chart/loader/testdata/frobnitz.v2.reqs/docs/README.md', 'helm/pkg/chart/loader/testdata/frobnitz.v2.reqs/charts/alpine/README.md', 'helm/pkg/chart/loader/testdata/frobnitz_with_bom/README.md', 'helm/pkg/chart/loader/testdata/frobnitz_with_bom/INSTALL.txt', 'helm/pkg/chart/loader/testdata/frobnitz_with_bom/LICENSE', 'helm/pkg/chart/loader/testdata/frobnitz_with_bom/docs/README.md', 'helm/pkg/chart/loader/testdata/frobnitz_with_bom/charts/alpine/README.md', 'helm/pkg/chart/loader/testdata/frobnitz_with_symlink/README.md', 'helm/pkg/chart/loader/testdata/frobnitz_with_symlink/INSTALL.txt', 'helm/pkg/chart/loader/testdata/frobnitz_with_symlink/docs/README.md', 'helm/pkg/chart/loader/testdata/frobnitz_with_symlink/charts/alpine/README.md', 'helm/pkg/chart/loader/testdata/frobnitz.v1/README.md', 'helm/pkg/chart/loader/testdata/frobnitz.v1/requirements.yaml', 'helm/pkg/chart/loader/testdata/frobnitz.v1/INSTALL.txt', 'helm/pkg/chart/loader/testdata/frobnitz.v1/LICENSE', 'helm/pkg/chart/loader/testdata/frobnitz.v1/docs/README.md', 'helm/pkg/chart/loader/testdata/frobnitz.v1/charts/alpine/README.md', 'helm/pkg/chart/loader/testdata/frobnitz_with_dev_null/README.md', 'helm/pkg/chart/loader/testdata/frobnitz_with_dev_null/INSTALL.txt', 'helm/pkg/chart/loader/testdata/frobnitz_with_dev_null/LICENSE', 'helm/pkg/chart/loader/testdata/frobnitz_with_dev_null/docs/README.md', 'helm/pkg/chart/loader/testdata/frobnitz_with_dev_null/charts/alpine/README.md', 'helm/pkg/chart/loader/testdata/frobnitz/README.md', 'helm/pkg/chart/loader/testdata/frobnitz/INSTALL.txt', 'helm/pkg/chart/loader/testdata/frobnitz/LICENSE', 'helm/pkg/chart/loader/testdata/frobnitz/docs/README.md', 'helm/pkg/chart/loader/testdata/frobnitz/charts/alpine/README.md', 'helm/pkg/chart/loader/testdata/frobnitz_backslash/README.md', 'helm/pkg/chart/loader/testdata/frobnitz_backslash/INSTALL.txt', 'helm/pkg/chart/loader/testdata/frobnitz_backslash/LICENSE', 'helm/pkg/chart/loader/testdata/frobnitz_backslash/docs/README.md', 'helm/pkg/chart/loader/testdata/frobnitz_backslash/charts/alpine/README.md', 'helm/pkg/lint/rules/dependencies.go', 'helm/pkg/lint/rules/dependencies_test.go', 'helm/pkg/action/uninstall.go', 'helm/pkg/action/uninstall_test.go', 'helm/pkg/action/install_test.go', 'helm/pkg/action/install.go', 'helm/pkg/action/testdata/charts/chart-with-uncompressed-dependencies-2.1.8.tgz', 'helm/pkg/action/testdata/charts/chart-with-compressed-dependencies-2.1.8.tgz', 'helm/pkg/action/testdata/charts/chart-with-compressed-dependencies/requirements.yaml', 'helm/pkg/action/testdata/charts/chart-with-compressed-dependencies/requirements.lock', 'helm/pkg/action/testdata/charts/chart-with-uncompressed-dependencies/README.md', 'helm/pkg/action/testdata/charts/chart-with-uncompressed-dependencies/requirements.yaml', 'helm/pkg/action/testdata/charts/chart-with-uncompressed-dependencies/requirements.lock', 'helm/pkg/action/testdata/charts/chart-with-uncompressed-dependencies/charts/mariadb/README.md', 'helm/pkg/action/testdata/charts/chart-with-uncompressed-dependencies/charts/mariadb/files/docker-entrypoint-initdb.d/README.md', 'helm/pkg/action/testdata/charts/chart-missing-deps/requirements.yaml', 'helm/pkg/action/testdata/charts/chart-missing-deps/requirements.lock', 'helm/pkg/chartutil/dependencies.go', 'helm/pkg/chartutil/dependencies_test.go', 'helm/pkg/chartutil/testdata/dependent-chart-helmignore/charts/alpine/README.md', 'helm/pkg/chartutil/testdata/dependent-chart-with-mixed-requirements-yaml/README.md', 'helm/pkg/chartutil/testdata/dependent-chart-with-mixed-requirements-yaml/INSTALL.txt', 'helm/pkg/chartutil/testdata/dependent-chart-with-mixed-requirements-yaml/LICENSE', 'helm/pkg/chartutil/testdata/dependent-chart-with-mixed-requirements-yaml/docs/README.md', 'helm/pkg/chartutil/testdata/dependent-chart-with-mixed-requirements-yaml/charts/alpine/README.md', 'helm/pkg/chartutil/testdata/dependent-chart-no-requirements-yaml/README.md', 'helm/pkg/chartutil/testdata/dependent-chart-no-requirements-yaml/INSTALL.txt', 'helm/pkg/chartutil/testdata/dependent-chart-no-requirements-yaml/LICENSE', 'helm/pkg/chartutil/testdata/dependent-chart-no-requirements-yaml/docs/README.md', 'helm/pkg/chartutil/testdata/dependent-chart-no-requirements-yaml/charts/alpine/README.md', 'helm/pkg/chartutil/testdata/subpop/README.md', 'helm/pkg/chartutil/testdata/three-level-dependent-chart/README.md', 'helm/pkg/chartutil/testdata/dependent-chart-with-all-in-requirements-yaml/README.md', 'helm/pkg/chartutil/testdata/dependent-chart-with-all-in-requirements-yaml/INSTALL.txt', 'helm/pkg/chartutil/testdata/dependent-chart-with-all-in-requirements-yaml/LICENSE', 'helm/pkg/chartutil/testdata/dependent-chart-with-all-in-requirements-yaml/docs/README.md', 'helm/pkg/chartutil/testdata/dependent-chart-with-all-in-requirements-yaml/charts/alpine/README.md', 'helm/pkg/chartutil/testdata/frobnitz/README.md', 'helm/pkg/chartutil/testdata/frobnitz/INSTALL.txt', 'helm/pkg/chartutil/testdata/frobnitz/LICENSE', 'helm/pkg/chartutil/testdata/frobnitz/docs/README.md', 'helm/pkg/chartutil/testdata/frobnitz/charts/alpine/README.md', 'helm/pkg/chartutil/testdata/dependent-chart-alias/README.md', 'helm/pkg/chartutil/testdata/dependent-chart-alias/INSTALL.txt', 'helm/pkg/chartutil/testdata/dependent-chart-alias/LICENSE', 'helm/pkg/chartutil/testdata/dependent-chart-alias/docs/README.md', 'helm/pkg/chartutil/testdata/dependent-chart-alias/charts/alpine/README.md', 'helm/pkg/plugin/installer/vcs_installer.go', 'helm/pkg/plugin/installer/installer.go', 'helm/pkg/plugin/installer/local_installer.go', 'helm/pkg/plugin/installer/installer_test.go', 'helm/pkg/plugin/installer/http_installer.go', 'helm/pkg/plugin/installer/local_installer_test.go', 'helm/pkg/plugin/installer/vcs_installer_test.go', 'helm/pkg/plugin/installer/http_installer_test.go', 'helm/cmd/helm/plugin_install.go', 'helm/cmd/helm/uninstall.go', 'helm/cmd/helm/dependency_build_test.go', 'helm/cmd/helm/plugin_uninstall.go', 'helm/cmd/helm/uninstall_test.go', 'helm/cmd/helm/install_test.go', 'helm/cmd/helm/install.go', 'helm/cmd/helm/dependency_build.go', 'helm/cmd/helm/testdata/output/install-lib-chart.txt', 'helm/cmd/helm/testdata/output/install-with-wait-for-jobs.txt', 'helm/cmd/helm/testdata/output/upgrade-with-bad-dependencies.txt', 'helm/cmd/helm/testdata/output/list-uninstalled.txt', 'helm/cmd/helm/testdata/output/upgrade-with-pending-install.txt', 'helm/cmd/helm/testdata/output/uninstall-multiple.txt', 'helm/cmd/helm/testdata/output/uninstall-wait.txt', 'helm/cmd/helm/testdata/output/install-with-multiple-values.txt', 'helm/cmd/helm/testdata/output/install-with-values-file.txt', 'helm/cmd/helm/testdata/output/install-with-timeout.txt', 'helm/cmd/helm/testdata/output/install-and-replace.txt', 'helm/cmd/helm/testdata/output/install-with-wait.txt', 'helm/cmd/helm/testdata/output/uninstall.txt', 'helm/cmd/helm/testdata/output/install-no-hooks.txt', 'helm/cmd/helm/testdata/output/dependency-list-no-requirements-linux.txt', 'helm/cmd/helm/testdata/output/install.txt', 'helm/cmd/helm/testdata/output/install-no-args.txt', 'helm/cmd/helm/testdata/output/install-with-multiple-values-files.txt', 'helm/cmd/helm/testdata/output/install-chart-bad-type.txt', 'helm/cmd/helm/testdata/output/uninstall-no-args.txt', 'helm/cmd/helm/testdata/output/upgrade-with-missing-dependencies.txt', 'helm/cmd/helm/testdata/output/uninstall-no-hooks.txt', 'helm/cmd/helm/testdata/output/upgrade-with-install.txt', 'helm/cmd/helm/testdata/output/install-with-values.txt', 'helm/cmd/helm/testdata/output/upgrade-with-install-timeout.txt', 'helm/cmd/helm/testdata/output/install-name-template.txt', 'helm/cmd/helm/testdata/output/uninstall-timeout.txt', 'helm/cmd/helm/testdata/output/uninstall-keep-history.txt', 'helm/cmd/helm/testdata/output/list-uninstalling.txt', 'helm/cmd/helm/testdata/testcharts/chart-with-template-lib-dep/charts/common/README.md', 'helm/cmd/helm/testdata/testcharts/empty/README.md', 'helm/cmd/helm/testdata/testcharts/deprecated/README.md', 'helm/cmd/helm/testdata/testcharts/issue1979/README.md', 'helm/cmd/helm/testdata/testcharts/signtest/alpine/README.md', 'helm/cmd/helm/testdata/testcharts/chart-with-template-with-invalid-yaml/README.md', 'helm/cmd/helm/testdata/testcharts/chart-with-bad-subcharts/requirements.yaml', 'helm/cmd/helm/testdata/testcharts/alpine/README.md', 'helm/cmd/helm/testdata/testcharts/lib-chart/README.md', 'helm/cmd/helm/testdata/testcharts/issue-7233/requirements.yaml', 'helm/cmd/helm/testdata/testcharts/issue-7233/requirements.lock', 'helm/cmd/helm/testdata/testcharts/chart-bad-type/README.md', 'helm/.github/workflows/build-test.yml']
 INFO:root:Trimming 1372 files down to 100 for LLM
 INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
-INFO:root:LLM found documentation in the repo: ['helm/CONTRIBUTING.md', 'helm/ADOPTERS.md', 'helm/README.md', 'helm/Makefile', 'helm/SECURITY.md']
+INFO:root:LLM found documentation in the repo: ['helm/CONTRIBUTING.md', 'helm/ADOPTERS.md', 'helm/README.md', 'helm/Makefile', 'helm/SECURITY.md', 'helm/scripts/sync-repo.sh', 'helm/scripts/get', 'helm/scripts/release-notes.sh', 'helm/scripts/get-helm-3', 'helm/internal/resolver/testdata/chartpath/base/Chart.yaml', 'helm/internal/resolver/testdata/chartpath/charts/localdependency/Chart.yaml']
 INFO:root:helm/CONTRIBUTING.md has a supported extension, including
 INFO:root:helm/ADOPTERS.md has a supported extension, including
 INFO:root:helm/README.md has a supported extension, including
@@ -14,14 +14,24 @@ INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1
 INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
 INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
 INFO:root:Summarized helm/Makefile: <list>
-1. **build**: This target builds the binary of the project. It depends on the source files and uses the Go compiler with specific flags to build the binary.
-2. **test**: This target depends on the `build` target and runs various types of tests on the built binary. It sets specific test flags based on the architecture and runs style checks, unit tests, and possibly other tests.
-3. **build-cross**: This target builds the project for multiple platforms. It uses the `gox` tool to build the project for different combinations of operating systems and architectures.
-4. **dist**: This target prepares the distribution of the project. It copies the license and readme files into the distribution directories, and then compresses the directories into tar.gz and zip formats.
-5. **clean**: This target cleans up the project by removing the binary directory and the distribution directory. This is typically used to ensure a clean state before building the project again.
+1. `build-cross`: This target builds the project for multiple platforms. It uses the `gox` tool to build the project for different OS and architecture combinations.
+
+2. `dist`: This target prepares the distribution of the project. It copies the LICENSE and README files into the distribution directories, and then creates tar.gz and zip archives for each directory.
+
+3. `fetch-dist`: This target fetches the distribution files for the project. It creates a `_dist` directory and downloads the necessary files into it.
+
+4. `sign`: This target signs the distribution files. It uses GPG to create a detached signature for each file in the `_dist` directory.
+
+5. `clean`: This target cleans the project by removing the binary directory and the `_dist` directory.
 </list>
 INFO:root:helm/SECURITY.md has a supported extension, including
-INFO:root:Using only supported extensions: ['helm/CONTRIBUTING.md', 'helm/ADOPTERS.md', 'helm/README.md', 'Makefile_summary.txt', 'helm/SECURITY.md']
+INFO:root:Excluded helm/scripts/sync-repo.sh due to unsupported extension
+INFO:root:helm/scripts/get has no extension but including
+INFO:root:Excluded helm/scripts/release-notes.sh due to unsupported extension
+INFO:root:helm/scripts/get-helm-3 has no extension but including
+INFO:root:Excluded helm/internal/resolver/testdata/chartpath/base/Chart.yaml due to unsupported extension
+INFO:root:Excluded helm/internal/resolver/testdata/chartpath/charts/localdependency/Chart.yaml due to unsupported extension
+INFO:root:Using only supported extensions: ['helm/CONTRIBUTING.md', 'helm/ADOPTERS.md', 'helm/README.md', 'Makefile_summary.txt', 'helm/SECURITY.md', 'helm/scripts/get', 'helm/scripts/get-helm-3']
 INFO:root:Using assistant prompt:
 
 Generate minimalist and straightforward instructions for compiling and
@@ -171,69 +181,76 @@ helm/testdata/rootca.crt
 helm/testdata/openssl.conf
 helm/pkg/repo/repo.go
 
+INFO:root:Creating file helm/CONTRIBUTING.md
 INFO:httpx:HTTP Request: POST https://api.openai.com/v1/files "HTTP/1.1 200 OK"
 INFO:root:Created file helm/CONTRIBUTING.md
+INFO:root:Creating file helm/ADOPTERS.md
 INFO:httpx:HTTP Request: POST https://api.openai.com/v1/files "HTTP/1.1 200 OK"
 INFO:root:Created file helm/ADOPTERS.md
+INFO:root:Creating file helm/README.md
 INFO:httpx:HTTP Request: POST https://api.openai.com/v1/files "HTTP/1.1 200 OK"
 INFO:root:Created file helm/README.md
+INFO:root:Creating file Makefile_summary.txt
 INFO:httpx:HTTP Request: POST https://api.openai.com/v1/files "HTTP/1.1 200 OK"
 INFO:root:Created file Makefile_summary.txt
+INFO:root:Creating file helm/SECURITY.md
 INFO:httpx:HTTP Request: POST https://api.openai.com/v1/files "HTTP/1.1 200 OK"
 INFO:root:Created file helm/SECURITY.md
+INFO:root:Creating file helm/scripts/get.txt
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/files "HTTP/1.1 400 Bad Request"
+ERROR:root:<Response [400 Bad Request]>
+INFO:root:Creating file helm/scripts/get-helm-3.txt
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/files "HTTP/1.1 400 Bad Request"
+ERROR:root:<Response [400 Bad Request]>
 INFO:root:Creating run
 INFO:httpx:HTTP Request: GET https://api.openai.com/v1/assistants/asst_RUUBZLtGLGE5pBDiYNnWAjlL "HTTP/1.1 200 OK"
 INFO:httpx:HTTP Request: POST https://api.openai.com/v1/threads "HTTP/1.1 200 OK"
-INFO:httpx:HTTP Request: POST https://api.openai.com/v1/threads/thread_4ExkusFoi8ErGtOLhUri0U5s/messages "HTTP/1.1 200 OK"
-INFO:httpx:HTTP Request: POST https://api.openai.com/v1/threads/thread_4ExkusFoi8ErGtOLhUri0U5s/runs "HTTP/1.1 200 OK"
-INFO:root:Polling run_TRdz3o2JiCTfFLlbV97RHfgw. Status: queued
-INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_4ExkusFoi8ErGtOLhUri0U5s/runs/run_TRdz3o2JiCTfFLlbV97RHfgw "HTTP/1.1 200 OK"
-INFO:root:Polling run_TRdz3o2JiCTfFLlbV97RHfgw. Status: in_progress
-INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_4ExkusFoi8ErGtOLhUri0U5s/runs/run_TRdz3o2JiCTfFLlbV97RHfgw "HTTP/1.1 200 OK"
-INFO:root:Polling run_TRdz3o2JiCTfFLlbV97RHfgw. Status: in_progress
-INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_4ExkusFoi8ErGtOLhUri0U5s/runs/run_TRdz3o2JiCTfFLlbV97RHfgw "HTTP/1.1 200 OK"
-INFO:root:Polling run_TRdz3o2JiCTfFLlbV97RHfgw. Status: in_progress
-INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_4ExkusFoi8ErGtOLhUri0U5s/runs/run_TRdz3o2JiCTfFLlbV97RHfgw "HTTP/1.1 200 OK"
-INFO:root:Polling run_TRdz3o2JiCTfFLlbV97RHfgw. Status: in_progress
-INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_4ExkusFoi8ErGtOLhUri0U5s/runs/run_TRdz3o2JiCTfFLlbV97RHfgw "HTTP/1.1 200 OK"
-INFO:root:Polling run_TRdz3o2JiCTfFLlbV97RHfgw. Status: in_progress
-INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_4ExkusFoi8ErGtOLhUri0U5s/runs/run_TRdz3o2JiCTfFLlbV97RHfgw "HTTP/1.1 200 OK"
-INFO:root:Polling run_TRdz3o2JiCTfFLlbV97RHfgw. Status: in_progress
-INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_4ExkusFoi8ErGtOLhUri0U5s/runs/run_TRdz3o2JiCTfFLlbV97RHfgw "HTTP/1.1 200 OK"
-INFO:root:Polling run_TRdz3o2JiCTfFLlbV97RHfgw. Status: in_progress
-INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_4ExkusFoi8ErGtOLhUri0U5s/runs/run_TRdz3o2JiCTfFLlbV97RHfgw "HTTP/1.1 200 OK"
-INFO:root:Polling run_TRdz3o2JiCTfFLlbV97RHfgw. Status: in_progress
-INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_4ExkusFoi8ErGtOLhUri0U5s/runs/run_TRdz3o2JiCTfFLlbV97RHfgw "HTTP/1.1 200 OK"
-INFO:root:Polling run_TRdz3o2JiCTfFLlbV97RHfgw. Status: in_progress
-INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_4ExkusFoi8ErGtOLhUri0U5s/runs/run_TRdz3o2JiCTfFLlbV97RHfgw "HTTP/1.1 200 OK"
-INFO:root:Polling run_TRdz3o2JiCTfFLlbV97RHfgw. Status: in_progress
-INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_4ExkusFoi8ErGtOLhUri0U5s/runs/run_TRdz3o2JiCTfFLlbV97RHfgw "HTTP/1.1 200 OK"
-INFO:root:Polling run_TRdz3o2JiCTfFLlbV97RHfgw. Status: in_progress
-INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_4ExkusFoi8ErGtOLhUri0U5s/runs/run_TRdz3o2JiCTfFLlbV97RHfgw "HTTP/1.1 200 OK"
-INFO:root:Polling run_TRdz3o2JiCTfFLlbV97RHfgw. Status: in_progress
-INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_4ExkusFoi8ErGtOLhUri0U5s/runs/run_TRdz3o2JiCTfFLlbV97RHfgw "HTTP/1.1 200 OK"
-INFO:root:Polling run_TRdz3o2JiCTfFLlbV97RHfgw. Status: in_progress
-INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_4ExkusFoi8ErGtOLhUri0U5s/runs/run_TRdz3o2JiCTfFLlbV97RHfgw "HTTP/1.1 200 OK"
-INFO:root:Polling run_TRdz3o2JiCTfFLlbV97RHfgw. Status: in_progress
-INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_4ExkusFoi8ErGtOLhUri0U5s/runs/run_TRdz3o2JiCTfFLlbV97RHfgw "HTTP/1.1 200 OK"
-INFO:root:Polling run_TRdz3o2JiCTfFLlbV97RHfgw. Status: in_progress
-INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_4ExkusFoi8ErGtOLhUri0U5s/runs/run_TRdz3o2JiCTfFLlbV97RHfgw "HTTP/1.1 200 OK"
-INFO:root:Polling run_TRdz3o2JiCTfFLlbV97RHfgw. Status: in_progress
-INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_4ExkusFoi8ErGtOLhUri0U5s/runs/run_TRdz3o2JiCTfFLlbV97RHfgw "HTTP/1.1 200 OK"
-INFO:root:Polling run_TRdz3o2JiCTfFLlbV97RHfgw. Status: in_progress
-INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_4ExkusFoi8ErGtOLhUri0U5s/runs/run_TRdz3o2JiCTfFLlbV97RHfgw "HTTP/1.1 200 OK"
-INFO:root:Polling run_TRdz3o2JiCTfFLlbV97RHfgw. Status: in_progress
-INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_4ExkusFoi8ErGtOLhUri0U5s/runs/run_TRdz3o2JiCTfFLlbV97RHfgw "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/threads/thread_JJn3a2yRJl1DjTVjYJ3HqV2d/messages "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/threads/thread_JJn3a2yRJl1DjTVjYJ3HqV2d/runs "HTTP/1.1 200 OK"
+INFO:root:Polling run_lymWQs8NlSqka0zJ5vPe6eG4. Status: queued
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_JJn3a2yRJl1DjTVjYJ3HqV2d/runs/run_lymWQs8NlSqka0zJ5vPe6eG4 "HTTP/1.1 200 OK"
+INFO:root:Polling run_lymWQs8NlSqka0zJ5vPe6eG4. Status: in_progress
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_JJn3a2yRJl1DjTVjYJ3HqV2d/runs/run_lymWQs8NlSqka0zJ5vPe6eG4 "HTTP/1.1 200 OK"
+INFO:root:Polling run_lymWQs8NlSqka0zJ5vPe6eG4. Status: in_progress
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_JJn3a2yRJl1DjTVjYJ3HqV2d/runs/run_lymWQs8NlSqka0zJ5vPe6eG4 "HTTP/1.1 200 OK"
+INFO:root:Polling run_lymWQs8NlSqka0zJ5vPe6eG4. Status: in_progress
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_JJn3a2yRJl1DjTVjYJ3HqV2d/runs/run_lymWQs8NlSqka0zJ5vPe6eG4 "HTTP/1.1 200 OK"
+INFO:root:Polling run_lymWQs8NlSqka0zJ5vPe6eG4. Status: in_progress
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_JJn3a2yRJl1DjTVjYJ3HqV2d/runs/run_lymWQs8NlSqka0zJ5vPe6eG4 "HTTP/1.1 200 OK"
+INFO:root:Polling run_lymWQs8NlSqka0zJ5vPe6eG4. Status: in_progress
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_JJn3a2yRJl1DjTVjYJ3HqV2d/runs/run_lymWQs8NlSqka0zJ5vPe6eG4 "HTTP/1.1 200 OK"
+INFO:root:Polling run_lymWQs8NlSqka0zJ5vPe6eG4. Status: in_progress
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_JJn3a2yRJl1DjTVjYJ3HqV2d/runs/run_lymWQs8NlSqka0zJ5vPe6eG4 "HTTP/1.1 200 OK"
+INFO:root:Polling run_lymWQs8NlSqka0zJ5vPe6eG4. Status: in_progress
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_JJn3a2yRJl1DjTVjYJ3HqV2d/runs/run_lymWQs8NlSqka0zJ5vPe6eG4 "HTTP/1.1 200 OK"
+INFO:root:Polling run_lymWQs8NlSqka0zJ5vPe6eG4. Status: in_progress
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_JJn3a2yRJl1DjTVjYJ3HqV2d/runs/run_lymWQs8NlSqka0zJ5vPe6eG4 "HTTP/1.1 200 OK"
+INFO:root:Polling run_lymWQs8NlSqka0zJ5vPe6eG4. Status: in_progress
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_JJn3a2yRJl1DjTVjYJ3HqV2d/runs/run_lymWQs8NlSqka0zJ5vPe6eG4 "HTTP/1.1 200 OK"
+INFO:root:Polling run_lymWQs8NlSqka0zJ5vPe6eG4. Status: in_progress
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_JJn3a2yRJl1DjTVjYJ3HqV2d/runs/run_lymWQs8NlSqka0zJ5vPe6eG4 "HTTP/1.1 200 OK"
+INFO:root:Polling run_lymWQs8NlSqka0zJ5vPe6eG4. Status: in_progress
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_JJn3a2yRJl1DjTVjYJ3HqV2d/runs/run_lymWQs8NlSqka0zJ5vPe6eG4 "HTTP/1.1 200 OK"
+INFO:root:Polling run_lymWQs8NlSqka0zJ5vPe6eG4. Status: in_progress
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_JJn3a2yRJl1DjTVjYJ3HqV2d/runs/run_lymWQs8NlSqka0zJ5vPe6eG4 "HTTP/1.1 200 OK"
+INFO:root:Polling run_lymWQs8NlSqka0zJ5vPe6eG4. Status: in_progress
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_JJn3a2yRJl1DjTVjYJ3HqV2d/runs/run_lymWQs8NlSqka0zJ5vPe6eG4 "HTTP/1.1 200 OK"
+INFO:root:Polling run_lymWQs8NlSqka0zJ5vPe6eG4. Status: in_progress
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_JJn3a2yRJl1DjTVjYJ3HqV2d/runs/run_lymWQs8NlSqka0zJ5vPe6eG4 "HTTP/1.1 200 OK"
+INFO:root:Polling run_lymWQs8NlSqka0zJ5vPe6eG4. Status: in_progress
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_JJn3a2yRJl1DjTVjYJ3HqV2d/runs/run_lymWQs8NlSqka0zJ5vPe6eG4 "HTTP/1.1 200 OK"
+INFO:root:Polling run_lymWQs8NlSqka0zJ5vPe6eG4. Status: in_progress
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_JJn3a2yRJl1DjTVjYJ3HqV2d/runs/run_lymWQs8NlSqka0zJ5vPe6eG4 "HTTP/1.1 200 OK"
 INFO:root:Run complete
-INFO:httpx:HTTP Request: DELETE https://api.openai.com/v1/files/file-rDBVs18grqYnkIMCYn7qaR6v "HTTP/1.1 200 OK"
-INFO:root:Deleted file-rDBVs18grqYnkIMCYn7qaR6v
-INFO:httpx:HTTP Request: DELETE https://api.openai.com/v1/files/file-nN4ENNnp7laGBUgKF3M6M6M8 "HTTP/1.1 200 OK"
-INFO:root:Deleted file-nN4ENNnp7laGBUgKF3M6M6M8
-INFO:httpx:HTTP Request: DELETE https://api.openai.com/v1/files/file-oaZZ3NAS12xah7GFqb5nt7RO "HTTP/1.1 200 OK"
-INFO:root:Deleted file-oaZZ3NAS12xah7GFqb5nt7RO
-INFO:httpx:HTTP Request: DELETE https://api.openai.com/v1/files/file-JTyj2keNZLru8sXer1PA1eWG "HTTP/1.1 200 OK"
-INFO:root:Deleted file-JTyj2keNZLru8sXer1PA1eWG
-INFO:httpx:HTTP Request: DELETE https://api.openai.com/v1/files/file-zS1Mex7Ro7kOU76Iqmb4Mpd7 "HTTP/1.1 200 OK"
-INFO:root:Deleted file-zS1Mex7Ro7kOU76Iqmb4Mpd7
-INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_4ExkusFoi8ErGtOLhUri0U5s/messages "HTTP/1.1 200 OK"
-INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_4ExkusFoi8ErGtOLhUri0U5s/messages?after=msg_zeJPZJqKjU5Al6e84hp1GCmh "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: DELETE https://api.openai.com/v1/files/file-vPAuSAT8ihuaynsYCrtI3SGt "HTTP/1.1 200 OK"
+INFO:root:Deleted file-vPAuSAT8ihuaynsYCrtI3SGt
+INFO:httpx:HTTP Request: DELETE https://api.openai.com/v1/files/file-nLsm1lfllzC5W0ZmToMP5Llh "HTTP/1.1 200 OK"
+INFO:root:Deleted file-nLsm1lfllzC5W0ZmToMP5Llh
+INFO:httpx:HTTP Request: DELETE https://api.openai.com/v1/files/file-WHt2lWgvXW19Xc4i6ftm0Wka "HTTP/1.1 200 OK"
+INFO:root:Deleted file-WHt2lWgvXW19Xc4i6ftm0Wka
+INFO:httpx:HTTP Request: DELETE https://api.openai.com/v1/files/file-GceeW6m5VAKYO18MthYGZ62z "HTTP/1.1 200 OK"
+INFO:root:Deleted file-GceeW6m5VAKYO18MthYGZ62z
+INFO:httpx:HTTP Request: DELETE https://api.openai.com/v1/files/file-wERRdGbCHTrMrh0PWkjDkusv "HTTP/1.1 200 OK"
+INFO:root:Deleted file-wERRdGbCHTrMrh0PWkjDkusv
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_JJn3a2yRJl1DjTVjYJ3HqV2d/messages "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_JJn3a2yRJl1DjTVjYJ3HqV2d/messages?after=msg_GUiDhdzzMgIKTfbAUirujaVp "HTTP/1.1 200 OK"

@@ -12,11 +12,15 @@ INFO:root:Excluded aws-load-balancer-controller/mkdocs.yml due to unsupported ex
 INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
 INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
 INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
-INFO:root:Summarized aws-load-balancer-controller/Makefile: 1. **mockgen** - This target checks if mockgen is installed, if not it downloads and installs it. Mockgen is a tool for generating mock interfaces for testing in Go.
-2. **kustomize** - This target checks if kustomize is installed, if not it downloads and installs it. Kustomize is a standalone tool to customize Kubernetes objects through a kustomization file.
-3. **ko** - This target runs a script to install ko, a tool for building and deploying Go applications to Kubernetes.
-4. **docs-preview: docs-dependencies** - This target previews the documentation using mkdocs. It depends on the docs-dependencies target.
-5. **quick-ci: verify-versions verify-generate verify-crds** - This target runs a quick continuous integration check. It verifies versions, generated files, and custom resource definitions.
+INFO:root:Summarized aws-load-balancer-controller/Makefile: 1. **mockgen** - This target checks if mockgen is installed, and if not, it downloads and installs it. Mockgen is a tool for generating mock interfaces for testing in Go.
+
+2. **kustomize** - This target checks if kustomize is installed, and if not, it downloads and installs it. Kustomize is a standalone tool to customize Kubernetes objects through a kustomization file.
+
+3. **ko** - This target runs a script to install ko, a tool for building and deploying Golang applications to Kubernetes.
+
+4. **quick-ci: verify-versions verify-generate verify-crds** - This target runs a quick continuous integration check by verifying versions, generating files, and verifying custom resource definitions (CRDs).
+
+5. **unit-test** - This target runs unit tests for the project using a script.
 INFO:root:aws-load-balancer-controller/helm/aws-load-balancer-controller/README.md has a supported extension, including
 INFO:root:Excluded aws-load-balancer-controller/helm/aws-load-balancer-controller/Chart.yaml due to unsupported extension
 INFO:root:Excluded aws-load-balancer-controller/helm/aws-load-balancer-controller/values.yaml due to unsupported extension
@@ -101,8 +105,8 @@ aws-load-balancer-controller/.git/index
 aws-load-balancer-controller/.git/config
 aws-load-balancer-controller/.git/refs/remotes/origin/HEAD
 aws-load-balancer-controller/.git/refs/heads/main
-aws-load-balancer-controller/.git/objects/pack/pack-e60c2435eeb0293549e4aa4416a50bb2ed088155.pack
-aws-load-balancer-controller/.git/objects/pack/pack-e60c2435eeb0293549e4aa4416a50bb2ed088155.idx
+aws-load-balancer-controller/.git/objects/pack/pack-90089da9a790b26174ddf987aad2dcadef6afba8.idx
+aws-load-balancer-controller/.git/objects/pack/pack-90089da9a790b26174ddf987aad2dcadef6afba8.pack
 aws-load-balancer-controller/.git/info/exclude
 aws-load-balancer-controller/.git/hooks/update.sample
 aws-load-balancer-controller/.git/hooks/commit-msg.sample
@@ -176,61 +180,75 @@ aws-load-balancer-controller/docs/deploy/installation.md
 aws-load-balancer-controller/docs/deploy/pod_readiness_gate.md
 aws-load-balancer-controller/docs/deploy/subnet_discovery.md
 
+INFO:root:Creating file aws-load-balancer-controller/CONTRIBUTING.md
 INFO:httpx:HTTP Request: POST https://api.openai.com/v1/files "HTTP/1.1 200 OK"
 INFO:root:Created file aws-load-balancer-controller/CONTRIBUTING.md
+INFO:root:Creating file aws-load-balancer-controller/README.md
 INFO:httpx:HTTP Request: POST https://api.openai.com/v1/files "HTTP/1.1 200 OK"
 INFO:root:Created file aws-load-balancer-controller/README.md
+INFO:root:Creating file Makefile_summary.txt
 INFO:httpx:HTTP Request: POST https://api.openai.com/v1/files "HTTP/1.1 200 OK"
 INFO:root:Created file Makefile_summary.txt
+INFO:root:Creating file aws-load-balancer-controller/helm/aws-load-balancer-controller/README.md
 INFO:httpx:HTTP Request: POST https://api.openai.com/v1/files "HTTP/1.1 200 OK"
 INFO:root:Created file aws-load-balancer-controller/helm/aws-load-balancer-controller/README.md
+INFO:root:Creating file aws-load-balancer-controller/docs/how-it-works.md
 INFO:httpx:HTTP Request: POST https://api.openai.com/v1/files "HTTP/1.1 200 OK"
 INFO:root:Created file aws-load-balancer-controller/docs/how-it-works.md
+INFO:root:Creating file aws-load-balancer-controller/docs/CONTRIBUTING.md
 INFO:httpx:HTTP Request: POST https://api.openai.com/v1/files "HTTP/1.1 200 OK"
 INFO:root:Created file aws-load-balancer-controller/docs/CONTRIBUTING.md
+INFO:root:Creating file aws-load-balancer-controller/docs/controller-devel.md
 INFO:httpx:HTTP Request: POST https://api.openai.com/v1/files "HTTP/1.1 200 OK"
 INFO:root:Created file aws-load-balancer-controller/docs/controller-devel.md
+INFO:root:Creating file aws-load-balancer-controller/docs/release.md
 INFO:httpx:HTTP Request: POST https://api.openai.com/v1/files "HTTP/1.1 200 OK"
 INFO:root:Created file aws-load-balancer-controller/docs/release.md
+INFO:root:Creating file aws-load-balancer-controller/docs/index.md
 INFO:httpx:HTTP Request: POST https://api.openai.com/v1/files "HTTP/1.1 200 OK"
 INFO:root:Created file aws-load-balancer-controller/docs/index.md
+INFO:root:Creating file aws-load-balancer-controller/docs/deploy/security_groups.md
 INFO:httpx:HTTP Request: POST https://api.openai.com/v1/files "HTTP/1.1 200 OK"
 INFO:root:Created file aws-load-balancer-controller/docs/deploy/security_groups.md
 INFO:root:Creating run
 INFO:httpx:HTTP Request: GET https://api.openai.com/v1/assistants/asst_RUUBZLtGLGE5pBDiYNnWAjlL "HTTP/1.1 200 OK"
 INFO:httpx:HTTP Request: POST https://api.openai.com/v1/threads "HTTP/1.1 200 OK"
-INFO:httpx:HTTP Request: POST https://api.openai.com/v1/threads/thread_XmcUsCnykruTQhBb3LPlxUAt/messages "HTTP/1.1 200 OK"
-INFO:httpx:HTTP Request: POST https://api.openai.com/v1/threads/thread_XmcUsCnykruTQhBb3LPlxUAt/runs "HTTP/1.1 200 OK"
-INFO:root:Polling run_YuVAl8HD4u26FF6OBH04PKJF. Status: queued
-INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_XmcUsCnykruTQhBb3LPlxUAt/runs/run_YuVAl8HD4u26FF6OBH04PKJF "HTTP/1.1 200 OK"
-INFO:root:Polling run_YuVAl8HD4u26FF6OBH04PKJF. Status: in_progress
-INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_XmcUsCnykruTQhBb3LPlxUAt/runs/run_YuVAl8HD4u26FF6OBH04PKJF "HTTP/1.1 200 OK"
-INFO:root:Polling run_YuVAl8HD4u26FF6OBH04PKJF. Status: in_progress
-INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_XmcUsCnykruTQhBb3LPlxUAt/runs/run_YuVAl8HD4u26FF6OBH04PKJF "HTTP/1.1 200 OK"
-INFO:root:Polling run_YuVAl8HD4u26FF6OBH04PKJF. Status: in_progress
-INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_XmcUsCnykruTQhBb3LPlxUAt/runs/run_YuVAl8HD4u26FF6OBH04PKJF "HTTP/1.1 200 OK"
-INFO:root:Polling run_YuVAl8HD4u26FF6OBH04PKJF. Status: in_progress
-INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_XmcUsCnykruTQhBb3LPlxUAt/runs/run_YuVAl8HD4u26FF6OBH04PKJF "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/threads/thread_zL0sGVLniUSfZlZuPPrwOiS1/messages "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/threads/thread_zL0sGVLniUSfZlZuPPrwOiS1/runs "HTTP/1.1 200 OK"
+INFO:root:Polling run_ImHW9Tl7fh1LXpQgBfpuoTWr. Status: queued
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_zL0sGVLniUSfZlZuPPrwOiS1/runs/run_ImHW9Tl7fh1LXpQgBfpuoTWr "HTTP/1.1 200 OK"
+INFO:root:Polling run_ImHW9Tl7fh1LXpQgBfpuoTWr. Status: in_progress
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_zL0sGVLniUSfZlZuPPrwOiS1/runs/run_ImHW9Tl7fh1LXpQgBfpuoTWr "HTTP/1.1 200 OK"
+INFO:root:Polling run_ImHW9Tl7fh1LXpQgBfpuoTWr. Status: in_progress
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_zL0sGVLniUSfZlZuPPrwOiS1/runs/run_ImHW9Tl7fh1LXpQgBfpuoTWr "HTTP/1.1 200 OK"
+INFO:root:Polling run_ImHW9Tl7fh1LXpQgBfpuoTWr. Status: in_progress
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_zL0sGVLniUSfZlZuPPrwOiS1/runs/run_ImHW9Tl7fh1LXpQgBfpuoTWr "HTTP/1.1 200 OK"
+INFO:root:Polling run_ImHW9Tl7fh1LXpQgBfpuoTWr. Status: in_progress
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_zL0sGVLniUSfZlZuPPrwOiS1/runs/run_ImHW9Tl7fh1LXpQgBfpuoTWr "HTTP/1.1 200 OK"
+INFO:root:Polling run_ImHW9Tl7fh1LXpQgBfpuoTWr. Status: in_progress
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_zL0sGVLniUSfZlZuPPrwOiS1/runs/run_ImHW9Tl7fh1LXpQgBfpuoTWr "HTTP/1.1 200 OK"
+INFO:root:Polling run_ImHW9Tl7fh1LXpQgBfpuoTWr. Status: in_progress
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_zL0sGVLniUSfZlZuPPrwOiS1/runs/run_ImHW9Tl7fh1LXpQgBfpuoTWr "HTTP/1.1 200 OK"
 INFO:root:Run complete
-INFO:httpx:HTTP Request: DELETE https://api.openai.com/v1/files/file-S36schyi7Gd52sil2ttZuzph "HTTP/1.1 200 OK"
-INFO:root:Deleted file-S36schyi7Gd52sil2ttZuzph
-INFO:httpx:HTTP Request: DELETE https://api.openai.com/v1/files/file-956EE6U7P9upbmXRVKxZ7SJH "HTTP/1.1 200 OK"
-INFO:root:Deleted file-956EE6U7P9upbmXRVKxZ7SJH
-INFO:httpx:HTTP Request: DELETE https://api.openai.com/v1/files/file-OJClR74ML4W3sN6WJcARQMA9 "HTTP/1.1 200 OK"
-INFO:root:Deleted file-OJClR74ML4W3sN6WJcARQMA9
-INFO:httpx:HTTP Request: DELETE https://api.openai.com/v1/files/file-seKq2Yl0pNxP9qDoslxmDs9P "HTTP/1.1 200 OK"
-INFO:root:Deleted file-seKq2Yl0pNxP9qDoslxmDs9P
-INFO:httpx:HTTP Request: DELETE https://api.openai.com/v1/files/file-gRG10o0A4wMiPqotNo65zW98 "HTTP/1.1 200 OK"
-INFO:root:Deleted file-gRG10o0A4wMiPqotNo65zW98
-INFO:httpx:HTTP Request: DELETE https://api.openai.com/v1/files/file-UCFfzWC5qr8O9Gg2q5C9EofZ "HTTP/1.1 200 OK"
-INFO:root:Deleted file-UCFfzWC5qr8O9Gg2q5C9EofZ
-INFO:httpx:HTTP Request: DELETE https://api.openai.com/v1/files/file-Ky8AxBX9kIVo9iUkpqLbWUvD "HTTP/1.1 200 OK"
-INFO:root:Deleted file-Ky8AxBX9kIVo9iUkpqLbWUvD
-INFO:httpx:HTTP Request: DELETE https://api.openai.com/v1/files/file-yXZbXcpevYB5egTVk4vB9a6Y "HTTP/1.1 200 OK"
-INFO:root:Deleted file-yXZbXcpevYB5egTVk4vB9a6Y
-INFO:httpx:HTTP Request: DELETE https://api.openai.com/v1/files/file-MbOPzu9lKdL5hQSuqUZchYZT "HTTP/1.1 200 OK"
-INFO:root:Deleted file-MbOPzu9lKdL5hQSuqUZchYZT
-INFO:httpx:HTTP Request: DELETE https://api.openai.com/v1/files/file-xcT0kNybDhIU5lr8x2R2PhSG "HTTP/1.1 200 OK"
-INFO:root:Deleted file-xcT0kNybDhIU5lr8x2R2PhSG
-INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_XmcUsCnykruTQhBb3LPlxUAt/messages "HTTP/1.1 200 OK"
-INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_XmcUsCnykruTQhBb3LPlxUAt/messages?after=msg_uN4jzyzuinOoitpZ1j0iEZzb "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: DELETE https://api.openai.com/v1/files/file-Ac0Q0Tfh2JKzeM0fHXLlzNkV "HTTP/1.1 200 OK"
+INFO:root:Deleted file-Ac0Q0Tfh2JKzeM0fHXLlzNkV
+INFO:httpx:HTTP Request: DELETE https://api.openai.com/v1/files/file-qtEpxj3174wHI82OLsihucst "HTTP/1.1 200 OK"
+INFO:root:Deleted file-qtEpxj3174wHI82OLsihucst
+INFO:httpx:HTTP Request: DELETE https://api.openai.com/v1/files/file-D9KP9FQF82yYMl3pWSGNDZvl "HTTP/1.1 200 OK"
+INFO:root:Deleted file-D9KP9FQF82yYMl3pWSGNDZvl
+INFO:httpx:HTTP Request: DELETE https://api.openai.com/v1/files/file-fPKHbayleVO7AIBzPIiC3jZj "HTTP/1.1 200 OK"
+INFO:root:Deleted file-fPKHbayleVO7AIBzPIiC3jZj
+INFO:httpx:HTTP Request: DELETE https://api.openai.com/v1/files/file-IAZp2so2j14DYlPIbqSnSRs6 "HTTP/1.1 200 OK"
+INFO:root:Deleted file-IAZp2so2j14DYlPIbqSnSRs6
+INFO:httpx:HTTP Request: DELETE https://api.openai.com/v1/files/file-7bILxrDwlZuU6GmqeuGNAphg "HTTP/1.1 200 OK"
+INFO:root:Deleted file-7bILxrDwlZuU6GmqeuGNAphg
+INFO:httpx:HTTP Request: DELETE https://api.openai.com/v1/files/file-7jXuuS2T9Tq5VpMynSQIWiKQ "HTTP/1.1 200 OK"
+INFO:root:Deleted file-7jXuuS2T9Tq5VpMynSQIWiKQ
+INFO:httpx:HTTP Request: DELETE https://api.openai.com/v1/files/file-b8wQI0qRMB5iKmSw45pQRYT7 "HTTP/1.1 200 OK"
+INFO:root:Deleted file-b8wQI0qRMB5iKmSw45pQRYT7
+INFO:httpx:HTTP Request: DELETE https://api.openai.com/v1/files/file-bNT5XD6v1ezxJsYPutucemU0 "HTTP/1.1 200 OK"
+INFO:root:Deleted file-bNT5XD6v1ezxJsYPutucemU0
+INFO:httpx:HTTP Request: DELETE https://api.openai.com/v1/files/file-p3GwpXnpREr8dTOCbe3k2eIY "HTTP/1.1 200 OK"
+INFO:root:Deleted file-p3GwpXnpREr8dTOCbe3k2eIY
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_zL0sGVLniUSfZlZuPPrwOiS1/messages "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://api.openai.com/v1/threads/thread_zL0sGVLniUSfZlZuPPrwOiS1/messages?after=msg_7krL4CzEmtzjyZwh0ns2fZDf "HTTP/1.1 200 OK"
