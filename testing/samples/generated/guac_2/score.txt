@@ -1,0 +1,16 @@
+EDIT_DESC(true)
+EDIT_LICENSE(true)
+EDIT_FIELD("repository", "https://github.com/apache/guacamole-server", "https://github.com/guacsec/guac", "git-checkout", 0, true)
+EDIT_FIELD("tag", "0.3.0", "main", "git-checkout", 0, true)
+REMOVE_PIPELINE_STAGE("runs", 1, true)
+REMOVE_PIPELINE_STAGE("runs", 3, true)
+REMOVE_PIPELINE_STAGE("runs", 4, false)
+ADD_FIELD("[line 2]", "install -Dm755 ./bin/kind /usr/bin/kind", "runs", 2, true)
+
+
+
+Notes:
+Does not contain evidence
+Wrong repository
+Uses Makefile instead of go build as seen in original
+The install step is not working for some reason

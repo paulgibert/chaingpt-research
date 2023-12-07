@@ -1,0 +1,4 @@
+Notes:
+Contains evidence.
+Builds without editing.
+ldflags doesn't inject version for some reasons

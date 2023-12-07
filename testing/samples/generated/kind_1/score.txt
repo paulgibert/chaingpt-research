@@ -1,0 +1,6 @@
+ADD_FIELD("[line 2]", "install -Dm755 ./bin/kind /usr/bin/kind", 1, true)
+REMOVE_PIPELINE_STATE("runs", 2, true)
+
+Notes:
+Contains evidence. Calling a proper make target but still
+errors.

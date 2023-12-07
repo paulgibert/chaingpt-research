@@ -1,0 +1,5 @@
+REMOVE_FIELD("modroot", "got/build", 1, true)
+ADD_FIELD("ldflags", "-w -X github.com/google/ko/pkg/commands.Version=${{package.version}}", "go/build", 1, false)
+
+Notes:
+Contains evidence

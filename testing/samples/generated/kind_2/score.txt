@@ -1,0 +1,5 @@
+ADD_FIELD("[line 2]", "install -Dm755 ./bin/kind /usr/bin/kind", 1, true)
+
+Notes:
+Contains evidence. Calling a proper make target but still
+errors.

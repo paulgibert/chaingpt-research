@@ -1,0 +1,5 @@
+ADD_FIELD("ldflags", "-w -X github.com/anchore/grype/internal/version.version=${{package.version}}", "go/build", 1, false)
+
+Notes:
+Contains evidence
+Builds without editing

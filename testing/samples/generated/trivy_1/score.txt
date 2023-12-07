@@ -1,0 +1,6 @@
+EDIT_FIELD("packages", "./...", "./cmd/trivy", "go/build", 1, true)
+ADD_FIELD("ldflags", "-w -X=main.version=${{package.version}}", "go/build", 1, false)
+
+Notes:
+Contains evidence.
+ldflags doesn't inject version for some reasons

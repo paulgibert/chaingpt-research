@@ -1,0 +1,9 @@
+EDIT_DESC(true)
+EDIT_LICENSE(true)
+REMOVE_PIPELINE("git-checkout", 0, true)
+EDIT_FIELD("[line 1]", "npm install hugo-extended --save-dev", "CGO_ENABLED=1 go install -tags extended github.com/gohugoio/hugo@latest", 1, true)
+
+Notes:
+Wrong repository
+Does not contain evidence
+Score above needs an install step.

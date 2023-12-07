@@ -1,0 +1,16 @@
+REMOVE_PIPELINE_STAGE("runs", 1, true)
+REMOVE_PIPELINE_STAGE("runs", 2, true)
+ADD_PIPELINE_STAGE("go/build", 1, true)
+ADD_FIELD("packages", "./cmd/buildkitd", "go/build", 1, true)
+ADD_FIELD("output", "buildkitd", "go/build", 1, true)
+ADD_FIELD("ldflags", "-s -w -X ${PKG}/version.Version=${VERSION} -X ${PKG}/version.Revision=${REVISION} -X ${PKG}/version.Package=${PKG} -extldflags '-static'", "go/build", 1, true)
+ADD_PIPELINE_STAGE("go/build", 1, true)
+ADD_FIELD("packages", "./cmd/buildctl", "go/build", 2, true)
+ADD_FIELD("output", "buildctl", "go/build", 2, true)
+ADD_FIELD("ldflags", "-s -w -X ${PKG}/version.Version=${VERSION} -X ${PKG}/version.Revision=${REVISION} -X ${PKG}/version.Package=${PKG} -extldflags '-static'", "go/build", 2, true)
+
+Notes:
+Questionably contains evidence. Does going for the Makefile route count?
+There is a Makefile target but it uses docker which can't be done
+inside of a container.
+ldflags value don't update the version for some reason

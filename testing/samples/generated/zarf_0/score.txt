@@ -1,0 +1,9 @@
+EDIT_FIELD("[line 1]", "make all", "make build-ui", "runs", 1, true)
+REMOVE_PIPELINE("runs", 2, true)
+ADD_PIPELINE("go/build", 2, true)
+ADD_FIELD("packages", ".", "go/build", 2, true)
+ADD_FIELD("output", "zarf", "go/build", 2, true)
+ADD_FIELD("ldflags", "-s -w -X 'github.com/defenseunicorns/zarf/src/config.CLIVersion=$(git describe --tags)'", "go/build", 2, false)
+
+Notes:
+Does not contain build evidence. There is not an "all" make target

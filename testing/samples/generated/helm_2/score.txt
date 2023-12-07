@@ -1,0 +1,6 @@
+EDIT_DESC(false)
+EDIT_FIELD("ldflags", "-X helm.sh/helm/v3/internal/version.gitCommit=<<commit_hash>> -X helm.sh/helm/v3/internal/version.gitTreeState=dirty", "-X helm.sh/helm/v3/internal/version.gitCommit=[INSERT COMMIT HASH] -X helm.sh/helm/v3/internal/version.gitTreeState=dirty", "go/build", 1, false)
+
+Notes:
+Contains evidence
+Builds without editing

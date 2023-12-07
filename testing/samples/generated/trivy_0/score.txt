@@ -1,0 +1,10 @@
+REMOVE_PIPELINE_STAGE("runs", 1, true)
+ADD_PIPELINE_STAGE("go/build", 1, true)
+ADD_FIELD("packages", "./cmd/trivy", "go/build", 1, true)
+ADD_FIELD("output", "trivy", "go/build", 1, true)
+ADD_FIELD("ldflags", "-w -X=main.version=${{package.version}}", "go/build", 1, false)
+
+Notes:
+Does not contain evidence.
+Where did it get this make command? Not even a Makefile in the project.
+ldflags doesn't inject version for some reasons

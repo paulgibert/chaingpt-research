@@ -69,15 +69,15 @@ def git_read_file(path: str) -> str:
 
 
 @tool
-def write_file(filename:str, content: str) -> str:
+def write_file(path:str, content: str) -> str:
     """
-    Creates and writes to the provided content to a file located
+    Creates and writes the provided content to a file located
     at the provided path.
     """
-    log_tool("write_file", filename)
-    if os.path.isfile(filename):
-        filename += "_dup"
+    log_tool("write_file", path)
+    if os.path.isfile(path):
+        path += "_dup"
     
-    with open(filename, "w", encoding="utf-8") as f:
+    with open(path, "w", encoding="utf-8") as f:
         f.write(content)
         
