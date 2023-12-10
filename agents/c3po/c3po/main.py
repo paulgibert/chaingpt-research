@@ -18,7 +18,7 @@ def parse_args():
                         default="agent.log",
                         help="The location to save the log file")
     parser.add_argument("--output-summary",
-                        required=False,
+                        default="summary.txt",
                         help="The location to save the build summary")
     parser.add_argument("--repository",
                         required=False,

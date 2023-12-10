@@ -84,7 +84,7 @@ def run_agent(package: str, version: str,
     _init_workspace(workspace)
 
     # Search for a clone the repository into the local workspace
-    repo = init_repository(package, version)
+    repo = init_repository(package, version, repository=repository)
     if repo is None:
         _cleanup_workspace(workspace)
         return

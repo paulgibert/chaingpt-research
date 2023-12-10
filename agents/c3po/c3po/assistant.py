@@ -24,8 +24,8 @@ mixing different approaches. You will respond in JSON form only.
 
 The response should contain the following fields:
 
-summary: A description of the components the project uses and how they are built. If able, provide
-         step-by-step build instructions.
+summary: A description of the components the project uses and how they are built. This should include the list of shell commands
+         necessary to build and install the project. Be sure to mention any dependencies that should be installed.
 
 description: A single sentence description of the project. It should not start with the project's name.
 

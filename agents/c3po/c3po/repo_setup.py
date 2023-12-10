@@ -43,11 +43,20 @@ def _clone_repo_url_from_user(package: str) -> GitRepo:
     return repo
 
 
-def _get_repo(package: str) -> GitRepo:
+def _get_repo(package: str, repository: str=None) -> GitRepo:
     """
     Finds and clones the GitHub repository for
     the provided package.
     """
+    if repository is not None:
+        logging.info("User provided url %s", repository)
+        repo = _try_clone(repository)
+        if repo is not None:
+            return repo
+        else:
+            logging.error("Failed ot clone user provided repository")
+            return None
+
     web_urls = repo_url_from_web_search(package)
     with yaspin(Spinners.line, text=Fore.BLUE + "\tasking GPT-4", color="blue"):
         try:
@@ -137,7 +146,7 @@ def _checkout_version(package: str, version: str, repo: GitRepo) -> str:
     # return _checkout_branch_or_tag_from_user(package, version, repo)
 
 
-def init_repository(package: str, version: str) -> GitRepo:
+def init_repository(package: str, version: str, repository: str=None) -> GitRepo:
     """
     Clones the GitHub repository for the provided package in the
     current working directory and does a checkout of the correct
@@ -156,11 +165,12 @@ def init_repository(package: str, version: str) -> GitRepo:
     
     @param package: The package to search for and clone
     @param version: The version to checkout
+    @param repository: Force set the repository url
     @returns The GitRepo object representing the cloned repository checked-out to
              the correct branch
     """
     print(Fore.BLUE + "Searching for GitHub repository")
-    repo = _get_repo(package)
+    repo = _get_repo(package, repository=repository)
     if repo is None:
         print(Fore.RED + f"Failed to find the GitHub repository for {package}")
         return None

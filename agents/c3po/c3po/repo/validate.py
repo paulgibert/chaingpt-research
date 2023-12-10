@@ -5,7 +5,7 @@ def check_url(url: str):
     """
     Checks that the url is properly formatted
     """
-    pattern = r"^https://github\.com/[a-zA-Z0-9\-_]+/[a-zA-Z0-9\-_]+$"
+    pattern = r"^https://github\.com/[a-zA-Z0-9\-_]+/[a-zA-Z0-9\-_]+(.git)?"
     if re.match(pattern, url) is None:
         raise ValueError(f"The provided git url {url} is not properly formatted")
 
